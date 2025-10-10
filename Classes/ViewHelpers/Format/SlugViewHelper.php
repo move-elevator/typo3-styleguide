@@ -1,68 +1,54 @@
 <?php
 
+declare(strict_types=1);
+
 /*
- * This file is part of the TYPO3 CMS extension "typo3_styleguide".
+ * This file is part of the "typo3_styleguide" TYPO3 CMS extension.
  *
- * Copyright (C) 2025 move elevator GmbH <km@move-elevator.de>
+ * (c) 2025 Konrad Michalik <km@move-elevator.de>
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace MoveElevator\Styleguide\ViewHelpers\Format;
 
+use Closure;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
+use function is_object;
+use function is_string;
+use function strlen;
+
 /**
- * This ViewHelper formats a string to a readable url slug.
+ * SlugViewHelper.
  *
- * Usages:
- * ```html
- * <html
- *  xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
- *  data-namespace-typo3-fluid="true"
- * >
- *
- * <sg:format.slug>XYZ</xt3:format.slug>
- *
- * {value -> sg:format.slug()}
- * ```
+ * @author Konrad Michalik <km@move-elevator.de>
+ * @license GPL-2.0
  */
 class SlugViewHelper extends AbstractViewHelper
 {
     use CompileWithContentArgumentAndRenderStatic; // @phpstan-ignore traitUse.deprecatedTrait
+
     public function initializeArguments(): void
     {
         $this->registerArgument('value', 'string', 'String to format');
     }
 
     /**
-     * Test
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return string
+     * @param array<string, mixed> $arguments
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
         $value = $renderChildrenClosure();
         if (!is_string($value) && !(is_object($value) && method_exists($value, '__toString'))) {
-            /** @phpstan-ignore-next-line */
+            /* @phpstan-ignore-next-line */
             return $value;
         }
-        return self::generateSlug(((string)$value));
+
+        return self::generateSlug((string) $value);
     }
 
     public function resolveContentArgumentName(): string
@@ -78,19 +64,26 @@ class SlugViewHelper extends AbstractViewHelper
 
         // use transliterate for cyrillic and hebrew characters
         // https://www.php.net/manual/en/transliterator.transliterate.php
-        $string = transliterator_transliterate('Any-Latin; Latin-ASCII', $string);
+        $transliterated = transliterator_transliterate('Any-Latin; Latin-ASCII', $string);
+        if (false === $transliterated) {
+            return $fallback ?? '';
+        }
+        $string = $transliterated;
 
         $string = preg_replace('/[^a-z0-9]/', '-', $string);
-
-        while (str_contains((string)$string, '--')) {
-            $string = str_replace('--', substr('--', 0, 1), (string)$string);
+        if (null === $string) {
+            return $fallback ?? '';
         }
 
-        if (strlen((string)$string) > $maxLength) {
-            $string = substr((string)$string, 0, $maxLength);
+        while (str_contains($string, '--')) {
+            $string = str_replace('--', '-', $string);
         }
 
-        if ($string === '' || $string === '-') {
+        if (strlen($string) > $maxLength) {
+            $string = substr($string, 0, $maxLength);
+        }
+
+        if ('' === $string || '-' === $string) {
             return $fallback;
         }
 

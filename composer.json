@@ -13,7 +13,7 @@
 		}
 	],
 	"require": {
-		"php": "^8.1",
+		"php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
 		"ext-dom": "*",
 		"ext-intl": "*",
 		"blueways/bw-static-template": "^3.0 || ^4.0",
@@ -28,6 +28,9 @@
 		"ergebnis/composer-normalize": "^2.44",
 		"helhum/typo3-console": "^7.0 || ^8.1",
 		"helmich/typo3-typoscript-lint": "^3.2",
+		"konradmichalik/php-cs-fixer-preset": "^0.1.0",
+		"konradmichalik/php-doc-block-header-fixer": "^0.2.2",
+		"konradmichalik/phpstan-typo3-preset": "^0.1.0",
 		"move-elevator/composer-translation-validator": "^1.1",
 		"phpstan/phpstan-deprecation-rules": "^1.0 || ^2.0",
 		"phpstan/phpstan-strict-rules": "^1.0 || ^2.0",
@@ -54,10 +57,12 @@
 			"typo3/class-alias-loader": true,
 			"typo3/cms-composer-installers": true
 		},
-		"lock": false,
 		"sort-packages": true
 	},
 	"extra": {
+		"konradmichalik/php-cs-fixer-preset": {
+			"copyright": 2025
+		},
 		"typo3/cms": {
 			"extension-key": "typo3_styleguide"
 		}
@@ -71,7 +76,7 @@
 		],
 		"fix:composer": "@composer normalize",
 		"fix:editorconfig": "@lint:editorconfig --fix",
-		"fix:php": "php vendor/bin/php-cs-fixer --config=php-cs-fixer.php fix",
+		"fix:php": "php vendor/bin/php-cs-fixer --config=.php-cs-fixer.php fix",
 		"lint": [
 			"@lint:composer",
 			"@lint:editorconfig",
@@ -93,6 +98,6 @@
 		"sca": [
 			"@sca:php"
 		],
-		"sca:php": "phpstan analyse --memory-limit=2G"
+		"sca:php": "phpstan analyse --memory-limit=2G -v"
 	}
 }
