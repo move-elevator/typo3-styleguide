@@ -13,14 +13,12 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide;
 
-
 /**
  * Configuration.
  *
  * @author Konrad Michalik <km@move-elevator.de>
  * @license GPL-2.0
  */
-
 class Configuration
 {
     final public const EXT_KEY = 'typo3_styleguide';
