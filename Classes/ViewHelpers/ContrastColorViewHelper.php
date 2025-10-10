@@ -1,42 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 /*
- * This file is part of the TYPO3 CMS extension "typo3_styleguide".
+ * This file is part of the "typo3_styleguide" TYPO3 CMS extension.
  *
- * Copyright (C) 2025 move elevator GmbH <km@move-elevator.de>
+ * (c) 2025 Konrad Michalik <km@move-elevator.de>
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace MoveElevator\Styleguide\ViewHelpers;
 
+use Closure;
+use InvalidArgumentException;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
+use function strlen;
+
 /**
- * This ViewHelper generates a contrast color based on a given color.
+ * ContrastColorViewHelper.
  *
- * Usage:
- * ```html
- *
- * <html
- *   xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
- *   data-namespace-typo3-fluid="true"
- * >
- * <sg:contrastColor color="#ff5733" />
- *
- * ```
+ * @author Konrad Michalik <km@move-elevator.de>
+ * @license GPL-2.0
  */
 class ContrastColorViewHelper extends AbstractViewHelper
 {
@@ -45,11 +33,14 @@ class ContrastColorViewHelper extends AbstractViewHelper
         $this->registerArgument('color', 'string', 'HEX Code', true);
     }
 
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    /**
+     * @param array<string, mixed> $arguments
+     */
+    public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
         $hexColor = ltrim($arguments['color'], '#');
-        if (strlen($hexColor) !== 6) {
-            throw new \InvalidArgumentException('Invalid HEX color code: ' . $arguments['color'], 4518636088);
+        if (6 !== strlen($hexColor)) {
+            throw new InvalidArgumentException('Invalid HEX color code: '.$arguments['color'], 4518636088);
         }
 
         $r = hexdec(substr($hexColor, 0, 2));

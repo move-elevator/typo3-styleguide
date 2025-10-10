@@ -1,28 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 /*
- * This file is part of the TYPO3 CMS extension "typo3_styleguide".
+ * This file is part of the "typo3_styleguide" TYPO3 CMS extension.
  *
- * Copyright (C) 2025 move elevator GmbH <km@move-elevator.de>
+ * (c) 2025 Konrad Michalik <km@move-elevator.de>
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 /**
  * Reads a file and returns its content as a string.
  *
  * @param string $file Path to the file
+ *
  * @return string Content of the file
  */
 function readFileContent($file)
@@ -34,6 +27,7 @@ function readFileContent($file)
  * Extracts class documentation comments from the file content.
  *
  * @param string $content Content of the PHP file
+ *
  * @return array Extracted documentation comments
  */
 function extractDocComments($content)
@@ -43,7 +37,7 @@ function extractDocComments($content)
     ];
 
     // Regex for class documentation
-    preg_match_all('/\/\*\*(.*?)\*\/\s*class\s+(\w+)/s', $content, $classMatches, PREG_SET_ORDER);
+    preg_match_all('/\/\*\*(.*?)\*\/\s*class\s+(\w+)/s', $content, $classMatches, \PREG_SET_ORDER);
     foreach ($classMatches as $match) {
         $docComments['classes'][] = [
             'name' => $match[2],
@@ -58,20 +52,23 @@ function extractDocComments($content)
  * Cleans the doc comments by removing the comment asterisks and preserving line breaks.
  *
  * @param string $comment The comment to clean
+ *
  * @return string The cleaned comment
  */
 function cleanDocComment($comment)
 {
     $comment = preg_replace('/^[ \t]*\*[ \t]?/m', '', $comment);
+
     return trim($comment);
 }
 
 /**
  * Generates a markdown file from the extracted documentation comments.
  *
- * @param string $className Name of the class
- * @param array $docComments Extracted documentation comments
- * @param string $outputDir Path to the output directory
+ * @param string $className   Name of the class
+ * @param array  $docComments Extracted documentation comments
+ * @param string $outputDir   Path to the output directory
+ *
  * @return string Name of the generated markdown file
  */
 function generateMarkdown($className, $docComments, $outputDir)
@@ -84,7 +81,7 @@ function generateMarkdown($className, $docComments, $outputDir)
 
     $fileName = "$outputDir/Classes/$className.md";
     if (!is_dir(dirname($fileName))) {
-        die("The specified output directory 'Classes' does not exist.\n");
+        exit("The specified output directory 'Classes' does not exist.\n");
     }
     file_put_contents($fileName, $markdown);
 
@@ -95,8 +92,8 @@ function generateMarkdown($className, $docComments, $outputDir)
  * Recursively processes a directory for PHP files and generates markdown files for each found class.
  * Also creates a main markdown file with a table of contents.
  *
- * @param string $directory Path to the directory
- * @param string $outputDir Path to the output directory
+ * @param string $directory   Path to the directory
+ * @param string $outputDir   Path to the output directory
  * @param string $tocFileName Name of the table of contents file
  */
 function processDirectory($directory, $outputDir, $tocFileName)
@@ -105,7 +102,7 @@ function processDirectory($directory, $outputDir, $tocFileName)
     $generatedFiles = [];
 
     foreach ($iterator as $file) {
-        if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
+        if ('php' === pathinfo($file, \PATHINFO_EXTENSION)) {
             $content = readFileContent($file);
             $docComments = extractDocComments($content);
 
@@ -123,9 +120,9 @@ function processDirectory($directory, $outputDir, $tocFileName)
 /**
  * Generates a main markdown file with a table of contents of all generated markdown files.
  *
- * @param array $generatedFiles List of generated markdown files
- * @param string $outputDir Path to the output directory
- * @param string $tocFileName Name of the table of contents file
+ * @param array  $generatedFiles List of generated markdown files
+ * @param string $outputDir      Path to the output directory
+ * @param string $tocFileName    Name of the table of contents file
  */
 function generateTableOfContents($generatedFiles, $outputDir, $tocFileName)
 {
@@ -141,7 +138,7 @@ function generateTableOfContents($generatedFiles, $outputDir, $tocFileName)
 // Parse command line arguments
 $options = getopt('d:o:t::');
 if (!isset($options['d'])) {
-    die("Usage: php script.php -d <directory> -o <output directory> [-t <TOC_FILENAME>]\n");
+    exit("Usage: php script.php -d <directory> -o <output directory> [-t <TOC_FILENAME>]\n");
 }
 
 $directory = $options['d'];
@@ -149,15 +146,15 @@ $outputDir = isset($options['o']) ? $options['o'] : '.';
 $tocFileName = isset($options['t']) ? $options['t'] : 'CLASSES.md';
 
 if (!is_dir($directory)) {
-    die("The specified directory does not exist.\n");
+    exit("The specified directory does not exist.\n");
 }
 
 if (!is_dir($outputDir) || !is_writable($outputDir)) {
-    die("The specified output directory does not exist or is not writable.\n");
+    exit("The specified output directory does not exist or is not writable.\n");
 }
 
 if (!is_dir("$outputDir/Classes") || !is_writable("$outputDir/Classes")) {
-    die("The specified output directory 'Classes' does not exist or is not writable.\n");
+    exit("The specified output directory 'Classes' does not exist or is not writable.\n");
 }
 
 // Process the directory
