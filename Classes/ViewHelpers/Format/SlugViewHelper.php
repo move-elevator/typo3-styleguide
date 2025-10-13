@@ -26,7 +26,7 @@ use function strlen;
  * SlugViewHelper.
  *
  * @author Konrad Michalik <km@move-elevator.de>
- * @license GPL-2.0
+ * @license GPL-2.0-or-later
  */
 class SlugViewHelper extends AbstractViewHelper
 {
