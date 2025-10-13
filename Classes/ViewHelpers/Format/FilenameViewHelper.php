@@ -21,7 +21,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * FilenameViewHelper.
  *
  * @author Konrad Michalik <km@move-elevator.de>
- * @license GPL-2.0
+ * @license GPL-2.0-or-later
  */
 class FilenameViewHelper extends AbstractViewHelper
 {

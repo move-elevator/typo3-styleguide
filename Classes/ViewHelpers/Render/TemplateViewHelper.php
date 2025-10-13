@@ -27,7 +27,7 @@ use function is_bool;
  * TemplateViewHelper.
  *
  * @author Konrad Michalik <km@move-elevator.de>
- * @license GPL-2.0
+ * @license GPL-2.0-or-later
  */
 class TemplateViewHelper extends AbstractViewHelper
 {
