@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41cd91a3a973e4526dcdbe95677767b2",
+    "content-hash": "c88a10cc6c3b21cce299e2c3780fd8c7",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7653,20 +7653,20 @@
         },
         {
             "name": "konradmichalik/phpstan-typo3-preset",
-            "version": "0.1.2",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackd248/phpstan-typo3-preset.git",
-                "reference": "31b9683748356a9304871cb76c81d2d4a271b1ca"
+                "reference": "44b30be04f4ddbda7875f2761f420ad50d0fa121"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackd248/phpstan-typo3-preset/zipball/31b9683748356a9304871cb76c81d2d4a271b1ca",
-                "reference": "31b9683748356a9304871cb76c81d2d4a271b1ca",
+                "url": "https://api.github.com/repos/jackd248/phpstan-typo3-preset/zipball/44b30be04f4ddbda7875f2761f420ad50d0fa121",
+                "reference": "44b30be04f4ddbda7875f2761f420ad50d0fa121",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "phpstan/phpstan": "^1.9 || ^2.0",
                 "phpstan/phpstan-deprecation-rules": "^1.1 || ^2.0",
                 "phpstan/phpstan-strict-rules": "^1.4 || ^2.0",
@@ -7676,7 +7676,7 @@
                 "tomasvotruba/type-coverage": "^1.0 || ^2.0"
             },
             "require-dev": {
-                "armin/editorconfig-cli": "^1.0 || ^2.0",
+                "armin/editorconfig-cli": "^2.0",
                 "ergebnis/composer-normalize": "^2.44"
             },
             "type": "library",
@@ -7701,9 +7701,9 @@
             "description": "TYPO3 preset configuration for PHPStan",
             "support": {
                 "issues": "https://github.com/jackd248/phpstan-typo3-preset/issues",
-                "source": "https://github.com/jackd248/phpstan-typo3-preset/tree/0.1.2"
+                "source": "https://github.com/jackd248/phpstan-typo3-preset/tree/0.1.4"
             },
-            "time": "2025-10-13T08:00:14+00:00"
+            "time": "2025-11-26T09:27:39+00:00"
         },
         {
             "name": "league/flysystem",
