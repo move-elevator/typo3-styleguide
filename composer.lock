@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9d002679990e562da422233d2d251fb",
+    "content-hash": "97154611a454e6731f96cfcf3d70fd80",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -9242,16 +9242,16 @@
         },
         {
             "name": "spaze/phpstan-disallowed-calls",
-            "version": "v4.7.0",
+            "version": "v4.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spaze/phpstan-disallowed-calls.git",
-                "reference": "0765102eeb154da8a3bcef3200375bb4297a2141"
+                "reference": "07b4356134e91e60b14f7ab6dcbca1072c4af889"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spaze/phpstan-disallowed-calls/zipball/0765102eeb154da8a3bcef3200375bb4297a2141",
-                "reference": "0765102eeb154da8a3bcef3200375bb4297a2141",
+                "url": "https://api.github.com/repos/spaze/phpstan-disallowed-calls/zipball/07b4356134e91e60b14f7ab6dcbca1072c4af889",
+                "reference": "07b4356134e91e60b14f7ab6dcbca1072c4af889",
                 "shasum": ""
             },
             "require": {
@@ -9263,8 +9263,8 @@
                 "php-parallel-lint/php-console-highlighter": "^1.0",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
                 "phpstan/phpstan-deprecation-rules": "^1.2 || ^2.0",
-                "phpunit/phpunit": "^8.5.14 || ^10.1 || ^11.0 || ^12.0",
-                "shipmonk/dead-code-detector": "^0.13.2",
+                "phpunit/phpunit": "^8.5.14 || ^10.1 || ^11.0 || ^12.0 || ^13.0",
+                "shipmonk/dead-code-detector": "^0.14.1",
                 "spaze/coding-standard": "^1.8"
             },
             "type": "phpstan-extension",
@@ -9297,7 +9297,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spaze/phpstan-disallowed-calls/issues",
-                "source": "https://github.com/spaze/phpstan-disallowed-calls/tree/v4.7.0"
+                "source": "https://github.com/spaze/phpstan-disallowed-calls/tree/v4.8.0"
             },
             "funding": [
                 {
@@ -9305,7 +9305,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-01T23:01:09+00:00"
+            "time": "2026-02-07T16:37:31+00:00"
         },
         {
             "name": "ssch/typo3-debug-dump-pass",
