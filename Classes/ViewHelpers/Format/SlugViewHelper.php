@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers\Format;
 
-use Closure;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 
 use function is_object;
 use function is_string;
@@ -30,19 +27,14 @@ use function strlen;
  */
 class SlugViewHelper extends AbstractViewHelper
 {
-    use CompileWithContentArgumentAndRenderStatic; // @phpstan-ignore traitUse.deprecatedTrait
-
     public function initializeArguments(): void
     {
         $this->registerArgument('value', 'string', 'String to format');
     }
 
-    /**
-     * @param array<string, mixed> $arguments
-     */
-    public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public function render(): string
     {
-        $value = $renderChildrenClosure();
+        $value = $this->renderChildren();
         if (!is_string($value) && !(is_object($value) && method_exists($value, '__toString'))) {
             /* @phpstan-ignore-next-line */
             return $value;
@@ -51,7 +43,7 @@ class SlugViewHelper extends AbstractViewHelper
         return self::generateSlug((string) $value);
     }
 
-    public function resolveContentArgumentName(): string
+    public function getContentArgumentName(): string
     {
         return 'value';
     }

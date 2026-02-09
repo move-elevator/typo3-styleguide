@@ -21,9 +21,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'pages',
     'doktype',
     [
-        'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide',
-        Configuration::PAGE_TYPE,
-        'apps-pagetree-page-styleguide',
+        'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide',
+        'value' => Configuration::PAGE_TYPE,
+        'icon' => 'apps-pagetree-page-styleguide',
     ],
     '1',
     'after',

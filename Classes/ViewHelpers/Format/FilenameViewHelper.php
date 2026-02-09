@@ -37,6 +37,6 @@ class FilenameViewHelper extends AbstractViewHelper
     {
         $value = $renderChildrenClosure();
 
-        return pathinfo($value, \PATHINFO_FILENAME);
+        return pathinfo((string) $value, \PATHINFO_FILENAME);
     }
 }

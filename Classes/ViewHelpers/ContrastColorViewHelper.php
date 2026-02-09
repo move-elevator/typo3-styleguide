@@ -38,7 +38,7 @@ class ContrastColorViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
-        $hexColor = ltrim($arguments['color'], '#');
+        $hexColor = ltrim((string) $arguments['color'], '#');
         if (6 !== strlen($hexColor)) {
             throw new InvalidArgumentException('Invalid HEX color code: '.$arguments['color'], 4518636088);
         }
