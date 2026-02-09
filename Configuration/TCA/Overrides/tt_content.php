@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the "typo3_styleguide" TYPO3 CMS extension.
  *
- * (c) 2025 Konrad Michalik <km@move-elevator.de>
+ * (c) 2025-2026 Konrad Michalik <km@move-elevator.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -42,16 +42,16 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 'default' => 'h2',
                 'items' => [
                     [
-                        'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.tag.h2',
-                        'h2',
+                        'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.tag.h2',
+                        'value' => 'h2',
                     ],
                     [
-                        'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.tag.h3',
-                        'h3',
+                        'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.tag.h3',
+                        'value' => 'h3',
                     ],
                     [
-                        'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.tag.h4',
-                        'h4',
+                        'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.tag.h4',
+                        'value' => 'h4',
                     ],
                 ],
             ],
