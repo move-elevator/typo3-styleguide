@@ -6,4 +6,4 @@ additional_hostnames:
   - 13.typo3-styleguide
 hooks:
    post-start:
-    - exec: mkdir -p /var/www/html/.Build/ && cp /var/www/html/.ddev/.typo3-setup/templates/* /var/www/html/.Build/
+    - exec: mkdir -p /var/www/html/.Build/ && cp /var/www/html/.ddev/.setup/templates/* /var/www/html/.Build/
