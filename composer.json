@@ -17,9 +17,9 @@
 		"ext-dom": "*",
 		"ext-intl": "*",
 		"blueways/bw-static-template": "^3.0 || ^4.0",
-		"typo3/cms-core": "^11.0 || ^12.0 || ^13.0",
-		"typo3/cms-fluid": "^11.0 || ^12.0 || ^13.0",
-		"typo3fluid/fluid": "^2.15 || ^4.0"
+		"typo3/cms-core": "^12.0 || ^13.0",
+		"typo3/cms-fluid": "^12.0 || ^13.0",
+		"typo3fluid/fluid": "^4.0"
 	},
 	"require-dev": {
 		"eliashaeussler/version-bumper": "^2.4 || ^3.0",
