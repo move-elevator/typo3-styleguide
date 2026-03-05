@@ -215,6 +215,10 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function getChildRecords(string $table, int $parentId): array
     {
+        if ($parentId <= 0) {
+            return [];
+        }
+
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable($table);
 
