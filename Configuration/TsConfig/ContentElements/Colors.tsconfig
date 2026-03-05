@@ -1,0 +1,15 @@
+mod.wizards.newContentElement.wizardItems {
+  special {
+    elements {
+      metypo3styleguide_colors {
+        iconIdentifier = content-info
+        title = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.colors.label
+        description = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.colors.description
+        tt_content_defValues {
+          CType = metypo3styleguide_colors
+        }
+      }
+    }
+    show := addToList(metypo3styleguide_colors)
+  }
+}

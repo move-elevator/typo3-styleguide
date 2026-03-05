@@ -1,0 +1,32 @@
+<html
+    xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
+    xmlns:f="http://www.w3.org/1999/XSL/Transform"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+<f:asset.script identifier="typo3styleguide_element_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/copy.js" />
+
+
+<div class="typo3-styleguide__frame">
+    <div class="typo3-styleguide__element-container">
+        <f:for each="{colors}" as="color">
+            <f:if condition="{color.data.color}">
+                <f:variable name="contrastColor">
+                    <sg:contrastColor color="{color.data.color}"/>
+                </f:variable>
+                <div class="typo3-styleguide__element" data-copy="{color.data.color}">
+                    <div class="typo3-styleguide__color"
+                         style="background-color: {color.data.color}; color: {contrastColor};">
+                        <p class="typo3-styleguide__color-value">
+                            {color.data.color}
+                        </p>
+                        <p class="typo3-styleguide__color-label">
+                            {color.data.label}
+                        </p>
+                    </div>
+                </div>
+            </f:if>
+        </f:for>
+    </div>
+</div>

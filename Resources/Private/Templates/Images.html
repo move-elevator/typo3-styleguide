@@ -11,17 +11,17 @@
 <div class="typo3-styleguide__frame">
     <div class="typo3-styleguide__element-container">
         <f:for each="{images}" as="image">
-            <f:if condition="{image.path}">
+            <f:if condition="{image.data.path}">
                 <div class="typo3-styleguide__element">
                     <div class="typo3-styleguide__image">
                         <div class="typo3-styleguide__image-box">
-                            <img src="{f:uri.resource(path: image.path)}" alt="{image.caption}"/>
+                            <img src="{sg:uri.resourcePath(path: image.data.path)}" alt="{image.data.caption}"/>
                         </div>
                     </div>
-                    <f:if condition="{image.caption}">
+                    <f:if condition="{image.data.caption}">
                         <div class="typo3-styleguide__element-caption">
                             <p class="typo3-styleguide__image-caption-text">
-                                {image.caption}
+                                {image.data.caption}
                             </p>
                         </div>
                     </f:if>

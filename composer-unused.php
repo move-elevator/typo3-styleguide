@@ -11,10 +11,8 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-use ComposerUnused\ComposerUnused\Configuration\{Configuration, NamedFilter};
+use ComposerUnused\ComposerUnused\Configuration\Configuration;
 
 return static function (Configuration $config): Configuration {
-    $config->addNamedFilter(NamedFilter::fromString('blueways/bw-static-template'));
-
     return $config;
 };

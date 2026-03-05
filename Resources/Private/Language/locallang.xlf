@@ -42,6 +42,72 @@
 			<trans-unit id="page.styleguide">
 				<source>Styleguide</source>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.label">
+				<source>Colors</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.description">
+				<source>Display a color palette for the styleguide</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.items">
+				<source>Colors</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_color">
+				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_color.color">
+				<source>Color (HEX)</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_color.label">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.label">
+				<source>Fonts</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.description">
+				<source>Display font specimens for the styleguide</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.items">
+				<source>Fonts</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_font">
+				<source>Font</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_font.font">
+				<source>Font family</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_font.font_weight">
+				<source>Font weight</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_font.label">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.label">
+				<source>Icons</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.description">
+				<source>Display all icons from a directory for the styleguide</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.path">
+				<source>Directory path</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.label">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.description">
+				<source>Display images for the styleguide</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.items">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_image.path">
+				<source>Path</source>
+			</trans-unit>
+			<trans-unit id="tx_metypo3styleguide_image.caption">
+				<source>Caption</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
