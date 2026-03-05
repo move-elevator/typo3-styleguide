@@ -13,8 +13,7 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers\Uri;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\PathUtility;
+use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
