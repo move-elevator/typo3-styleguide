@@ -432,7 +432,7 @@ page.100 {
                 <field index="perms_group" type="integer">27</field>
                 <field index="perms_everybody" type="integer">0</field>
                 <field index="title">Styleguide</field>
-                <field index="doktype" type="integer">1</field>
+                <field index="doktype" type="integer">1754310721</field>
                 <field index="TSconfig" type="NULL"></field>
                 <field index="is_siteroot" type="integer">0</field>
                 <field index="php_tree_stop" type="integer">0</field>
