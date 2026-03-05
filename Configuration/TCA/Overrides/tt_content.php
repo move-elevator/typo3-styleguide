@@ -12,6 +12,7 @@ declare(strict_types=1);
  */
 
 use MoveElevator\Styleguide\Configuration;
+use MoveElevator\Styleguide\Preview\StyleguidePreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || exit('Access denied.');
@@ -188,6 +189,7 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
 );
 
 $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_technicalheadline'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_metypo3styleguide_technicalheadlinetag,subheader,bodytext,
@@ -214,6 +216,7 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_technicalheadline'] = 
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_colors'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_metypo3styleguide_colors,
@@ -232,6 +235,7 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_colors'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_fonts'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_metypo3styleguide_fonts,
@@ -250,6 +254,7 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_fonts'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_icons'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_metypo3styleguide_icons_path,
@@ -268,6 +273,7 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_icons'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_images'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_metypo3styleguide_images,
