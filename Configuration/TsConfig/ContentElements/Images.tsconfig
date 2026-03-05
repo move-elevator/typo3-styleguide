@@ -1,5 +1,5 @@
 mod.wizards.newContentElement.wizardItems {
-  special {
+  styleguide {
     elements {
       metypo3styleguide_images {
         iconIdentifier = content-info

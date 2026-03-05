@@ -55,6 +55,10 @@
 				<source />
 				<target>Styleguide</target>
 			</trans-unit>
+			<trans-unit id="wizard.tab.styleguide">
+				<source />
+				<target>Styleguide</target>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.label">
 				<source />
 				<target>Farben</target>

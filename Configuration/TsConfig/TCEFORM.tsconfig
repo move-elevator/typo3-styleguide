@@ -36,3 +36,7 @@
     twitter_title.disabled = 1
   }
 [end]
+
+[traverse(page, "doktype") != 1754310721]
+  mod.wizards.newContentElement.wizardItems.styleguide.show >
+[end]

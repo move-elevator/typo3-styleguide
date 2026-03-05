@@ -1,5 +1,6 @@
 mod.wizards.newContentElement.wizardItems {
-  special {
+  styleguide {
+    header = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:wizard.tab.styleguide
     elements {
       metypo3styleguide_technicalheadline {
         iconIdentifier = content-info

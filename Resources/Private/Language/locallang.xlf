@@ -42,6 +42,9 @@
 			<trans-unit id="page.styleguide">
 				<source>Styleguide</source>
 			</trans-unit>
+			<trans-unit id="wizard.tab.styleguide">
+				<source>Styleguide</source>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.label">
 				<source>Colors</source>
 			</trans-unit>
