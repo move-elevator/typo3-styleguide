@@ -54,13 +54,13 @@
 			<trans-unit id="contentelement.colors.items">
 				<source>Colors</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_color">
+			<trans-unit id="tx_typo3styleguide_color">
 				<source>Color</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_color.color">
+			<trans-unit id="tx_typo3styleguide_color.color">
 				<source>Color (HEX)</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_color.label">
+			<trans-unit id="tx_typo3styleguide_color.label">
 				<source>Label</source>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
@@ -72,16 +72,16 @@
 			<trans-unit id="contentelement.fonts.items">
 				<source>Fonts</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font">
+			<trans-unit id="tx_typo3styleguide_font">
 				<source>Font</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font.font">
+			<trans-unit id="tx_typo3styleguide_font.font">
 				<source>Font family</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font.font_weight">
+			<trans-unit id="tx_typo3styleguide_font.font_weight">
 				<source>Font weight</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font.label">
+			<trans-unit id="tx_typo3styleguide_font.label">
 				<source>Label</source>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
@@ -102,13 +102,13 @@
 			<trans-unit id="contentelement.images.items">
 				<source>Images</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_image">
+			<trans-unit id="tx_typo3styleguide_image">
 				<source>Image</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_image.path">
+			<trans-unit id="tx_typo3styleguide_image.path">
 				<source>Path</source>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_image.caption">
+			<trans-unit id="tx_typo3styleguide_image.caption">
 				<source>Caption</source>
 			</trans-unit>
 		</body>

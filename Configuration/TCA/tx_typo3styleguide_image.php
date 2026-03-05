@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_image',
+        'title' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_image',
         'label' => 'path',
         'label_alt' => 'caption',
         'tstamp' => 'tstamp',
@@ -41,7 +41,7 @@ return [
             ],
         ],
         'path' => [
-            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_image.path',
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_image.path',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -52,7 +52,7 @@ return [
             ],
         ],
         'caption' => [
-            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_image.caption',
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_image.caption',
             'config' => [
                 'type' => 'input',
                 'size' => 50,

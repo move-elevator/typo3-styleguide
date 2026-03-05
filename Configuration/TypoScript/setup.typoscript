@@ -2,17 +2,17 @@ lib.contentElement {
   templateRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Templates/
 }
 tt_content {
-  metypo3styleguide_technicalheadline =< lib.contentElement
-  metypo3styleguide_technicalheadline {
+  typo3styleguide_technicalheadline =< lib.contentElement
+  typo3styleguide_technicalheadline {
     templateName = TechnicalHeadline
   }
 
-  metypo3styleguide_colors =< lib.contentElement
-  metypo3styleguide_colors {
+  typo3styleguide_colors =< lib.contentElement
+  typo3styleguide_colors {
     templateName = Colors
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
-      table = tx_metypo3styleguide_color
+      table = tx_typo3styleguide_color
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -20,12 +20,12 @@ tt_content {
     }
   }
 
-  metypo3styleguide_fonts =< lib.contentElement
-  metypo3styleguide_fonts {
+  typo3styleguide_fonts =< lib.contentElement
+  typo3styleguide_fonts {
     templateName = Fonts
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
-      table = tx_metypo3styleguide_font
+      table = tx_typo3styleguide_font
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -33,17 +33,17 @@ tt_content {
     }
   }
 
-  metypo3styleguide_icons =< lib.contentElement
-  metypo3styleguide_icons {
+  typo3styleguide_icons =< lib.contentElement
+  typo3styleguide_icons {
     templateName = Icons
   }
 
-  metypo3styleguide_images =< lib.contentElement
-  metypo3styleguide_images {
+  typo3styleguide_images =< lib.contentElement
+  typo3styleguide_images {
     templateName = Images
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
-      table = tx_metypo3styleguide_image
+      table = tx_typo3styleguide_image
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting

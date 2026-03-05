@@ -1,15 +1,15 @@
 mod.wizards.newContentElement.wizardItems {
   styleguide {
     elements {
-      metypo3styleguide_fonts {
+      typo3styleguide_fonts {
         iconIdentifier = content-styleguide-fonts
         title = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.fonts.label
         description = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.fonts.description
         tt_content_defValues {
-          CType = metypo3styleguide_fonts
+          CType = typo3styleguide_fonts
         }
       }
     }
-    show := addToList(metypo3styleguide_fonts)
+    show := addToList(typo3styleguide_fonts)
   }
 }

@@ -40,11 +40,11 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         $cType = (string) ($row['CType'] ?? '');
 
         return match ($cType) {
-            'metypo3styleguide_technicalheadline' => $this->renderTechnicalHeadlinePreview($row),
-            'metypo3styleguide_colors' => $this->renderColorsPreview($row),
-            'metypo3styleguide_fonts' => $this->renderFontsPreview($row),
-            'metypo3styleguide_icons' => $this->renderIconsPreview($row),
-            'metypo3styleguide_images' => $this->renderImagesPreview($row),
+            'typo3styleguide_technicalheadline' => $this->renderTechnicalHeadlinePreview($row),
+            'typo3styleguide_colors' => $this->renderColorsPreview($row),
+            'typo3styleguide_fonts' => $this->renderFontsPreview($row),
+            'typo3styleguide_icons' => $this->renderIconsPreview($row),
+            'typo3styleguide_images' => $this->renderImagesPreview($row),
             default => parent::renderPageModulePreviewContent($item),
         };
     }
@@ -67,7 +67,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function renderColorsPreview(array $row): string
     {
-        $children = $this->getChildRecords('tx_metypo3styleguide_color', (int) $row['uid']);
+        $children = $this->getChildRecords('tx_typo3styleguide_color', (int) $row['uid']);
         if ([] === $children) {
             return '';
         }
@@ -80,7 +80,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function renderFontsPreview(array $row): string
     {
-        $children = $this->getChildRecords('tx_metypo3styleguide_font', (int) $row['uid']);
+        $children = $this->getChildRecords('tx_typo3styleguide_font', (int) $row['uid']);
         if ([] === $children) {
             return '';
         }
@@ -111,7 +111,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function renderIconsPreview(array $row): string
     {
-        $path = (string) ($row['tx_metypo3styleguide_icons_path'] ?? '');
+        $path = (string) ($row['tx_typo3styleguide_icons_path'] ?? '');
         if ('' === $path) {
             return '';
         }
@@ -151,7 +151,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function renderImagesPreview(array $row): string
     {
-        $children = $this->getChildRecords('tx_metypo3styleguide_image', (int) $row['uid']);
+        $children = $this->getChildRecords('tx_typo3styleguide_image', (int) $row['uid']);
         if ([] === $children) {
             return '';
         }

@@ -155,7 +155,7 @@
                     <softrefs type="array"></softrefs>
                 </rec>
             </table>
-            <table index="tx_metypo3styleguide_color" type="array">
+            <table index="tx_typo3styleguide_color" type="array">
                 <rec index="1" type="array">
                     <uid>1</uid>
                     <pid>2</pid>
@@ -178,7 +178,7 @@
                     <softrefs type="array"></softrefs>
                 </rec>
             </table>
-            <table index="tx_metypo3styleguide_font" type="array">
+            <table index="tx_typo3styleguide_font" type="array">
                 <rec index="1" type="array">
                     <uid>1</uid>
                     <pid>2</pid>
@@ -201,7 +201,7 @@
                     <softrefs type="array"></softrefs>
                 </rec>
             </table>
-            <table index="tx_metypo3styleguide_image" type="array">
+            <table index="tx_typo3styleguide_image" type="array">
                 <rec index="1" type="array">
                     <uid>1</uid>
                     <pid>2</pid>
@@ -247,17 +247,17 @@
                     <item index="7">1</item>
                     <item index="8">1</item>
                 </table>
-                <table index="tx_metypo3styleguide_color" type="array">
+                <table index="tx_typo3styleguide_color" type="array">
                     <item index="1">1</item>
                     <item index="2">1</item>
                     <item index="3">1</item>
                 </table>
-                <table index="tx_metypo3styleguide_font" type="array">
+                <table index="tx_typo3styleguide_font" type="array">
                     <item index="1">1</item>
                     <item index="2">1</item>
                     <item index="3">1</item>
                 </table>
-                <table index="tx_metypo3styleguide_image" type="array">
+                <table index="tx_typo3styleguide_image" type="array">
                     <item index="1">1</item>
                     <item index="2">1</item>
                 </table>
@@ -508,7 +508,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Basics</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -559,7 +559,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -587,7 +587,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Logo</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -638,7 +638,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -666,7 +666,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_images</field>
+                <field index="CType">typo3styleguide_images</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -717,8 +717,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_images" type="integer">2</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_images" type="integer">2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -746,7 +746,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Icons</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -797,7 +797,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -825,7 +825,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_icons</field>
+                <field index="CType">typo3styleguide_icons</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -876,8 +876,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_icons_path">EXT:core/Resources/Public/Icons/T3Icons/svgs/content/</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_icons_path">EXT:core/Resources/Public/Icons/T3Icons/svgs/content/</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -900,12 +900,12 @@ page.100 {
                 <field index="l10n_source" type="integer">0</field>
                 <field index="l10n_state" type="NULL"></field>
                 <field index="t3_origuid" type="integer">0</field>
-                <field index="l18n_diffsource">{&quot;CType&quot;:&quot;&quot;,&quot;colPos&quot;:&quot;&quot;,&quot;header&quot;:&quot;&quot;,&quot;header_layout&quot;:&quot;&quot;,&quot;header_position&quot;:&quot;&quot;,&quot;date&quot;:&quot;&quot;,&quot;header_link&quot;:&quot;&quot;,&quot;tx_metypo3styleguide_technicalheadlinetag&quot;:&quot;&quot;,&quot;subheader&quot;:&quot;&quot;,&quot;bodytext&quot;:&quot;&quot;,&quot;layout&quot;:&quot;&quot;,&quot;frame_class&quot;:&quot;&quot;,&quot;space_before_class&quot;:&quot;&quot;,&quot;space_after_class&quot;:&quot;&quot;,&quot;sys_language_uid&quot;:&quot;&quot;,&quot;hidden&quot;:&quot;&quot;,&quot;starttime&quot;:&quot;&quot;,&quot;endtime&quot;:&quot;&quot;,&quot;fe_group&quot;:&quot;&quot;,&quot;editlock&quot;:&quot;&quot;,&quot;categories&quot;:&quot;&quot;,&quot;rowDescription&quot;:&quot;&quot;}</field>
+                <field index="l18n_diffsource">{&quot;CType&quot;:&quot;&quot;,&quot;colPos&quot;:&quot;&quot;,&quot;header&quot;:&quot;&quot;,&quot;header_layout&quot;:&quot;&quot;,&quot;header_position&quot;:&quot;&quot;,&quot;date&quot;:&quot;&quot;,&quot;header_link&quot;:&quot;&quot;,&quot;tx_typo3styleguide_technicalheadlinetag&quot;:&quot;&quot;,&quot;subheader&quot;:&quot;&quot;,&quot;bodytext&quot;:&quot;&quot;,&quot;layout&quot;:&quot;&quot;,&quot;frame_class&quot;:&quot;&quot;,&quot;space_before_class&quot;:&quot;&quot;,&quot;space_after_class&quot;:&quot;&quot;,&quot;sys_language_uid&quot;:&quot;&quot;,&quot;hidden&quot;:&quot;&quot;,&quot;starttime&quot;:&quot;&quot;,&quot;endtime&quot;:&quot;&quot;,&quot;fe_group&quot;:&quot;&quot;,&quot;editlock&quot;:&quot;&quot;,&quot;categories&quot;:&quot;&quot;,&quot;rowDescription&quot;:&quot;&quot;}</field>
                 <field index="t3ver_oid" type="integer">0</field>
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Colors</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -956,7 +956,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -984,7 +984,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_colors</field>
+                <field index="CType">typo3styleguide_colors</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -1035,8 +1035,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_colors" type="integer">3</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_colors" type="integer">3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1064,7 +1064,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Fonts</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -1115,7 +1115,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1143,7 +1143,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_fonts</field>
+                <field index="CType">typo3styleguide_fonts</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -1194,8 +1194,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_fonts" type="integer">3</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_fonts" type="integer">3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1223,7 +1223,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Elements</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -1274,7 +1274,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1302,7 +1302,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Text</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -1353,7 +1353,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1432,11 +1432,11 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_color:1" type="array">
+        <tablerow index="tx_typo3styleguide_color:1" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">1</field>
                 <field index="pid" type="integer">2</field>
@@ -1452,7 +1452,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_color:2" type="array">
+        <tablerow index="tx_typo3styleguide_color:2" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">2</field>
                 <field index="pid" type="integer">2</field>
@@ -1468,7 +1468,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_color:3" type="array">
+        <tablerow index="tx_typo3styleguide_color:3" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">3</field>
                 <field index="pid" type="integer">2</field>
@@ -1484,7 +1484,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_font:1" type="array">
+        <tablerow index="tx_typo3styleguide_font:1" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">1</field>
                 <field index="pid" type="integer">2</field>
@@ -1501,7 +1501,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_font:2" type="array">
+        <tablerow index="tx_typo3styleguide_font:2" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">2</field>
                 <field index="pid" type="integer">2</field>
@@ -1518,7 +1518,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_font:3" type="array">
+        <tablerow index="tx_typo3styleguide_font:3" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">3</field>
                 <field index="pid" type="integer">2</field>
@@ -1535,7 +1535,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_image:1" type="array">
+        <tablerow index="tx_typo3styleguide_image:1" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">1</field>
                 <field index="pid" type="integer">2</field>
@@ -1551,7 +1551,7 @@ page.100 {
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
-        <tablerow index="tx_metypo3styleguide_image:2" type="array">
+        <tablerow index="tx_typo3styleguide_image:2" type="array">
             <fieldlist index="data" type="array">
                 <field index="uid" type="integer">2</field>
                 <field index="pid" type="integer">2</field>

@@ -25,7 +25,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     'CType',
     [
         'label' => $lll.'contentelement.technical_headline.label',
-        'value' => 'metypo3styleguide_technicalheadline',
+        'value' => 'typo3styleguide_technicalheadline',
         'icon' => 'content-styleguide-headline',
         'description' => $lll.'contentelement.technical_headline.description',
     ],
@@ -39,11 +39,11 @@ ExtensionManagementUtility::addTcaSelectItem(
     'CType',
     [
         'label' => $lll.'contentelement.colors.label',
-        'value' => 'metypo3styleguide_colors',
+        'value' => 'typo3styleguide_colors',
         'icon' => 'content-styleguide-colors',
         'description' => $lll.'contentelement.colors.description',
     ],
-    'metypo3styleguide_technicalheadline',
+    'typo3styleguide_technicalheadline',
     'after',
 );
 
@@ -53,11 +53,11 @@ ExtensionManagementUtility::addTcaSelectItem(
     'CType',
     [
         'label' => $lll.'contentelement.fonts.label',
-        'value' => 'metypo3styleguide_fonts',
+        'value' => 'typo3styleguide_fonts',
         'icon' => 'content-styleguide-fonts',
         'description' => $lll.'contentelement.fonts.description',
     ],
-    'metypo3styleguide_colors',
+    'typo3styleguide_colors',
     'after',
 );
 
@@ -67,11 +67,11 @@ ExtensionManagementUtility::addTcaSelectItem(
     'CType',
     [
         'label' => $lll.'contentelement.icons.label',
-        'value' => 'metypo3styleguide_icons',
+        'value' => 'typo3styleguide_icons',
         'icon' => 'content-styleguide-icons',
         'description' => $lll.'contentelement.icons.description',
     ],
-    'metypo3styleguide_fonts',
+    'typo3styleguide_fonts',
     'after',
 );
 
@@ -81,24 +81,24 @@ ExtensionManagementUtility::addTcaSelectItem(
     'CType',
     [
         'label' => $lll.'contentelement.images.label',
-        'value' => 'metypo3styleguide_images',
+        'value' => 'typo3styleguide_images',
         'icon' => 'content-styleguide-images',
         'description' => $lll.'contentelement.images.description',
     ],
-    'metypo3styleguide_icons',
+    'typo3styleguide_icons',
     'after',
 );
 
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_technicalheadline'] = 'content-styleguide-headline';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_colors'] = 'content-styleguide-colors';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_fonts'] = 'content-styleguide-fonts';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_icons'] = 'content-styleguide-icons';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_images'] = 'content-styleguide-images';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_technicalheadline'] = 'content-styleguide-headline';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_colors'] = 'content-styleguide-colors';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts'] = 'content-styleguide-fonts';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
     [
-        'tx_metypo3styleguide_technicalheadlinetag' => [
+        'tx_typo3styleguide_technicalheadlinetag' => [
             'label' => $lll.'contentelement.technical_headline.tag',
             'config' => [
                 'type' => 'select',
@@ -120,11 +120,11 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 ],
             ],
         ],
-        'tx_metypo3styleguide_colors' => [
+        'tx_typo3styleguide_colors' => [
             'label' => $lll.'contentelement.colors.items',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_metypo3styleguide_color',
+                'foreign_table' => 'tx_typo3styleguide_color',
                 'foreign_field' => 'parentid',
                 'foreign_table_field' => 'parenttable',
                 'foreign_sortby' => 'sorting',
@@ -138,11 +138,11 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 ],
             ],
         ],
-        'tx_metypo3styleguide_fonts' => [
+        'tx_typo3styleguide_fonts' => [
             'label' => $lll.'contentelement.fonts.items',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_metypo3styleguide_font',
+                'foreign_table' => 'tx_typo3styleguide_font',
                 'foreign_field' => 'parentid',
                 'foreign_table_field' => 'parenttable',
                 'foreign_sortby' => 'sorting',
@@ -156,7 +156,7 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 ],
             ],
         ],
-        'tx_metypo3styleguide_icons_path' => [
+        'tx_typo3styleguide_icons_path' => [
             'label' => $lll.'contentelement.icons.path',
             'config' => [
                 'type' => 'input',
@@ -167,11 +167,11 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 'placeholder' => 'EXT:sitepackage/Resources/Public/Icons/',
             ],
         ],
-        'tx_metypo3styleguide_images' => [
+        'tx_typo3styleguide_images' => [
             'label' => $lll.'contentelement.images.items',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_metypo3styleguide_image',
+                'foreign_table' => 'tx_typo3styleguide_image',
                 'foreign_field' => 'parentid',
                 'foreign_table_field' => 'parenttable',
                 'foreign_sortby' => 'sorting',
@@ -188,11 +188,11 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     ],
 );
 
-$GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_technicalheadline'] = [
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_technicalheadline'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_metypo3styleguide_technicalheadlinetag,subheader,bodytext,
+                    --palette--;;header,tx_typo3styleguide_technicalheadlinetag,subheader,bodytext,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -215,11 +215,11 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_technicalheadline'] = 
     ],
 ];
 
-$GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_colors'] = [
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_colors'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_metypo3styleguide_colors,
+                    --palette--;;header,tx_typo3styleguide_colors,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -234,11 +234,11 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_colors'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
 ];
 
-$GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_fonts'] = [
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_fonts'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_metypo3styleguide_fonts,
+                    --palette--;;header,tx_typo3styleguide_fonts,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -253,11 +253,11 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_fonts'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
 ];
 
-$GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_icons'] = [
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_icons'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_metypo3styleguide_icons_path,
+                    --palette--;;header,tx_typo3styleguide_icons_path,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -272,11 +272,11 @@ $GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_icons'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
 ];
 
-$GLOBALS['TCA']['tt_content']['types']['metypo3styleguide_images'] = [
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_images'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_metypo3styleguide_images,
+                    --palette--;;header,tx_typo3styleguide_images,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,

@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_font',
+        'title' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font',
         'label' => 'font',
         'label_alt' => 'label',
         'tstamp' => 'tstamp',
@@ -41,7 +41,7 @@ return [
             ],
         ],
         'font' => [
-            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_font.font',
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.font',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -52,7 +52,7 @@ return [
             ],
         ],
         'font_weight' => [
-            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_font.font_weight',
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.font_weight',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
@@ -62,7 +62,7 @@ return [
             ],
         ],
         'label' => [
-            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_metypo3styleguide_font.label',
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.label',
             'config' => [
                 'type' => 'input',
                 'size' => 30,

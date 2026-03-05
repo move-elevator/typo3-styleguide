@@ -71,15 +71,15 @@
 				<source />
 				<target>Farben</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_color">
+			<trans-unit id="tx_typo3styleguide_color">
 				<source />
 				<target>Farbe</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_color.color">
+			<trans-unit id="tx_typo3styleguide_color.color">
 				<source />
 				<target>Farbe (HEX)</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_color.label">
+			<trans-unit id="tx_typo3styleguide_color.label">
 				<source />
 				<target>Bezeichnung</target>
 			</trans-unit>
@@ -95,19 +95,19 @@
 				<source />
 				<target>Schriften</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font">
+			<trans-unit id="tx_typo3styleguide_font">
 				<source />
 				<target>Schrift</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font.font">
+			<trans-unit id="tx_typo3styleguide_font.font">
 				<source />
 				<target>Schriftfamilie</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font.font_weight">
+			<trans-unit id="tx_typo3styleguide_font.font_weight">
 				<source />
 				<target>Schriftstärke</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_font.label">
+			<trans-unit id="tx_typo3styleguide_font.label">
 				<source />
 				<target>Bezeichnung</target>
 			</trans-unit>
@@ -135,15 +135,15 @@
 				<source />
 				<target>Bilder</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_image">
+			<trans-unit id="tx_typo3styleguide_image">
 				<source />
 				<target>Bild</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_image.path">
+			<trans-unit id="tx_typo3styleguide_image.path">
 				<source />
 				<target>Pfad</target>
 			</trans-unit>
-			<trans-unit id="tx_metypo3styleguide_image.caption">
+			<trans-unit id="tx_typo3styleguide_image.caption">
 				<source />
 				<target>Bildunterschrift</target>
 			</trans-unit>
