@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div style="font-size:11px;color:#666;margin-bottom:4px;">{path}</div>
+<f:if condition="{icons}">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;">
+        <f:for each="{icons}" as="icon">
+            <div style="display:inline-block;margin:0 4px 4px 0;text-align:center;" title="{icon.name}">
+                <img src="{icon.webPath}" alt="{icon.name}" style="width:32px;height:32px;object-fit:contain;" loading="lazy"/>
+            </div>
+        </f:for>
+        <f:if condition="{hasMore}">
+            <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;font-size:11px;color:#666;">…</div>
+        </f:if>
+    </div>
+</f:if>
+</html>

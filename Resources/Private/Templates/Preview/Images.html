@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;">
+    <f:for each="{images}" as="image">
+        <f:if condition="{image.webPath}">
+            <f:then>
+                <div style="display:inline-block;margin:0 8px 8px 0;text-align:center;">
+                    <img src="{image.webPath}" alt="{image.caption}" style="max-width:64px;max-height:64px;border:1px solid rgba(0,0,0,.1);border-radius:4px;" loading="lazy"/>
+                    <f:if condition="{image.caption}">
+                        <div style="font-size:10px;color:#666;margin-top:2px;max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{image.caption}</div>
+                    </f:if>
+                </div>
+            </f:then>
+            <f:else>
+                <div style="display:inline-block;margin:0 8px 8px 0;font-size:11px;color:#666;">{image.path}</div>
+            </f:else>
+        </f:if>
+    </f:for>
+</div>
+</html>

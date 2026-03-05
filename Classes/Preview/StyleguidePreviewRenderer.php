@@ -15,14 +15,14 @@ namespace MoveElevator\Styleguide\Preview;
 
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
-use TYPO3\CMS\Core\Database\Connection;
-use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\{Connection, ConnectionPool};
 use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 
 use function htmlspecialchars;
 use function is_array;
 
 use const ENT_QUOTES;
+use const PATHINFO_FILENAME;
 
 /**
  * StyleguidePreviewRenderer.
@@ -32,6 +32,8 @@ use const ENT_QUOTES;
  */
 class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
 {
+    private const TEMPLATE_PATH = 'EXT:typo3_styleguide/Resources/Private/Templates/Preview/';
+
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $row = $this->getRowFromItem($item);
@@ -70,18 +72,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             return '';
         }
 
-        $items = '';
-        foreach ($children as $child) {
-            $color = htmlspecialchars((string) $child['color'], ENT_QUOTES);
-            $label = htmlspecialchars((string) $child['label'], ENT_QUOTES);
-            $items .= '<div style="display:inline-flex;align-items:center;margin:0 12px 6px 0;">'
-                .'<span style="display:inline-block;width:20px;height:20px;border-radius:4px;background:'.$color.';border:1px solid rgba(0,0,0,.15);flex-shrink:0;"></span>'
-                .'<span style="margin-left:6px;font-size:11px;line-height:1.2;">'.$color
-                .('' !== $label ? '<br><span style="color:#666;">'.$label.'</span>' : '')
-                .'</span></div>';
-        }
-
-        return '<div style="display:flex;flex-wrap:wrap;">'.$items.'</div>';
+        return $this->renderFluidPreview('Colors', ['children' => $children]);
     }
 
     /**
@@ -94,27 +85,25 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             return '';
         }
 
-        $items = '';
+        $fonts = [];
         foreach ($children as $child) {
-            $font = htmlspecialchars((string) $child['font'], ENT_QUOTES);
-            $weight = htmlspecialchars((string) $child['font_weight'], ENT_QUOTES);
-            $label = htmlspecialchars((string) $child['label'], ENT_QUOTES);
-            $displayName = '' !== $label ? $label : $font;
+            $font = (string) $child['font'];
+            $weight = (string) $child['font_weight'];
+            $label = (string) $child['label'];
 
             $style = 'font-family:'.$font.';font-size:16px;';
             if ('' !== $weight) {
                 $style .= 'font-weight:'.$weight.';';
             }
 
-            $items .= '<div style="margin-bottom:8px;">'
-                .'<div style="font-size:11px;color:#666;margin-bottom:2px;">'.$displayName
-                .('' !== $weight ? ' ('.$weight.')' : '')
-                .'</div>'
-                .'<div style="'.$style.'">AaBbCc 123</div>'
-                .'</div>';
+            $fonts[] = [
+                'label' => '' !== $label ? $label : $font,
+                'weight' => $weight,
+                'style' => $style,
+            ];
         }
 
-        return $items;
+        return $this->renderFluidPreview('Fonts', ['fonts' => $fonts]);
     }
 
     /**
@@ -128,16 +117,13 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         }
 
         $absDir = GeneralUtility::getFileAbsFileName($path);
-        if ('' === $absDir || !is_dir($absDir)) {
-            return '<span style="font-size:11px;color:#666;">'.htmlspecialchars($path, ENT_QUOTES).'</span>';
-        }
-
-        $files = scandir($absDir);
+        $files = ('' !== $absDir && is_dir($absDir)) ? scandir($absDir) : false;
         if (false === $files) {
-            return '<span style="font-size:11px;color:#666;">'.htmlspecialchars($path, ENT_QUOTES).'</span>';
+            return $this->renderFluidPreview('Icons', ['path' => $path, 'icons' => [], 'hasMore' => false]);
         }
 
-        $items = '';
+        $icons = [];
+        $hasMore = false;
         $count = 0;
         foreach ($files as $file) {
             if ('.' === $file || '..' === $file || !is_file($absDir.'/'.$file)) {
@@ -146,20 +132,18 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
 
             ++$count;
             if ($count > 20) {
-                $items .= '<div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;font-size:11px;color:#666;">…</div>';
+                $hasMore = true;
 
                 break;
             }
 
-            $webPath = PathUtility::getAbsoluteWebPath($absDir.'/'.$file);
-            $name = htmlspecialchars(pathinfo($file, \PATHINFO_FILENAME), ENT_QUOTES);
-            $items .= '<div style="display:inline-block;margin:0 4px 4px 0;text-align:center;" title="'.$name.'">'
-                .'<img src="'.htmlspecialchars($webPath, ENT_QUOTES).'" alt="'.$name.'" style="width:32px;height:32px;object-fit:contain;" loading="lazy" />'
-                .'</div>';
+            $icons[] = [
+                'name' => pathinfo($file, PATHINFO_FILENAME),
+                'webPath' => PathUtility::getAbsoluteWebPath($absDir.'/'.$file),
+            ];
         }
 
-        return '<div style="font-size:11px;color:#666;margin-bottom:4px;">'.htmlspecialchars($path, ENT_QUOTES).'</div>'
-            .'<div style="display:flex;flex-wrap:wrap;align-items:center;">'.$items.'</div>';
+        return $this->renderFluidPreview('Icons', ['path' => $path, 'icons' => $icons, 'hasMore' => $hasMore]);
     }
 
     /**
@@ -172,24 +156,47 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             return '';
         }
 
-        $items = '';
+        $images = [];
         foreach ($children as $child) {
             $extPath = (string) $child['path'];
-            $caption = htmlspecialchars((string) $child['caption'], ENT_QUOTES);
             $absPath = GeneralUtility::getFileAbsFileName($extPath);
-            $webPath = '' !== $absPath ? PathUtility::getAbsoluteWebPath($absPath) : '';
 
-            if ('' !== $webPath) {
-                $items .= '<div style="display:inline-block;margin:0 8px 8px 0;text-align:center;">'
-                    .'<img src="'.htmlspecialchars($webPath, ENT_QUOTES).'" alt="'.$caption.'" style="max-width:64px;max-height:64px;border:1px solid rgba(0,0,0,.1);border-radius:4px;" loading="lazy" />'
-                    .('' !== $caption ? '<div style="font-size:10px;color:#666;margin-top:2px;max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'.$caption.'</div>' : '')
-                    .'</div>';
-            } else {
-                $items .= '<div style="display:inline-block;margin:0 8px 8px 0;font-size:11px;color:#666;">'.htmlspecialchars($extPath, ENT_QUOTES).'</div>';
-            }
+            $images[] = [
+                'path' => $extPath,
+                'caption' => (string) $child['caption'],
+                'webPath' => '' !== $absPath ? PathUtility::getAbsoluteWebPath($absPath) : '',
+            ];
         }
 
-        return '<div style="display:flex;flex-wrap:wrap;align-items:flex-start;">'.$items.'</div>';
+        return $this->renderFluidPreview('Images', ['images' => $images]);
+    }
+
+    /**
+     * @param array<string, mixed> $variables
+     */
+    private function renderFluidPreview(string $templateName, array $variables): string
+    {
+        // TYPO3 v13+: Use ViewFactoryInterface
+        if (class_exists(\TYPO3\CMS\Core\View\ViewFactoryData::class)) {
+            /** @var \TYPO3\CMS\Core\View\ViewFactoryInterface $viewFactory */
+            $viewFactory = GeneralUtility::makeInstance(\TYPO3\CMS\Core\View\ViewFactoryInterface::class);
+            $view = $viewFactory->create(new \TYPO3\CMS\Core\View\ViewFactoryData(
+                templateRootPaths: [GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH)],
+            ));
+            $view->assignMultiple($variables);
+
+            return $view->render($templateName);
+        }
+
+        // TYPO3 v12 fallback: StandaloneView
+        /** @var \TYPO3\CMS\Fluid\View\StandaloneView $view */
+        $view = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class); // @phpstan-ignore argument.type
+        $view->setTemplatePathAndFilename(
+            GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH.$templateName.'.html')
+        );
+        $view->assignMultiple($variables);
+
+        return $view->render();
     }
 
     /**
