@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers\Format;
 
-use Closure;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -30,12 +28,9 @@ class FilenameViewHelper extends AbstractViewHelper
         $this->registerArgument('filename', 'string', 'String to format');
     }
 
-    /**
-     * @param array<string, mixed> $arguments
-     */
-    public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public function render(): string
     {
-        $value = $renderChildrenClosure();
+        $value = $this->renderChildren();
 
         return pathinfo((string) $value, \PATHINFO_FILENAME);
     }

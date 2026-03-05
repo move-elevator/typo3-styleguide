@@ -13,9 +13,7 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers;
 
-use Closure;
 use InvalidArgumentException;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 use function strlen;
@@ -33,14 +31,11 @@ class ContrastColorViewHelper extends AbstractViewHelper
         $this->registerArgument('color', 'string', 'HEX Code', true);
     }
 
-    /**
-     * @param array<string, mixed> $arguments
-     */
-    public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public function render(): string
     {
-        $hexColor = ltrim((string) $arguments['color'], '#');
+        $hexColor = ltrim((string) $this->arguments['color'], '#');
         if (6 !== strlen($hexColor)) {
-            throw new InvalidArgumentException('Invalid HEX color code: '.$arguments['color'], 4518636088);
+            throw new InvalidArgumentException('Invalid HEX color code: '.$this->arguments['color'], 4518636088);
         }
 
         $r = hexdec(substr($hexColor, 0, 2));

@@ -13,10 +13,8 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers;
 
-use Closure;
 use InvalidArgumentException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -33,13 +31,11 @@ class FilesViewHelper extends AbstractViewHelper
     }
 
     /**
-     * @param array<string, mixed> $arguments
-     *
      * @return list<string>
      */
-    public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): array
+    public function render(): array
     {
-        $path = GeneralUtility::getFileAbsFileName($arguments['path']);
+        $path = GeneralUtility::getFileAbsFileName($this->arguments['path']);
         if (!is_dir($path)) {
             throw new InvalidArgumentException('The provided path is not a valid directory: '.$path, 4247501749);
         }
