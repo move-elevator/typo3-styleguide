@@ -190,9 +190,9 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
 
         // TYPO3 v12 fallback: StandaloneView
         /** @var \TYPO3\CMS\Fluid\View\StandaloneView $view */
-        $view = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class); // @phpstan-ignore argument.type
-        $view->setTemplatePathAndFilename(
-            GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH.$templateName.'.html')
+        $view = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class); // @phpstan-ignore classConstant.deprecatedClass
+        $view->setTemplatePathAndFilename( // @phpstan-ignore method.deprecatedClass
+            GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH.$templateName.'.html'),
         );
         $view->assignMultiple($variables);
 
