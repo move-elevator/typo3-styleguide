@@ -164,7 +164,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             $images[] = [
                 'path' => $extPath,
                 'caption' => (string) $child['caption'],
-                'webPath' => '' !== $absPath ? PathUtility::getAbsoluteWebPath($absPath) : '',
+                'webPath' => '' !== $absPath && is_file($absPath) ? PathUtility::getAbsoluteWebPath($absPath) : '',
             ];
         }
 
