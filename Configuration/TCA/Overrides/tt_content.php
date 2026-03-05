@@ -26,7 +26,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => $lll.'contentelement.technical_headline.label',
         'value' => 'metypo3styleguide_technicalheadline',
-        'icon' => 'content-info',
+        'icon' => 'content-styleguide-headline',
         'description' => $lll.'contentelement.technical_headline.description',
     ],
     'html',
@@ -40,7 +40,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => $lll.'contentelement.colors.label',
         'value' => 'metypo3styleguide_colors',
-        'icon' => 'content-info',
+        'icon' => 'content-styleguide-colors',
         'description' => $lll.'contentelement.colors.description',
     ],
     'metypo3styleguide_technicalheadline',
@@ -54,7 +54,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => $lll.'contentelement.fonts.label',
         'value' => 'metypo3styleguide_fonts',
-        'icon' => 'content-info',
+        'icon' => 'content-styleguide-fonts',
         'description' => $lll.'contentelement.fonts.description',
     ],
     'metypo3styleguide_colors',
@@ -68,7 +68,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => $lll.'contentelement.icons.label',
         'value' => 'metypo3styleguide_icons',
-        'icon' => 'content-info',
+        'icon' => 'content-styleguide-icons',
         'description' => $lll.'contentelement.icons.description',
     ],
     'metypo3styleguide_fonts',
@@ -82,18 +82,18 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => $lll.'contentelement.images.label',
         'value' => 'metypo3styleguide_images',
-        'icon' => 'content-info',
+        'icon' => 'content-styleguide-images',
         'description' => $lll.'contentelement.images.description',
     ],
     'metypo3styleguide_icons',
     'after',
 );
 
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_technicalheadline'] = 'content-info';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_colors'] = 'content-info';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_fonts'] = 'content-info';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_icons'] = 'content-info';
-$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_images'] = 'content-info';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_technicalheadline'] = 'content-styleguide-headline';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_colors'] = 'content-styleguide-colors';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_fonts'] = 'content-styleguide-fonts';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_icons'] = 'content-styleguide-icons';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['metypo3styleguide_images'] = 'content-styleguide-images';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],

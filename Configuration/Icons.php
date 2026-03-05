@@ -22,4 +22,24 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/page-styleguide-hidden.svg',
     ],
+    'content-styleguide-headline' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-headline.svg',
+    ],
+    'content-styleguide-colors' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-colors.svg',
+    ],
+    'content-styleguide-fonts' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-fonts.svg',
+    ],
+    'content-styleguide-icons' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-icons.svg',
+    ],
+    'content-styleguide-images' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-images.svg',
+    ],
 ];

@@ -3,7 +3,7 @@ mod.wizards.newContentElement.wizardItems {
     header = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:wizard.tab.styleguide
     elements {
       metypo3styleguide_technicalheadline {
-        iconIdentifier = content-info
+        iconIdentifier = content-styleguide-headline
         title = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.label
         description = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.description
         tt_content_defValues {
