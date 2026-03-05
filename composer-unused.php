@@ -11,9 +11,8 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-use ComposerUnused\ComposerUnused\Configuration\{Configuration, NamedFilter};
+use ComposerUnused\ComposerUnused\Configuration\Configuration;
 
 return static function (Configuration $config): Configuration {
-    return $config
-        ->addNamedFilter(NamedFilter::fromString('typo3/cms-fluid'));
+    return $config;
 };
