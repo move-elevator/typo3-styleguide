@@ -36,3 +36,8 @@
     twitter_title.disabled = 1
   }
 [end]
+
+[traverse(page, "doktype") != 1754310721]
+  mod.wizards.newContentElement.wizardItems.styleguide.show >
+  TCEFORM.tt_content.CType.removeItems := addToList(typo3styleguide_technicalheadline,typo3styleguide_colors,typo3styleguide_fonts,typo3styleguide_icons,typo3styleguide_images)
+[end]

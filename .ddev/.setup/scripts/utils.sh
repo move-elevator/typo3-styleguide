@@ -31,7 +31,7 @@ function _progress() {
       SPINNER_PID=$!
       # Save current stdout/stderr
       exec 3>&1 4>&2
-      exec >/dev/null 2>&1
+#      exec >/dev/null 2>&1
     else
       printf "\n"
     fi
@@ -160,7 +160,9 @@ function post_setup() {
   TYPO3_INSTALL_DB_DBNAME=$DATABASE
 
   _progress " ├─ Setup TYPO3"
-    if [ "$VERSION" == "12" ]; then
+    if [ "$VERSION" == "11" ]; then
+      post_setup_11
+    elif [ "$VERSION" == "12" ]; then
       post_setup_12
     elif [ "$VERSION" == "13" ]; then
       post_setup_13
@@ -216,7 +218,11 @@ function setup_environment() {
     mkdir -p "$BASE_PATH/packages/$EXTENSION_KEY"
     chmod 775 -R $BASE_PATH
     export DATABASE="database_$VERSION"
-    export TYPO3_BIN="$BASE_PATH/vendor/bin/typo3"
+    if [ "$VERSION" == "11" ]; then
+        export TYPO3_BIN="$BASE_PATH/vendor/bin/typo3cms"
+    else
+        export TYPO3_BIN="$BASE_PATH/vendor/bin/typo3"
+    fi
     mysql -uroot -proot -e "DROP DATABASE IF EXISTS $DATABASE"
 }
 
@@ -362,6 +368,20 @@ function import_sql_data() {
           message yellow "No SQL files found in $FIXTURE_DIR. Import will be skipped."
         fi
     done
+}
+
+# Function to perform post-setup tasks for TYPO3 version 11.
+# It sets up TYPO3 by running the installation setup, configuring TYPO3 settings,
+# and modifying configuration files to enable deprecations and adjust base paths.
+function post_setup_11 {
+  $TYPO3_BIN install:setup -n --database-name $DATABASE
+  setup_typo3
+  $TYPO3_BIN configuration:set 'GFX/processor_path_lzw' '/usr/bin/'
+
+  sed -i "/'deprecations'/,/^[[:space:]]*'disabled' => true,/s/'disabled' => true,/'disabled' => false,/" /var/www/html/.Build/$VERSION/public/typo3conf/LocalConfiguration.php
+
+  sed -i -e "s/base: ht\//base: \//g" /var/www/html/.Build/$VERSION/config/sites/main/config.yaml
+  sed -i -e 's/base: \/en\//base: \//g' /var/www/html/.Build/$VERSION/config/sites/main/config.yaml
 }
 
 # Function to perform post-setup tasks for TYPO3 version 12.

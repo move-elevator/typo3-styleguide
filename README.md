@@ -5,7 +5,7 @@
 # TYPO3 extension `typo3_styleguide`
 
 [![Latest Stable Version](https://typo3-badges.dev/badge/typo3_styleguide/version/shields.svg)](https://extensions.typo3.org/extension/typo3_styleguide)
-[![Supported TYPO3 versions](https://badgen.net/badge/TYPO3/12%20&%2013/orange)]()
+[![Supported TYPO3 versions](https://badgen.net/badge/TYPO3/12%20&%2013%20&%2014/orange)](https://extensions.typo3.org/extension/typo3_styleguide)
 [![CGL](https://img.shields.io/github/actions/workflow/status/move-elevator/typo3-styleguide/cgl.yml?label=cgl&logo=github)](https://github.com/move-elevator/typo3-styleguide/actions/workflows/cgl.yml)
 [![License](https://poser.pugx.org/move-elevator/typo3-styleguide/license)](LICENSE.md)
 
@@ -20,19 +20,19 @@ This extension provides several tools for a simple TYPO3 based styleguide.
 
 ## ✨ Features
 
-* Content element for technical headlines with automatic table of contents
-* Static templates for rendering any templates or partials
-* Predefined template patterns for images, icons, colors and fonts
-* Collection of TYPO3 ViewHelpers for reuse in templates
-* Custom page type for styleguide pages
+* Dedicated content elements for colors, fonts, icons, images and technical headlines
+* Automatic table of contents for technical headlines
+* Rich backend previews for all styleguide content elements
+* Custom page type for styleguide pages with restricted content element availability
 * Backend layout for styleguide pages
+* Collection of TYPO3 ViewHelpers for reuse in templates
 
 ## 🔥 Installation
 
 ### Requirements
 
-* TYPO3 >= 11.5
-* PHP 8.1+
+* TYPO3 12, 13 or 14
+* PHP 8.2+
 
 ### Composer
 
@@ -57,21 +57,15 @@ Include static TypoScript template via the backend or import it:
 
 ## 📙 Documentation
 
-- [Content Element](Documentation/ContentElement.md)
-- [Static Templates](Documentation/StaticTemplates.md)
-- [Patterns](Documentation/Patterns.md)
+- [Content Elements](Documentation/ContentElement.md)
 - [ViewHelpers](Documentation/ViewHelpers/CLASSES.md)
-- [BackendLayout](Documentation/BackendLayout.md)
-- [PageType](Documentation/PageType.md)
+- [Backend Layout](Documentation/BackendLayout.md)
+- [Page Type](Documentation/PageType.md)
 
 
 ## 🧑‍💻 Contributing
 
 Please have a look at [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## 💎 Credits
-
-Style by Adrien Coquet from <a href="https://thenounproject.com/browse/icons/term/style/" target="_blank" title="style Icons">Noun Project</a> (CC BY 3.0).
 
 ## ⭐ License
 

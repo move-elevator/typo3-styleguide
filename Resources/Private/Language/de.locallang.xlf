@@ -55,6 +55,98 @@
 				<source />
 				<target>Styleguide</target>
 			</trans-unit>
+			<trans-unit id="wizard.tab.styleguide">
+				<source />
+				<target>Styleguide</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.label">
+				<source />
+				<target>Farben</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.description">
+				<source />
+				<target>Farbpalette für den Styleguide anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.items">
+				<source />
+				<target>Farben</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color">
+				<source />
+				<target>Farbe</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.color">
+				<source />
+				<target>Farbe (HEX)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.label">
+				<source />
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.label">
+				<source />
+				<target>Schriften</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.description">
+				<source />
+				<target>Schriftmuster für den Styleguide anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.items">
+				<source />
+				<target>Schriften</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font">
+				<source />
+				<target>Schrift</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.font">
+				<source />
+				<target>Schriftfamilie</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.font_weight">
+				<source />
+				<target>Schriftstärke</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.label">
+				<source />
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.label">
+				<source />
+				<target>Icons</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.description">
+				<source />
+				<target>Alle Icons aus einem Verzeichnis für den Styleguide anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.path">
+				<source />
+				<target>Verzeichnispfad</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.label">
+				<source />
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.description">
+				<source />
+				<target>Bilder für den Styleguide anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.items">
+				<source />
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_image">
+				<source />
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_image.path">
+				<source />
+				<target>Pfad</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_image.caption">
+				<source />
+				<target>Bildunterschrift</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

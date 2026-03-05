@@ -11,27 +11,30 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace MoveElevator\Styleguide\ViewHelpers\Format;
+namespace MoveElevator\Styleguide\ViewHelpers\Uri;
 
+use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * FilenameViewHelper.
+ * ResourcePathViewHelper.
  *
  * @author Konrad Michalik <km@move-elevator.de>
  * @license GPL-2.0-or-later
  */
-class FilenameViewHelper extends AbstractViewHelper
+class ResourcePathViewHelper extends AbstractViewHelper
 {
     public function initializeArguments(): void
     {
-        $this->registerArgument('filename', 'string', 'String to format');
+        $this->registerArgument('path', 'string', 'EXT: path to resolve to a web URL', true);
     }
 
     public function render(): string
     {
-        $value = $this->renderChildren();
+        $path = (string) $this->arguments['path'];
 
-        return pathinfo((string) $value, \PATHINFO_FILENAME);
+        return PathUtility::getAbsoluteWebPath(
+            GeneralUtility::getFileAbsFileName($path),
+        );
     }
 }

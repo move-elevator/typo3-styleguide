@@ -1,15 +1,16 @@
 mod.wizards.newContentElement.wizardItems {
-  special {
+  styleguide {
+    header = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:wizard.tab.styleguide
     elements {
-      metypo3styleguide_technicalheadline {
-        iconIdentifier = content-info
+      typo3styleguide_technicalheadline {
+        iconIdentifier = content-styleguide-headline
         title = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.label
         description = LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.technical_headline.description
         tt_content_defValues {
-          CType = metypo3styleguide_technicalheadline
+          CType = typo3styleguide_technicalheadline
         }
       }
     }
-    show := addToList(metypo3styleguide_technicalheadline)
+    show := addToList(typo3styleguide_technicalheadline)
   }
 }

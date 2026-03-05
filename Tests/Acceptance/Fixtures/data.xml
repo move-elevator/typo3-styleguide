@@ -155,6 +155,68 @@
                     <softrefs type="array"></softrefs>
                 </rec>
             </table>
+            <table index="tx_typo3styleguide_color" type="array">
+                <rec index="1" type="array">
+                    <uid>1</uid>
+                    <pid>2</pid>
+                    <title>orange</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="2" type="array">
+                    <uid>2</uid>
+                    <pid>2</pid>
+                    <title>gray</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="3" type="array">
+                    <uid>3</uid>
+                    <pid>2</pid>
+                    <title>blue</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+            </table>
+            <table index="tx_typo3styleguide_font" type="array">
+                <rec index="1" type="array">
+                    <uid>1</uid>
+                    <pid>2</pid>
+                    <title>Courier New</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="2" type="array">
+                    <uid>2</uid>
+                    <pid>2</pid>
+                    <title>Verdana</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="3" type="array">
+                    <uid>3</uid>
+                    <pid>2</pid>
+                    <title>Garamond</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+            </table>
+            <table index="tx_typo3styleguide_image" type="array">
+                <rec index="1" type="array">
+                    <uid>1</uid>
+                    <pid>2</pid>
+                    <title>TYPO3 Logo Orange</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="2" type="array">
+                    <uid>2</uid>
+                    <pid>2</pid>
+                    <title>TYPO3 Logo Black</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+            </table>
         </records>
         <pid_lookup type="array">
             <page_contents index="0" type="array">
@@ -184,6 +246,20 @@
                     <item index="6">1</item>
                     <item index="7">1</item>
                     <item index="8">1</item>
+                </table>
+                <table index="tx_typo3styleguide_color" type="array">
+                    <item index="1">1</item>
+                    <item index="2">1</item>
+                    <item index="3">1</item>
+                </table>
+                <table index="tx_typo3styleguide_font" type="array">
+                    <item index="1">1</item>
+                    <item index="2">1</item>
+                    <item index="3">1</item>
+                </table>
+                <table index="tx_typo3styleguide_image" type="array">
+                    <item index="1">1</item>
+                    <item index="2">1</item>
                 </table>
             </page_contents>
         </pid_lookup>
@@ -356,7 +432,7 @@ page.100 {
                 <field index="perms_group" type="integer">27</field>
                 <field index="perms_everybody" type="integer">0</field>
                 <field index="title">Styleguide</field>
-                <field index="doktype" type="integer">1</field>
+                <field index="doktype" type="integer">1754310721</field>
                 <field index="TSconfig" type="NULL"></field>
                 <field index="is_siteroot" type="integer">0</field>
                 <field index="php_tree_stop" type="integer">0</field>
@@ -432,7 +508,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Basics</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -483,12 +559,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -516,7 +587,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Logo</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -567,12 +638,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -600,7 +666,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">bw_static_template</field>
+                <field index="CType">typo3styleguide_images</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -651,23 +717,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path">EXT:typo3_styleguide/Resources/Private/Templates/Patterns/Images.html</field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json">{
-  &quot;images&quot;: [
-    {
-      &quot;path&quot;: &quot;EXT:core/Resources/Public/Images/typo3_orange.svg&quot;,
-      &quot;caption&quot;: &quot;TYPO3 Logo Orange&quot;
-    },
-    {
-      &quot;path&quot;: &quot;EXT:core/Resources/Public/Images/typo3_black.svg&quot;,
-      &quot;caption&quot;: &quot;TYPO3 Logo Black&quot;
-    }
-  ]
-}</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_images" type="integer">2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -695,7 +746,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Icons</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -746,12 +797,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -774,12 +820,12 @@ page.100 {
                 <field index="l10n_source" type="integer">0</field>
                 <field index="l10n_state" type="NULL"></field>
                 <field index="t3_origuid" type="integer">0</field>
-                <field index="l18n_diffsource">{&quot;CType&quot;:&quot;&quot;,&quot;colPos&quot;:&quot;&quot;,&quot;tx_bwstatictemplate_template_path&quot;:&quot;&quot;,&quot;tx_bwstatictemplate_be_template&quot;:&quot;&quot;,&quot;tx_bwstatictemplate_from_file&quot;:&quot;&quot;,&quot;tx_bwstatictemplate_json&quot;:&quot;&quot;,&quot;assets&quot;:&quot;&quot;,&quot;layout&quot;:&quot;&quot;,&quot;frame_class&quot;:&quot;&quot;,&quot;space_before_class&quot;:&quot;&quot;,&quot;space_after_class&quot;:&quot;&quot;,&quot;sectionIndex&quot;:&quot;&quot;,&quot;linkToTop&quot;:&quot;&quot;,&quot;sys_language_uid&quot;:&quot;&quot;,&quot;hidden&quot;:&quot;&quot;,&quot;starttime&quot;:&quot;&quot;,&quot;endtime&quot;:&quot;&quot;,&quot;fe_group&quot;:&quot;&quot;,&quot;editlock&quot;:&quot;&quot;,&quot;categories&quot;:&quot;&quot;,&quot;rowDescription&quot;:&quot;&quot;}</field>
+                <field index="l18n_diffsource"></field>
                 <field index="t3ver_oid" type="integer">0</field>
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">bw_static_template</field>
+                <field index="CType">typo3styleguide_icons</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -830,14 +876,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path">EXT:typo3_styleguide/Resources/Private/Templates/Patterns/Icons.html</field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json">{
-    &quot;path&quot;: &quot;EXT:core/Resources/Public/Icons/T3Icons/svgs/content/&quot;
-}</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_icons_path">EXT:core/Resources/Public/Icons/T3Icons/svgs/content/</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -860,12 +900,12 @@ page.100 {
                 <field index="l10n_source" type="integer">0</field>
                 <field index="l10n_state" type="NULL"></field>
                 <field index="t3_origuid" type="integer">0</field>
-                <field index="l18n_diffsource">{&quot;CType&quot;:&quot;&quot;,&quot;colPos&quot;:&quot;&quot;,&quot;header&quot;:&quot;&quot;,&quot;header_layout&quot;:&quot;&quot;,&quot;header_position&quot;:&quot;&quot;,&quot;date&quot;:&quot;&quot;,&quot;header_link&quot;:&quot;&quot;,&quot;tx_metypo3styleguide_technicalheadlinetag&quot;:&quot;&quot;,&quot;subheader&quot;:&quot;&quot;,&quot;bodytext&quot;:&quot;&quot;,&quot;layout&quot;:&quot;&quot;,&quot;frame_class&quot;:&quot;&quot;,&quot;space_before_class&quot;:&quot;&quot;,&quot;space_after_class&quot;:&quot;&quot;,&quot;sys_language_uid&quot;:&quot;&quot;,&quot;hidden&quot;:&quot;&quot;,&quot;starttime&quot;:&quot;&quot;,&quot;endtime&quot;:&quot;&quot;,&quot;fe_group&quot;:&quot;&quot;,&quot;editlock&quot;:&quot;&quot;,&quot;categories&quot;:&quot;&quot;,&quot;rowDescription&quot;:&quot;&quot;}</field>
+                <field index="l18n_diffsource">{&quot;CType&quot;:&quot;&quot;,&quot;colPos&quot;:&quot;&quot;,&quot;header&quot;:&quot;&quot;,&quot;header_layout&quot;:&quot;&quot;,&quot;header_position&quot;:&quot;&quot;,&quot;date&quot;:&quot;&quot;,&quot;header_link&quot;:&quot;&quot;,&quot;tx_typo3styleguide_technicalheadlinetag&quot;:&quot;&quot;,&quot;subheader&quot;:&quot;&quot;,&quot;bodytext&quot;:&quot;&quot;,&quot;layout&quot;:&quot;&quot;,&quot;frame_class&quot;:&quot;&quot;,&quot;space_before_class&quot;:&quot;&quot;,&quot;space_after_class&quot;:&quot;&quot;,&quot;sys_language_uid&quot;:&quot;&quot;,&quot;hidden&quot;:&quot;&quot;,&quot;starttime&quot;:&quot;&quot;,&quot;endtime&quot;:&quot;&quot;,&quot;fe_group&quot;:&quot;&quot;,&quot;editlock&quot;:&quot;&quot;,&quot;categories&quot;:&quot;&quot;,&quot;rowDescription&quot;:&quot;&quot;}</field>
                 <field index="t3ver_oid" type="integer">0</field>
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Colors</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -916,12 +956,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -949,7 +984,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">bw_static_template</field>
+                <field index="CType">typo3styleguide_colors</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -1000,27 +1035,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path">EXT:typo3_styleguide/Resources/Private/Templates/Patterns/Colors.html</field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json">{
-    &quot;colors&quot;: [
-        {
-            &quot;color&quot;: &quot;#f49700&quot;,
-            &quot;label&quot;: &quot;orange&quot;
-        },
-        {
-            &quot;color&quot;: &quot;#515151&quot;,
-            &quot;label&quot;: &quot;gray&quot;
-        },
-        {
-            &quot;color&quot;: &quot;#538bb3&quot;,
-            &quot;label&quot;: &quot;blue&quot;
-        }
-    ]
-}</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_colors" type="integer">3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1048,7 +1064,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Fonts</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -1099,12 +1115,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1132,7 +1143,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">bw_static_template</field>
+                <field index="CType">typo3styleguide_fonts</field>
                 <field index="header"></field>
                 <field index="header_position"></field>
                 <field index="bodytext" type="NULL"></field>
@@ -1183,24 +1194,8 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path">EXT:typo3_styleguide/Resources/Private/Templates/Patterns/Fonts.html</field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json">{
-    &quot;fonts&quot;: [
-        {
-            &quot;font&quot;: &quot;Courier New&quot;
-        },
-        {
-            &quot;font&quot;: &quot;Verdana&quot;
-        },
-        {
-            &quot;font&quot;: &quot;Garamond&quot;
-        }
-    ]
-}</field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_fonts" type="integer">3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1228,7 +1223,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Elements</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -1279,12 +1274,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1312,7 +1302,7 @@ page.100 {
                 <field index="t3ver_wsid" type="integer">0</field>
                 <field index="t3ver_state" type="integer">0</field>
                 <field index="t3ver_stage" type="integer">0</field>
-                <field index="CType">metypo3styleguide_technicalheadline</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
                 <field index="header">Text</field>
                 <field index="header_position"></field>
                 <field index="bodytext"></field>
@@ -1363,12 +1353,7 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h3</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h3</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -1447,12 +1432,138 @@ page.100 {
                 <field index="selected_categories" type="NULL"></field>
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
-                <field index="tx_bwstatictemplate_template_path"></field>
-                <field index="tx_bwstatictemplate_from_file" type="integer">0</field>
-                <field index="tx_bwstatictemplate_file_path"></field>
-                <field index="tx_bwstatictemplate_be_template"></field>
-                <field index="tx_bwstatictemplate_json" type="NULL"></field>
-                <field index="tx_metypo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_color:1" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">1</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">1</field>
+                <field index="parentid" type="integer">11</field>
+                <field index="parenttable">tt_content</field>
+                <field index="color">#f49700</field>
+                <field index="label">orange</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_color:2" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">2</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">2</field>
+                <field index="parentid" type="integer">11</field>
+                <field index="parenttable">tt_content</field>
+                <field index="color">#515151</field>
+                <field index="label">gray</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_color:3" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">3</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">3</field>
+                <field index="parentid" type="integer">11</field>
+                <field index="parenttable">tt_content</field>
+                <field index="color">#538bb3</field>
+                <field index="label">blue</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_font:1" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">1</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">1</field>
+                <field index="parentid" type="integer">12</field>
+                <field index="parenttable">tt_content</field>
+                <field index="font">Courier New</field>
+                <field index="font_weight"></field>
+                <field index="label"></field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_font:2" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">2</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">2</field>
+                <field index="parentid" type="integer">12</field>
+                <field index="parenttable">tt_content</field>
+                <field index="font">Verdana</field>
+                <field index="font_weight"></field>
+                <field index="label"></field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_font:3" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">3</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">3</field>
+                <field index="parentid" type="integer">12</field>
+                <field index="parenttable">tt_content</field>
+                <field index="font">Garamond</field>
+                <field index="font_weight"></field>
+                <field index="label"></field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_image:1" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">1</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">1</field>
+                <field index="parentid" type="integer">10</field>
+                <field index="parenttable">tt_content</field>
+                <field index="path">EXT:core/Resources/Public/Images/typo3_orange.svg</field>
+                <field index="caption">TYPO3 Logo Orange</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_image:2" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">2</field>
+                <field index="pid" type="integer">2</field>
+                <field index="tstamp" type="integer">1754036171</field>
+                <field index="crdate" type="integer">1754036171</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">2</field>
+                <field index="parentid" type="integer">10</field>
+                <field index="parenttable">tt_content</field>
+                <field index="path">EXT:core/Resources/Public/Images/typo3_black.svg</field>
+                <field index="caption">TYPO3 Logo Black</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>

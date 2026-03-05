@@ -4,14 +4,14 @@
     data-namespace-typo3-fluid="true"
 >
 
-<f:asset.css identifier="metypo3styleguide_technicalheadline_css" href="EXT:typo3_styleguide/Resources/Public/Css/TechnicalHeadline.css" />
-<f:asset.script identifier="metypo3styleguide_technicalheadline_script" src="EXT:typo3_styleguide/Resources/Public/JavaScript/technical_headline.js" />
+<f:asset.css identifier="typo3styleguide_technicalheadline_css" href="EXT:typo3_styleguide/Resources/Public/Css/TechnicalHeadline.css" />
+<f:asset.script identifier="typo3styleguide_technicalheadline_script" src="EXT:typo3_styleguide/Resources/Public/JavaScript/technical_headline.js" />
 
-<f:if condition="{data.tx_metypo3styleguide_technicalheadlinetag} == 'h3'">
+<f:if condition="{data.tx_typo3styleguide_technicalheadlinetag} == 'h3'">
     <f:then>
         <f:variable name="anchor">##</f:variable>
     </f:then>
-    <f:else if="{data.tx_metypo3styleguide_technicalheadlinetag} == 'h4'">
+    <f:else if="{data.tx_typo3styleguide_technicalheadlinetag} == 'h4'">
         <f:variable name="anchor">###</f:variable>
     </f:else>
     <f:else>
@@ -19,14 +19,14 @@
     </f:else>
 </f:if>
 
-<div class="typo3-styleguide-technical-headline" id="{data.header -> sg:format.slug()}" data-label-toc="{f:translate(key: 'technical_headline.toc.title', extensionName: 'MeTypo3Styleguide')}">
-    <{data.tx_metypo3styleguide_technicalheadlinetag} class="typo3-styleguide-technical-headline__headline">
-        <a class="typo3-styleguide-technical-headline__link" href="#{data.header -> sg:format.slug()}">{anchor}<span class="visually-hidden">{f:translate(key: 'technical_headline.headline.link.title', extensionName: 'metypo3styleguide')}</span></a>
+<div class="typo3-styleguide-technical-headline" id="{data.header -> sg:format.slug()}" data-label-toc="{f:translate(key: 'technical_headline.toc.title', extensionName: 'Typo3Styleguide')}">
+    <{data.tx_typo3styleguide_technicalheadlinetag} class="typo3-styleguide-technical-headline__headline">
+        <a class="typo3-styleguide-technical-headline__link" href="#{data.header -> sg:format.slug()}">{anchor}<span class="visually-hidden">{f:translate(key: 'technical_headline.headline.link.title', extensionName: 'Typo3Styleguide')}</span></a>
         <span class="typo3-styleguide-technical-headline__title">{data.header}</span>
-        <a class="typo3-styleguide-technical-headline__to-top" href="#typo3-styleguide-technical-headline-toc" aria-label="{f:translate(key: 'technical_headline.headline.top.title', extensionName: 'MeTypo3Styleguide')}">
+        <a class="typo3-styleguide-technical-headline__to-top" href="#typo3-styleguide-technical-headline-toc" aria-label="{f:translate(key: 'technical_headline.headline.top.title', extensionName: 'Typo3Styleguide')}">
             &uarr;
         </a>
-    </{data.tx_metypo3styleguide_technicalheadlinetag}>
+    </{data.tx_typo3styleguide_technicalheadlinetag}>
     <f:if condition="{data.subheader}">
         <h3 class="typo3-styleguide-technical-headline__label">{data.subheader}</h3>
     </f:if>

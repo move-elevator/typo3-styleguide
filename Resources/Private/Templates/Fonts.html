@@ -11,9 +11,9 @@
     <div class="typo3-styleguide__element-container">
         <f:for each="{fonts}" as="font">
             <div class="typo3-styleguide__element">
-                <div class="typo3-styleguide__font" style="font-family: {font.font};{f:if(condition: '{font.fontWeight}', then: ' font-weight: {font.fontWeight};')}">
+                <div class="typo3-styleguide__font" style="font-family: {font.data.font};{f:if(condition: '{font.data.font_weight}', then: ' font-weight: {font.data.font_weight};')}">
                     <p class="typo3-styleguide__font-label">
-                        {f:if(condition: font.label, then: font.label, else: font.font)}
+                        {f:if(condition: font.data.label, then: font.data.label, else: font.data.font)}
                     </p>
                     <p class="typo3-styleguide__font-example">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est

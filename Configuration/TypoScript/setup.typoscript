@@ -1,12 +1,54 @@
-@import 'EXT:bw_static_template/Configuration/TypoScript/setup.typoscript'
-
 lib.contentElement {
   templateRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Templates/
 }
 tt_content {
-  metypo3styleguide_technicalheadline =< lib.contentElement
-  metypo3styleguide_technicalheadline {
+  typo3styleguide_technicalheadline =< lib.contentElement
+  typo3styleguide_technicalheadline {
     templateName = TechnicalHeadline
+  }
+
+  typo3styleguide_colors =< lib.contentElement
+  typo3styleguide_colors {
+    templateName = Colors
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_color
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = colors
+    }
+  }
+
+  typo3styleguide_fonts =< lib.contentElement
+  typo3styleguide_fonts {
+    templateName = Fonts
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_font
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = fonts
+    }
+  }
+
+  typo3styleguide_icons =< lib.contentElement
+  typo3styleguide_icons {
+    templateName = Icons
+  }
+
+  typo3styleguide_images =< lib.contentElement
+  typo3styleguide_images {
+    templateName = Images
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_image
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = images
+    }
   }
 }
 
