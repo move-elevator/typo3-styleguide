@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\Preview;
 
-use Doctrine\DBAL\ParameterType;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 
@@ -222,7 +222,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             ->select('*')
             ->from($table)
             ->where(
-                $queryBuilder->expr()->eq('parentid', $queryBuilder->createNamedParameter($parentId, ParameterType::INTEGER)),
+                $queryBuilder->expr()->eq('parentid', $queryBuilder->createNamedParameter($parentId, Connection::PARAM_INT)),
                 $queryBuilder->expr()->eq('parenttable', $queryBuilder->createNamedParameter('tt_content')),
             )
             ->orderBy('sorting')
