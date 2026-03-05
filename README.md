@@ -67,10 +67,6 @@ Include static TypoScript template via the backend or import it:
 
 Please have a look at [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-## 💎 Credits
-
-Style by Adrien Coquet from <a href="https://thenounproject.com/browse/icons/term/style/" target="_blank" title="style Icons">Noun Project</a> (CC BY 3.0).
-
 ## ⭐ License
 
 This project is licensed
