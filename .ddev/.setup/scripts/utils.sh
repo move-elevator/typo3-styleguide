@@ -31,7 +31,7 @@ function _progress() {
       SPINNER_PID=$!
       # Save current stdout/stderr
       exec 3>&1 4>&2
-#      exec >/dev/null 2>&1
+      exec >/dev/null 2>&1
     else
       printf "\n"
     fi
