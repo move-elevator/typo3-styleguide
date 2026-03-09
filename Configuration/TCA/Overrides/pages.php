@@ -24,8 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide',
         'value' => Configuration::PAGE_TYPE,
         'icon' => 'apps-pagetree-page-styleguide',
+        'group' => 'special',
     ],
-    '1',
+    '199',
     'after',
 );
 
