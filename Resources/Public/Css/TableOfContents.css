@@ -1,0 +1,128 @@
+.typo3-styleguide-toc {
+    font-family: monospace, sans-serif;
+    margin: 0 40px;
+}
+
+/* --- List Layout --- */
+
+.typo3-styleguide-toc__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.typo3-styleguide-toc__list .typo3-styleguide-toc__list {
+    margin-left: 2rem;
+    margin-top: 0.25rem;
+}
+
+.typo3-styleguide-toc__item {
+    list-style: none;
+}
+
+.typo3-styleguide-toc__item::before {
+    content: '# ';
+    color: var(--typo3-sg-text-secondary, #646464);
+}
+
+.typo3-styleguide-toc__link {
+    display: inline-flex;
+    min-width: 10rem;
+    padding: 0.25rem 0;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--typo3-sg-text-secondary, #646464);
+    color: var(--typo3-sg-text-primary, #000000);
+}
+
+.typo3-styleguide-toc__link:hover {
+    color: var(--typo3-sg-accent, #f49700);
+    text-decoration-color: var(--typo3-sg-accent, #f49700);
+}
+
+/* --- Cards Layout --- */
+
+.typo3-styleguide-toc__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    padding: 10px 0;
+}
+
+.typo3-styleguide-toc__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 20px 24px;
+    border: 1px solid var(--typo3-sg-border, #ddd);
+    border-radius: 10px;
+    background: var(--typo3-sg-bg-primary, #ffffff);
+    text-decoration: none;
+    color: var(--typo3-sg-text-primary, #000000);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.typo3-styleguide-toc__card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: var(--typo3-sg-text-primary, #000000);
+}
+
+.typo3-styleguide-toc__card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+}
+
+.typo3-styleguide-toc__card-icon img,
+.typo3-styleguide-toc__card-icon svg {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.typo3-styleguide-toc__card-title {
+    font-family: monospace, sans-serif;
+    font-size: 0.95rem;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+    .typo3-styleguide-toc {
+        margin: 0 20px;
+    }
+
+    .typo3-styleguide-toc__cards {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .typo3-styleguide-toc {
+        margin: 0 16px;
+    }
+
+    .typo3-styleguide-toc__cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .typo3-styleguide-toc__card {
+        padding: 20px 16px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typo3-styleguide-toc__card {
+        transition: none;
+    }
+}
