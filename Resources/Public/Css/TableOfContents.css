@@ -93,6 +93,26 @@
     word-break: break-word;
 }
 
+/* --- Cards Sub-Groups (deeper levels) --- */
+
+.typo3-styleguide-toc__group {
+    margin-top: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--typo3-sg-border, #ddd);
+}
+
+.typo3-styleguide-toc__group-title {
+    font-family: monospace, sans-serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--typo3-sg-text-secondary, #646464);
+    margin: 0 0 0.5rem;
+}
+
+.typo3-styleguide-toc__group-title::before {
+    content: '# ';
+}
+
 /* --- Responsive --- */
 
 @media (max-width: 768px) {
