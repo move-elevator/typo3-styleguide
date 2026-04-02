@@ -1,0 +1,19 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<ul class="typo3-styleguide-toc__list">
+    <f:for each="{pages}" as="page">
+        <f:if condition="{page.data.doktype} == 1754310721">
+            <li class="typo3-styleguide-toc__item">
+                <a href="{page.link}" class="typo3-styleguide-toc__link">{page.title}</a>
+                <f:if condition="{page.children}">
+                    <f:render partial="TableOfContents/List" arguments="{pages: page.children}" />
+                </f:if>
+            </li>
+        </f:if>
+    </f:for>
+</ul>
+
+</html>
