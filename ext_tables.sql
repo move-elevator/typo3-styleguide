@@ -5,6 +5,7 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_fonts int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_icons_path varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_images int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_tableofcontents_layout varchar(10) DEFAULT 'list' NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_color
@@ -30,4 +31,9 @@ CREATE TABLE tx_typo3styleguide_image
 	parenttable varchar(255) DEFAULT '' NOT NULL,
 	path varchar(255) DEFAULT '' NOT NULL,
 	caption varchar(255) DEFAULT '' NOT NULL,
+);
+
+CREATE TABLE pages
+(
+	tx_typo3styleguide_ctype_icon varchar(255) DEFAULT '' NOT NULL,
 );
