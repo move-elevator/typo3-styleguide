@@ -18,8 +18,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 /**
  * CTypeIconIdentifierViewHelper.
  *
- * Resolves a CType identifier to its registered icon identifier.
- *
  * @author Konrad Michalik <km@move-elevator.de>
  * @license GPL-2.0-or-later
  */

@@ -62,6 +62,6 @@ $GLOBALS['TCA']['pages']['columns']['tx_typo3styleguide_ctype_icon'] = [
                 'value' => '',
             ],
         ],
-        'itemsProcFunc' => \MoveElevator\Styleguide\UserFunc\CTypeItemsProcFunc::class.'->getItems',
+        'itemsProcFunc' => MoveElevator\Styleguide\UserFunc\CTypeItemsProcFunc::class.'->getItems',
     ],
 ];
