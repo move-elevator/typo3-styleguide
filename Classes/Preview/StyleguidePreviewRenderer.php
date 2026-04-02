@@ -45,6 +45,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             'typo3styleguide_fonts' => $this->renderFontsPreview($row),
             'typo3styleguide_icons' => $this->renderIconsPreview($row),
             'typo3styleguide_images' => $this->renderImagesPreview($row),
+            'typo3styleguide_tableofcontents' => $this->renderTableOfContentsPreview($row),
             default => parent::renderPageModulePreviewContent($item),
         };
     }
@@ -169,6 +170,22 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         }
 
         return $this->renderFluidPreview('Images', ['images' => $images]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderTableOfContentsPreview(array $row): string
+    {
+        $layout = (string) ($row['tx_typo3styleguide_tableofcontents_layout'] ?? 'list');
+        $layoutLabels = [
+            'list' => 'List',
+            'cards' => 'Cards',
+        ];
+
+        return $this->renderFluidPreview('TableOfContents', [
+            'layout' => $layoutLabels[$layout] ?? $layout,
+        ]);
     }
 
     /**
