@@ -63,7 +63,6 @@ tt_content {
       includeSpacer = 1
       as = pages
       expandAll = 1
-      additionalFields = tx_typo3styleguide_ctype_icon,doktype
     }
   }
 }
