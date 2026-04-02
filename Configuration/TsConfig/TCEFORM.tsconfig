@@ -39,7 +39,7 @@
 
 [traverse(page, "doktype") != 1754310721]
   mod.wizards.newContentElement.wizardItems.styleguide.show >
-  TCEFORM.tt_content.CType.removeItems := addToList(typo3styleguide_technicalheadline,typo3styleguide_colors,typo3styleguide_fonts,typo3styleguide_icons,typo3styleguide_images)
+  TCEFORM.tt_content.CType.removeItems := addToList(typo3styleguide_technicalheadline,typo3styleguide_colors,typo3styleguide_fonts,typo3styleguide_icons,typo3styleguide_images,typo3styleguide_tableofcontents)
 [end]
 
 [traverse(page, "doktype") != 1754310721]
