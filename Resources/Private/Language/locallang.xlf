@@ -111,6 +111,24 @@
 			<trans-unit id="tx_typo3styleguide_image.caption">
 				<source>Caption</source>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.label">
+				<source>Table of contents</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.description">
+				<source>Display a navigable table of contents of child styleguide pages</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.list">
+				<source>List</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.cards">
+				<source>Cards</source>
+			</trans-unit>
+			<trans-unit id="page.styleguide.ctype_icon">
+				<source>Representative content element</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

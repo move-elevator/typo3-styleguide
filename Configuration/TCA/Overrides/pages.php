@@ -43,8 +43,25 @@ ArrayUtility::mergeRecursiveWithOverrule(
         ],
         'types' => [
             Configuration::PAGE_TYPE => [
-                'showitem' => $GLOBALS['TCA']['pages']['types'][PageRepository::DOKTYPE_DEFAULT]['showitem'],
+                'showitem' => $GLOBALS['TCA']['pages']['types'][PageRepository::DOKTYPE_DEFAULT]['showitem']
+                    .',--div--;LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide,tx_typo3styleguide_ctype_icon',
             ],
         ],
     ],
 );
+
+$GLOBALS['TCA']['pages']['columns']['tx_typo3styleguide_ctype_icon'] = [
+    'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide.ctype_icon',
+    'config' => [
+        'type' => 'select',
+        'renderType' => 'selectSingle',
+        'default' => '',
+        'items' => [
+            [
+                'label' => '',
+                'value' => '',
+            ],
+        ],
+        'itemsProcFunc' => MoveElevator\Styleguide\UserFunc\CTypeItemsProcFunc::class.'->getItems',
+    ],
+];

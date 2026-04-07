@@ -42,4 +42,8 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-images.svg',
     ],
+    'content-styleguide-tableofcontents' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-tableofcontents.svg',
+    ],
 ];

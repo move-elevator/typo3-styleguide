@@ -1,0 +1,22 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+<f:asset.css identifier="typo3styleguide_toc_css" href="EXT:typo3_styleguide/Resources/Public/Css/TableOfContents.css"/>
+
+<f:if condition="{pages}">
+    <nav class="typo3-styleguide-toc typo3-styleguide-toc--{data.tx_typo3styleguide_tableofcontents_layout}">
+        <f:switch expression="{data.tx_typo3styleguide_tableofcontents_layout}">
+            <f:case value="cards">
+                <f:render partial="TableOfContents/Cards" arguments="{pages: pages}" />
+            </f:case>
+            <f:defaultCase>
+                <f:render partial="TableOfContents/List" arguments="{pages: pages}" />
+            </f:defaultCase>
+        </f:switch>
+    </nav>
+</f:if>
+
+</html>

@@ -147,6 +147,30 @@
 				<source />
 				<target>Bildunterschrift</target>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.label">
+				<source />
+				<target>Inhaltsverzeichnis</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.description">
+				<source />
+				<target>Navigierbares Inhaltsverzeichnis der untergeordneten Styleguide-Seiten anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout">
+				<source />
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.list">
+				<source />
+				<target>Liste</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.cards">
+				<source />
+				<target>Karten</target>
+			</trans-unit>
+			<trans-unit id="page.styleguide.ctype_icon">
+				<source />
+				<target>Repräsentatives Inhaltselement</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

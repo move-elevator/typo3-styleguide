@@ -89,11 +89,26 @@ ExtensionManagementUtility::addTcaSelectItem(
     'after',
 );
 
+// --- Table of Contents ---
+ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'label' => $lll.'contentelement.tableofcontents.label',
+        'value' => 'typo3styleguide_tableofcontents',
+        'icon' => 'content-styleguide-tableofcontents',
+        'description' => $lll.'contentelement.tableofcontents.description',
+    ],
+    'typo3styleguide_images',
+    'after',
+);
+
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_technicalheadline'] = 'content-styleguide-headline';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_colors'] = 'content-styleguide-colors';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts'] = 'content-styleguide-fonts';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_tableofcontents'] = 'content-styleguide-tableofcontents';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
@@ -181,6 +196,24 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                     'useSortable' => true,
                     'enabledControls' => [
                         'dragdrop' => true,
+                    ],
+                ],
+            ],
+        ],
+        'tx_typo3styleguide_tableofcontents_layout' => [
+            'label' => $lll.'contentelement.tableofcontents.layout',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => 'list',
+                'items' => [
+                    [
+                        'label' => $lll.'contentelement.tableofcontents.layout.list',
+                        'value' => 'list',
+                    ],
+                    [
+                        'label' => $lll.'contentelement.tableofcontents.layout.cards',
+                        'value' => 'cards',
                     ],
                 ],
             ],
@@ -277,6 +310,25 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_images'] = [
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_typo3styleguide_images,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_tableofcontents'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
+    'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;header,tx_typo3styleguide_tableofcontents_layout,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,

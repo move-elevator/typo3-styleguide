@@ -1,5 +1,6 @@
 lib.contentElement {
   templateRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Templates/
+  partialRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Partials/
 }
 tt_content {
   typo3styleguide_technicalheadline =< lib.contentElement
@@ -48,6 +49,20 @@ tt_content {
       markers.uid.field = uid
       orderBy = sorting
       as = images
+    }
+  }
+
+  typo3styleguide_tableofcontents =< lib.contentElement
+  typo3styleguide_tableofcontents {
+    templateName = TableOfContents
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    dataProcessing.10 {
+      special = directory
+      special.value.data = TSFE:id
+      levels = 9
+      includeSpacer = 1
+      as = pages
+      expandAll = 1
     }
   }
 }
