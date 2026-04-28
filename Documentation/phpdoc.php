@@ -96,7 +96,7 @@ function generateMarkdown($className, $docComments, $outputDir)
  * @param string $outputDir   Path to the output directory
  * @param string $tocFileName Name of the table of contents file
  */
-function processDirectory($directory, $outputDir, $tocFileName)
+function processDirectory($directory, $outputDir, $tocFileName): void
 {
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
     $generatedFiles = [];
@@ -124,7 +124,7 @@ function processDirectory($directory, $outputDir, $tocFileName)
  * @param string $outputDir      Path to the output directory
  * @param string $tocFileName    Name of the table of contents file
  */
-function generateTableOfContents($generatedFiles, $outputDir, $tocFileName)
+function generateTableOfContents($generatedFiles, $outputDir, $tocFileName): void
 {
     $toc = "# Table of Contents\n\n";
     foreach ($generatedFiles as $file) {
