@@ -23,8 +23,6 @@
 	},
 	"require-dev": {
 		"eliashaeussler/version-bumper": "^2.4 || ^3.0 || ^4.0",
-		"helhum/typo3-console": "^7.0 || ^8.1",
-		"move-elevator/composer-translation-validator": "^1.4.0",
 		"phpunit/phpunit": "^11.0 || ^12.0 || ^13.0",
 		"typo3/cms-base-distribution": "^12.4 || ^13.4 || ^14.0",
 		"typo3/cms-lowlevel": "^12.4 || ^13.4 || ^14.0"
@@ -42,7 +40,6 @@
 			"eliashaeussler/version-bumper": true,
 			"ergebnis/composer-normalize": true,
 			"helhum/dotenv-connector": true,
-			"move-elevator/composer-translation-validator": true,
 			"php-http/discovery": true,
 			"typo3/class-alias-loader": true,
 			"typo3/cms-composer-installers": true
