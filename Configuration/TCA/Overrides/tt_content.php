@@ -19,6 +19,13 @@ defined('TYPO3') || exit('Access denied.');
 
 $lll = 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:';
 
+ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'styleguide',
+    $lll.'wizard.tab.styleguide',
+);
+
 // --- Technical Headline ---
 ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
@@ -28,6 +35,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'typo3styleguide_technicalheadline',
         'icon' => 'content-styleguide-headline',
         'description' => $lll.'contentelement.technical_headline.description',
+        'group' => 'styleguide',
     ],
     'html',
     'after',
@@ -42,6 +50,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'typo3styleguide_colors',
         'icon' => 'content-styleguide-colors',
         'description' => $lll.'contentelement.colors.description',
+        'group' => 'styleguide',
     ],
     'typo3styleguide_technicalheadline',
     'after',
@@ -56,6 +65,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'typo3styleguide_fonts',
         'icon' => 'content-styleguide-fonts',
         'description' => $lll.'contentelement.fonts.description',
+        'group' => 'styleguide',
     ],
     'typo3styleguide_colors',
     'after',
@@ -70,6 +80,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'typo3styleguide_icons',
         'icon' => 'content-styleguide-icons',
         'description' => $lll.'contentelement.icons.description',
+        'group' => 'styleguide',
     ],
     'typo3styleguide_fonts',
     'after',
@@ -84,6 +95,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'typo3styleguide_images',
         'icon' => 'content-styleguide-images',
         'description' => $lll.'contentelement.images.description',
+        'group' => 'styleguide',
     ],
     'typo3styleguide_icons',
     'after',
@@ -98,6 +110,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'typo3styleguide_tableofcontents',
         'icon' => 'content-styleguide-tableofcontents',
         'description' => $lll.'contentelement.tableofcontents.description',
+        'group' => 'styleguide',
     ],
     'typo3styleguide_images',
     'after',
