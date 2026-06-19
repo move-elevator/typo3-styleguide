@@ -67,6 +67,8 @@ tt_content {
   }
 }
 
-[traverse(page, "doktype") == 1754310721]
-  page.meta.robots = noindex,nofollow
-[end]
+page.meta.robots = noindex,nofollow
+page.meta.robots.if {
+  value.data = page:doktype
+  isInList = 1754310721
+}
