@@ -20,6 +20,7 @@ return [
         'crdate' => 'crdate',
         'delete' => 'deleted',
         'sortby' => 'sorting',
+        'versioningWS' => true,
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text.svg',
         'hideTable' => true,
         'enablecolumns' => [
