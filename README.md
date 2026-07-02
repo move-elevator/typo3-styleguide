@@ -6,6 +6,7 @@
 
 [![Supported TYPO3 versions](https://badgen.net/badge/TYPO3/12%20&%2013%20&%2014/orange)](https://extensions.typo3.org/extension/typo3_styleguide)
 [![CGL](https://img.shields.io/github/actions/workflow/status/move-elevator/typo3-styleguide/cgl.yml?label=cgl&logo=github)](https://github.com/move-elevator/typo3-styleguide/actions/workflows/cgl.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/move-elevator/typo3-styleguide/badge)](https://securityscorecards.dev/viewer/?uri=github.com/move-elevator/typo3-styleguide)
 [![License](https://poser.pugx.org/move-elevator/typo3-styleguide/license)](LICENSE.md)
 
 </div>
