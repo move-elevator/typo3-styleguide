@@ -4,7 +4,7 @@
 
 # TYPO3 extension `typo3_styleguide`
 
-[![Supported TYPO3 versions](https://badgen.net/badge/TYPO3/12%20&%2013%20&%2014/orange)](https://extensions.typo3.org/extension/typo3_styleguide)
+![TYPO3](https://img.shields.io/badge/TYPO3-12.0%20%7C%2013.0%20%7C%2014.0-orange.svg)
 [![CGL](https://img.shields.io/github/actions/workflow/status/move-elevator/typo3-styleguide/cgl.yml?label=cgl&logo=github)](https://github.com/move-elevator/typo3-styleguide/actions/workflows/cgl.yml)
 [![License](https://poser.pugx.org/move-elevator/typo3-styleguide/license)](LICENSE.md)
 
