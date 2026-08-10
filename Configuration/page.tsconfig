@@ -1,3 +1,2 @@
 @import './TsConfig/BackendLayouts/*.tsconfig'
-@import './TsConfig/ContentElements/*.tsconfig'
 @import './TsConfig/*.tsconfig'
