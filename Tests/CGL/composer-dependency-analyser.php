@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 use Composer\Autoload;
 use ShipMonk\ComposerDependencyAnalyser;
+use ShipMonk\ComposerDependencyAnalyser\Config\ErrorType;
 
 $rootPath = dirname(__DIR__, 2);
 
@@ -26,6 +27,8 @@ $configuration
     ->addPathsToExclude([
         $rootPath.'/Tests/CGL',
     ])
+    // Optional dependency: only a "suggest", guarded in Configuration/Services.php.
+    ->ignoreErrorsOnPackage('hn/typo3-mcp-server', [ErrorType::DEV_DEPENDENCY_IN_PROD])
 ;
 
 return $configuration;

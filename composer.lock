@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "687e7cfbc3a692a84868d13446410cba",
+    "content-hash": "6990857e986f1ae6608512359644ad9d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2565,16 +2565,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v7.4.13",
+            "version": "v7.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "f299e20ce983be6c0744952533c6dfeaaa1448e2"
+                "reference": "7f59a843c1fbcceafecdf6863d3e38ea6ecd5061"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/f299e20ce983be6c0744952533c6dfeaaa1448e2",
-                "reference": "f299e20ce983be6c0744952533c6dfeaaa1448e2",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/7f59a843c1fbcceafecdf6863d3e38ea6ecd5061",
+                "reference": "7f59a843c1fbcceafecdf6863d3e38ea6ecd5061",
                 "shasum": ""
             },
             "require": {
@@ -2625,7 +2625,7 @@
             "description": "Allows you to standardize and centralize the way objects are constructed in your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dependency-injection/tree/v7.4.13"
+                "source": "https://github.com/symfony/dependency-injection/tree/v7.4.16"
             },
             "funding": [
                 {
@@ -2645,7 +2645,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-20T14:07:29+00:00"
+            "time": "2026-08-06T09:45:22+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -6457,6 +6457,108 @@
             "time": "2026-06-04T05:37:13+00:00"
         },
         {
+            "name": "hn/typo3-mcp-server",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hauptsacheNet/typo3-mcp-server.git",
+                "reference": "077c424f80c022dee427909da9055d529234045a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hauptsacheNet/typo3-mcp-server/zipball/077c424f80c022dee427909da9055d529234045a",
+                "reference": "077c424f80c022dee427909da9055d529234045a",
+                "shasum": ""
+            },
+            "require": {
+                "logiscape/mcp-sdk-php": "^1.2",
+                "php": ">=8.2",
+                "typo3/cms-backend": "^13.4 || ^14.3",
+                "typo3/cms-core": "^13.4 || ^14.3",
+                "typo3/cms-workspaces": "^13.4 || ^14.3"
+            },
+            "require-dev": {
+                "b13/container": "^4.0",
+                "brianium/paratest": "^7.4",
+                "georgringer/news": "^14.0",
+                "typo3/cms-install": "^13.4 || ^14.3",
+                "typo3/testing-framework": "^8.2 || ^9.2"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "mcp_server"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hn\\McpServer\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pfeiffer",
+                    "email": "marco@hauptsache.net"
+                }
+            ],
+            "description": "TYPO3 extension that provides a Model Context Protocol (MCP) server for interacting with TYPO3 pages and records",
+            "homepage": "https://github.com/hauptsacheNet/typo3-mcp-server",
+            "support": {
+                "issues": "https://github.com/hauptsacheNet/typo3-mcp-server/issues",
+                "source": "https://github.com/hauptsacheNet/typo3-mcp-server/tree/v0.5.0"
+            },
+            "time": "2026-07-28T11:37:44+00:00"
+        },
+        {
+            "name": "logiscape/mcp-sdk-php",
+            "version": "v1.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/logiscape/mcp-sdk-php.git",
+                "reference": "8a54f753360c7319e06a412928f48ef9990cb8f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/logiscape/mcp-sdk-php/zipball/8a54f753360c7319e06a412928f48ef9990cb8f5",
+                "reference": "8a54f753360c7319e06a412928f48ef9990cb8f5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=8.1",
+                "psr/log": "^2.0 ||^3.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.0"
+            },
+            "suggest": {
+                "ext-pcntl": "For better process handling in CLI environments",
+                "monolog/monolog": "^3.0 - For debugging and logging capabilities"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mcp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Model Context Protocol SDK for PHP",
+            "support": {
+                "issues": "https://github.com/logiscape/mcp-sdk-php/issues",
+                "source": "https://github.com/logiscape/mcp-sdk-php/tree/v1.7.5"
+            },
+            "time": "2026-07-28T03:32:24+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.13.4",
             "source": {
@@ -9743,6 +9845,73 @@
             "support": {
                 "chat": "https://typo3.community/meet/slack/",
                 "docs": "https://docs.typo3.org/c/typo3/cms-webhooks/main/en-us/",
+                "forum": "https://talk.typo3.org/",
+                "issues": "https://forge.typo3.org/issues/",
+                "rss": "https://news.typo3.com/rss/",
+                "security": "https://typo3.org/security/",
+                "source": "https://github.com/TYPO3/typo3/"
+            },
+            "funding": [
+                {
+                    "url": "https://typo3.org/membership",
+                    "type": "membership"
+                }
+            ],
+            "time": "2026-06-16T08:52:34+00:00"
+        },
+        {
+            "name": "typo3/cms-workspaces",
+            "version": "v14.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/workspaces.git",
+                "reference": "8904eec0dfce2052a433c798b51fa51407dc0bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/workspaces/zipball/8904eec0dfce2052a433c798b51fa51407dc0bee",
+                "reference": "8904eec0dfce2052a433c798b51fa51407dc0bee",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "14.3.4"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "replace": {
+                "typo3/cms-version": "self.version"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "workspaces"
+                },
+                "branch-alias": {
+                    "dev-main": "14.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Workspaces\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 CMS Workspaces - Workflows with custom stages and versioning for a better editing and publishing experience.",
+            "homepage": "https://typo3.community/",
+            "support": {
+                "chat": "https://typo3.community/meet/slack/",
+                "docs": "https://docs.typo3.org/c/typo3/cms-workspaces/main/en-us/",
                 "forum": "https://talk.typo3.org/",
                 "issues": "https://forge.typo3.org/issues/",
                 "rss": "https://news.typo3.com/rss/",
