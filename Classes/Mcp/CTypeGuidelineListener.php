@@ -51,8 +51,11 @@ final class CTypeGuidelineListener
         // reaches the LLM. The event API is field-oriented, hence the pseudo field.
         $event->addField(self::GUIDELINE_FIELD, [
             'label' => 'Editorial guideline',
-            'type' => 'none',
             'description' => $description,
+            'config' => [
+                'type' => 'none',
+                'readOnly' => true,
+            ],
             'mcp' => ['computed' => true],
         ]);
     }
