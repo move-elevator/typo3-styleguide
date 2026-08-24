@@ -21,6 +21,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 use function array_map;
 use function implode;
+use function in_array;
 use function is_array;
 use function is_string;
 use function sprintf;
@@ -42,7 +43,7 @@ final class CTypeGuidelineListener
     /**
      * @var list<int>|null
      */
-    private ?array $examplePageUids = null;
+    private ?array $exampleRootPageUids = null;
 
     public function __invoke(AfterSchemaLoadEvent $event): void
     {
@@ -95,18 +96,18 @@ final class CTypeGuidelineListener
             return;
         }
 
-        $pageUids = $this->getExamplePageUids();
-        if ([] === $pageUids) {
+        $rootPageUids = $this->getExampleRootPageUids();
+        if ([] === $rootPageUids) {
             return;
         }
 
         $event->addField(self::EXAMPLES_FIELD, [
             'label' => 'Reference examples',
             'description' => sprintf(
-                'Maintained examples exist on the styleguide pages with pid %s. Read "tt_content" there filtered by '
+                'Maintained examples exist in the styleguide page tree at pid %s. Read "tt_content" there filtered by '
                 .'this CType, and pass the fields parameter to keep the output small. GetPageTree resolves the '
                 .'rendered frontend URL.',
-                implode(', ', $pageUids),
+                implode(', ', $rootPageUids),
             ),
             'config' => [
                 'type' => 'none',
@@ -117,19 +118,23 @@ final class CTypeGuidelineListener
     }
 
     /**
+     * Only the topmost page of each styleguide tree. Subpages carry the same
+     * doktype and are reachable from there, so listing them all would bloat the
+     * hint and would go stale as soon as a page is added.
+     *
      * @return list<int>
      */
-    private function getExamplePageUids(): array
+    private function getExampleRootPageUids(): array
     {
-        if (null !== $this->examplePageUids) {
-            return $this->examplePageUids;
+        if (null !== $this->exampleRootPageUids) {
+            return $this->exampleRootPageUids;
         }
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('pages');
 
-        $uids = $queryBuilder
-            ->select('uid')
+        $pages = $queryBuilder
+            ->select('uid', 'pid')
             ->from('pages')
             ->where(
                 $queryBuilder->expr()->eq(
@@ -138,13 +143,21 @@ final class CTypeGuidelineListener
                 ),
             )
             ->orderBy('uid')
-            ->setMaxResults(5)
             ->executeQuery()
-            ->fetchFirstColumn();
+            ->fetchAllAssociative();
 
-        $this->examplePageUids = array_map(static fn (mixed $uid): int => (int) $uid, $uids);
+        $uids = array_map(static fn (array $page): int => (int) $page['uid'], $pages);
 
-        return $this->examplePageUids;
+        $rootUids = [];
+        foreach ($pages as $page) {
+            if (!in_array((int) $page['pid'], $uids, true)) {
+                $rootUids[] = (int) $page['uid'];
+            }
+        }
+
+        $this->exampleRootPageUids = $rootUids;
+
+        return $rootUids;
     }
 
     private function resolveItemDescription(string $cType): ?string
