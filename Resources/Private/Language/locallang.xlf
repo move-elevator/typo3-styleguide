@@ -16,7 +16,7 @@
 				<source>Technical headline</source>
 			</trans-unit>
 			<trans-unit id="contentelement.technical_headline.description">
-				<source>Helper content to display technical information as headline element</source>
+				<source>Structural headline that segments a styleguide page and feeds its table of contents. Use h2 for top-level sections and h3 for subsections. For a headline followed by running text, use a regular text element.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.technical_headline.tag">
 				<source>Headline-Level</source>
@@ -49,7 +49,7 @@
 				<source>Colors</source>
 			</trans-unit>
 			<trans-unit id="contentelement.colors.description">
-				<source>Display a color palette for the styleguide</source>
+				<source>Color palette of the design system. One inline record per color, with HEX value and optional name. Use it to document the palette, not to decorate a page.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.colors.items">
 				<source>Colors</source>
@@ -67,7 +67,7 @@
 				<source>Fonts</source>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.description">
-				<source>Display font specimens for the styleguide</source>
+				<source>Font specimens of the design system. One inline record per font, with family and optional weight. Each entry renders sample text in that font.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.items">
 				<source>Fonts</source>
@@ -88,7 +88,7 @@
 				<source>Icons</source>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.description">
-				<source>Display all icons from a directory for the styleguide</source>
+				<source>Renders every icon file found in an EXT: directory, using the filename as label. Point it at a folder; single icons cannot be picked.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.path">
 				<source>Directory path</source>
@@ -97,7 +97,7 @@
 				<source>Images</source>
 			</trans-unit>
 			<trans-unit id="contentelement.images.description">
-				<source>Display images for the styleguide</source>
+				<source>Collection of design assets referenced by EXT: path, each with an optional caption. Use it for logos and graphics of the design system; for editorial images use a regular text and media element.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.images.items">
 				<source>Images</source>
@@ -115,7 +115,7 @@
 				<source>Table of contents</source>
 			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.description">
-				<source>Display a navigable table of contents of child styleguide pages</source>
+				<source>Navigable overview of the child styleguide pages, as list or cards. Place it on an overview page; headlines inside a single page are linked automatically by the technical headline element.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.layout">
 				<source>Layout</source>
