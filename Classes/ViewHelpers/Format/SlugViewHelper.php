@@ -36,8 +36,7 @@ class SlugViewHelper extends AbstractViewHelper
     {
         $value = $this->renderChildren();
         if (!is_string($value) && !(is_object($value) && method_exists($value, '__toString'))) {
-            /* @phpstan-ignore-next-line */
-            return $value;
+            return '';
         }
 
         return self::generateSlug((string) $value);
