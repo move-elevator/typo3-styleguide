@@ -35,6 +35,8 @@ return Config::create()
     ->withFinder(
         static fn (Finder $finder) => $finder
             ->in($rootPath)
+            // .ddev holds #ddev-generated files, fixing them would be undone by the next add-on update
+            ->exclude(['.ddev'])
             ->notPath(['ext_emconf.php']),
     )
 ;
