@@ -21,7 +21,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.technical_headline.description">
 				<source />
-				<target>Hilfsinhalt um technische Informationen als Headline Element auszuspielen</target>
+				<target>Strukturüberschrift, die eine Styleguide-Seite gliedert und ins Inhaltsverzeichnis einfließt. h2 für Hauptabschnitte, h3 für Unterabschnitte. Für eine Überschrift mit Fließtext ein normales Textelement verwenden.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.technical_headline.tag">
 				<source />
@@ -65,7 +65,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.colors.description">
 				<source />
-				<target>Farbpalette für den Styleguide anzeigen</target>
+				<target>Farbpalette des Designsystems. Ein Inline-Datensatz pro Farbe, mit HEX-Wert und optionalem Namen. Dient der Dokumentation der Palette, nicht der Gestaltung einer Seite.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.colors.items">
 				<source />
@@ -89,7 +89,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.description">
 				<source />
-				<target>Schriftmuster für den Styleguide anzeigen</target>
+				<target>Schriftmuster des Designsystems. Ein Inline-Datensatz pro Schrift, mit Familie und optionalem Schnitt. Jeder Eintrag zeigt einen Beispieltext in dieser Schrift.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.items">
 				<source />
@@ -117,7 +117,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.icons.description">
 				<source />
-				<target>Alle Icons aus einem Verzeichnis für den Styleguide anzeigen</target>
+				<target>Zeigt jede Icon-Datei aus einem EXT:-Verzeichnis, mit dem Dateinamen als Label. Verweist auf einen Ordner; einzelne Icons sind nicht auswählbar.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.path">
 				<source />
@@ -129,7 +129,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.images.description">
 				<source />
-				<target>Bilder für den Styleguide anzeigen</target>
+				<target>Sammlung von Design-Assets über EXT:-Pfad, jeweils mit optionaler Bildunterschrift. Für Logos und Grafiken des Designsystems; für redaktionelle Bilder ein normales Text-Medien-Element verwenden.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.images.items">
 				<source />
@@ -153,7 +153,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.description">
 				<source />
-				<target>Navigierbares Inhaltsverzeichnis der untergeordneten Styleguide-Seiten anzeigen</target>
+				<target>Navigierbare Übersicht der untergeordneten Styleguide-Seiten, als Liste oder Karten. Gehört auf eine Übersichtsseite; Überschriften innerhalb einer Seite verlinkt das Strukturüberschrift-Element automatisch.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.layout">
 				<source />

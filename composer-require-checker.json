@@ -1,5 +1,6 @@
 {
 	"symbol-whitelist": [
-		"TYPO3\\CMS\\Fluid\\View\\StandaloneView"
+		"TYPO3\\CMS\\Fluid\\View\\StandaloneView",
+		"Hn\\McpServer\\Event\\AfterSchemaLoadEvent"
 	]
 }

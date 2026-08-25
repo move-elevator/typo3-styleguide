@@ -16,6 +16,7 @@
 		"php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
 		"ext-dom": "*",
 		"ext-intl": "*",
+		"symfony/dependency-injection": "^6.2 || ^7.0",
 		"typo3/cms-backend": "^12.0 || ^13.0 || ^14.0",
 		"typo3/cms-core": "^12.0 || ^13.0 || ^14.0",
 		"typo3/cms-fluid": "^12.0 || ^13.0 || ^14.0",
@@ -23,12 +24,14 @@
 	},
 	"require-dev": {
 		"eliashaeussler/version-bumper": "^2.4 || ^3.0 || ^4.0",
+		"hn/typo3-mcp-server": "^0.5",
 		"phpunit/phpunit": "^11.0 || ^12.0 || ^13.0",
 		"typo3/cms-base-distribution": "^12.4 || ^13.4 || ^14.0",
 		"typo3/cms-lowlevel": "^12.4 || ^13.4 || ^14.0"
 	},
 	"suggest": {
-		"blueways/bw-static-template": "For rendering arbitrary Fluid templates as content elements (^3.0 || ^4.0)"
+		"blueways/bw-static-template": "For rendering arbitrary Fluid templates as content elements (^3.0 || ^4.0)",
+		"hn/typo3-mcp-server": "For exposing content element guidelines to AI clients via MCP (^0.5, TYPO3 >= 13.4)"
 	},
 	"autoload": {
 		"psr-4": {
