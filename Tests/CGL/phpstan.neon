@@ -18,3 +18,19 @@ parameters:
 
 	type_coverage:
 		constant: 0 # TODO: Set to 100, when PHP 8.3 is minimum requirement
+
+	ignoreErrors:
+		# StandaloneView is the TYPO3 v12 fallback and no longer exists in v14
+		-
+			identifier: class.notFound
+			path: ../../Classes/Preview/StyleguidePreviewRenderer.php
+			reportUnmatched: false
+		# GridColumnItem::getRecord() returns an array in v13 and a RecordInterface in v14
+		-
+			identifier: function.impossibleType
+			path: ../../Classes/Preview/StyleguidePreviewRenderer.php
+			reportUnmatched: false
+		# The TYPO3 itemsProcFunc API dictates the by-reference parameter
+		-
+			identifier: ergebnis.noParameterPassedByReference
+			path: ../../Classes/UserFunc/CTypeItemsProcFunc.php

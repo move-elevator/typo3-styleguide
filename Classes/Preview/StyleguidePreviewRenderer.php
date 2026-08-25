@@ -198,23 +198,20 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             /** @var \TYPO3\CMS\Core\View\ViewFactoryInterface $viewFactory */
             $viewFactory = GeneralUtility::makeInstance(\TYPO3\CMS\Core\View\ViewFactoryInterface::class);
             $view = $viewFactory->create(new \TYPO3\CMS\Core\View\ViewFactoryData(
-                templateRootPaths: [GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH)],
+                [GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH)],
             ));
             $view->assignMultiple($variables);
 
             return $view->render($templateName);
         }
 
-        /** @phpstan-ignore class.notFound */
+        // TYPO3 v12: StandaloneView, removed in v14
         $view = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
-        /* @phpstan-ignore class.notFound */
         $view->setTemplatePathAndFilename(
             GeneralUtility::getFileAbsFileName(self::TEMPLATE_PATH.$templateName.'.html'),
         );
-        /* @phpstan-ignore class.notFound */
         $view->assignMultiple($variables);
 
-        /* @phpstan-ignore class.notFound */
         return $view->render();
     }
 
@@ -227,7 +224,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
     {
         $record = $item->getRecord();
 
-        // @phpstan-ignore function.impossibleType (v13 returns array, v14 returns RecordInterface)
+        // v13 returns array, v14 returns RecordInterface
         if (is_array($record)) {
             return $record;
         }
