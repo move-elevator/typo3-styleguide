@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df8f2434761a5bd0c48fe80abd68cfed",
+    "content-hash": "23e3c81f5c5b2be5e6fcb1fac35a31ea",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -6624,20 +6624,20 @@
         },
         {
             "name": "hn/typo3-mcp-server",
-            "version": "v0.5.0",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hauptsacheNet/typo3-mcp-server.git",
-                "reference": "077c424f80c022dee427909da9055d529234045a"
+                "reference": "74e8188b09d3b87974b053cdf449f67f93f28219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hauptsacheNet/typo3-mcp-server/zipball/077c424f80c022dee427909da9055d529234045a",
-                "reference": "077c424f80c022dee427909da9055d529234045a",
+                "url": "https://api.github.com/repos/hauptsacheNet/typo3-mcp-server/zipball/74e8188b09d3b87974b053cdf449f67f93f28219",
+                "reference": "74e8188b09d3b87974b053cdf449f67f93f28219",
                 "shasum": ""
             },
             "require": {
-                "logiscape/mcp-sdk-php": "^1.2",
+                "logiscape/mcp-sdk-php": "^2.0",
                 "php": ">=8.2",
                 "typo3/cms-backend": "^13.4 || ^14.3",
                 "typo3/cms-core": "^13.4 || ^14.3",
@@ -6675,22 +6675,22 @@
             "homepage": "https://github.com/hauptsacheNet/typo3-mcp-server",
             "support": {
                 "issues": "https://github.com/hauptsacheNet/typo3-mcp-server/issues",
-                "source": "https://github.com/hauptsacheNet/typo3-mcp-server/tree/v0.5.0"
+                "source": "https://github.com/hauptsacheNet/typo3-mcp-server/tree/v0.6.2"
             },
-            "time": "2026-07-28T11:37:44+00:00"
+            "time": "2026-08-31T14:38:09+00:00"
         },
         {
             "name": "logiscape/mcp-sdk-php",
-            "version": "v1.7.5",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/logiscape/mcp-sdk-php.git",
-                "reference": "8a54f753360c7319e06a412928f48ef9990cb8f5"
+                "reference": "262c0daba4b3bbe5c9a2df7d9833573eb01bb553"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/logiscape/mcp-sdk-php/zipball/8a54f753360c7319e06a412928f48ef9990cb8f5",
-                "reference": "8a54f753360c7319e06a412928f48ef9990cb8f5",
+                "url": "https://api.github.com/repos/logiscape/mcp-sdk-php/zipball/262c0daba4b3bbe5c9a2df7d9833573eb01bb553",
+                "reference": "262c0daba4b3bbe5c9a2df7d9833573eb01bb553",
                 "shasum": ""
             },
             "require": {
@@ -6720,9 +6720,9 @@
             "description": "Model Context Protocol SDK for PHP",
             "support": {
                 "issues": "https://github.com/logiscape/mcp-sdk-php/issues",
-                "source": "https://github.com/logiscape/mcp-sdk-php/tree/v1.7.5"
+                "source": "https://github.com/logiscape/mcp-sdk-php/tree/v2.0.1"
             },
-            "time": "2026-07-28T03:32:24+00:00"
+            "time": "2026-08-18T20:23:27+00:00"
         },
         {
             "name": "myclabs/deep-copy",
