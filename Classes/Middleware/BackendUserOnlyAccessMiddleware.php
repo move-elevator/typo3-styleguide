@@ -98,9 +98,9 @@ class BackendUserOnlyAccessMiddleware implements MiddlewareInterface
             return [];
         }
 
-        return array_values(array_unique(array_filter(array_map(
+        return array_values(array_filter(array_map(
             static fn (string $uid): int => (int) trim($uid),
             explode(',', $configuredUids),
-        ))));
+        )));
     }
 }
