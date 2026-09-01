@@ -4,6 +4,9 @@
     data-namespace-typo3-fluid="true"
 >
 
+<f:layout name="Default" />
+<f:section name="Main">
+
 <f:asset.css identifier="typo3styleguide_technicalheadline_css" href="EXT:typo3_styleguide/Resources/Public/Css/TechnicalHeadline.css" />
 <f:asset.script identifier="typo3styleguide_technicalheadline_script" src="EXT:typo3_styleguide/Resources/Public/JavaScript/technical_headline.js" />
 
@@ -34,3 +37,5 @@
         <p class="typo3-styleguide-technical-headline__text">{data.bodytext -> f:format.raw()}</p>
     </f:if>
 </div>
+
+</f:section>
