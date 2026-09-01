@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\Middleware;
 
-use Exception;
 use MoveElevator\Styleguide\Configuration;
 use Psr\Http\Message\{ResponseInterface, ServerRequestInterface};
 use Psr\Http\Server\{MiddlewareInterface, RequestHandlerInterface};
 use TYPO3\CMS\Core\Configuration\Exception\{ExtensionConfigurationExtensionNotConfiguredException, ExtensionConfigurationPathDoesNotExistException};
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Context\{Context, UserAspect};
+use TYPO3\CMS\Core\Exception\Page\RootLineException;
 use TYPO3\CMS\Core\Routing\PageArguments;
 use TYPO3\CMS\Core\Utility\{GeneralUtility, RootlineUtility};
 use TYPO3\CMS\Frontend\Controller\ErrorController;
@@ -73,7 +73,9 @@ class BackendUserOnlyAccessMiddleware implements MiddlewareInterface
     {
         try {
             $rootline = GeneralUtility::makeInstance(RootlineUtility::class, $pageId, '', $this->context)->get();
-        } catch (Exception) {
+        } catch (RootLineException) {
+            // Expected for a broken/circular rootline or disabled mount points. Other failures
+            // (e.g. a database error) are not swallowed here and use TYPO3's regular error handling.
             return [];
         }
 
