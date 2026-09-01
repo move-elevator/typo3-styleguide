@@ -52,12 +52,7 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
         $this->configureExtension(false, '10');
 
         $request = $this->createRequestForPage(10);
-        $response = $this->createMock(ResponseInterface::class);
-        $handler = $this->createMock(RequestHandlerInterface::class);
-        $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
-
-        $subject = $this->createSubject(rootlinePageUids: [10]);
-        self::assertSame($response, $subject->process($request, $handler));
+        $this->assertPassesThrough($request, $this->createSubject(rootlinePageUids: [10]));
     }
 
     public function testPassesThroughWhenNoRootPageUidsAreConfigured(): void
@@ -65,12 +60,7 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
         $this->configureExtension(true, '');
 
         $request = $this->createRequestForPage(10);
-        $response = $this->createMock(ResponseInterface::class);
-        $handler = $this->createMock(RequestHandlerInterface::class);
-        $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
-
-        $subject = $this->createSubject(rootlinePageUids: [10]);
-        self::assertSame($response, $subject->process($request, $handler));
+        $this->assertPassesThrough($request, $this->createSubject(rootlinePageUids: [10]));
     }
 
     public function testPassesThroughWhenPageIsNotInRestrictedScope(): void
@@ -78,12 +68,7 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
         $this->configureExtension(true, '10');
 
         $request = $this->createRequestForPage(20);
-        $response = $this->createMock(ResponseInterface::class);
-        $handler = $this->createMock(RequestHandlerInterface::class);
-        $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
-
-        $subject = $this->createSubject(rootlinePageUids: [1, 2, 20]);
-        self::assertSame($response, $subject->process($request, $handler));
+        $this->assertPassesThrough($request, $this->createSubject(rootlinePageUids: [1, 2, 20]));
     }
 
     public function testPassesThroughWhenPageIdCannotBeResolved(): void
@@ -93,12 +78,7 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
         $request = $this->createMock(ServerRequestInterface::class);
         $request->method('getAttribute')->with('routing')->willReturn(null);
 
-        $response = $this->createMock(ResponseInterface::class);
-        $handler = $this->createMock(RequestHandlerInterface::class);
-        $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
-
-        $subject = $this->createSubject(rootlinePageUids: [10]);
-        self::assertSame($response, $subject->process($request, $handler));
+        $this->assertPassesThrough($request, $this->createSubject(rootlinePageUids: [10]));
     }
 
     public function testDeniesAnonymousUserOnRestrictedPageItself(): void
@@ -146,16 +126,10 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
         $backendUser->userid_column = 'uid';
         $backendUser->user = ['uid' => 1];
         $this->context->method('getAspect')->with('backend.user')->willReturn(new UserAspect($backendUser));
-
-        $request = $this->createRequestForPage(10);
-        $response = $this->createMock(ResponseInterface::class);
-        $handler = $this->createMock(RequestHandlerInterface::class);
-        $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
-
         $this->errorController->expects(self::never())->method('accessDeniedAction');
 
-        $subject = $this->createSubject(rootlinePageUids: [10]);
-        self::assertSame($response, $subject->process($request, $handler));
+        $request = $this->createRequestForPage(10);
+        $this->assertPassesThrough($request, $this->createSubject(rootlinePageUids: [10]));
     }
 
     public function testPassesThroughWhenExtensionConfigurationHasNotBeenInitializedYet(): void
@@ -164,11 +138,15 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
             ->willThrowException(new ExtensionConfigurationExtensionNotConfiguredException('not configured', 1509654728));
 
         $request = $this->createRequestForPage(10);
+        $this->assertPassesThrough($request, $this->createSubject(rootlinePageUids: [10]));
+    }
+
+    private function assertPassesThrough(ServerRequestInterface $request, BackendUserOnlyAccessMiddleware $subject): void
+    {
         $response = $this->createMock(ResponseInterface::class);
         $handler = $this->createMock(RequestHandlerInterface::class);
         $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
 
-        $subject = $this->createSubject(rootlinePageUids: [10]);
         self::assertSame($response, $subject->process($request, $handler));
     }
 
