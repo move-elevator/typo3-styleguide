@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\Middleware;
 
+use Exception;
 use MoveElevator\Styleguide\Configuration;
 use Psr\Http\Message\{ResponseInterface, ServerRequestInterface};
 use Psr\Http\Server\{MiddlewareInterface, RequestHandlerInterface};
-use Throwable;
 use TYPO3\CMS\Core\Configuration\Exception\{ExtensionConfigurationExtensionNotConfiguredException, ExtensionConfigurationPathDoesNotExistException};
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Context\{Context, UserAspect};
@@ -73,7 +73,7 @@ class BackendUserOnlyAccessMiddleware implements MiddlewareInterface
     {
         try {
             $rootline = GeneralUtility::makeInstance(RootlineUtility::class, $pageId, '', $this->context)->get();
-        } catch (Throwable) {
+        } catch (Exception) {
             return [];
         }
 
