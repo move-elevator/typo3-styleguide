@@ -38,6 +38,11 @@
 			"MoveElevator\\Styleguide\\": "Classes/"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"MoveElevator\\Styleguide\\Tests\\": "Tests/"
+		}
+	},
 	"config": {
 		"allow-plugins": {
 			"eliashaeussler/version-bumper": true,
@@ -68,6 +73,7 @@
 			"@cgl install"
 		],
 		"cgl": "@composer -d Tests/CGL --",
-		"doc:viewhelpers": "php Documentation/phpdoc.php -d Classes/ViewHelpers -o Documentation/ViewHelpers"
+		"doc:viewhelpers": "php Documentation/phpdoc.php -d Classes/ViewHelpers -o Documentation/ViewHelpers",
+		"test:unit": "phpunit -c phpunit.xml.dist"
 	}
 }
