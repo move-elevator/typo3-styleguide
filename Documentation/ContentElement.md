@@ -7,6 +7,7 @@ This extension provides the following content elements for building a styleguide
 - [Fonts](#fonts)
 - [Icons](#icons)
 - [Images](#images)
+- [Table of Contents](#table-of-contents)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -58,3 +59,14 @@ The `Images` content element displays a collection of images. Each image is defi
 
 - **Path** — An `EXT:` path to the image file (e.g. `EXT:sitepackage/Resources/Public/Images/logo.svg`)
 - **Caption** — Optional caption text
+
+## <img src="../Resources/Public/Icons/content-styleguide-tableofcontents.svg" height="20"> Table of Contents
+
+The `Table of Contents` content element renders a navigable overview of the child pages below the page it is placed on, recursively through all levels. Only pages using the [Styleguide page type](PageType.md) are listed.
+
+- **Layout** — `List` for a nested, indented list, or `Cards` for a grouped card grid with one group per page level
+
+> [!TIP]
+> In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
+
+Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
