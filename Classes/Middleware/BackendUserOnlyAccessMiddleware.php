@@ -17,6 +17,7 @@ use MoveElevator\Styleguide\Configuration;
 use Psr\Http\Message\{ResponseInterface, ServerRequestInterface};
 use Psr\Http\Server\{MiddlewareInterface, RequestHandlerInterface};
 use Throwable;
+use TYPO3\CMS\Core\Configuration\Exception\{ExtensionConfigurationExtensionNotConfiguredException, ExtensionConfigurationPathDoesNotExistException};
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Context\{Context, UserAspect};
 use TYPO3\CMS\Core\Routing\PageArguments;
@@ -84,11 +85,18 @@ class BackendUserOnlyAccessMiddleware implements MiddlewareInterface
      */
     private function getRestrictedRootPageUids(): array
     {
-        if (!(bool) ($this->extensionConfiguration->get(Configuration::EXT_KEY, 'restrictToBackendUsers') ?? false)) {
+        try {
+            $isEnabled = (bool) ($this->extensionConfiguration->get(Configuration::EXT_KEY, 'restrictToBackendUsers') ?? false);
+            $configuredUids = (string) ($this->extensionConfiguration->get(Configuration::EXT_KEY, 'restrictedRootPageUids') ?? '');
+        } catch (ExtensionConfigurationExtensionNotConfiguredException|ExtensionConfigurationPathDoesNotExistException) {
+            // Extension configuration has not been initialized yet, e.g. right after installing this
+            // extension version, before the Install Tool synchronized ext_conf_template.txt defaults.
             return [];
         }
 
-        $configuredUids = (string) ($this->extensionConfiguration->get(Configuration::EXT_KEY, 'restrictedRootPageUids') ?? '');
+        if (!$isEnabled) {
+            return [];
+        }
 
         return array_values(array_unique(array_filter(array_map(
             static fn (string $uid): int => (int) trim($uid),

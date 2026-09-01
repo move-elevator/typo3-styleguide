@@ -20,6 +20,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\{ResponseInterface, ServerRequestInterface};
 use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Authentication\AbstractUserAuthentication;
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Context\{Context, UserAspect};
 use TYPO3\CMS\Core\Routing\PageArguments;
@@ -152,6 +153,20 @@ final class BackendUserOnlyAccessMiddlewareTest extends TestCase
         $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
 
         $this->errorController->expects(self::never())->method('accessDeniedAction');
+
+        $subject = $this->createSubject(rootlinePageUids: [10]);
+        self::assertSame($response, $subject->process($request, $handler));
+    }
+
+    public function testPassesThroughWhenExtensionConfigurationHasNotBeenInitializedYet(): void
+    {
+        $this->extensionConfiguration->method('get')
+            ->willThrowException(new ExtensionConfigurationExtensionNotConfiguredException('not configured', 1509654728));
+
+        $request = $this->createRequestForPage(10);
+        $response = $this->createMock(ResponseInterface::class);
+        $handler = $this->createMock(RequestHandlerInterface::class);
+        $handler->expects(self::once())->method('handle')->with($request)->willReturn($response);
 
         $subject = $this->createSubject(rootlinePageUids: [10]);
         self::assertSame($response, $subject->process($request, $handler));
