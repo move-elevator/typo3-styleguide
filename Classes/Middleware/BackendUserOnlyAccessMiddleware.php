@@ -18,7 +18,7 @@ use Psr\Http\Message\{ResponseInterface, ServerRequestInterface};
 use Psr\Http\Server\{MiddlewareInterface, RequestHandlerInterface};
 use TYPO3\CMS\Core\Configuration\Exception\{ExtensionConfigurationExtensionNotConfiguredException, ExtensionConfigurationPathDoesNotExistException};
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Context\{Context, UserAspect};
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Exception\Page\RootLineException;
 use TYPO3\CMS\Core\Routing\PageArguments;
 use TYPO3\CMS\Core\Utility\{GeneralUtility, RootlineUtility};
@@ -55,8 +55,7 @@ class BackendUserOnlyAccessMiddleware implements MiddlewareInterface
             return $handler->handle($request);
         }
 
-        $userAspect = $this->context->getAspect('backend.user');
-        if ($userAspect instanceof UserAspect && $userAspect->isLoggedIn()) {
+        if ($this->context->getAspect('backend.user')->isLoggedIn()) {
             return $handler->handle($request);
         }
 
@@ -100,9 +99,12 @@ class BackendUserOnlyAccessMiddleware implements MiddlewareInterface
             return [];
         }
 
-        return array_values(array_filter(array_map(
-            static fn (string $uid): int => (int) trim($uid),
-            explode(',', $configuredUids),
-        )));
+        return array_values(array_filter(
+            array_map(
+                static fn (string $uid): int => (int) trim($uid),
+                explode(',', $configuredUids),
+            ),
+            static fn (int $uid): bool => $uid > 0,
+        ));
     }
 }
