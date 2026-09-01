@@ -24,7 +24,7 @@
 	},
 	"require-dev": {
 		"eliashaeussler/version-bumper": "^2.4 || ^3.0 || ^4.0",
-		"hn/typo3-mcp-server": "^0.5",
+		"hn/typo3-mcp-server": "^0.6",
 		"phpunit/phpunit": "^11.0 || ^12.0 || ^13.0",
 		"typo3/cms-base-distribution": "^12.4 || ^13.4 || ^14.0",
 		"typo3/cms-lowlevel": "^12.4 || ^13.4 || ^14.0"
