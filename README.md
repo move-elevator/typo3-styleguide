@@ -24,6 +24,7 @@ This extension provides several tools for a simple TYPO3 based styleguide.
 * Rich backend previews for all styleguide content elements
 * Custom page type for styleguide pages with restricted content element availability
 * Backend layout for styleguide pages
+* Optional restriction of frontend access to logged-in backend users
 * Collection of TYPO3 ViewHelpers for reuse in templates
 
 ## 🔥 Installation
@@ -56,6 +57,7 @@ Include static TypoScript template via the backend or import it:
 - [ViewHelpers](Documentation/ViewHelpers/CLASSES.md)
 - [Backend Layout](Documentation/BackendLayout.md)
 - [Page Type](Documentation/PageType.md)
+- [Restrict Frontend Access to Backend Users](Documentation/BackendUserOnlyAccess.md)
 
 
 ## 🧑‍💻 Contributing

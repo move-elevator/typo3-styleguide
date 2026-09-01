@@ -1,0 +1,5 @@
+# cat=basic; type=boolean; label=Restrict styleguide pages to backend users: If enabled, frontend access to the pages configured below (and all pages beneath them) is restricted to logged-in TYPO3 backend users.
+restrictToBackendUsers = 0
+
+# cat=basic; type=string; label=Restricted root page UIDs: Comma-separated list of page UIDs. Frontend access to these pages and all pages below them is restricted to logged-in backend users when the option above is enabled.
+restrictedRootPageUids =
