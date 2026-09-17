@@ -1,0 +1,11 @@
+/.ddev export-ignore
+/.github export-ignore
+/Tests export-ignore
+/.editorconfig export-ignore
+/.gitignore export-ignore
+/composer-require-checker.json export-ignore
+/composer-unused.php export-ignore
+/packaging_exclude.php export-ignore
+/phpunit.xml.dist export-ignore
+/renovate.json export-ignore
+/version-bumper.yaml export-ignore
