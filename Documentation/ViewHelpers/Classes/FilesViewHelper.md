@@ -15,3 +15,14 @@ Usage:
 </f:for>
 
 ```
+
+The optional `exclude` argument takes a comma-separated list of glob patterns. Every file
+whose name matches one of them is skipped. The wildcards `*` and `?` are supported.
+
+```html
+
+<f:for each="{sg:files(path: path, exclude: '*-alt.svg, legacy-*, *.json')}" as="file">
+    {file}
+</f:for>
+
+```
