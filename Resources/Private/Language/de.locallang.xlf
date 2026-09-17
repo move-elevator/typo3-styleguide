@@ -123,6 +123,14 @@
 				<source />
 				<target>Verzeichnispfad</target>
 			</trans-unit>
+			<trans-unit id="contentelement.icons.exclude">
+				<source />
+				<target>Ausschließen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.exclude.description">
+				<source />
+				<target>Kommagetrennte Dateinamen-Muster, die ausgeschlossen werden, z. B. "*-alt.svg, legacy-*". Die Platzhalter * und ? werden unterstützt.</target>
+			</trans-unit>
 			<trans-unit id="contentelement.images.label">
 				<source />
 				<target>Bilder</target>

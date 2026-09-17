@@ -4,6 +4,7 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_colors int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_fonts int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_icons_path varchar(255) DEFAULT '' NOT NULL,
+	tx_typo3styleguide_icons_exclude varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_tableofcontents_layout varchar(10) DEFAULT 'list' NOT NULL,
 );

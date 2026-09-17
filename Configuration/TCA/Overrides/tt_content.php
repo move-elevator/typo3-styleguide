@@ -195,6 +195,17 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 'placeholder' => 'EXT:sitepackage/Resources/Public/Icons/',
             ],
         ],
+        'tx_typo3styleguide_icons_exclude' => [
+            'label' => $lll.'contentelement.icons.exclude',
+            'description' => $lll.'contentelement.icons.exclude.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => '*-alt.svg, legacy-*, *.json',
+            ],
+        ],
         'tx_typo3styleguide_images' => [
             'label' => $lll.'contentelement.images.items',
             'config' => [
@@ -303,7 +314,7 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_icons'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_typo3styleguide_icons_path,
+                    --palette--;;header,tx_typo3styleguide_icons_path,tx_typo3styleguide_icons_exclude,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,

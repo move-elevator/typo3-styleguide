@@ -93,6 +93,12 @@
 			<trans-unit id="contentelement.icons.path">
 				<source>Directory path</source>
 			</trans-unit>
+			<trans-unit id="contentelement.icons.exclude">
+				<source>Exclude</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.exclude.description">
+				<source>Comma-separated file name patterns to exclude, e.g. "*-alt.svg, legacy-*". The wildcards * and ? are supported.</source>
+			</trans-unit>
 			<trans-unit id="contentelement.images.label">
 				<source>Images</source>
 			</trans-unit>
