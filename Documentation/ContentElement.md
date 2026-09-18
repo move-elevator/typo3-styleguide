@@ -50,8 +50,9 @@ Each font entry renders a specimen text in the specified font family and weight.
 The `Icons` content element displays all icon files from a given directory. Configure it with:
 
 - **Path** — An `EXT:` path pointing to the icon directory (e.g. `EXT:sitepackage/Resources/Public/Icons/`)
+- **Exclude** — Optional comma-separated list of file name patterns to skip (e.g. `*-alt.svg, legacy-*, *.json`). The wildcards `*` and `?` are supported.
 
-All files in the directory are rendered as icons with their filename as label.
+All files in the directory that are not excluded are rendered as icons with their filename as label.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-images.svg" height="20"> Images
 

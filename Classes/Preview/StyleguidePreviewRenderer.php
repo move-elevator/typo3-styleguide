@@ -13,11 +13,13 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\Preview;
 
+use MoveElevator\Styleguide\Utility\FileListUtility;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Database\{Connection, ConnectionPool};
 use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 
+use function count;
 use function htmlspecialchars;
 use function is_array;
 
@@ -118,21 +120,12 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         }
 
         $absDir = GeneralUtility::getFileAbsFileName($path);
-        $files = ('' !== $absDir && is_dir($absDir)) ? scandir($absDir) : false;
-        if (false === $files) {
-            return $this->renderFluidPreview('Icons', ['path' => $path, 'icons' => [], 'hasMore' => false]);
-        }
+        $files = FileListUtility::listFiles($absDir, (string) ($row['tx_typo3styleguide_icons_exclude'] ?? ''));
 
         $icons = [];
         $hasMore = false;
-        $count = 0;
         foreach ($files as $file) {
-            if ('.' === $file || '..' === $file || !is_file($absDir.'/'.$file)) {
-                continue;
-            }
-
-            ++$count;
-            if ($count > 20) {
+            if (count($icons) >= 20) {
                 $hasMore = true;
 
                 break;

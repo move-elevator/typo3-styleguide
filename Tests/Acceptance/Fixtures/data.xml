@@ -1062,6 +1062,7 @@ page.100 {
                 <field index="date" type="integer">0</field>
                 <field index="tx_impexp_origuid" type="integer">0</field>
                 <field index="tx_typo3styleguide_icons_path">EXT:core/Resources/Public/Icons/T3Icons/svgs/content/</field>
+                <field index="tx_typo3styleguide_icons_exclude"></field>
                 <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
             </fieldlist>
             <related index="rels" type="array"></related>
