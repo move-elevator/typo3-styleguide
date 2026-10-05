@@ -30,7 +30,3 @@ parameters:
 			identifier: function.impossibleType
 			path: ../../Classes/Preview/StyleguidePreviewRenderer.php
 			reportUnmatched: false
-		# The TYPO3 itemsProcFunc API dictates the by-reference parameter
-		-
-			identifier: ergebnis.noParameterPassedByReference
-			path: ../../Classes/UserFunc/CTypeItemsProcFunc.php
