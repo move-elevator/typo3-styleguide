@@ -8,6 +8,7 @@ This extension provides the following content elements for building a styleguide
 - [Icons](#icons)
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
+- [Page Links](#page-links)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -71,3 +72,10 @@ The `Table of Contents` content element renders a navigable overview of the chil
 > In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
+
+## <img src="../Resources/Public/Icons/content-styleguide-pagelinks.svg" height="20"> Page Links
+
+The `Page Links` content element renders links to manually selected pages of any page type. Use it to reference demo pages that cannot use the [Styleguide page type](PageType.md), e.g. because content elements are restricted per page type in your project, and are therefore not listed by the [Table of Contents](#table-of-contents).
+
+- **Pages** — The pages to link, rendered in the selected order. Pages hidden in menus are included.
+- **Layout** — `List` for a flat list, or `Cards` for a card grid, matching the [Table of Contents](#table-of-contents) styling

@@ -175,6 +175,18 @@
 				<source />
 				<target>Karten</target>
 			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.label">
+				<source />
+				<target>Seitenlinks</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.description">
+				<source />
+				<target>Links auf manuell ausgewählte Seiten beliebigen Seitentyps, als Liste oder Karten. Für Demoseiten, die keine Styleguide-Seiten sein können, z. B. wegen Inhaltselement-Beschränkungen des Seitentyps.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.pages">
+				<source />
+				<target>Seiten</target>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />
 				<target>Repräsentatives Inhaltselement</target>
