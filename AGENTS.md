@@ -19,7 +19,7 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 - `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`) and `Public/`
 - `Tests/Unit/`: PHPUnit unit tests
 - `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment
-- `Tests/CGL/`: separate Composer project holding all code quality tools and their configs
+- `Tests/CGL/`: separate Composer project holding all code quality tools and their configs. Its `composer.lock` is committed and updated by Renovate, so tool releases only reach CI through a Renovate PR
 - `Documentation/`: generated ViewHelper docs and content element notes
 - `.ddev/`: DDEV setup with custom commands (`cgl`, `install`, `all`, `typo3`, and one command per TYPO3 version)
 - `ext_localconf.php`, `ext_tables.php`, `ext_tables.sql`, `ext_emconf.php`: classic extension registration files
