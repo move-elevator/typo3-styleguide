@@ -235,6 +235,34 @@
     text-decoration: underline dotted;
 }
 
+.typo3-styleguide__contrast {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace, sans-serif;
+    font-size: 0.8125rem;
+    gap: 6px;
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    width: 200px;
+}
+
+.typo3-styleguide__contrast-item {
+    border: 2px solid var(--typo3-sg-text-primary);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--typo3-sg-text-primary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+    padding: 4px 10px;
+}
+
+.typo3-styleguide__contrast-item--pass {
+    background: var(--typo3-sg-text-primary);
+    color: var(--typo3-sg-bg-primary);
+}
+
 .typo3-styleguide__notice {
     border: 2px dashed var(--typo3-sg-text-primary);
     border-radius: 10px;

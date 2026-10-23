@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace MoveElevator\Styleguide\Tests\Unit\ViewHelpers;
 
 use InvalidArgumentException;
-use MoveElevator\Styleguide\ViewHelpers\{ContrastColorViewHelper, IsHexColorViewHelper, RgbColorViewHelper};
+use MoveElevator\Styleguide\ViewHelpers\{ContrastColorViewHelper, ContrastRatioViewHelper, IsHexColorViewHelper, RgbColorViewHelper};
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -39,6 +39,13 @@ final class ColorViewHelpersTest extends TestCase
         $this->assertFalse($this->isHexColor('orange'));
     }
 
+    public function testContrastRatioIsRoundedDownSoNoCriterionIsOverstated(): void
+    {
+        $this->assertSame(21.0, $this->contrastRatio('#FFFFFF', '#000000'));
+        $this->assertSame(4.54, $this->contrastRatio('#767676', '#FFFFFF'));
+        $this->assertSame(4.47, $this->contrastRatio('#777777', '#FFFFFF'));
+    }
+
     public function testContrastColorReturnsBlackOnLightAndWhiteOnDark(): void
     {
         $this->assertSame('#000000', $this->contrastFor('#E4E2D4'));
@@ -51,6 +58,14 @@ final class ColorViewHelpersTest extends TestCase
         $this->expectExceptionCode(4518636088);
 
         $this->contrastFor('#12345');
+    }
+
+    private function contrastRatio(string $color, string $against): float
+    {
+        $viewHelper = new ContrastRatioViewHelper();
+        $viewHelper->setArguments(['color' => $color, 'against' => $against]);
+
+        return $viewHelper->render();
     }
 
     private function isHexColor(string $color): bool

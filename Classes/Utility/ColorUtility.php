@@ -15,7 +15,10 @@ namespace MoveElevator\Styleguide\Utility;
 
 use InvalidArgumentException;
 
+use function array_map;
 use function hexdec;
+use function max;
+use function min;
 use function preg_match;
 use function substr;
 
@@ -32,6 +35,19 @@ final class ColorUtility
     public static function isHex(string $hex): bool
     {
         return 1 === preg_match(self::HEX_PATTERN, $hex);
+    }
+
+    /**
+     * Contrast ratio of two colors according to WCAG 2.x, from 1 (identical) to 21 (black on white).
+     *
+     * @throws InvalidArgumentException if one of the values is not a valid HEX color
+     */
+    public static function contrastRatio(string $first, string $second): float
+    {
+        $firstLuminance = self::relativeLuminance($first);
+        $secondLuminance = self::relativeLuminance($second);
+
+        return (max($firstLuminance, $secondLuminance) + 0.05) / (min($firstLuminance, $secondLuminance) + 0.05);
     }
 
     /**
@@ -54,5 +70,16 @@ final class ColorUtility
             (int) hexdec(substr($digits, 2, 2)),
             (int) hexdec(substr($digits, 4, 2)),
         ];
+    }
+
+    private static function relativeLuminance(string $hex): float
+    {
+        [$red, $green, $blue] = array_map(static function (int $channel): float {
+            $value = $channel / 255;
+
+            return $value <= 0.03928 ? $value / 12.92 : (($value + 0.055) / 1.055) ** 2.4;
+        }, self::hexToRgb($hex));
+
+        return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
     }
 }

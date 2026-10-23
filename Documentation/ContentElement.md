@@ -38,6 +38,14 @@ The `Colors` content element displays a color palette. Each color is defined as 
 
 Colors are rendered as swatches with their HEX value and label. The RGB value is derived from the HEX value and shown below the swatch together with the optional values. HEX, RGB and the variable name are copied to the clipboard on click.
 
+Each color shows its contrast ratio against white and a dark color, calculated according to WCAG 2.x. The label tells whether the pair reaches `AA` (4.5:1) or `AAA` (7:1) for text and 3:1 for large text and interface elements. A solid badge means the text requirement is met, an outlined one means it is not, and the label is always written out. Ratios are rounded down, so a value below a threshold is never shown as reaching it.
+
+The dark color defaults to `#000000`, falls back to it when the value is not a valid six digit HEX color, and can be changed with TypoScript:
+
+```
+tt_content.typo3styleguide_colors.settings.contrastDark = #1a1a1a
+```
+
 A color with an invalid HEX value shows a notice in its place instead of breaking the page. Copying is announced to screen readers through a status message.
 
 The rich text field of the element can be used for usage rules, e.g. when to use which color. Colors can be grouped by using the element header and several `Colors` elements.

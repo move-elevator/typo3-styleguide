@@ -51,6 +51,32 @@ final class ColorUtilityTest extends TestCase
         $this->assertTrue(ColorUtility::isHex($hex));
     }
 
+    #[DataProvider('contrastPairProvider')]
+    public function testContrastRatioMatchesKnownPairs(string $first, string $second, float $expected): void
+    {
+        $this->assertEqualsWithDelta($expected, ColorUtility::contrastRatio($first, $second), 0.01);
+    }
+
+    /**
+     * @return iterable<string, array{string, string, float}>
+     */
+    public static function contrastPairProvider(): iterable
+    {
+        yield 'black on white' => ['#FFFFFF', '#000000', 21.0];
+        yield 'order does not matter' => ['#000000', '#FFFFFF', 21.0];
+        yield 'identical colors' => ['#FF6418', '#FF6418', 1.0];
+        yield 'just above AA for text' => ['#767676', '#FFFFFF', 4.54];
+        yield 'just below AA for text' => ['#777777', '#FFFFFF', 4.48];
+    }
+
+    public function testContrastRatioRejectsInvalidColor(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionCode(4518636088);
+
+        ColorUtility::contrastRatio('#FF6418', 'black');
+    }
+
     #[DataProvider('invalidHexProvider')]
     public function testIsHexRejectsInvalidHex(string $hex): void
     {

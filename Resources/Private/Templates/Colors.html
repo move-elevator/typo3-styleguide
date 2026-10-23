@@ -16,6 +16,8 @@
     </div>
 </f:if>
 
+<f:variable name="contrastDark"><f:if condition="{sg:isHexColor(color: settings.contrastDark)}"><f:then>{settings.contrastDark}</f:then><f:else>#000000</f:else></f:if></f:variable>
+
 <div class="typo3-styleguide__frame">
     <div class="typo3-styleguide__element-container">
         <f:for each="{colors}" as="color">
@@ -60,6 +62,12 @@
                             </div>
                         </f:if>
                     </dl>
+                    <f:variable name="ratioLight" value="{sg:contrastRatio(color: color.data.color, against: '#FFFFFF')}"/>
+                    <f:variable name="ratioDark" value="{sg:contrastRatio(color: color.data.color, against: contrastDark)}"/>
+                    <ul class="typo3-styleguide__contrast" aria-label="WCAG contrast of this color">
+                        <f:render partial="Colors/ContrastBadge" arguments="{label: 'White', ratio: ratioLight}"/>
+                        <f:render partial="Colors/ContrastBadge" arguments="{label: contrastDark, ratio: ratioDark}"/>
+                    </ul>
                 </div>
                 </f:then>
                 <f:else>

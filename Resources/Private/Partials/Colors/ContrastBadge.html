@@ -1,0 +1,16 @@
+<li class="typo3-styleguide__contrast-item{f:if(condition: '{ratio} >= 4.5', then: ' typo3-styleguide__contrast-item--pass')}">
+    <strong>{label} {ratio}:1</strong>
+    <span>Text:
+        <f:if condition="{ratio} >= 7">
+            <f:then>AAA</f:then>
+            <f:else if="{ratio} >= 4.5">AA</f:else>
+            <f:else>Fail</f:else>
+        </f:if>
+    </span>
+    <span>UI:
+        <f:if condition="{ratio} >= 3">
+            <f:then>Pass</f:then>
+            <f:else>Fail</f:else>
+        </f:if>
+    </span>
+</li>

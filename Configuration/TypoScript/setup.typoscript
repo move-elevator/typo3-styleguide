@@ -11,6 +11,7 @@ tt_content {
   typo3styleguide_colors =< lib.contentElement
   typo3styleguide_colors {
     templateName = Colors
+    settings.contrastDark = #000000
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_color
