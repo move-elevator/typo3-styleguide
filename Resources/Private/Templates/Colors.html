@@ -10,16 +10,24 @@
 <f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
 <f:asset.script identifier="typo3styleguide_element_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/copy.js" />
 
+<f:if condition="{data.bodytext}">
+    <div class="typo3-styleguide__rules">
+        <f:format.html>{data.bodytext}</f:format.html>
+    </div>
+</f:if>
 
 <div class="typo3-styleguide__frame">
     <div class="typo3-styleguide__element-container">
         <f:for each="{colors}" as="color">
             <f:if condition="{color.data.color}">
+              <f:if condition="{sg:isHexColor(color: color.data.color)}">
+                <f:then>
                 <f:variable name="contrastColor">
                     <sg:contrastColor color="{color.data.color}"/>
                 </f:variable>
-                <div class="typo3-styleguide__element" data-copy="{color.data.color}">
-                    <div class="typo3-styleguide__color"
+                <f:variable name="rgb" value="{sg:rgbColor(color: color.data.color)}"/>
+                <div class="typo3-styleguide__element">
+                    <div class="typo3-styleguide__color" data-copy="{color.data.color}"
                          style="background-color: {color.data.color}; color: {contrastColor};">
                         <p class="typo3-styleguide__color-value">
                             {color.data.color}
@@ -28,7 +36,38 @@
                             {color.data.label}
                         </p>
                     </div>
+                    <dl class="typo3-styleguide__color-meta">
+                        <div class="typo3-styleguide__color-meta-row">
+                            <dt>RGB</dt>
+                            <dd><button type="button" class="typo3-styleguide__copy" data-copy="{rgb}">{rgb}</button></dd>
+                        </div>
+                        <f:if condition="{color.data.cmyk}">
+                            <div class="typo3-styleguide__color-meta-row">
+                                <dt>CMYK</dt>
+                                <dd>{color.data.cmyk}</dd>
+                            </div>
+                        </f:if>
+                        <f:if condition="{color.data.pms}">
+                            <div class="typo3-styleguide__color-meta-row">
+                                <dt>PMS</dt>
+                                <dd>{color.data.pms}</dd>
+                            </div>
+                        </f:if>
+                        <f:if condition="{color.data.variable}">
+                            <div class="typo3-styleguide__color-meta-row">
+                                <dt>Variable</dt>
+                                <dd><button type="button" class="typo3-styleguide__copy" data-copy="{color.data.variable}">{color.data.variable}</button></dd>
+                            </div>
+                        </f:if>
+                    </dl>
                 </div>
+                </f:then>
+                <f:else>
+                    <div class="typo3-styleguide__element">
+                        <p class="typo3-styleguide__notice">Invalid HEX color: {color.data.color}</p>
+                    </div>
+                </f:else>
+              </f:if>
             </f:if>
         </f:for>
     </div>

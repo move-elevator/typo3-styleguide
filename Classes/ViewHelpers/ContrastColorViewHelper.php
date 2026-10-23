@@ -13,10 +13,8 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers;
 
-use InvalidArgumentException;
+use MoveElevator\Styleguide\Utility\ColorUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-
-use function strlen;
 
 /**
  * ContrastColorViewHelper.
@@ -33,14 +31,7 @@ class ContrastColorViewHelper extends AbstractViewHelper
 
     public function render(): string
     {
-        $hexColor = ltrim((string) $this->arguments['color'], '#');
-        if (6 !== strlen($hexColor)) {
-            throw new InvalidArgumentException('Invalid HEX color code: '.$this->arguments['color'], 4518636088);
-        }
-
-        $r = hexdec(substr($hexColor, 0, 2));
-        $g = hexdec(substr($hexColor, 2, 2));
-        $b = hexdec(substr($hexColor, 4, 2));
+        [$r, $g, $b] = ColorUtility::hexToRgb((string) $this->arguments['color']);
 
         $brightness = ($r * 0.299 + $g * 0.587 + $b * 0.114);
 

@@ -4,18 +4,27 @@ class Copy {
   }
 
   init() {
-    document.querySelectorAll('.typo3-styleguide__element[data-copy]').forEach(el => {
-      el.setAttribute('tabindex', '0');
-      el.setAttribute('role', 'button');
-      el.setAttribute('aria-label', `Copy "${el.getAttribute('data-copy')}" to clipboard`);
+    this.status = document.createElement('div');
+    this.status.setAttribute('role', 'status');
+    this.status.className = 'typo3-styleguide__sr-only';
+    document.body.appendChild(this.status);
+
+    document.querySelectorAll('.typo3-styleguide__element[data-copy], .typo3-styleguide__element [data-copy]').forEach(el => {
+      if (!el.hasAttribute('aria-label')) {
+        el.setAttribute('aria-label', `Copy "${el.getAttribute('data-copy')}" to clipboard`);
+      }
 
       el.addEventListener('click', () => this.copyToClipboard(el));
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.copyToClipboard(el);
-        }
-      });
+      if (el.tagName !== 'BUTTON') {
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('role', 'button');
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.copyToClipboard(el);
+          }
+        });
+      }
     });
   }
 
@@ -58,21 +67,32 @@ class Copy {
     document.body.removeChild(textArea);
   }
 
+  announce(text) {
+    this.status.textContent = '';
+    requestAnimationFrame(() => {
+      this.status.textContent = text;
+    });
+  }
+
   showCopiedHint(el, message = 'Copied!', type = 'success') {
-    const existingHint = el.querySelector('.copy-hint');
+    const host = el.closest('.typo3-styleguide__element');
+    const existingHint = host.querySelector('.copy-hint');
     if (existingHint) {
       existingHint.remove();
     }
 
+    this.announce(type === 'error' ? message : `Copied ${el.getAttribute('data-copy')}`);
+
     const hint = document.createElement('div');
     hint.textContent = message;
+    hint.setAttribute('aria-hidden', 'true');
     hint.classList.add('copy-hint');
     if (type === 'error') {
       hint.classList.add('copy-hint--error');
     }
 
-    el.style.position = 'relative';
-    el.appendChild(hint);
+    host.style.position = 'relative';
+    host.appendChild(hint);
 
     requestAnimationFrame(() => {
       hint.style.opacity = '1';
@@ -82,6 +102,7 @@ class Copy {
     setTimeout(() => {
       hint.style.opacity = '0';
       hint.style.transform = 'translate(-50%, -50%) scale(0.9)';
+      this.status.textContent = '';
       setTimeout(() => {
         if (hint.parentNode) {
           hint.remove();

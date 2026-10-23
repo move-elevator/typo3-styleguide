@@ -65,7 +65,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.colors.description">
 				<source />
-				<target>Farbpalette des Designsystems. Ein Inline-Datensatz pro Farbe, mit HEX-Wert und optionalem Namen. Dient der Dokumentation der Palette, nicht der Gestaltung einer Seite.</target>
+				<target>Farbpalette des Designsystems. Ein Inline-Datensatz pro Farbe, mit HEX-Wert und optionalem Namen, CMYK, PMS und Variablennamen. Der RGB-Wert wird aus HEX abgeleitet. Dient der Dokumentation der Palette, nicht der Gestaltung einer Seite.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.colors.items">
 				<source />
@@ -82,6 +82,18 @@
 			<trans-unit id="tx_typo3styleguide_color.label">
 				<source />
 				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.cmyk">
+				<source />
+				<target>CMYK</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.pms">
+				<source />
+				<target>PMS (Pantone)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.variable">
+				<source />
+				<target>Variablenname</target>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source />

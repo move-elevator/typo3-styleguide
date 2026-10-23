@@ -92,7 +92,8 @@
     }
 }
 
-.typo3-styleguide__element[data-copy]:hover {
+.typo3-styleguide__element[data-copy]:hover,
+.typo3-styleguide__element [data-copy]:hover {
     cursor: pointer;
 }
 
@@ -194,6 +195,62 @@
     text-align: center;
 }
 
+.typo3-styleguide__color-meta {
+    font-family: monospace, sans-serif;
+    font-size: 0.875rem;
+    margin: 10px 0 0;
+    width: 200px;
+    color: var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide__color-meta-row {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.typo3-styleguide__color-meta dt {
+    font-weight: bolder;
+}
+
+.typo3-styleguide__color-meta dd {
+    margin: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+.typo3-styleguide__copy {
+    align-items: center;
+    background: none;
+    border: 0;
+    color: inherit;
+    display: inline-flex;
+    font: inherit;
+    justify-content: flex-end;
+    min-height: 44px;
+    padding: 0;
+    text-decoration: underline dotted;
+}
+
+.typo3-styleguide__notice {
+    border: 2px dashed var(--typo3-sg-text-primary);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--typo3-sg-text-primary);
+    font-family: monospace, sans-serif;
+    margin: 0;
+    overflow-wrap: anywhere;
+    padding: 16px;
+    width: 200px;
+}
+
+.typo3-styleguide__rules {
+    margin: 0 0 20px;
+    color: var(--typo3-sg-text-primary);
+}
+
 .typo3-styleguide__font {
     padding: 40px;
     width: 100%;
@@ -213,8 +270,9 @@
     padding: 0;
 }
 
-.typo3-styleguide__element[data-copy]:focus {
-    outline: 2px solid var(--typo3-sg-accent);
+.typo3-styleguide__element[data-copy]:focus,
+.typo3-styleguide__element [data-copy]:focus {
+    outline: 2px solid var(--typo3-sg-text-primary);
     outline-offset: 2px;
 }
 
@@ -235,11 +293,26 @@
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
-    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .copy-hint { transition: none; }
+@media (prefers-reduced-motion: no-preference) {
+    .copy-hint { transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+}
+
+@media (forced-colors: active) {
+    .typo3-styleguide__copy {
+        border: 1px solid ButtonText;
+        padding: 0 8px;
+    }
+}
+
+.typo3-styleguide__sr-only {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 .copy-hint--error {

@@ -15,6 +15,9 @@ CREATE TABLE tx_typo3styleguide_color
 	parenttable varchar(255) DEFAULT '' NOT NULL,
 	color varchar(7) DEFAULT '' NOT NULL,
 	label varchar(255) DEFAULT '' NOT NULL,
+	cmyk varchar(50) DEFAULT '' NOT NULL,
+	pms varchar(50) DEFAULT '' NOT NULL,
+	variable varchar(255) DEFAULT '' NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_font

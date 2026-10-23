@@ -61,10 +61,40 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'cmyk' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.cmyk',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'max' => 50,
+                'eval' => 'trim',
+                'placeholder' => '0, 72, 100, 0',
+            ],
+        ],
+        'pms' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.pms',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'max' => 50,
+                'eval' => 'trim',
+                'placeholder' => 'PANTONE 165 C',
+            ],
+        ],
+        'variable' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.variable',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => '$color-primary-01',
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'color,label',
+            'showitem' => 'color,label,cmyk,pms,variable',
         ],
     ],
 ];
