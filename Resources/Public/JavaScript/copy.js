@@ -44,6 +44,7 @@ class Copy {
   }
 
   fallbackCopyTextToClipboard(text, el) {
+    const previouslyFocused = document.activeElement;
     const textArea = document.createElement('textarea');
     textArea.value = text;
     textArea.style.position = 'fixed';
@@ -65,13 +66,18 @@ class Copy {
     }
 
     document.body.removeChild(textArea);
+    previouslyFocused?.focus();
   }
 
   announce(text) {
+    clearTimeout(this.statusTimer);
     this.status.textContent = '';
     requestAnimationFrame(() => {
       this.status.textContent = text;
     });
+    this.statusTimer = setTimeout(() => {
+      this.status.textContent = '';
+    }, 1500);
   }
 
   showCopiedHint(el, message = 'Copied!', type = 'success') {
@@ -102,7 +108,6 @@ class Copy {
     setTimeout(() => {
       hint.style.opacity = '0';
       hint.style.transform = 'translate(-50%, -50%) scale(0.9)';
-      this.status.textContent = '';
       setTimeout(() => {
         if (hint.parentNode) {
           hint.remove();
