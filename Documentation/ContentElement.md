@@ -39,11 +39,17 @@ Colors are rendered as swatches with their HEX value and label.
 
 The `Fonts` content element showcases available fonts. Each font is defined as an inline record with:
 
-- **Font** — Font family name (e.g. `Lexend`)
-- **Font Weight** — Optional weight value (e.g. `700`)
+- **Font** — Font family name (e.g. `Gabarito`), quote names that need it
+- **Font Weights** — Optional comma separated weights (e.g. `400, 700`)
+- **Fallback fonts** — Optional fonts that follow the family (e.g. `system-ui, sans-serif`)
 - **Label** — Optional display name
+- **Source** — Optional note on where the font comes from (e.g. `Self-hosted (WOFF2)`)
+- **Sample text** — Optional text for the specimen, a placeholder text is used when empty
 
-Each font entry renders a specimen text in the specified font family and weight.
+Each font entry renders one specimen per weight in the specified font family, with the fallback fonts applied. Below the specimens, a `font-family` snippet is generated that is copied to the clipboard on click.
+
+> [!TIP]
+> Host the font yourself as WOFF2 instead of loading it from a third-party font service, which transfers the visitor's IP address. Use `system-ui` as the last fallback so the page stays readable while the font loads.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-icons.svg" height="20"> Icons
 

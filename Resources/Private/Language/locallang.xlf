@@ -67,7 +67,7 @@
 				<source>Fonts</source>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.description">
-				<source>Font specimens of the design system. One inline record per font, with family and optional weight. Each entry renders sample text in that font.</source>
+				<source>Font specimens of the design system. One inline record per font, with family, optional weights, fallback fonts, source and sample text. Each weight renders sample text in that font.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.items">
 				<source>Fonts</source>
@@ -79,7 +79,16 @@
 				<source>Font family</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font.font_weight">
-				<source>Font weight</source>
+				<source>Font weights (comma separated)</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.fallback">
+				<source>Fallback fonts</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.source">
+				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.sample">
+				<source>Sample text</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font.label">
 				<source>Label</source>

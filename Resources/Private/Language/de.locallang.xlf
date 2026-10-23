@@ -89,7 +89,7 @@
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.description">
 				<source />
-				<target>Schriftmuster des Designsystems. Ein Inline-Datensatz pro Schrift, mit Familie und optionalem Schnitt. Jeder Eintrag zeigt einen Beispieltext in dieser Schrift.</target>
+				<target>Schriftmuster des Designsystems. Ein Inline-Datensatz pro Schrift, mit Familie, optionalen Schriftstärken, Fallback-Schriften, Quelle und Beispieltext. Jede Schriftstärke zeigt einen Beispieltext in dieser Schrift.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.items">
 				<source />
@@ -105,7 +105,19 @@
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font.font_weight">
 				<source />
-				<target>Schriftstärke</target>
+				<target>Schriftstärken (kommagetrennt)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.fallback">
+				<source />
+				<target>Fallback-Schriften</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.source">
+				<source />
+				<target>Quelle</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.sample">
+				<source />
+				<target>Beispieltext</target>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font.label">
 				<source />

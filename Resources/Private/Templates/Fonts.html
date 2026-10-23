@@ -9,25 +9,31 @@
 
 <f:asset.css identifier="typo3styleguide_element_css"
              href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+<f:asset.script identifier="typo3styleguide_element_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/copy.js" />
 
 <div class="typo3-styleguide__frame">
     <div class="typo3-styleguide__element-container">
         <f:for each="{fonts}" as="font">
+            <f:variable name="stack" value="{font.data.font}{f:if(condition: font.data.fallback, then: ', {font.data.fallback}')}"/>
+            <f:variable name="weights" value="{sg:format.split(value: font.data.font_weight)}"/>
+            <f:variable name="label" value="{f:if(condition: font.data.label, then: font.data.label, else: font.data.font)}"/>
+            <f:variable name="sample" value="{f:if(condition: font.data.sample, then: font.data.sample, else: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est')}"/>
             <div class="typo3-styleguide__element">
-                <div class="typo3-styleguide__font" style="font-family: {font.data.font};{f:if(condition: '{font.data.font_weight}', then: ' font-weight: {font.data.font_weight};')}">
-                    <p class="typo3-styleguide__font-label">
-                        {f:if(condition: font.data.label, then: font.data.label, else: font.data.font)}
-                    </p>
-                    <p class="typo3-styleguide__font-example">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                    </p>
-                    <p class="typo3-styleguide__font-example">
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
-                        abcdefghijklmnopqrstuvwxyz<br/>
-                        1234567890!@#$%^&*()
-                    </p>
-                </div>
+                <f:if condition="{weights}">
+                    <f:then>
+                        <f:for each="{weights}" as="weight">
+                            <f:render partial="Fonts/Specimen" arguments="{stack: stack, weight: weight, label: label, sample: sample}"/>
+                        </f:for>
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Fonts/Specimen" arguments="{stack: stack, weight: '', label: label, sample: sample}"/>
+                    </f:else>
+                </f:if>
+                <f:if condition="{font.data.source}">
+                    <p class="typo3-styleguide__font-source">Source: {font.data.source}</p>
+                </f:if>
             </div>
+            <div class="typo3-styleguide__element typo3-styleguide__snippet" data-copy="font-family: {stack};">font-family: {stack};</div>
         </f:for>
     </div>
 </div>

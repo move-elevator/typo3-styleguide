@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace MoveElevator\Styleguide\Preview;
 
 use MoveElevator\Styleguide\Utility\FileListUtility;
+use MoveElevator\Styleguide\ViewHelpers\Format\SplitViewHelper;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Database\{Connection, ConnectionPool};
@@ -91,19 +92,25 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         $fonts = [];
         foreach ($children as $child) {
             $font = (string) $child['font'];
-            $weight = (string) $child['font_weight'];
+            $fallback = (string) $child['fallback'];
             $label = (string) $child['label'];
-
-            $style = 'font-family:'.$font.';font-size:16px;';
-            if ('' !== $weight) {
-                $style .= 'font-weight:'.$weight.';';
+            $weights = SplitViewHelper::split((string) $child['font_weight']);
+            if ([] === $weights) {
+                $weights = [''];
             }
 
-            $fonts[] = [
-                'label' => '' !== $label ? $label : $font,
-                'weight' => $weight,
-                'style' => $style,
-            ];
+            foreach ($weights as $weight) {
+                $style = 'font-family:'.('' !== $fallback ? $font.', '.$fallback : $font).';font-size:16px;';
+                if ('' !== $weight) {
+                    $style .= 'font-weight:'.$weight.';';
+                }
+
+                $fonts[] = [
+                    'label' => '' !== $label ? $label : $font,
+                    'weight' => $weight,
+                    'style' => $style,
+                ];
+            }
         }
 
         return $this->renderFluidPreview('Fonts', ['fonts' => $fonts]);

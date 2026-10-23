@@ -49,17 +49,27 @@ return [
                 'max' => 255,
                 'eval' => 'trim',
                 'required' => true,
-                'placeholder' => 'Arial, sans-serif',
+                'placeholder' => 'Gabarito',
             ],
         ],
         'font_weight' => [
             'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.font_weight',
             'config' => [
                 'type' => 'input',
-                'size' => 10,
-                'max' => 30,
+                'size' => 20,
+                'max' => 100,
                 'eval' => 'trim',
-                'placeholder' => '400',
+                'placeholder' => '400, 700',
+            ],
+        ],
+        'fallback' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.fallback',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => 'system-ui, sans-serif',
             ],
         ],
         'label' => [
@@ -71,10 +81,28 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'source' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.source',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => 'Self-hosted (WOFF2)',
+            ],
+        ],
+        'sample' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.sample',
+            'config' => [
+                'type' => 'text',
+                'rows' => 3,
+                'cols' => 40,
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'font,font_weight,label',
+            'showitem' => 'font,font_weight,fallback,label,source,sample',
         ],
     ],
 ];

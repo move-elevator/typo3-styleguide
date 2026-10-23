@@ -22,8 +22,11 @@ CREATE TABLE tx_typo3styleguide_font
 	parentid int(11) DEFAULT 0 NOT NULL,
 	parenttable varchar(255) DEFAULT '' NOT NULL,
 	font varchar(255) DEFAULT '' NOT NULL,
-	font_weight varchar(30) DEFAULT '' NOT NULL,
+	font_weight varchar(100) DEFAULT '' NOT NULL,
+	fallback varchar(255) DEFAULT '' NOT NULL,
 	label varchar(255) DEFAULT '' NOT NULL,
+	source varchar(255) DEFAULT '' NOT NULL,
+	sample text,
 );
 
 CREATE TABLE tx_typo3styleguide_image

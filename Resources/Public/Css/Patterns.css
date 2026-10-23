@@ -208,6 +208,27 @@
     margin-bottom: 2rem;
 }
 
+.typo3-styleguide__snippet {
+    background: var(--typo3-sg-bg-secondary);
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: var(--typo3-sg-text-primary);
+    font-family: monospace, sans-serif;
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+    min-height: 44px;
+    overflow-wrap: anywhere;
+    padding: 12px;
+    width: 100%;
+}
+
+.typo3-styleguide__font-source {
+    color: var(--typo3-sg-text-primary);
+    font-family: monospace, sans-serif;
+    margin: -1rem 0 2rem;
+}
+
 .typo3-styleguide__font p {
     margin: 0;
     padding: 0;

@@ -5,3 +5,4 @@
 - [FilesViewHelper](./Classes/FilesViewHelper.md)
 - [SlugViewHelper](./Classes/SlugViewHelper.md)
 - [FilenameViewHelper](./Classes/FilenameViewHelper.md)
+- [SplitViewHelper](./Classes/SplitViewHelper.md)

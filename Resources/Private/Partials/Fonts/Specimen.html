@@ -1,0 +1,13 @@
+<div class="typo3-styleguide__font" style="font-family: {stack};{f:if(condition: weight, then: ' font-weight: {weight};')}">
+    <p class="typo3-styleguide__font-label">
+        {label}<f:if condition="{weight}"> (weight {weight})</f:if>
+    </p>
+    <p class="typo3-styleguide__font-example">
+        <f:format.nl2br>{sample}</f:format.nl2br>
+    </p>
+    <p class="typo3-styleguide__font-example" aria-hidden="true">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+        abcdefghijklmnopqrstuvwxyz<br/>
+        1234567890!@#$%^&*()
+    </p>
+</div>
