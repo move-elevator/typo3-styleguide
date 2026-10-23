@@ -38,6 +38,8 @@ The `Colors` content element displays a color palette. Each color is defined as 
 
 Colors are rendered as swatches with their HEX value and label. The RGB value is derived from the HEX value and shown below the swatch together with the optional values. HEX, RGB and the variable name are copied to the clipboard on click.
 
+Below the swatches, the palette can be downloaded as SCSS variables, LESS variables or a JSON file in the design tokens format. The files are generated in the browser from the records of the element, nothing is stored on the server, and the downloads are visible to everyone who can see the page. Only colors with a valid HEX value and a variable name are included, a leading `$` or `@` of the name is ignored. Adobe's ASE format is not supported, it is a binary format that needs its own writer.
+
 A color with an invalid HEX value shows a notice in its place instead of breaking the page. Copying is announced to screen readers through a status message.
 
 The rich text field of the element can be used for usage rules, e.g. when to use which color. Colors can be grouped by using the element header and several `Colors` elements.
