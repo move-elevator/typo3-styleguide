@@ -175,6 +175,54 @@
 				<source />
 				<target>Karten</target>
 			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.label">
+				<source />
+				<target>Bildgrößen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.description">
+				<source />
+				<target>Bild- und Formatvorgaben pro Kanal. Ein Inline-Datensatz pro Größe, dargestellt als Tabelle mit Vorschau des Seitenverhältnisses und dem Datum der Prüfung.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.items">
+				<source />
+				<target>Größen</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize">
+				<source />
+				<target>Bildgröße</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.channel">
+				<source />
+				<target>Kanal</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.image_type">
+				<source />
+				<target>Art</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.width">
+				<source />
+				<target>Breite (px)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.height">
+				<source />
+				<target>Höhe (px)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.format">
+				<source />
+				<target>Format</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.valid_as_of">
+				<source />
+				<target>Gültig seit</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.size">
+				<source />
+				<target>Größe</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.preview">
+				<source />
+				<target>Proportion</target>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />
 				<target>Repräsentatives Inhaltselement</target>

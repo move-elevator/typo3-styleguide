@@ -48,6 +48,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             'typo3styleguide_icons' => $this->renderIconsPreview($row),
             'typo3styleguide_images' => $this->renderImagesPreview($row),
             'typo3styleguide_tableofcontents' => $this->renderTableOfContentsPreview($row),
+            'typo3styleguide_imagesizes' => $this->renderImageSizesPreview($row),
             default => parent::renderPageModulePreviewContent($item),
         };
     }
@@ -138,6 +139,31 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         }
 
         return $this->renderFluidPreview('Icons', ['path' => $path, 'icons' => $icons, 'hasMore' => $hasMore]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderImageSizesPreview(array $row): string
+    {
+        $children = $this->getChildRecords('tx_typo3styleguide_imagesize', (int) $row['uid']);
+        if ([] === $children) {
+            return '';
+        }
+
+        $sizes = [];
+        foreach ($children as $child) {
+            $channel = (string) $child['channel'];
+            $type = (string) $child['image_type'];
+
+            $sizes[] = [
+                'label' => '' !== $type ? $channel.', '.$type : $channel,
+                'width' => (int) $child['width'],
+                'height' => (int) $child['height'],
+            ];
+        }
+
+        return $this->renderFluidPreview('ImageSizes', ['sizes' => $sizes]);
     }
 
     /**

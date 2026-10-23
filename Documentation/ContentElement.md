@@ -8,6 +8,7 @@ This extension provides the following content elements for building a styleguide
 - [Icons](#icons)
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
+- [Image Sizes](#image-sizes)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -71,3 +72,15 @@ The `Table of Contents` content element renders a navigable overview of the chil
 > In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
+
+## <img src="../Resources/Public/Icons/content-styleguide-imagesizes.svg" height="20"> Image Sizes
+
+The `Image Sizes` content element documents image and format specifications as a table. Each size is defined as an inline record with:
+
+- **Channel** — Where the image is used (e.g. `LinkedIn`)
+- **Type** — Optional kind of image (e.g. `Profile picture`)
+- **Width** and **Height** — Size in pixels
+- **Format** — Optional file format (e.g. `JPG/PNG`)
+- **Valid as of** — Optional date the values were last checked
+
+The table shows each size next to a frame in the same aspect ratio, so proportions can be compared at a glance. The date is shown as is, which makes outdated values visible. Platform specifications change often, so keep the date up to date.

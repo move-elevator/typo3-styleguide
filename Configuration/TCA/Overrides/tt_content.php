@@ -116,12 +116,28 @@ ExtensionManagementUtility::addTcaSelectItem(
     'after',
 );
 
+// --- Image Sizes ---
+ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'label' => $lll.'contentelement.imagesizes.label',
+        'value' => 'typo3styleguide_imagesizes',
+        'icon' => 'content-styleguide-imagesizes',
+        'description' => $lll.'contentelement.imagesizes.description',
+        'group' => 'styleguide',
+    ],
+    'typo3styleguide_tableofcontents',
+    'after',
+);
+
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_technicalheadline'] = 'content-styleguide-headline';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_colors'] = 'content-styleguide-colors';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts'] = 'content-styleguide-fonts';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_tableofcontents'] = 'content-styleguide-tableofcontents';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_imagesizes'] = 'content-styleguide-imagesizes';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
@@ -204,6 +220,24 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 'max' => 255,
                 'eval' => 'trim',
                 'placeholder' => '*-alt.svg, legacy-*, *.json',
+            ],
+        ],
+        'tx_typo3styleguide_imagesizes' => [
+            'label' => $lll.'contentelement.imagesizes.items',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_typo3styleguide_imagesize',
+                'foreign_field' => 'parentid',
+                'foreign_table_field' => 'parenttable',
+                'foreign_sortby' => 'sorting',
+                'appearance' => [
+                    'collapseAll' => true,
+                    'expandSingle' => true,
+                    'useSortable' => true,
+                    'enabledControls' => [
+                        'dragdrop' => true,
+                    ],
+                ],
             ],
         ],
         'tx_typo3styleguide_images' => [
@@ -353,6 +387,25 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_tableofcontents'] = [
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_typo3styleguide_tableofcontents_layout,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_imagesizes'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
+    'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;header,tx_typo3styleguide_imagesizes,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
