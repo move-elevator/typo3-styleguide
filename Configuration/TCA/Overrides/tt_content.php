@@ -116,12 +116,28 @@ ExtensionManagementUtility::addTcaSelectItem(
     'after',
 );
 
+// --- Guideline ---
+ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'label' => $lll.'contentelement.guideline.label',
+        'value' => 'typo3styleguide_guideline',
+        'icon' => 'content-styleguide-guideline',
+        'description' => $lll.'contentelement.guideline.description',
+        'group' => 'styleguide',
+    ],
+    'typo3styleguide_tableofcontents',
+    'after',
+);
+
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_technicalheadline'] = 'content-styleguide-headline';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_colors'] = 'content-styleguide-colors';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts'] = 'content-styleguide-fonts';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_tableofcontents'] = 'content-styleguide-tableofcontents';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_guideline'] = 'content-styleguide-guideline';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
@@ -144,6 +160,28 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                     [
                         'label' => $lll.'contentelement.technical_headline.tag.h4',
                         'value' => 'h4',
+                    ],
+                ],
+            ],
+        ],
+        'tx_typo3styleguide_guideline_type' => [
+            'label' => $lll.'contentelement.guideline.type',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => 'do',
+                'items' => [
+                    [
+                        'label' => $lll.'contentelement.guideline.type.do',
+                        'value' => 'do',
+                    ],
+                    [
+                        'label' => $lll.'contentelement.guideline.type.dont',
+                        'value' => 'dont',
+                    ],
+                    [
+                        'label' => $lll.'contentelement.guideline.type.note',
+                        'value' => 'note',
                     ],
                 ],
             ],
@@ -365,4 +403,36 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_tableofcontents'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_guideline'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
+    'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;header,tx_typo3styleguide_guideline_type,image,bodytext,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+    'columnsOverrides' => [
+        'bodytext' => [
+            'config' => [
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
+            ],
+        ],
+        'image' => [
+            'config' => [
+                'maxitems' => 1,
+            ],
+        ],
+    ],
 ];

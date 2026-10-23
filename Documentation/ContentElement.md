@@ -8,6 +8,7 @@ This extension provides the following content elements for building a styleguide
 - [Icons](#icons)
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
+- [Guideline](#guideline)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -71,3 +72,13 @@ The `Table of Contents` content element renders a navigable overview of the chil
 > In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
+
+## <img src="../Resources/Public/Icons/content-styleguide-guideline.svg" height="20"> Guideline
+
+The `Guideline` content element shows a single rule with an optional image and a text. Use it for icon rules, image rules and general usage rules. It provides:
+
+- **Type** — `Do`, `Don't` or `Note`
+- **Image** — Optional image, set the alternative text on the file reference
+- **Text** — Rich text for the rule
+
+The type is shown as an icon and a written label, the frame differs as well (solid, dashed or dotted), so the meaning never depends on color alone. The heading of the element is shown as the rule's title below the type, and the element is named by both for screen readers.
