@@ -4,6 +4,8 @@ class Copy {
   }
 
   init() {
+    this.createLiveRegion();
+
     document.querySelectorAll('.typo3-styleguide__element[data-copy]').forEach(el => {
       el.setAttribute('tabindex', '0');
       el.setAttribute('role', 'button');
@@ -17,26 +19,23 @@ class Copy {
         }
       });
     });
+  }
 
-    // Real buttons are keyboard operable and labelled by their own text already
-    document.querySelectorAll('.typo3-styleguide__frame button[data-copy]').forEach(el => {
-      el.addEventListener('click', () => this.copyToClipboard(el));
-    });
+  // Created up front: screen readers can miss a status node that is inserted right before its first message
+  createLiveRegion() {
+    this.liveRegion = document.createElement('div');
+    this.liveRegion.setAttribute('role', 'status');
+    // Inline because this script also loads on pages without the headline stylesheet that defines .visually-hidden
+    this.liveRegion.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap';
+    document.body.appendChild(this.liveRegion);
   }
 
   announce(message) {
-    if (!this.liveRegion) {
-      this.liveRegion = document.createElement('div');
-      this.liveRegion.setAttribute('role', 'status');
-      this.liveRegion.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap';
-      document.body.appendChild(this.liveRegion);
-    }
-
     // Clearing first makes screen readers repeat an identical message
     this.liveRegion.textContent = '';
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       this.liveRegion.textContent = message;
-    });
+    }, 50);
   }
 
   copyToClipboard(el) {

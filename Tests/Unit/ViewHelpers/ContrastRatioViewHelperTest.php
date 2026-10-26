@@ -40,13 +40,9 @@ final class ContrastRatioViewHelperTest extends TestCase
         yield 'black on white' => ['#000000', '#FFFFFF', 21.0];
         yield 'identical colors' => ['#2563EB', '#2563EB', 1.0];
         yield 'orange on white' => ['#FF6418', '#FFFFFF', 2.96];
+        yield 'white on orange' => ['#FFFFFF', '#FF6418', 2.96];
         yield 'dark blue on white' => ['#003241', '#FFFFFF', 13.70];
         yield 'lowercase without hash' => ['ff6418', 'ffffff', 2.96];
-    }
-
-    public function testRenderIsIndependentOfArgumentOrder(): void
-    {
-        $this->assertSame($this->render('#FF6418', '#003241'), $this->render('#003241', '#FF6418'));
     }
 
     public function testRenderDoesNotRoundUpBelowThreshold(): void
