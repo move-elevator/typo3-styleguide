@@ -13,4 +13,6 @@ Usage:
 
 ```
 
+The color can also be piped in: `{color -> sg:format.rgb()}`.
+
 Renders `255, 87, 51`. Only six digit values are accepted, anything else throws an `InvalidArgumentException`.

@@ -17,6 +17,7 @@ use InvalidArgumentException;
 use MoveElevator\Styleguide\ViewHelpers\Format\RgbViewHelper;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
+use TYPO3Fluid\Fluid\View\TemplateView;
 
 /**
  * RgbViewHelperTest.
@@ -59,6 +60,16 @@ final class RgbViewHelperTest extends TestCase
         yield 'short notation' => ['#FFF'];
         yield 'not hexadecimal' => ['#GGGGGG'];
         yield 'empty' => [''];
+    }
+
+    public function testRenderAcceptsColorPipedInFromFluid(): void
+    {
+        $view = new TemplateView();
+        $view->getRenderingContext()->getViewHelperResolver()->addNamespace('sg', 'MoveElevator\\Styleguide\\ViewHelpers');
+        $view->getRenderingContext()->getTemplatePaths()->setTemplateSource('{color -> sg:format.rgb()}');
+        $view->assign('color', '#FF6418');
+
+        $this->assertSame('255, 100, 24', $view->render());
     }
 
     private function render(string $hex): string

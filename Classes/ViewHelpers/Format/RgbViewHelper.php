@@ -28,11 +28,16 @@ class RgbViewHelper extends AbstractViewHelper
 {
     public function initializeArguments(): void
     {
-        $this->registerArgument('color', 'string', 'HEX Code', true);
+        $this->registerArgument('color', 'string', 'HEX Code');
     }
 
     public function render(): string
     {
-        return implode(', ', ColorUtility::hexToRgb((string) $this->arguments['color']));
+        return implode(', ', ColorUtility::hexToRgb((string) $this->renderChildren()));
+    }
+
+    public function getContentArgumentName(): string
+    {
+        return 'color';
     }
 }
