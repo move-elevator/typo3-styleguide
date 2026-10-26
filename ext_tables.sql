@@ -7,6 +7,11 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_icons_exclude varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_tableofcontents_layout varchar(10) DEFAULT 'list' NOT NULL,
+	tx_typo3styleguide_brandasset_light int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_brandasset_dark int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_brandasset_white int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_brandasset_protected decimal(5,2) DEFAULT 0.00 NOT NULL,
+	tx_typo3styleguide_brandasset_downloads int(11) unsigned DEFAULT 0 NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_color

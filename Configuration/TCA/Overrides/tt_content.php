@@ -116,12 +116,28 @@ ExtensionManagementUtility::addTcaSelectItem(
     'after',
 );
 
+// --- Brand Asset ---
+ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'label' => $lll.'contentelement.brandasset.label',
+        'value' => 'typo3styleguide_brandasset',
+        'icon' => 'content-styleguide-brandasset',
+        'description' => $lll.'contentelement.brandasset.description',
+        'group' => 'styleguide',
+    ],
+    'typo3styleguide_tableofcontents',
+    'after',
+);
+
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_technicalheadline'] = 'content-styleguide-headline';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_colors'] = 'content-styleguide-colors';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts'] = 'content-styleguide-fonts';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_tableofcontents'] = 'content-styleguide-tableofcontents';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_brandasset'] = 'content-styleguide-brandasset';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
@@ -204,6 +220,50 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 'max' => 255,
                 'eval' => 'trim',
                 'placeholder' => '*-alt.svg, legacy-*, *.json',
+            ],
+        ],
+        'tx_typo3styleguide_brandasset_light' => [
+            'label' => $lll.'contentelement.brandasset.variant.light',
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types',
+            ],
+        ],
+        'tx_typo3styleguide_brandasset_dark' => [
+            'label' => $lll.'contentelement.brandasset.variant.dark',
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types',
+            ],
+        ],
+        'tx_typo3styleguide_brandasset_white' => [
+            'label' => $lll.'contentelement.brandasset.variant.white',
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types',
+            ],
+        ],
+        'tx_typo3styleguide_brandasset_protected' => [
+            'label' => $lll.'contentelement.brandasset.protected',
+            'description' => $lll.'contentelement.brandasset.protected.description',
+            'config' => [
+                'type' => 'number',
+                'format' => 'decimal',
+                'size' => 6,
+                'range' => [
+                    'lower' => 0,
+                    'upper' => 10,
+                ],
+                'default' => 0,
+            ],
+        ],
+        'tx_typo3styleguide_brandasset_downloads' => [
+            'label' => $lll.'contentelement.brandasset.downloads',
+            'config' => [
+                'type' => 'file',
             ],
         ],
         'tx_typo3styleguide_images' => [
@@ -353,6 +413,25 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_tableofcontents'] = [
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_typo3styleguide_tableofcontents_layout,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_brandasset'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
+    'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;header,tx_typo3styleguide_brandasset_light,tx_typo3styleguide_brandasset_dark,tx_typo3styleguide_brandasset_white,tx_typo3styleguide_brandasset_protected,tx_typo3styleguide_brandasset_downloads,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,

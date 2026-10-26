@@ -132,6 +132,33 @@
 			<trans-unit id="contentelement.tableofcontents.layout.cards">
 				<source>Cards</source>
 			</trans-unit>
+			<trans-unit id="contentelement.brandasset.label">
+				<source>Brand Asset</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.description">
+				<source>A logo shown in its variants on matching backgrounds, with an optional protected area and downloads grouped by format.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.light">
+				<source>Logo for light backgrounds</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.dark">
+				<source>Logo for dark backgrounds</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.white">
+				<source>White logo</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected">
+				<source>Protected area (multiple of the logo height)</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.description">
+				<source>Distance to keep free around the logo, for example 0.5. Leave empty or 0 to hide the protected area.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.caption">
+				<source>Protected area: %s times the logo height</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.downloads">
+				<source>Downloads</source>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>
 			</trans-unit>

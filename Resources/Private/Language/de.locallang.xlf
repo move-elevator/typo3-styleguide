@@ -175,6 +175,42 @@
 				<source />
 				<target>Karten</target>
 			</trans-unit>
+			<trans-unit id="contentelement.brandasset.label">
+				<source />
+				<target>Markenelement</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.description">
+				<source />
+				<target>Ein Logo in seinen Varianten auf passenden Hintergründen, mit optionalem Schutzraum und nach Format gruppierten Downloads.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.light">
+				<source />
+				<target>Logo für helle Hintergründe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.dark">
+				<source />
+				<target>Logo für dunkle Hintergründe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.white">
+				<source />
+				<target>Weißes Logo</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected">
+				<source />
+				<target>Schutzraum (Vielfaches der Logohöhe)</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.description">
+				<source />
+				<target>Abstand, der um das Logo frei bleibt, zum Beispiel 0,5. Leer lassen oder 0, um den Schutzraum auszublenden.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.caption">
+				<source />
+				<target>Schutzraum: %s mal die Logohöhe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.downloads">
+				<source />
+				<target>Downloads</target>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />
 				<target>Repräsentatives Inhaltselement</target>

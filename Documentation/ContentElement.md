@@ -8,6 +8,7 @@ This extension provides the following content elements for building a styleguide
 - [Icons](#icons)
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
+- [Brand Asset](#brand-asset)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -71,3 +72,16 @@ The `Table of Contents` content element renders a navigable overview of the chil
 > In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
+
+## <img src="../Resources/Public/Icons/content-styleguide-brandasset.svg" height="20"> Brand Asset
+
+The `Brand Asset` content element shows a logo in its variants on matching backgrounds and offers the files for download. All files are selected from the file list, so editors maintain them in the backend. It provides:
+
+- **Logo for light backgrounds**, **Logo for dark backgrounds** and **White logo** — One image each, shown on a light, a dark and a gray background. Variants without an image are not shown.
+- **Protected area** — Optional distance to keep free around the logo, as a multiple of the logo height (e.g. `0.5`). With `0` or no value, the protected area is not shown.
+- **Downloads** — Any number of files, listed with their size and grouped by file format (e.g. `SVG`, `PNG`, `ZIP`).
+
+Set the alternative text of each logo on its file reference, the caption only names the variant. The logo is shown 64px high, the protected area is drawn as a dashed frame at the given distance. No value is preset, because the distance is defined by the brand.
+
+> [!NOTE]
+> The element is built on file references instead of paths inside an extension. That keeps the files editable in the backend, but it also means they live in the file storage and not in the repository.

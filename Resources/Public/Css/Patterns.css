@@ -208,6 +208,126 @@
     margin-bottom: 2rem;
 }
 
+.typo3-styleguide__logo {
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: 10px;
+    margin: 0;
+    max-width: 100%;
+    min-width: min(280px, 100%);
+    overflow: hidden;
+    width: fit-content;
+}
+
+.typo3-styleguide__logo-stage {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 160px;
+    padding: 16px;
+}
+
+.typo3-styleguide__logo--light .typo3-styleguide__logo-stage {
+    background: #ffffff;
+}
+
+.typo3-styleguide__logo--dark .typo3-styleguide__logo-stage {
+    background: #1a1a1a;
+}
+
+.typo3-styleguide__logo--white .typo3-styleguide__logo-stage {
+    background: #555555;
+}
+
+.typo3-styleguide__logo-area {
+    --typo3-sg-logo-height: 64px;
+}
+
+.typo3-styleguide__logo-area img {
+    display: block;
+    height: var(--typo3-sg-logo-height);
+    max-width: 100%;
+    width: auto;
+}
+
+.typo3-styleguide__logo-area--protected {
+    background: rgba(128, 128, 128, 0.2);
+    outline: 1px dashed #808080;
+    padding: calc(var(--typo3-sg-logo-height) * var(--typo3-sg-protected));
+}
+
+.typo3-styleguide__logo--dark .typo3-styleguide__logo-area--protected,
+.typo3-styleguide__logo--white .typo3-styleguide__logo-area--protected {
+    background: rgba(255, 255, 255, 0.15);
+    outline-color: #ffffff;
+}
+
+@media (forced-colors: active) {
+    .typo3-styleguide__logo-stage {
+        forced-color-adjust: none;
+    }
+}
+
+.typo3-styleguide__logo-caption {
+    background: var(--typo3-sg-bg-primary);
+    border-top: 1px solid var(--typo3-sg-border);
+    color: var(--typo3-sg-text-primary);
+    display: flex;
+    flex-direction: column;
+    font-family: monospace, sans-serif;
+    gap: 4px;
+    padding: 10px 16px;
+}
+
+.typo3-styleguide__downloads {
+    color: var(--typo3-sg-text-primary);
+    font-family: monospace, sans-serif;
+    margin: 20px 40px 0;
+}
+
+@media (max-width: 768px) {
+    .typo3-styleguide__downloads {
+        margin: 20px 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .typo3-styleguide__downloads {
+        margin: 20px 16px 0;
+    }
+}
+
+.typo3-styleguide__downloads-format {
+    font-weight: bold;
+    margin: 16px 0 4px;
+}
+
+.typo3-styleguide__downloads-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.typo3-styleguide__downloads-list li {
+    align-items: center;
+    border-bottom: 1px solid var(--typo3-sg-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    min-height: 44px;
+}
+
+.typo3-styleguide__downloads-list a {
+    align-items: center;
+    color: inherit;
+    display: inline-flex;
+    min-height: 44px;
+    overflow-wrap: anywhere;
+}
+
+.typo3-styleguide__downloads-size {
+    color: var(--typo3-sg-text-secondary);
+}
+
 .typo3-styleguide__font p {
     margin: 0;
     padding: 0;
