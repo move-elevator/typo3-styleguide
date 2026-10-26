@@ -16,9 +16,9 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 
 - `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `Middleware/`, `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
 - `Configuration/`: `TCA/` (content elements, page types and TypoScript templates are registered in `TCA/Overrides/`), `TsConfig/`, `TypoScript/`, `Services.yaml`, `RequestMiddlewares.php`, `Icons.php`
-- `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`) and `Public/`
+- `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`, the optional page frame under `Frame/`) and `Public/`
 - `Tests/Unit/`: PHPUnit unit tests
-- `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment
+- `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment. `data.xml` holds two page trees: `/styleguide` with the plain content elements and `/styleguide-neu` with the frame and the new design. A new tree needs its rows appended to the page tree, the header records and `pid_lookup` as well as the table rows, and inline fields must hold the uids of their children, not a count, or the import re-parents existing records. `ddev install` imports every `*.xml` in the folder
 - `Tests/CGL/`: separate Composer project holding all code quality tools and their configs. Its `composer.lock` is committed and updated by Renovate, so tool releases only reach CI through a Renovate PR
 - `Documentation/`: generated ViewHelper docs and content element notes
 - `.ddev/`: DDEV setup with custom commands (`cgl`, `install`, `all`, `typo3`, and one command per TYPO3 version)
