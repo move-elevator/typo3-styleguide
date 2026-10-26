@@ -404,6 +404,34 @@
                     <relations index="rels" type="array"></relations>
                     <softrefs type="array"></softrefs>
                 </rec>
+                <rec index="46" type="array">
+                    <uid>46</uid>
+                    <pid>8</pid>
+                    <title>Rules</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="47" type="array">
+                    <uid>47</uid>
+                    <pid>8</pid>
+                    <title>typo3styleguide_guidelines</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="48" type="array">
+                    <uid>48</uid>
+                    <pid>11</pid>
+                    <title>Rules</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="49" type="array">
+                    <uid>49</uid>
+                    <pid>11</pid>
+                    <title>typo3styleguide_guidelines</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
                 <rec index="35" type="array">
                     <uid>35</uid>
                     <pid>9</pid>
@@ -691,6 +719,50 @@
                     <softrefs type="array"></softrefs>
                 </rec>
             </table>
+            <table index="tx_typo3styleguide_guideline" type="array">
+                <rec index="1" type="array">
+                    <uid>1</uid>
+                    <pid>8</pid>
+                    <title>Use the standard logo on light surfaces and the li</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="2" type="array">
+                    <uid>2</uid>
+                    <pid>8</pid>
+                    <title>Keep the clear space around the logo free of text,</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="3" type="array">
+                    <uid>3</uid>
+                    <pid>8</pid>
+                    <title>Do not stretch, rotate or recolor the logo.</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="4" type="array">
+                    <uid>4</uid>
+                    <pid>8</pid>
+                    <title>Do not place the logo on a busy photo without enou</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="5" type="array">
+                    <uid>5</uid>
+                    <pid>11</pid>
+                    <title>Use one icon style across the whole product.</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+                <rec index="6" type="array">
+                    <uid>6</uid>
+                    <pid>11</pid>
+                    <title>Do not shrink the touch area below 48 by 48 pixels</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
+            </table>
         </records>
         <pid_lookup type="array">
             <page_contents index="0" type="array">
@@ -797,8 +869,16 @@
                 <table index="tt_content" type="array">
                     <item index="33">1</item>
                     <item index="34">1</item>
+                    <item index="46">1</item>
+                    <item index="47">1</item>
                 </table>
                 <table index="tx_typo3styleguide_image" type="array">
+                    <item index="3">1</item>
+                    <item index="4">1</item>
+                </table>
+                <table index="tx_typo3styleguide_guideline" type="array">
+                    <item index="1">1</item>
+                    <item index="2">1</item>
                     <item index="3">1</item>
                     <item index="4">1</item>
                 </table>
@@ -845,8 +925,14 @@
             </page_contents>
             <page_contents index="11" type="array">
                 <table index="tt_content" type="array">
+                    <item index="48">1</item>
+                    <item index="49">1</item>
                     <item index="41">1</item>
                     <item index="42">1</item>
+                </table>
+                <table index="tx_typo3styleguide_guideline" type="array">
+                    <item index="5">1</item>
+                    <item index="6">1</item>
                 </table>
             </page_contents>
         </pid_lookup>
@@ -4625,6 +4711,341 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="tx_typo3styleguide_fonts" type="integer">0</field>
                 <field index="tx_typo3styleguide_images">3,4</field>
                 <field index="bodytext"></field>
+                <field index="tx_typo3styleguide_images_downloads" type="integer">1</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tt_content:46" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">46</field>
+                <field index="rowDescription"></field>
+                <field index="pid" type="integer">8</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="starttime" type="integer">0</field>
+                <field index="endtime" type="integer">0</field>
+                <field index="fe_group"></field>
+                <field index="sorting" type="integer">768</field>
+                <field index="editlock" type="integer">0</field>
+                <field index="sys_language_uid" type="integer">0</field>
+                <field index="l18n_parent" type="integer">0</field>
+                <field index="l10n_source" type="integer">0</field>
+                <field index="l10n_state" type="NULL"></field>
+                <field index="t3_origuid" type="integer">0</field>
+                <field index="l18n_diffsource"></field>
+                <field index="t3ver_oid" type="integer">0</field>
+                <field index="t3ver_wsid" type="integer">0</field>
+                <field index="t3ver_state" type="integer">0</field>
+                <field index="t3ver_stage" type="integer">0</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
+                <field index="header">Rules</field>
+                <field index="header_position"></field>
+                <field index="bodytext" type="NULL"></field>
+                <field index="bullets_type" type="integer">0</field>
+                <field index="uploads_description" type="integer">0</field>
+                <field index="uploads_type" type="integer">0</field>
+                <field index="assets" type="integer">0</field>
+                <field index="image" type="integer">0</field>
+                <field index="imagewidth" type="integer">0</field>
+                <field index="imageorient" type="integer">0</field>
+                <field index="imagecols" type="integer">2</field>
+                <field index="imageborder" type="integer">0</field>
+                <field index="media" type="integer">0</field>
+                <field index="layout" type="integer">0</field>
+                <field index="frame_class">default</field>
+                <field index="cols" type="integer">0</field>
+                <field index="space_before_class"></field>
+                <field index="space_after_class"></field>
+                <field index="records" type="NULL"></field>
+                <field index="pages" type="NULL"></field>
+                <field index="colPos" type="integer">0</field>
+                <field index="subheader"></field>
+                <field index="header_link"></field>
+                <field index="image_zoom" type="integer">0</field>
+                <field index="header_layout">0</field>
+                <field index="list_type"></field>
+                <field index="sectionIndex" type="integer">1</field>
+                <field index="linkToTop" type="integer">0</field>
+                <field index="file_collections" type="NULL"></field>
+                <field index="filelink_size" type="integer">0</field>
+                <field index="filelink_sorting"></field>
+                <field index="filelink_sorting_direction"></field>
+                <field index="target"></field>
+                <field index="recursive" type="integer">0</field>
+                <field index="imageheight" type="integer">0</field>
+                <field index="pi_flexform" type="NULL"></field>
+                <field index="accessibility_title"></field>
+                <field index="accessibility_bypass" type="integer">0</field>
+                <field index="accessibility_bypass_text"></field>
+                <field index="category_field"></field>
+                <field index="table_class"></field>
+                <field index="table_caption" type="NULL"></field>
+                <field index="table_delimiter" type="integer">124</field>
+                <field index="table_enclosure" type="integer">0</field>
+                <field index="table_header_position" type="integer">0</field>
+                <field index="table_tfoot" type="integer">0</field>
+                <field index="categories" type="integer">0</field>
+                <field index="selected_categories" type="NULL"></field>
+                <field index="date" type="integer">0</field>
+                <field index="tx_impexp_origuid" type="integer">0</field>
+                <field index="tx_typo3styleguide_colors" type="integer">0</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_fonts" type="integer">0</field>
+                <field index="tx_typo3styleguide_images" type="integer">0</field>
+                <field index="bodytext">What we do with the logo, and what we avoid.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tt_content:47" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">47</field>
+                <field index="rowDescription"></field>
+                <field index="pid" type="integer">8</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="starttime" type="integer">0</field>
+                <field index="endtime" type="integer">0</field>
+                <field index="fe_group"></field>
+                <field index="sorting" type="integer">1024</field>
+                <field index="editlock" type="integer">0</field>
+                <field index="sys_language_uid" type="integer">0</field>
+                <field index="l18n_parent" type="integer">0</field>
+                <field index="l10n_source" type="integer">0</field>
+                <field index="l10n_state" type="NULL"></field>
+                <field index="t3_origuid" type="integer">0</field>
+                <field index="l18n_diffsource"></field>
+                <field index="t3ver_oid" type="integer">0</field>
+                <field index="t3ver_wsid" type="integer">0</field>
+                <field index="t3ver_state" type="integer">0</field>
+                <field index="t3ver_stage" type="integer">0</field>
+                <field index="CType">typo3styleguide_guidelines</field>
+                <field index="header"></field>
+                <field index="header_position"></field>
+                <field index="bodytext" type="NULL"></field>
+                <field index="bullets_type" type="integer">0</field>
+                <field index="uploads_description" type="integer">0</field>
+                <field index="uploads_type" type="integer">0</field>
+                <field index="assets" type="integer">0</field>
+                <field index="image" type="integer">0</field>
+                <field index="imagewidth" type="integer">0</field>
+                <field index="imageorient" type="integer">0</field>
+                <field index="imagecols" type="integer">2</field>
+                <field index="imageborder" type="integer">0</field>
+                <field index="media" type="integer">0</field>
+                <field index="layout" type="integer">0</field>
+                <field index="frame_class">default</field>
+                <field index="cols" type="integer">0</field>
+                <field index="space_before_class"></field>
+                <field index="space_after_class"></field>
+                <field index="records" type="NULL"></field>
+                <field index="pages" type="NULL"></field>
+                <field index="colPos" type="integer">0</field>
+                <field index="subheader"></field>
+                <field index="header_link"></field>
+                <field index="image_zoom" type="integer">0</field>
+                <field index="header_layout">0</field>
+                <field index="list_type"></field>
+                <field index="sectionIndex" type="integer">1</field>
+                <field index="linkToTop" type="integer">0</field>
+                <field index="file_collections" type="NULL"></field>
+                <field index="filelink_size" type="integer">0</field>
+                <field index="filelink_sorting"></field>
+                <field index="filelink_sorting_direction"></field>
+                <field index="target"></field>
+                <field index="recursive" type="integer">0</field>
+                <field index="imageheight" type="integer">0</field>
+                <field index="pi_flexform" type="NULL"></field>
+                <field index="accessibility_title"></field>
+                <field index="accessibility_bypass" type="integer">0</field>
+                <field index="accessibility_bypass_text"></field>
+                <field index="category_field"></field>
+                <field index="table_class"></field>
+                <field index="table_caption" type="NULL"></field>
+                <field index="table_delimiter" type="integer">124</field>
+                <field index="table_enclosure" type="integer">0</field>
+                <field index="table_header_position" type="integer">0</field>
+                <field index="table_tfoot" type="integer">0</field>
+                <field index="categories" type="integer">0</field>
+                <field index="selected_categories" type="NULL"></field>
+                <field index="date" type="integer">0</field>
+                <field index="tx_impexp_origuid" type="integer">0</field>
+                <field index="tx_typo3styleguide_colors" type="integer">0</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_fonts" type="integer">0</field>
+                <field index="tx_typo3styleguide_images" type="integer">0</field>
+                <field index="bodytext"></field>
+                <field index="tx_typo3styleguide_guidelines">1,2,3,4</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tt_content:48" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">48</field>
+                <field index="rowDescription"></field>
+                <field index="pid" type="integer">11</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="starttime" type="integer">0</field>
+                <field index="endtime" type="integer">0</field>
+                <field index="fe_group"></field>
+                <field index="sorting" type="integer">768</field>
+                <field index="editlock" type="integer">0</field>
+                <field index="sys_language_uid" type="integer">0</field>
+                <field index="l18n_parent" type="integer">0</field>
+                <field index="l10n_source" type="integer">0</field>
+                <field index="l10n_state" type="NULL"></field>
+                <field index="t3_origuid" type="integer">0</field>
+                <field index="l18n_diffsource"></field>
+                <field index="t3ver_oid" type="integer">0</field>
+                <field index="t3ver_wsid" type="integer">0</field>
+                <field index="t3ver_state" type="integer">0</field>
+                <field index="t3ver_stage" type="integer">0</field>
+                <field index="CType">typo3styleguide_technicalheadline</field>
+                <field index="header">Rules</field>
+                <field index="header_position"></field>
+                <field index="bodytext" type="NULL"></field>
+                <field index="bullets_type" type="integer">0</field>
+                <field index="uploads_description" type="integer">0</field>
+                <field index="uploads_type" type="integer">0</field>
+                <field index="assets" type="integer">0</field>
+                <field index="image" type="integer">0</field>
+                <field index="imagewidth" type="integer">0</field>
+                <field index="imageorient" type="integer">0</field>
+                <field index="imagecols" type="integer">2</field>
+                <field index="imageborder" type="integer">0</field>
+                <field index="media" type="integer">0</field>
+                <field index="layout" type="integer">0</field>
+                <field index="frame_class">default</field>
+                <field index="cols" type="integer">0</field>
+                <field index="space_before_class"></field>
+                <field index="space_after_class"></field>
+                <field index="records" type="NULL"></field>
+                <field index="pages" type="NULL"></field>
+                <field index="colPos" type="integer">0</field>
+                <field index="subheader"></field>
+                <field index="header_link"></field>
+                <field index="image_zoom" type="integer">0</field>
+                <field index="header_layout">0</field>
+                <field index="list_type"></field>
+                <field index="sectionIndex" type="integer">1</field>
+                <field index="linkToTop" type="integer">0</field>
+                <field index="file_collections" type="NULL"></field>
+                <field index="filelink_size" type="integer">0</field>
+                <field index="filelink_sorting"></field>
+                <field index="filelink_sorting_direction"></field>
+                <field index="target"></field>
+                <field index="recursive" type="integer">0</field>
+                <field index="imageheight" type="integer">0</field>
+                <field index="pi_flexform" type="NULL"></field>
+                <field index="accessibility_title"></field>
+                <field index="accessibility_bypass" type="integer">0</field>
+                <field index="accessibility_bypass_text"></field>
+                <field index="category_field"></field>
+                <field index="table_class"></field>
+                <field index="table_caption" type="NULL"></field>
+                <field index="table_delimiter" type="integer">124</field>
+                <field index="table_enclosure" type="integer">0</field>
+                <field index="table_header_position" type="integer">0</field>
+                <field index="table_tfoot" type="integer">0</field>
+                <field index="categories" type="integer">0</field>
+                <field index="selected_categories" type="NULL"></field>
+                <field index="date" type="integer">0</field>
+                <field index="tx_impexp_origuid" type="integer">0</field>
+                <field index="tx_typo3styleguide_colors" type="integer">0</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_fonts" type="integer">0</field>
+                <field index="tx_typo3styleguide_images" type="integer">0</field>
+                <field index="bodytext">Icons have to work for everyone who uses them.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tt_content:49" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">49</field>
+                <field index="rowDescription"></field>
+                <field index="pid" type="integer">11</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="starttime" type="integer">0</field>
+                <field index="endtime" type="integer">0</field>
+                <field index="fe_group"></field>
+                <field index="sorting" type="integer">1024</field>
+                <field index="editlock" type="integer">0</field>
+                <field index="sys_language_uid" type="integer">0</field>
+                <field index="l18n_parent" type="integer">0</field>
+                <field index="l10n_source" type="integer">0</field>
+                <field index="l10n_state" type="NULL"></field>
+                <field index="t3_origuid" type="integer">0</field>
+                <field index="l18n_diffsource"></field>
+                <field index="t3ver_oid" type="integer">0</field>
+                <field index="t3ver_wsid" type="integer">0</field>
+                <field index="t3ver_state" type="integer">0</field>
+                <field index="t3ver_stage" type="integer">0</field>
+                <field index="CType">typo3styleguide_guidelines</field>
+                <field index="header"></field>
+                <field index="header_position"></field>
+                <field index="bodytext" type="NULL"></field>
+                <field index="bullets_type" type="integer">0</field>
+                <field index="uploads_description" type="integer">0</field>
+                <field index="uploads_type" type="integer">0</field>
+                <field index="assets" type="integer">0</field>
+                <field index="image" type="integer">0</field>
+                <field index="imagewidth" type="integer">0</field>
+                <field index="imageorient" type="integer">0</field>
+                <field index="imagecols" type="integer">2</field>
+                <field index="imageborder" type="integer">0</field>
+                <field index="media" type="integer">0</field>
+                <field index="layout" type="integer">0</field>
+                <field index="frame_class">default</field>
+                <field index="cols" type="integer">0</field>
+                <field index="space_before_class"></field>
+                <field index="space_after_class"></field>
+                <field index="records" type="NULL"></field>
+                <field index="pages" type="NULL"></field>
+                <field index="colPos" type="integer">0</field>
+                <field index="subheader"></field>
+                <field index="header_link"></field>
+                <field index="image_zoom" type="integer">0</field>
+                <field index="header_layout">0</field>
+                <field index="list_type"></field>
+                <field index="sectionIndex" type="integer">1</field>
+                <field index="linkToTop" type="integer">0</field>
+                <field index="file_collections" type="NULL"></field>
+                <field index="filelink_size" type="integer">0</field>
+                <field index="filelink_sorting"></field>
+                <field index="filelink_sorting_direction"></field>
+                <field index="target"></field>
+                <field index="recursive" type="integer">0</field>
+                <field index="imageheight" type="integer">0</field>
+                <field index="pi_flexform" type="NULL"></field>
+                <field index="accessibility_title"></field>
+                <field index="accessibility_bypass" type="integer">0</field>
+                <field index="accessibility_bypass_text"></field>
+                <field index="category_field"></field>
+                <field index="table_class"></field>
+                <field index="table_caption" type="NULL"></field>
+                <field index="table_delimiter" type="integer">124</field>
+                <field index="table_enclosure" type="integer">0</field>
+                <field index="table_header_position" type="integer">0</field>
+                <field index="table_tfoot" type="integer">0</field>
+                <field index="categories" type="integer">0</field>
+                <field index="selected_categories" type="NULL"></field>
+                <field index="date" type="integer">0</field>
+                <field index="tx_impexp_origuid" type="integer">0</field>
+                <field index="tx_typo3styleguide_colors" type="integer">0</field>
+                <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
+                <field index="tx_typo3styleguide_fonts" type="integer">0</field>
+                <field index="tx_typo3styleguide_images" type="integer">0</field>
+                <field index="bodytext"></field>
+                <field index="tx_typo3styleguide_guidelines">5,6</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -5898,6 +6319,102 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="parenttable">tt_content</field>
                 <field index="path">EXT:core/Resources/Public/Images/typo3_black.svg</field>
                 <field index="caption">Logo, black</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:1" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">1</field>
+                <field index="pid" type="integer">8</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">1</field>
+                <field index="parentid" type="integer">47</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">do</field>
+                <field index="text">Use the standard logo on light surfaces and the light variant on dark surfaces.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:2" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">2</field>
+                <field index="pid" type="integer">8</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">2</field>
+                <field index="parentid" type="integer">47</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">do</field>
+                <field index="text">Keep the clear space around the logo free of text, images and edges.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:3" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">3</field>
+                <field index="pid" type="integer">8</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">3</field>
+                <field index="parentid" type="integer">47</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">dont</field>
+                <field index="text">Do not stretch, rotate or recolor the logo.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:4" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">4</field>
+                <field index="pid" type="integer">8</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">4</field>
+                <field index="parentid" type="integer">47</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">dont</field>
+                <field index="text">Do not place the logo on a busy photo without enough contrast.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:5" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">5</field>
+                <field index="pid" type="integer">11</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">5</field>
+                <field index="parentid" type="integer">49</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">do</field>
+                <field index="text">Use one icon style across the whole product.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:6" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">6</field>
+                <field index="pid" type="integer">11</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">6</field>
+                <field index="parentid" type="integer">49</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">dont</field>
+                <field index="text">Do not shrink the touch area below 48 by 48 pixels.</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
