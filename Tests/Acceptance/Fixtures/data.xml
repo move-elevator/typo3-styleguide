@@ -649,14 +649,14 @@
                 <rec index="4" type="array">
                     <uid>4</uid>
                     <pid>10</pid>
-                    <title>Regular, body text</title>
+                    <title>Regular</title>
                     <relations index="rels" type="array"></relations>
                     <softrefs type="array"></softrefs>
                 </rec>
                 <rec index="5" type="array">
                     <uid>5</uid>
                     <pid>10</pid>
-                    <title>Bold, headings</title>
+                    <title>Bold</title>
                     <relations index="rels" type="array"></relations>
                     <softrefs type="array"></softrefs>
                 </rec>
@@ -5379,7 +5379,10 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="tx_typo3styleguide_technicalheadlinetag">h2</field>
                 <field index="tx_typo3styleguide_fonts">4,5</field>
                 <field index="tx_typo3styleguide_images" type="integer">0</field>
-                <field index="bodytext"></field>
+                <field index="bodytext">&lt;p&gt;Both weights are system fonts, so nothing is loaded from a third party.&lt;/p&gt;</field>
+                <field index="tx_typo3styleguide_fonts_layout">detail</field>
+                <field index="tx_typo3styleguide_fonts_fallback">'Times New Roman', serif</field>
+                <field index="tx_typo3styleguide_fonts_sample">Typography carries the voice of the brand.</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -5841,9 +5844,10 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="sorting" type="integer">4</field>
                 <field index="parentid" type="integer">40</field>
                 <field index="parenttable">tt_content</field>
-                <field index="font">system-ui</field>
+                <field index="font">Georgia</field>
                 <field index="font_weight">400</field>
-                <field index="label">Regular, body text</field>
+                <field index="label">Regular</field>
+                <field index="purpose">Body text</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -5858,9 +5862,10 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="sorting" type="integer">5</field>
                 <field index="parentid" type="integer">40</field>
                 <field index="parenttable">tt_content</field>
-                <field index="font">system-ui</field>
+                <field index="font">Georgia</field>
                 <field index="font_weight">700</field>
-                <field index="label">Bold, headings</field>
+                <field index="label">Bold</field>
+                <field index="purpose">Headlines and emphasis</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
