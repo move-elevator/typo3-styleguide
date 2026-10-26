@@ -355,6 +355,82 @@
 				<source />
 				<target>Richtlinien</target>
 			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.label">
+				<source />
+				<target>Element-Doku</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.description">
+				<source />
+				<target>Dokumentiert einen Inhaltstyp: seine Felder aus dem TCA und Live-Beispiele von den Seiten, die du nennst. Gehört neben die Regeln zu diesem Element.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype">
+				<source />
+				<target>Inhaltstyp</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype.description">
+				<source />
+				<target>Der Inhaltstyp, der dokumentiert wird. Seine Felder kommen aus dem TCA, das funktioniert für selbst geschriebene Typen und für Content Blocks.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages">
+				<source />
+				<target>Beispielseiten</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages.description">
+				<source />
+				<target>Seiten mit Beispielelementen dieses Typs. Nur Elemente dieser Seiten werden gezeigt, und nur wenn der Besucher die Seite sehen darf.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.note">
+				<source />
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.type">
+				<source />
+				<target>Inhaltstyp</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview">
+				<source />
+				<target>Vorschau</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview.width">
+				<source />
+				<target>Vorschaubreite</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.desktop">
+				<source />
+				<target>Desktop</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.tablet">
+				<source />
+				<target>Tablet</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.mobile">
+				<source />
+				<target>Mobil</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields">
+				<source />
+				<target>Felder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields.field">
+				<source />
+				<target>Feld</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields.required">
+				<source />
+				<target>Pflicht</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields.note">
+				<source />
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.required.yes">
+				<source />
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.required.no">
+				<source />
+				<target>Nein</target>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline">
 				<source />
 				<target>Richtlinie</target>

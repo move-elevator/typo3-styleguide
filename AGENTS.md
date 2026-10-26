@@ -14,7 +14,7 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 
 ## Structure
 
-- `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `Middleware/`, `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
+- `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `DataProcessing/`, `Middleware/`, `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
 - `Configuration/`: `TCA/` (content elements, page types and TypoScript templates are registered in `TCA/Overrides/`), `TsConfig/`, `TypoScript/`, `Services.yaml`, `RequestMiddlewares.php`, `Icons.php`
 - `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`, the optional page frame under `Frame/`) and `Public/`
 - `Tests/Unit/`: PHPUnit unit tests

@@ -267,6 +267,63 @@
 			<trans-unit id="contentelement.guidelines.items">
 				<source>Guidelines</source>
 			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.label">
+				<source>Element documentation</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.description">
+				<source>Documents a content type: its fields from the TCA and live examples from the pages you name. Place it next to the rules for that element.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype">
+				<source>Content type</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype.description">
+				<source>The content type to document. Its fields are read from the TCA, so this works for hand-written types and for Content Blocks.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages">
+				<source>Example pages</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages.description">
+				<source>Pages with example elements of this type. Only elements on these pages are shown, and only if the visitor may see the page.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.note">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.type">
+				<source>Content type</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview">
+				<source>Preview</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview.width">
+				<source>Preview width</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.desktop">
+				<source>Desktop</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.tablet">
+				<source>Tablet</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.mobile">
+				<source>Mobile</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields">
+				<source>Fields</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields.field">
+				<source>Field</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields.required">
+				<source>Required</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.required.yes">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.required.no">
+				<source>No</source>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline">
 				<source>Guideline</source>
 			</trans-unit>

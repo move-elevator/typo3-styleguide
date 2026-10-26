@@ -54,4 +54,8 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-guidelines.svg',
     ],
+    'content-styleguide-elementdoc' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-elementdoc.svg',
+    ],
 ];

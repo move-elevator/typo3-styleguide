@@ -1,0 +1,9 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<p style="margin:0;font-size:11px;line-height:1.4;">
+    <f:if condition="{cType}">
+        <f:then><code>{cType}</code>, {pageCount} page(s)</f:then>
+        <f:else>No content type selected</f:else>
+    </f:if>
+</p>
+</html>

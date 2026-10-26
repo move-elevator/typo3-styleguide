@@ -14,6 +14,7 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_color
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -27,6 +28,7 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_font
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -45,6 +47,7 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_image
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -68,11 +71,18 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_guideline
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
       as = guidelines
     }
+  }
+
+  typo3styleguide_elementdoc =< lib.contentElement
+  typo3styleguide_elementdoc {
+    templateName = ElementDoc
+    dataProcessing.10 = MoveElevator\Styleguide\DataProcessing\ElementDocProcessor
   }
 
   typo3styleguide_tableofcontents =< lib.contentElement

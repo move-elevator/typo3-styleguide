@@ -15,6 +15,8 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_images_downloads tinyint(4) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_guidelines int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_elementdoc_ctype varchar(255) DEFAULT '' NOT NULL,
+	tx_typo3styleguide_elementdoc_pages varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_tableofcontents_layout varchar(10) DEFAULT 'list' NOT NULL,
 	tx_typo3styleguide_gallery_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_gallery_columns varchar(2) DEFAULT '4' NOT NULL,

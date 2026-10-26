@@ -10,6 +10,7 @@ This extension provides the following content elements for building a styleguide
 - [Table of Contents](#table-of-contents)
 - [Gallery](#gallery)
 - [Guidelines](#guidelines)
+- [Element Documentation](#element-documentation)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -118,3 +119,24 @@ The `Guidelines` content element shows Do and Don't rules as cards. Each rule is
 - **Example image** — Optional `EXT:` path to an image that shows the rule
 
 Every card carries a symbol and a word, so a rule never relies on color alone. The example image has no alternative text of its own, because the rule text describes it.
+
+## <img src="../Resources/Public/Icons/content-styleguide-elementdoc.svg" height="20"> Element Documentation
+
+The `Element Documentation` content element documents a content type, for example one of your own or a Content Block. Pair it with a [Guidelines](#guidelines) element for the Do and Don't rules.
+
+- **Content type** — The type to document
+- **Example pages** — Up to ten pages that hold example elements of this type
+- **Description** — Optional rich text above the preview
+
+It renders two parts:
+
+- **Preview** — Every element of the chosen type on the example pages, rendered live. The name above each example is the last [Technical Headline](#technical-headline) before it on that page. Three buttons set the width of the preview boxes to 1200, 768 and 375 px
+- **Fields** — The fields an editor fills in, with their label, whether they are required and their description. They are read from the TCA, so tabs and palettes every content type has (such as appearance, language, access and categories) are left out
+
+The width buttons narrow the box around the example, they do not change the width of the screen. Styles that react to the width of the box, such as container queries, respond, styles that react to the width of the screen do not.
+
+> [!NOTE]
+> The examples are not chosen by the request. Only elements on the example pages named at the element are rendered, only if the visitor may see the page, and hidden or time restricted elements stay hidden. A request parameter cannot select a record. The element never renders itself, so it cannot loop.
+
+> [!TIP]
+> The inline records of the Colors, Fonts, Images and Guidelines elements are found by the page they are stored on, so these elements also render correctly when they are shown on a different page, as in the preview.

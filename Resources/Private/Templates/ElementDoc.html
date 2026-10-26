@@ -1,0 +1,78 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+
+<div class="typo3-styleguide__frame">
+    <div class="typo3-styleguide__element-doc">
+        <p class="typo3-styleguide__element-doc-type">
+            <f:translate key="{lll}contentelement.elementdoc.type"/>: <strong>{elementLabel}</strong> <code>{elementCType}</code>
+        </p>
+
+        <f:if condition="{data.bodytext}">
+            <div class="typo3-styleguide__element-doc-note">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </div>
+        </f:if>
+
+        <f:if condition="{examples}">
+            <f:asset.script identifier="typo3styleguide_element_preview_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/element_preview.js" />
+            <section class="typo3-styleguide__preview" data-sg-preview>
+                <div class="typo3-styleguide__preview-bar">
+                    <h3 class="typo3-styleguide__element-doc-title"><f:translate key="{lll}contentelement.elementdoc.preview"/></h3>
+                    <div class="typo3-styleguide__preview-widths" role="group" aria-label="{f:translate(key: '{lll}contentelement.elementdoc.preview.width')}" data-sg-preview-widths hidden>
+                        <button type="button" data-width="1200" aria-pressed="true"><f:translate key="{lll}contentelement.elementdoc.width.desktop"/> <span>1200 px</span></button>
+                        <button type="button" data-width="768" aria-pressed="false"><f:translate key="{lll}contentelement.elementdoc.width.tablet"/> <span>768 px</span></button>
+                        <button type="button" data-width="375" aria-pressed="false"><f:translate key="{lll}contentelement.elementdoc.width.mobile"/> <span>375 px</span></button>
+                    </div>
+                </div>
+                <f:for each="{examples}" as="example">
+                    <figure class="typo3-styleguide__preview-example">
+                        <figcaption>{example.name}</figcaption>
+                        <div class="typo3-styleguide__preview-viewport">
+                            <div class="typo3-styleguide__preview-canvas" data-sg-preview-canvas>
+                                <f:format.raw>{example.html}</f:format.raw>
+                            </div>
+                        </div>
+                    </figure>
+                </f:for>
+            </section>
+        </f:if>
+
+        <f:if condition="{fields}">
+            <section class="typo3-styleguide__element-doc-fields">
+                <h3 class="typo3-styleguide__element-doc-title"><f:translate key="{lll}contentelement.elementdoc.fields"/></h3>
+                <div class="typo3-styleguide__element-doc-table-wrap">
+                    <table class="typo3-styleguide__element-doc-table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><f:translate key="{lll}contentelement.elementdoc.fields.field"/></th>
+                                <th scope="col"><f:translate key="{lll}contentelement.elementdoc.fields.required"/></th>
+                                <th scope="col"><f:translate key="{lll}contentelement.elementdoc.fields.note"/></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <f:for each="{fields}" as="field">
+                                <tr>
+                                    <th scope="row">{field.name}</th>
+                                    <td><f:translate key="{lll}contentelement.elementdoc.required.{f:if(condition: field.required, then: 'yes', else: 'no')}"/></td>
+                                    <td>{field.note}</td>
+                                </tr>
+                            </f:for>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </f:if>
+    </div>
+</div>
+
+</f:section>
+</html>
