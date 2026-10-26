@@ -87,6 +87,12 @@
 			<trans-unit id="contentelement.colors.layout.detail">
 				<source>Detail</source>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.scale">
+				<source>Scale</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.status">
+				<source>Status</source>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.usage">
 				<source>Usage rules</source>
 			</trans-unit>
@@ -134,6 +140,24 @@
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_color.detail.description">
 				<source>Shown in the Detail layout of the Colors element.</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role">
+				<source>Role</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.description">
+				<source>Shown as a symbol in the Status layout, so a status never relies on color alone.</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.none">
+				<source>None</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.success">
+				<source>Success</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.warning">
+				<source>Warning</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.error">
+				<source>Error</source>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source>Fonts</source>

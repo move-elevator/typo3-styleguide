@@ -115,6 +115,14 @@
 				<source />
 				<target>Detail</target>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.scale">
+				<source />
+				<target>Stufenreihe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.status">
+				<source />
+				<target>Status</target>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.usage">
 				<source />
 				<target>Verwendungsregeln</target>
@@ -178,6 +186,30 @@
 			<trans-unit id="tx_typo3styleguide_color.detail.description">
 				<source />
 				<target>Wird im Layout Detail des Farben-Elements angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role">
+				<source />
+				<target>Rolle</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.description">
+				<source />
+				<target>Wird im Layout Status als Symbol angezeigt, damit ein Status nie nur über die Farbe vermittelt wird.</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.none">
+				<source />
+				<target>Keine</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.success">
+				<source />
+				<target>Erfolg</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.warning">
+				<source />
+				<target>Warnung</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.error">
+				<source />
+				<target>Fehler</target>
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source />

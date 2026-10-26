@@ -94,10 +94,37 @@ return [
                 'placeholder' => '$color-primary',
             ],
         ],
+        'role' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => '',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.none',
+                        'value' => '',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.success',
+                        'value' => 'success',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.warning',
+                        'value' => 'warning',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.error',
+                        'value' => 'error',
+                    ],
+                ],
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'color,label,cmyk,pms,variable',
+            'showitem' => 'color,label,cmyk,pms,variable,role',
         ],
     ],
 ];

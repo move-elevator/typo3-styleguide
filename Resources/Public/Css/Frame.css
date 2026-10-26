@@ -190,7 +190,9 @@ body:has(.typo3-styleguide-frame) {
 .typo3-styleguide-frame__main .typo3-styleguide__gallery,
 .typo3-styleguide-frame__main .typo3-styleguide-toc,
 .typo3-styleguide-frame__main .typo3-styleguide__color-usage,
-.typo3-styleguide-frame__main .typo3-styleguide__color-cards {
+.typo3-styleguide-frame__main .typo3-styleguide__color-cards,
+.typo3-styleguide-frame__main .typo3-styleguide__color-scale,
+.typo3-styleguide-frame__main .typo3-styleguide__color-status {
     margin-left: 0;
     margin-right: 0;
 }

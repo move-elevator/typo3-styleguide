@@ -429,9 +429,81 @@
     color: var(--typo3-sg-bg-primary);
 }
 
+/* Colors, Scale layout */
+.typo3-styleguide__color-scale {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 0 40px;
+    padding: 0;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+    list-style: none;
+}
+
+.typo3-styleguide__color-scale-step {
+    flex: 1 1 120px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 112px;
+    padding: 12px 14px;
+    font-family: monospace, sans-serif;
+}
+
+/* Colors, Status layout */
+.typo3-styleguide__color-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    list-style: none;
+    margin: 0 40px;
+    padding: 0;
+}
+
+.typo3-styleguide__color-status-card {
+    overflow: hidden;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide__color-status-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    min-height: 72px;
+    padding: 18px 20px;
+    font-size: 1.125rem;
+}
+
+.typo3-styleguide__color-status-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 20px 20px;
+}
+
+.typo3-styleguide__color-status-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+    margin: 0;
+    font-family: monospace, sans-serif;
+}
+
+.typo3-styleguide__color-status .typo3-styleguide__color-card-contrast {
+    padding-top: 8px;
+}
+
 @media (max-width: 768px) {
     .typo3-styleguide__color-usage,
-    .typo3-styleguide__color-cards {
+    .typo3-styleguide__color-cards,
+    .typo3-styleguide__color-scale,
+    .typo3-styleguide__color-status {
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -446,7 +518,9 @@
 
 @media (max-width: 480px) {
     .typo3-styleguide__color-usage,
-    .typo3-styleguide__color-cards {
+    .typo3-styleguide__color-cards,
+    .typo3-styleguide__color-scale,
+    .typo3-styleguide__color-status {
         margin-left: 16px;
         margin-right: 16px;
     }

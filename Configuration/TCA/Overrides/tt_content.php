@@ -198,13 +198,21 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                         'label' => $lll.'contentelement.colors.layout.detail',
                         'value' => 'detail',
                     ],
+                    [
+                        'label' => $lll.'contentelement.colors.layout.scale',
+                        'value' => 'scale',
+                    ],
+                    [
+                        'label' => $lll.'contentelement.colors.layout.status',
+                        'value' => 'status',
+                    ],
                 ],
             ],
         ],
         'tx_typo3styleguide_colors_contrast_light' => [
             'label' => $lll.'contentelement.colors.contrast_light',
             'description' => $lll.'contentelement.colors.contrast.description',
-            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:=:detail',
+            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:IN:detail,status',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
@@ -217,7 +225,7 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
         'tx_typo3styleguide_colors_contrast_dark' => [
             'label' => $lll.'contentelement.colors.contrast_dark',
             'description' => $lll.'contentelement.colors.contrast.description',
-            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:=:detail',
+            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:IN:detail,status',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
@@ -386,7 +394,7 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_colors'] = [
         'bodytext' => [
             'label' => $lll.'contentelement.colors.usage',
             'description' => $lll.'contentelement.colors.usage.description',
-            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:=:detail',
+            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:IN:detail,status',
             'config' => [
                 'enableRichtext' => true,
                 'richtextConfiguration' => 'default',

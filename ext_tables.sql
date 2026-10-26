@@ -24,6 +24,7 @@ CREATE TABLE tx_typo3styleguide_color
 	cmyk varchar(50) DEFAULT '' NOT NULL,
 	pms varchar(100) DEFAULT '' NOT NULL,
 	variable varchar(100) DEFAULT '' NOT NULL,
+	role varchar(20) DEFAULT '' NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_font

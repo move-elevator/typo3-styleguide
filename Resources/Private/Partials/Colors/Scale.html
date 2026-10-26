@@ -1,0 +1,20 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<ol class="typo3-styleguide__color-scale">
+    <f:for each="{colors}" as="color" iteration="iterator">
+        <f:if condition="{color.data.color}">
+            <f:variable name="contrastColor"><sg:contrastColor color="{color.data.color}"/></f:variable>
+            <f:variable name="step"><f:format.padding padLength="2" padString="0">{iterator.cycle}</f:format.padding></f:variable>
+            <li class="typo3-styleguide__color-scale-step" style="background-color: {color.data.color}; color: {contrastColor};">
+                <strong>{f:if(condition: color.data.label, then: color.data.label, else: step)}</strong>
+                <span>{color.data.color}</span>
+            </li>
+        </f:if>
+    </f:for>
+</ol>
+
+</html>

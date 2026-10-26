@@ -1,0 +1,61 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+<f:variable name="light" value="{f:if(condition: data.tx_typo3styleguide_colors_contrast_light, then: data.tx_typo3styleguide_colors_contrast_light, else: '#FFFFFF')}" />
+<f:variable name="dark" value="{f:if(condition: data.tx_typo3styleguide_colors_contrast_dark, then: data.tx_typo3styleguide_colors_contrast_dark, else: '#000000')}" />
+
+<f:if condition="{data.bodytext}">
+    <div class="typo3-styleguide__color-usage">
+        <f:format.html>{data.bodytext}</f:format.html>
+    </div>
+</f:if>
+
+<ul class="typo3-styleguide__color-status" role="list">
+    <f:for each="{colors}" as="color">
+        <f:if condition="{color.data.color}">
+            <f:variable name="contrastColor"><sg:contrastColor color="{color.data.color}"/></f:variable>
+            <f:variable name="ratioLight" value="{sg:contrastRatio(color: color.data.color, background: light)}" />
+            <f:variable name="ratioDark" value="{sg:contrastRatio(color: color.data.color, background: dark)}" />
+            <f:variable name="levelLight"><sg:contrastLevel ratio="{ratioLight}"/></f:variable>
+            <f:variable name="levelDark"><sg:contrastLevel ratio="{ratioDark}"/></f:variable>
+            <li class="typo3-styleguide__color-status-card">
+                <div class="typo3-styleguide__color-status-head" style="background-color: {color.data.color}; color: {contrastColor};">
+                    <f:switch expression="{color.data.role}">
+                        <f:case value="success">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                        </f:case>
+                        <f:case value="warning">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v5M12 17h.01M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg>
+                        </f:case>
+                        <f:case value="error">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+                        </f:case>
+                    </f:switch>
+                    <strong>{f:if(condition: color.data.label, then: color.data.label, else: color.data.color)}</strong>
+                </div>
+                <div class="typo3-styleguide__color-status-body">
+                    <p class="typo3-styleguide__color-status-values">
+                        <button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color}">{color.data.color}</button>
+                        <button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color -> sg:format.rgb()}">RGB {color.data.color -> sg:format.rgb()}</button>
+                    </p>
+                    <ul class="typo3-styleguide__color-card-contrast" role="list">
+                        <li class="typo3-styleguide__chip typo3-styleguide__chip--{levelLight}">
+                            <strong><f:translate key="{lll}contentelement.colors.contrast.light"/> <f:format.number decimals="2">{ratioLight}</f:format.number>:1</strong>
+                            <span><f:translate key="{lll}contentelement.colors.contrast.{levelLight}"/></span>
+                        </li>
+                        <li class="typo3-styleguide__chip typo3-styleguide__chip--{levelDark}">
+                            <strong><f:translate key="{lll}contentelement.colors.contrast.dark"/> <f:format.number decimals="2">{ratioDark}</f:format.number>:1</strong>
+                            <span><f:translate key="{lll}contentelement.colors.contrast.{levelDark}"/></span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </f:if>
+    </f:for>
+</ul>
+
+</html>

@@ -16,6 +16,12 @@
         <f:case value="detail">
             <f:render partial="Colors/Detail" arguments="{colors: colors, data: data}" />
         </f:case>
+        <f:case value="scale">
+            <f:render partial="Colors/Scale" arguments="{colors: colors}" />
+        </f:case>
+        <f:case value="status">
+            <f:render partial="Colors/Status" arguments="{colors: colors, data: data}" />
+        </f:case>
         <f:defaultCase>
             <div class="typo3-styleguide__element-container">
                 <f:for each="{colors}" as="color">
