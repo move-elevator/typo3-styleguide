@@ -13,9 +13,10 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers;
 
-use InvalidArgumentException;
+use MoveElevator\Styleguide\Utility\ColorUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
+use function array_map;
 use function max;
 use function min;
 
@@ -46,18 +47,13 @@ class ContrastRatioViewHelper extends AbstractViewHelper
 
     private function relativeLuminance(string $hexColor): float
     {
-        $hex = ltrim($hexColor, '#');
-        if (1 !== preg_match('/^[0-9a-f]{6}$/i', $hex)) {
-            throw new InvalidArgumentException('Invalid HEX color code: '.$hexColor, 1761475200);
-        }
-
         $linear = array_map(
-            static function (string $channel): float {
-                $value = hexdec($channel) / 255;
+            static function (int $channel): float {
+                $value = $channel / 255;
 
                 return $value <= 0.03928 ? $value / 12.92 : (($value + 0.055) / 1.055) ** 2.4;
             },
-            str_split($hex, 2),
+            ColorUtility::hexToRgb($hexColor),
         );
 
         return 0.2126 * $linear[0] + 0.7152 * $linear[1] + 0.0722 * $linear[2];
