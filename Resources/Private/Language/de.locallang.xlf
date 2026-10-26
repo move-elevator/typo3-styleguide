@@ -415,6 +415,14 @@
 				<source />
 				<target>Karten</target>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.areas">
+				<source />
+				<target>Bereiche</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.area.open">
+				<source />
+				<target>Bereich öffnen</target>
+			</trans-unit>
 			<trans-unit id="contentelement.gallery.label">
 				<source />
 				<target>Galerie</target>

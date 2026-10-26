@@ -176,6 +176,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         $layoutLabels = [
             'list' => 'List',
             'cards' => 'Cards',
+            'areas' => 'Areas',
         ];
 
         return $this->renderFluidPreview('TableOfContents', [

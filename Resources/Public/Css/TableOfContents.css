@@ -141,6 +141,96 @@
     }
 }
 
+/* --- Areas Layout --- */
+
+.typo3-styleguide-toc--areas {
+    font-family: var(--typo3-sg-font, monospace, sans-serif);
+}
+
+.typo3-styleguide-toc__areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.typo3-styleguide-toc__area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px;
+    border: 1px solid var(--typo3-sg-border, #ddd);
+    border-radius: var(--typo3-sg-radius, 10px);
+    background: var(--typo3-sg-bg-primary, #ffffff);
+    color: var(--typo3-sg-text-primary, #000000);
+}
+
+.typo3-styleguide-toc__area-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--typo3-sg-border, #ddd);
+    border-radius: var(--typo3-sg-radius, 10px);
+}
+
+.typo3-styleguide-toc__area-icon img,
+.typo3-styleguide-toc__area-icon svg {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.typo3-styleguide-toc__area-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.typo3-styleguide-toc__area-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.typo3-styleguide-toc__area-text {
+    margin: 0;
+    color: var(--typo3-sg-text-secondary, #646464);
+}
+
+.typo3-styleguide-toc__area-pages {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--typo3-sg-border, #ddd);
+}
+
+.typo3-styleguide-toc__area-pages a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: inherit;
+}
+
+.typo3-styleguide-toc__area-link {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: auto;
+    padding: 0 22px;
+    border: 2px solid var(--typo3-sg-text-primary, #000000);
+    border-radius: var(--typo3-sg-radius, 10px);
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .typo3-styleguide-toc__card {
         transition: none;

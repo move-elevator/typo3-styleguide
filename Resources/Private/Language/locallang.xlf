@@ -312,6 +312,12 @@
 			<trans-unit id="contentelement.tableofcontents.layout.cards">
 				<source>Cards</source>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.areas">
+				<source>Areas</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.area.open">
+				<source>Open area</source>
+			</trans-unit>
 			<trans-unit id="contentelement.gallery.label">
 				<source>Gallery</source>
 			</trans-unit>

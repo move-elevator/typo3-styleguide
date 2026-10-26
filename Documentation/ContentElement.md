@@ -90,10 +90,12 @@ Enable **Show download links** to add a download link with the original file bel
 
 The `Table of Contents` content element renders a navigable overview of the child pages below the page it is placed on, recursively through all levels. Only pages using the [Styleguide page type](PageType.md) are listed.
 
-- **Layout** — `List` for a nested, indented list, or `Cards` for a grouped card grid with one group per page level
+- **Layout** — `List` for a nested, indented list, `Cards` for a grouped card grid with one group per page level, or `Areas` for one larger card per direct child page, for example on a start page
 
 > [!TIP]
-> In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
+> In `Cards` and `Areas` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
+
+In `Areas` layout, a card shows the page title, the page's **Subtitle** as a short text, the links to its child pages and an "Open area" button. The titles are third level headings, so give the element a header to keep the heading levels in order.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
 

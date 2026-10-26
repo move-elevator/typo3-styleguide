@@ -433,6 +433,10 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                         'label' => $lll.'contentelement.tableofcontents.layout.cards',
                         'value' => 'cards',
                     ],
+                    [
+                        'label' => $lll.'contentelement.tableofcontents.layout.areas',
+                        'value' => 'areas',
+                    ],
                 ],
             ],
         ],
