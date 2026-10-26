@@ -17,6 +17,26 @@ class Copy {
         }
       });
     });
+
+    // Real buttons are keyboard operable and labelled by their own text already
+    document.querySelectorAll('.typo3-styleguide__frame button[data-copy]').forEach(el => {
+      el.addEventListener('click', () => this.copyToClipboard(el));
+    });
+  }
+
+  announce(message) {
+    if (!this.liveRegion) {
+      this.liveRegion = document.createElement('div');
+      this.liveRegion.setAttribute('role', 'status');
+      this.liveRegion.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap';
+      document.body.appendChild(this.liveRegion);
+    }
+
+    // Clearing first makes screen readers repeat an identical message
+    this.liveRegion.textContent = '';
+    requestAnimationFrame(() => {
+      this.liveRegion.textContent = message;
+    });
   }
 
   copyToClipboard(el) {
@@ -64,7 +84,10 @@ class Copy {
       existingHint.remove();
     }
 
-    const hint = document.createElement('div');
+    this.announce(message);
+
+    const hint = document.createElement('span');
+    hint.setAttribute('aria-hidden', 'true');
     hint.textContent = message;
     hint.classList.add('copy-hint');
     if (type === 'error') {
