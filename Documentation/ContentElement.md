@@ -9,6 +9,7 @@ This extension provides the following content elements for building a styleguide
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
 - [Gallery](#gallery)
+- [Guidelines](#guidelines)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -83,6 +84,8 @@ The `Images` content element displays a collection of images. Each image is defi
 - **Path** — An `EXT:` path to the image file (e.g. `EXT:sitepackage/Resources/Public/Images/logo.svg`)
 - **Caption** — Optional caption text
 
+Enable **Show download links** to add a download link with the original file below each image, for example for logo files.
+
 ## <img src="../Resources/Public/Icons/content-styleguide-tableofcontents.svg" height="20"> Table of Contents
 
 The `Table of Contents` content element renders a navigable overview of the child pages below the page it is placed on, recursively through all levels. Only pages using the [Styleguide page type](PageType.md) are listed.
@@ -103,3 +106,13 @@ The `Gallery` content element shows an image collection as a grid, for example a
 - **Show download links** — Adds a download link with the original file below each image
 
 Images load lazily and are scaled to a maximum width of 600 px, the download always delivers the original file.
+
+## <img src="../Resources/Public/Icons/content-styleguide-guidelines.svg" height="20"> Guidelines
+
+The `Guidelines` content element shows Do and Don't rules as cards. Each rule is defined as an inline record with:
+
+- **Type** — `Do` or `Don't`
+- **Text** — The rule
+- **Example image** — Optional `EXT:` path to an image that shows the rule
+
+Every card carries a symbol and a word, so a rule never relies on color alone. The example image has no alternative text of its own, because the rule text describes it.

@@ -249,6 +249,45 @@
 			<trans-unit id="contentelement.images.items">
 				<source>Images</source>
 			</trans-unit>
+			<trans-unit id="contentelement.images.downloads">
+				<source>Show download links</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.downloads.description">
+				<source>Adds a download link with the original file below each image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.download">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.label">
+				<source>Guidelines</source>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.description">
+				<source>Do and Don't rules as cards with a symbol and a word. One inline record per rule, optionally with an example image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.items">
+				<source>Guidelines</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline">
+				<source>Guideline</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.do">
+				<source>Do</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.dont">
+				<source>Don't</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.text">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path">
+				<source>Example image</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path.description">
+				<source>Optional EXT: path to an image that shows the rule. The text describes it, so the image has no alternative text of its own.</source>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_image">
 				<source>Image</source>
 			</trans-unit>

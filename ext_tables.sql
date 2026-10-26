@@ -13,6 +13,8 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_icons_path varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_icons_exclude varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_images int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_images_downloads tinyint(4) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_guidelines int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_tableofcontents_layout varchar(10) DEFAULT 'list' NOT NULL,
 	tx_typo3styleguide_gallery_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_gallery_columns varchar(2) DEFAULT '4' NOT NULL,
@@ -47,6 +49,15 @@ CREATE TABLE tx_typo3styleguide_image
 	parenttable varchar(255) DEFAULT '' NOT NULL,
 	path varchar(255) DEFAULT '' NOT NULL,
 	caption varchar(255) DEFAULT '' NOT NULL,
+);
+
+CREATE TABLE tx_typo3styleguide_guideline
+(
+	parentid int(11) DEFAULT 0 NOT NULL,
+	parenttable varchar(255) DEFAULT '' NOT NULL,
+	type varchar(10) DEFAULT 'do' NOT NULL,
+	text text,
+	path varchar(255) DEFAULT '' NOT NULL,
 );
 
 CREATE TABLE pages

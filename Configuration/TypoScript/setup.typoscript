@@ -62,6 +62,19 @@ tt_content {
     }
   }
 
+  typo3styleguide_guidelines =< lib.contentElement
+  typo3styleguide_guidelines {
+    templateName = Guidelines
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_guideline
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = guidelines
+    }
+  }
+
   typo3styleguide_tableofcontents =< lib.contentElement
   typo3styleguide_tableofcontents {
     templateName = TableOfContents

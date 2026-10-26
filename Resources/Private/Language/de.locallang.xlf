@@ -331,6 +331,58 @@
 				<source />
 				<target>Bilder</target>
 			</trans-unit>
+			<trans-unit id="contentelement.images.downloads">
+				<source />
+				<target>Download-Links anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.downloads.description">
+				<source />
+				<target>Zeigt unter jedem Bild einen Download-Link auf die Originaldatei.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.download">
+				<source />
+				<target>Herunterladen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.label">
+				<source />
+				<target>Richtlinien</target>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.description">
+				<source />
+				<target>Do-und-Don't-Regeln als Karten mit Symbol und Wort. Ein Inline-Datensatz pro Regel, optional mit Beispielbild.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.items">
+				<source />
+				<target>Richtlinien</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline">
+				<source />
+				<target>Richtlinie</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type">
+				<source />
+				<target>Art</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.do">
+				<source />
+				<target>So machen wir es</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.dont">
+				<source />
+				<target>Das vermeiden wir</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.text">
+				<source />
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path">
+				<source />
+				<target>Beispielbild</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path.description">
+				<source />
+				<target>Optionaler EXT:-Pfad zu einem Bild, das die Regel zeigt. Der Text beschreibt es, deshalb hat das Bild keinen eigenen Alternativtext.</target>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_image">
 				<source />
 				<target>Bild</target>

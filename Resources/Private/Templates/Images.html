@@ -28,6 +28,10 @@
                             </p>
                         </div>
                     </f:if>
+                    <f:if condition="{data.tx_typo3styleguide_images_downloads}">
+                        <f:variable name="label"><f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.images.download"/></f:variable>
+                        <a class="typo3-styleguide__gallery-download" href="{f:uri.resource(path: image.data.path)}" download aria-label="{label} {f:if(condition: image.data.caption, then: image.data.caption, else: image.data.path)}">{label}</a>
+                    </f:if>
                 </div>
             </f:if>
         </f:for>
