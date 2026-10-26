@@ -4905,7 +4905,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -5072,7 +5072,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -5239,7 +5239,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -5575,7 +5575,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -5744,7 +5744,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -5913,7 +5913,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -6164,7 +6164,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
@@ -6333,7 +6333,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="subheader"></field>
                 <field index="header_link"></field>
                 <field index="image_zoom" type="integer">0</field>
-                <field index="header_layout">0</field>
+                <field index="header_layout" type="integer">100</field>
                 <field index="list_type"></field>
                 <field index="sectionIndex" type="integer">1</field>
                 <field index="linkToTop" type="integer">0</field>
