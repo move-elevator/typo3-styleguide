@@ -11,6 +11,7 @@ This extension provides the following content elements for building a styleguide
 - [Gallery](#gallery)
 - [Guidelines](#guidelines)
 - [Element Documentation](#element-documentation)
+- [Page Preview](#page-preview)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -75,8 +76,11 @@ The `Icons` content element displays all icon files from a given directory. Conf
 
 - **Path** — An `EXT:` path pointing to the icon directory (e.g. `EXT:sitepackage/Resources/Public/Icons/`)
 - **Exclude** — Optional comma-separated list of file name patterns to skip (e.g. `*-alt.svg, legacy-*, *.json`). The wildcards `*` and `?` are supported.
+- **Show search** — Optional search field above the icons
 
 All files in the directory that are not excluded are rendered as icons with their filename as label.
+
+Enable **Show search** to add a search field above the icons. It filters the icons by their name while you type and tells screen readers how many are left.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-images.svg" height="20"> Images
 
@@ -91,12 +95,13 @@ Enable **Show download links** to add a download link with the original file bel
 
 The `Table of Contents` content element renders a navigable overview of the child pages below the page it is placed on, recursively through all levels. Only pages using the [Styleguide page type](PageType.md) are listed.
 
-- **Layout** — `List` for a nested, indented list, `Cards` for a grouped card grid with one group per page level, or `Areas` for one larger card per direct child page, for example on a start page
+- **Layout** — `List` for a nested, indented list, `Cards` for a grouped card grid with one group per page level, `Groups` for the same groups without the row of top level cards, or `Areas` for one larger card per direct child page, for example on a start page
+- **Depth** — how many levels of child pages are shown. Without a choice the setting of the project applies
 
 > [!TIP]
 > In `Cards` and `Areas` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
 
-In `Areas` layout, a card shows the page title, the page's **Subtitle** as a short text, the links to its child pages and an "Open area" button. The titles are third level headings, so give the element a header to keep the heading levels in order.
+In `Areas` layout, a card shows the page title, the page's **Subtitle** as a short text, the links to its child pages and an "Open" button. The titles are third level headings, so give the element a header to keep the heading levels in order.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
 
@@ -130,13 +135,28 @@ The `Element Documentation` content element documents a content type, for exampl
 
 It renders two parts:
 
-- **Preview** — Every element of the chosen type on the example pages, rendered live. The name above each example is the last [Technical Headline](#technical-headline) before it on that page. Three buttons set the width of the preview boxes to 1200, 768 and 375 px
-- **Fields** — The fields an editor fills in, with their label, whether they are required and their description. They are read from the TCA, so tabs and palettes every content type has (such as appearance, language, access and categories) are left out
+- **Preview** — Every element of the chosen type on the example pages, shown in a frame. The name above each example is the last [Technical Headline](#technical-headline) before it on that page. Three buttons set the width of the frames to 1200, 768 and 375 px, and a link above each frame opens the example in a new tab at full width
+- **Fields** — The fields an editor fills in, as a list with their label and a badge for the required ones. A field with a description opens on click to show it. They are read from the TCA, so tabs and palettes every content type has (such as appearance, language, access and categories) are left out
 
-The width buttons narrow the box around the example, they do not change the width of the screen. Styles that react to the width of the box, such as container queries, respond, styles that react to the width of the screen do not.
+Both parts use third level headings, so give the element a header to keep the heading levels in order.
+
+Each example is a frame that loads the example page itself and shows only the one element, with the layout and the stylesheets of your project. The page keeps its own access rules and the rest of your styleguide is not affected by the CSS of the examples. The width buttons change the width of the frame, so styles that react to the width of the screen, such as media queries, respond like on a real page.
 
 > [!NOTE]
-> The examples are not chosen by the request. Only elements on the example pages named at the element are rendered, only if the visitor may see the page, and hidden or time restricted elements stay hidden. A request parameter cannot select a record. The element never renders itself, so it cannot loop.
+> The previews are only shown to logged-in backend users. Without a login, the frames show a short notice. The example pages must be reachable by that backend user, hidden pages and the [restriction to backend users](BackendUserOnlyAccess.md) work as on the page itself. The frame needs the page to be embeddable in your own site, so set `frame-ancestors 'self'` (or `X-Frame-Options: SAMEORIGIN`) if you send such headers.
+>
+> The frames show the page of your project without its own page background, because that is a decoration of the page and not part of the element. Elements that scripts add to the page later, such as a cookie banner, cannot be removed on the server.
+>
+> The parameter `sg_preview` is excluded from the cache hash, so the page cache is not split by it. The reduced page is sent with `Cache-Control: private, no-store`.
 
 > [!TIP]
-> The inline records of the Colors, Fonts, Images and Guidelines elements are found by the page they are stored on, so these elements also render correctly when they are shown on a different page, as in the preview.
+> The inline records of the Colors, Fonts, Images and Guidelines elements are found by the page they are stored on, so these elements also render correctly when they are shown on a different page.
+
+## <img src="../Resources/Public/Icons/content-styleguide-pagepreview.svg" height="20"> Page Preview
+
+The `Page Preview` content element shows a whole page in a frame, for example to document a page type. Use the [Element Documentation](#element-documentation) for single elements and this element where the page around them matters.
+
+- **Page** — The page that is shown. It must be reachable by the visitors of the page with this element
+- **Description** — Optional rich text above the preview
+
+The preview has the width buttons, the scale and the link to open the page in a new tab of the Element Documentation. The page is loaded as it is, so it keeps its own layout and access rules. The frame has a fixed height of 800 px and scrolls inside, because a whole page is usually longer than the screen.

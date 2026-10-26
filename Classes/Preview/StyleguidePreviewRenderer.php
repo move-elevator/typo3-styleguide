@@ -51,6 +51,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             'typo3styleguide_gallery' => $this->renderGalleryPreview($row),
             'typo3styleguide_guidelines' => $this->renderGuidelinesPreview($row),
             'typo3styleguide_elementdoc' => $this->renderElementDocPreview($row),
+            'typo3styleguide_pagepreview' => $this->renderPagePreviewPreview($row),
             default => parent::renderPageModulePreviewContent($item),
         };
     }
@@ -204,6 +205,16 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         return $this->renderFluidPreview('ElementDoc', [
             'cType' => (string) ($row['tx_typo3styleguide_elementdoc_ctype'] ?? ''),
             'pageCount' => count(GeneralUtility::intExplode(',', (string) ($row['tx_typo3styleguide_elementdoc_pages'] ?? ''), true)),
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderPagePreviewPreview(array $row): string
+    {
+        return $this->renderFluidPreview('PagePreview', [
+            'page' => GeneralUtility::intExplode(',', (string) ($row['tx_typo3styleguide_pagepreview_page'] ?? ''), true)[0] ?? 0,
         ]);
     }
 

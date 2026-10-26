@@ -19,4 +19,7 @@ use TYPO3\CMS\Core\Utility\{ExtensionManagementUtility, GeneralUtility};
     if ($versionInformation->getMajorVersion() < 12) {
         ExtensionManagementUtility::addPageTSConfig('@import "EXT:typo3_styleguide/Configuration/page.tsconfig"');
     }
+
+    // The preview frames load a page with this parameter. It must not need a cHash and must not split the page cache
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'sg_preview';
 })();

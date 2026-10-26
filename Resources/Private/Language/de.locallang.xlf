@@ -67,6 +67,38 @@
 				<source />
 				<target>Hauptmenü</target>
 			</trans-unit>
+			<trans-unit id="frame.theme">
+				<source />
+				<target>Dunkles Design</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter">
+				<source />
+				<target>Seiten filtern</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter.none">
+				<source />
+				<target>Keine Seite gefunden</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.overview">
+				<source />
+				<target>Übersicht</target>
+			</trans-unit>
+			<trans-unit id="frame.search.label">
+				<source />
+				<target>Im Styleguide suchen</target>
+			</trans-unit>
+			<trans-unit id="frame.search.placeholder">
+				<source />
+				<target>Im Styleguide suchen, zum Beispiel Logo</target>
+			</trans-unit>
+			<trans-unit id="frame.search.count">
+				<source />
+				<target>{shown} von {total} Seiten</target>
+			</trans-unit>
+			<trans-unit id="frame.search.none">
+				<source />
+				<target>Keine Seite gefunden</target>
+			</trans-unit>
 			<trans-unit id="frame.nav.home">
 				<source />
 				<target>Start</target>
@@ -271,6 +303,10 @@
 				<source />
 				<target>Gewichte</target>
 			</trans-unit>
+			<trans-unit id="contentelement.fonts.snippet">
+				<source />
+				<target>CSS-Snippet</target>
+			</trans-unit>
 			<trans-unit id="contentelement.fonts.example">
 				<source />
 				<target>Beispiel</target>
@@ -318,6 +354,26 @@
 			<trans-unit id="contentelement.icons.exclude.description">
 				<source />
 				<target>Kommagetrennte Dateinamen-Muster, die ausgeschlossen werden, z. B. "*-alt.svg, legacy-*". Die Platzhalter * und ? werden unterstützt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search">
+				<source />
+				<target>Suche anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.description">
+				<source />
+				<target>Zeigt über den Icons ein Suchfeld, das die Icons nach ihrem Namen filtert.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.label">
+				<source />
+				<target>Icons suchen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.count">
+				<source />
+				<target>{shown} von {total} Icons</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.none">
+				<source />
+				<target>Kein Icon gefunden</target>
 			</trans-unit>
 			<trans-unit id="contentelement.images.label">
 				<source />
@@ -383,6 +439,22 @@
 				<source />
 				<target>Beschreibung</target>
 			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.label">
+				<source />
+				<target>Seitenvorschau</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.description">
+				<source />
+				<target>Zeigt eine ganze Seite in einem Rahmen, zum Beispiel einen Seitentyp. Nutze es, wenn ein einzelnes Element nicht reicht.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page">
+				<source />
+				<target>Seite</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page.description">
+				<source />
+				<target>Die Seite, die im Rahmen gezeigt wird. Die Besucher dieser Seite müssen sie erreichen können.</target>
+			</trans-unit>
 			<trans-unit id="contentelement.elementdoc.type">
 				<source />
 				<target>Inhaltstyp</target>
@@ -407,29 +479,25 @@
 				<source />
 				<target>Mobil</target>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields">
+			<trans-unit id="contentelement.elementdoc.scale">
 				<source />
-				<target>Felder</target>
+				<target>Maßstab</target>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields.field">
+			<trans-unit id="contentelement.elementdoc.open">
 				<source />
-				<target>Feld</target>
+				<target>In neuem Tab öffnen</target>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields.required">
+			<trans-unit id="contentelement.elementdoc.field.required">
 				<source />
 				<target>Pflicht</target>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields.note">
+			<trans-unit id="contentelement.elementdoc.field.optional">
 				<source />
-				<target>Hinweis</target>
+				<target>Optional</target>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.required.yes">
+			<trans-unit id="contentelement.elementdoc.fields">
 				<source />
-				<target>Ja</target>
-			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.required.no">
-				<source />
-				<target>Nein</target>
+				<target>Felder</target>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline">
 				<source />
@@ -491,13 +559,45 @@
 				<source />
 				<target>Karten</target>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.groups">
+				<source />
+				<target>Karten nach Bereichen</target>
+			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.layout.areas">
 				<source />
 				<target>Bereiche</target>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels">
+				<source />
+				<target>Tiefe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.description">
+				<source />
+				<target>Wie viele Ebenen der Seiten darunter gezeigt werden. Ohne Auswahl gilt die Einstellung des Projekts.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.default">
+				<source />
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.1">
+				<source />
+				<target>1 Ebene</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.2">
+				<source />
+				<target>2 Ebenen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.3">
+				<source />
+				<target>3 Ebenen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.9">
+				<source />
+				<target>Alle Ebenen</target>
+			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.area.open">
 				<source />
-				<target>Bereich öffnen</target>
+				<target>Öffnen</target>
 			</trans-unit>
 			<trans-unit id="contentelement.gallery.label">
 				<source />

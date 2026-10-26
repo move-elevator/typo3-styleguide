@@ -1,6 +1,7 @@
 lib.contentElement {
   templateRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Templates/
   partialRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Partials/
+  layoutRootPaths.-1 = EXT:typo3_styleguide/Resources/Private/Layouts/
 }
 tt_content {
   typo3styleguide_technicalheadline =< lib.contentElement
@@ -85,6 +86,12 @@ tt_content {
     dataProcessing.10 = MoveElevator\Styleguide\DataProcessing\ElementDocProcessor
   }
 
+  typo3styleguide_pagepreview =< lib.contentElement
+  typo3styleguide_pagepreview {
+    templateName = PagePreview
+    dataProcessing.10 = MoveElevator\Styleguide\DataProcessing\PagePreviewProcessor
+  }
+
   typo3styleguide_tableofcontents =< lib.contentElement
   typo3styleguide_tableofcontents {
     templateName = TableOfContents
@@ -93,12 +100,19 @@ tt_content {
       special = directory
       special.value.data = TSFE:id
       levels = 9
+      # The field of the element overrides the depth when it is set, also where a project has set its own depth
+      levels.override.field = tx_typo3styleguide_tableofcontents_levels
       includeSpacer = 1
       as = pages
       expandAll = 1
     }
   }
 }
+
+# Marks every content element for the preview frames, see ElementPreviewMiddleware. Only requests that carry the parameter get the markers
+[traverse(request.getQueryParams(), 'sg_preview') > 0]
+  tt_content.stdWrap.dataWrap = <!--sg-preview-start:{field:uid}-->|<!--sg-preview-end:{field:uid}-->
+[END]
 
 page.meta.robots = noindex,nofollow
 page.meta.robots.if {

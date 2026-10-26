@@ -51,6 +51,30 @@
 			<trans-unit id="frame.nav.main">
 				<source>Main menu</source>
 			</trans-unit>
+			<trans-unit id="frame.theme">
+				<source>Dark theme</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter">
+				<source>Filter pages</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter.none">
+				<source>No page found</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.overview">
+				<source>Overview</source>
+			</trans-unit>
+			<trans-unit id="frame.search.label">
+				<source>Search the styleguide</source>
+			</trans-unit>
+			<trans-unit id="frame.search.placeholder">
+				<source>Search the styleguide, for example logo</source>
+			</trans-unit>
+			<trans-unit id="frame.search.count">
+				<source>{shown} of {total} pages</source>
+			</trans-unit>
+			<trans-unit id="frame.search.none">
+				<source>No page found</source>
+			</trans-unit>
 			<trans-unit id="frame.nav.home">
 				<source>Home</source>
 			</trans-unit>
@@ -204,6 +228,9 @@
 			<trans-unit id="contentelement.fonts.weights">
 				<source>Weights</source>
 			</trans-unit>
+			<trans-unit id="contentelement.fonts.snippet">
+				<source>CSS snippet</source>
+			</trans-unit>
 			<trans-unit id="contentelement.fonts.example">
 				<source>Example</source>
 			</trans-unit>
@@ -239,6 +266,21 @@
 			</trans-unit>
 			<trans-unit id="contentelement.icons.exclude.description">
 				<source>Comma-separated file name patterns to exclude, e.g. "*-alt.svg, legacy-*". The wildcards * and ? are supported.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search">
+				<source>Show search</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.description">
+				<source>Shows a search field above the icons that filters them by name.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.label">
+				<source>Search icons</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.count">
+				<source>{shown} of {total} icons</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.none">
+				<source>No icon found</source>
 			</trans-unit>
 			<trans-unit id="contentelement.images.label">
 				<source>Images</source>
@@ -288,6 +330,18 @@
 			<trans-unit id="contentelement.elementdoc.note">
 				<source>Description</source>
 			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.label">
+				<source>Page preview</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.description">
+				<source>Shows a whole page in a frame, for example a page type. Use it where the page of an element is not enough.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page">
+				<source>Page</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page.description">
+				<source>The page that is shown in the frame. It must be reachable by the visitors of this page.</source>
+			</trans-unit>
 			<trans-unit id="contentelement.elementdoc.type">
 				<source>Content type</source>
 			</trans-unit>
@@ -306,23 +360,20 @@
 			<trans-unit id="contentelement.elementdoc.width.mobile">
 				<source>Mobile</source>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields">
-				<source>Fields</source>
+			<trans-unit id="contentelement.elementdoc.scale">
+				<source>Scale</source>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields.field">
-				<source>Field</source>
+			<trans-unit id="contentelement.elementdoc.open">
+				<source>Open in new tab</source>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields.required">
+			<trans-unit id="contentelement.elementdoc.field.required">
 				<source>Required</source>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.fields.note">
-				<source>Note</source>
+			<trans-unit id="contentelement.elementdoc.field.optional">
+				<source>Optional</source>
 			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.required.yes">
-				<source>Yes</source>
-			</trans-unit>
-			<trans-unit id="contentelement.elementdoc.required.no">
-				<source>No</source>
+			<trans-unit id="contentelement.elementdoc.fields">
+				<source>Fields</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline">
 				<source>Guideline</source>
@@ -369,11 +420,35 @@
 			<trans-unit id="contentelement.tableofcontents.layout.cards">
 				<source>Cards</source>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.groups">
+				<source>Cards grouped by area</source>
+			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.layout.areas">
 				<source>Areas</source>
 			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels">
+				<source>Depth</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.description">
+				<source>How many levels of the pages below are shown. Without a choice the setting of the project applies.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.1">
+				<source>1 level</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.2">
+				<source>2 levels</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.3">
+				<source>3 levels</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.9">
+				<source>All levels</source>
+			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.area.open">
-				<source>Open area</source>
+				<source>Open</source>
 			</trans-unit>
 			<trans-unit id="contentelement.gallery.label">
 				<source>Gallery</source>

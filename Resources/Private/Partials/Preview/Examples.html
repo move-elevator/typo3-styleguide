@@ -1,0 +1,36 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+
+<f:asset.script identifier="typo3styleguide_element_preview_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/element_preview.js" />
+<section class="typo3-styleguide__preview" data-sg-preview>
+    <div class="typo3-styleguide__preview-bar">
+        <h3 class="typo3-styleguide__element-doc-title" id="typo3-styleguide-doc-{uid}-preview" data-sg-anchor="{label}"><f:translate key="{lll}contentelement.elementdoc.preview"/></h3>
+        <div class="typo3-styleguide__preview-widths" role="group" aria-label="{f:translate(key: '{lll}contentelement.elementdoc.preview.width')}" data-sg-preview-widths hidden>
+            <button type="button" data-width="1200" aria-pressed="true"><f:translate key="{lll}contentelement.elementdoc.width.desktop"/> <span>1200 px</span></button>
+            <button type="button" data-width="768" aria-pressed="false"><f:translate key="{lll}contentelement.elementdoc.width.tablet"/> <span>768 px</span></button>
+            <button type="button" data-width="375" aria-pressed="false"><f:translate key="{lll}contentelement.elementdoc.width.mobile"/> <span>375 px</span></button>
+        </div>
+    </div>
+    <f:for each="{examples}" as="example">
+        <figure class="typo3-styleguide__preview-example">
+            <figcaption class="typo3-styleguide__preview-caption">
+                <span>{example.name}<span class="typo3-styleguide__preview-scale" data-sg-preview-scale data-label="{f:translate(key: '{lll}contentelement.elementdoc.scale')}" hidden></span></span>
+                <a class="typo3-styleguide__preview-open" href="{example.src}" target="_blank" rel="noopener" aria-label="{f:translate(key: '{lll}contentelement.elementdoc.open')}: {example.name}">
+                    <f:translate key="{lll}contentelement.elementdoc.open"/>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+                </a>
+            </figcaption>
+            <div class="typo3-styleguide__preview-viewport">
+                <div class="typo3-styleguide__preview-stage">
+                    <iframe class="typo3-styleguide__preview-frame" data-sg-preview-frame{f:if(condition: fixedHeight, then: ' data-sg-fixed-height="{fixedHeight}" style="height: {fixedHeight}px"')} src="{example.src}" title="{f:translate(key: '{lll}contentelement.elementdoc.preview')}: {example.name}" loading="lazy"></iframe>
+                </div>
+            </div>
+        </figure>
+    </f:for>
+</section>
+
+</html>

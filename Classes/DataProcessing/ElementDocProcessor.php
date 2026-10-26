@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\DataProcessing;
 
-use MoveElevator\Styleguide\Utility\ElementFieldCollector;
+use MoveElevator\Styleguide\Middleware\ElementPreviewMiddleware;
+use MoveElevator\Styleguide\Utility\{ElementFieldCollector, PreviewUrl};
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\{ContentObjectRenderer, DataProcessorInterface};
 
-use function array_slice;
 use function count;
 use function is_array;
 use function is_string;
@@ -28,9 +28,11 @@ use function is_string;
 /**
  * ElementDocProcessor.
  *
- * Prepares the documentation of a content type: its fields from the TCA and live examples. The
- * examples come only from the pages the editor named at the element, and only from pages the
- * visitor may see. Nothing in the request chooses which records are rendered.
+ * Prepares the documentation of a content type: its fields from the TCA and the URLs of the preview
+ * frames. The examples come only from the pages the editor named at the element, in the order of
+ * the editor. A page is listed when its own visibility settings (hidden, time, login group) allow
+ * the visitor to see it. The frame itself loads the page through ElementPreviewMiddleware, which
+ * applies the full access rules of that page. Nothing in the request chooses which records are listed.
  *
  * @author Konrad Michalik <km@move-elevator.de>
  * @license GPL-2.0-or-later
@@ -89,7 +91,7 @@ final class ElementDocProcessor implements DataProcessorInterface
     /**
      * @param list<int> $pageIds
      *
-     * @return list<array{name: string, html: string}>
+     * @return list<array{name: string, src: string}>
      */
     private function examples(ContentObjectRenderer $cObj, string $cType, array $pageIds): array
     {
@@ -97,8 +99,14 @@ final class ElementDocProcessor implements DataProcessorInterface
             return [];
         }
 
+        // The query answers in database order, the editor's order of the pages is the order of the examples
+        $accessiblePageIds = array_values(array_intersect(
+            $pageIds,
+            GeneralUtility::makeInstance(PageRepository::class)->filterAccessiblePageIds($pageIds),
+        ));
+
         $examples = [];
-        foreach (GeneralUtility::makeInstance(PageRepository::class)->filterAccessiblePageIds($pageIds) as $pageId) {
+        foreach ($accessiblePageIds as $pageId) {
             $headline = '';
             $rows = $cObj->getRecords('tt_content', ['pidInList' => (string) $pageId, 'orderBy' => 'sorting']);
             foreach ($rows as $row) {
@@ -107,17 +115,20 @@ final class ElementDocProcessor implements DataProcessorInterface
 
                     continue;
                 }
-                if ($cType !== $row['CType'] || count($examples) >= self::MAX_EXAMPLES) {
+                if ($cType !== $row['CType']) {
                     continue;
                 }
 
                 $examples[] = [
                     'name' => '' !== $headline ? $headline : (string) $row['header'],
-                    'html' => $cObj->cObjGetSingle('RECORDS', ['tables' => 'tt_content', 'source' => (string) (int) $row['uid']]),
+                    'src' => PreviewUrl::forPage($cObj, $pageId, '&'.ElementPreviewMiddleware::PARAMETER.'='.(int) $row['uid']),
                 ];
+                if (count($examples) >= self::MAX_EXAMPLES) {
+                    return $examples;
+                }
             }
         }
 
-        return array_slice($examples, 0, self::MAX_EXAMPLES);
+        return $examples;
     }
 }
