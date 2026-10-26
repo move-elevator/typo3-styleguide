@@ -429,6 +429,121 @@
     color: var(--typo3-sg-bg-primary);
 }
 
+.typo3-styleguide__visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Fonts, Detail layout */
+.typo3-styleguide__font-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0 40px;
+    color: var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide__font-detail-specimen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px 48px;
+    padding: 32px;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+    background: var(--typo3-sg-bg-secondary);
+}
+
+.typo3-styleguide__font-detail-specimen p {
+    margin: 0;
+}
+
+.typo3-styleguide__font-detail-aa {
+    font-size: 6rem;
+    line-height: 1;
+}
+
+.typo3-styleguide__font-detail-name {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.typo3-styleguide__font-detail-glyphs {
+    overflow-wrap: anywhere;
+}
+
+.typo3-styleguide__font-detail-sample {
+    margin-top: 16px !important;
+    max-width: 560px;
+}
+
+.typo3-styleguide__font-detail-note {
+    max-width: 720px;
+    color: var(--typo3-sg-text-secondary);
+}
+
+.typo3-styleguide__font-detail-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+}
+
+.typo3-styleguide__font-detail-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+}
+
+.typo3-styleguide__font-detail-table th,
+.typo3-styleguide__font-detail-table td {
+    padding: 14px 20px;
+    text-align: left;
+}
+
+.typo3-styleguide__font-detail-table thead tr {
+    background: var(--typo3-sg-bg-secondary);
+}
+
+.typo3-styleguide__font-detail-table tbody tr {
+    border-top: 1px solid var(--typo3-sg-border);
+}
+
+.typo3-styleguide__font-detail-snippet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+}
+
+.typo3-styleguide__font-detail-snippet pre {
+    flex: 1 1 320px;
+    min-width: 0;
+    margin: 0;
+    padding: 14px 20px;
+    overflow-x: auto;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+    background: var(--typo3-sg-bg-secondary);
+}
+
+.typo3-styleguide__font-detail-download {
+    margin: 0;
+}
+
+.typo3-styleguide__font-detail-download a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
 /* Colors, Scale layout */
 .typo3-styleguide__color-scale {
     display: flex;
@@ -500,6 +615,7 @@
 }
 
 @media (max-width: 768px) {
+    .typo3-styleguide__font-detail,
     .typo3-styleguide__color-usage,
     .typo3-styleguide__color-cards,
     .typo3-styleguide__color-scale,
@@ -517,6 +633,7 @@
 }
 
 @media (max-width: 480px) {
+    .typo3-styleguide__font-detail,
     .typo3-styleguide__color-usage,
     .typo3-styleguide__color-cards,
     .typo3-styleguide__color-scale,

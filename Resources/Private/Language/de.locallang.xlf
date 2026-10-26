@@ -223,6 +223,58 @@
 				<source />
 				<target>Schriften</target>
 			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout">
+				<source />
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.specimen">
+				<source />
+				<target>Schriftprobe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.detail">
+				<source />
+				<target>Detail</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback">
+				<source />
+				<target>Fallback-Schriften</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback.description">
+				<source />
+				<target>Wird im CSS-Snippet an die Schriftfamilie angehängt, zum Beispiel eine Systemschrift.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample">
+				<source />
+				<target>Mustertext</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample.description">
+				<source />
+				<target>Optionale Zeile unter dem Alphabet im Layout Detail.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download">
+				<source />
+				<target>Download-Link</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download.label">
+				<source />
+				<target>Schrift laden</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note">
+				<source />
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note.description">
+				<source />
+				<target>Zum Beispiel, wie die Schrift gehostet wird. Wird im Layout Detail über den Gewichten angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.weights">
+				<source />
+				<target>Gewichte</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.example">
+				<source />
+				<target>Beispiel</target>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font">
 				<source />
 				<target>Schrift</target>
@@ -238,6 +290,14 @@
 			<trans-unit id="tx_typo3styleguide_font.label">
 				<source />
 				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose">
+				<source />
+				<target>Einsatz</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose.description">
+				<source />
+				<target>Wofür dieses Gewicht gilt. Wird im Layout Detail des Schriften-Elements angezeigt.</target>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
 				<source />

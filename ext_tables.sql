@@ -6,6 +6,10 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_colors_contrast_light varchar(7) DEFAULT '#FFFFFF' NOT NULL,
 	tx_typo3styleguide_colors_contrast_dark varchar(7) DEFAULT '#000000' NOT NULL,
 	tx_typo3styleguide_fonts int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_fonts_layout varchar(10) DEFAULT 'specimen' NOT NULL,
+	tx_typo3styleguide_fonts_fallback varchar(255) DEFAULT '' NOT NULL,
+	tx_typo3styleguide_fonts_sample varchar(255) DEFAULT '' NOT NULL,
+	tx_typo3styleguide_fonts_download varchar(1024) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_icons_path varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_icons_exclude varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_images int(11) unsigned DEFAULT 0 NOT NULL,
@@ -34,6 +38,7 @@ CREATE TABLE tx_typo3styleguide_font
 	font varchar(255) DEFAULT '' NOT NULL,
 	font_weight varchar(30) DEFAULT '' NOT NULL,
 	label varchar(255) DEFAULT '' NOT NULL,
+	purpose varchar(255) DEFAULT '' NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_image

@@ -253,6 +253,57 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 ],
             ],
         ],
+        'tx_typo3styleguide_fonts_layout' => [
+            'label' => $lll.'contentelement.fonts.layout',
+            'onChange' => 'reload',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => 'specimen',
+                'items' => [
+                    [
+                        'label' => $lll.'contentelement.fonts.layout.specimen',
+                        'value' => 'specimen',
+                    ],
+                    [
+                        'label' => $lll.'contentelement.fonts.layout.detail',
+                        'value' => 'detail',
+                    ],
+                ],
+            ],
+        ],
+        'tx_typo3styleguide_fonts_fallback' => [
+            'label' => $lll.'contentelement.fonts.fallback',
+            'description' => $lll.'contentelement.fonts.fallback.description',
+            'displayCond' => 'FIELD:tx_typo3styleguide_fonts_layout:=:detail',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => "'Segoe UI', sans-serif",
+            ],
+        ],
+        'tx_typo3styleguide_fonts_sample' => [
+            'label' => $lll.'contentelement.fonts.sample',
+            'description' => $lll.'contentelement.fonts.sample.description',
+            'displayCond' => 'FIELD:tx_typo3styleguide_fonts_layout:=:detail',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+                'eval' => 'trim',
+            ],
+        ],
+        'tx_typo3styleguide_fonts_download' => [
+            'label' => $lll.'contentelement.fonts.download',
+            'displayCond' => 'FIELD:tx_typo3styleguide_fonts_layout:=:detail',
+            'config' => [
+                'type' => 'link',
+                'size' => 50,
+                'allowedTypes' => ['file', 'url'],
+            ],
+        ],
         'tx_typo3styleguide_icons_path' => [
             'label' => $lll.'contentelement.icons.path',
             'config' => [
@@ -407,7 +458,8 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_fonts'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_typo3styleguide_fonts,
+                    --palette--;;header,tx_typo3styleguide_fonts_layout,tx_typo3styleguide_fonts,
+                    tx_typo3styleguide_fonts_fallback,tx_typo3styleguide_fonts_sample,tx_typo3styleguide_fonts_download,bodytext,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -420,6 +472,17 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_fonts'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+    'columnsOverrides' => [
+        'bodytext' => [
+            'label' => $lll.'contentelement.fonts.note',
+            'description' => $lll.'contentelement.fonts.note.description',
+            'displayCond' => 'FIELD:tx_typo3styleguide_fonts_layout:=:detail',
+            'config' => [
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
+            ],
+        ],
+    ],
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_icons'] = [

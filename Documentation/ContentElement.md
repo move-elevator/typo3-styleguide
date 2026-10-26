@@ -54,8 +54,18 @@ The `Fonts` content element showcases available fonts. Each font is defined as a
 - **Font** — Font family name (e.g. `Lexend`)
 - **Font Weight** — Optional weight value (e.g. `700`)
 - **Label** — Optional display name
+- **Usage** — Optional purpose of this weight for the Detail layout (e.g. "Headlines")
 
 Each font entry renders a specimen text in the specified font family and weight.
+
+Choose the **Layout** `Detail` for one specimen per element instead: a large "Aa", the alphabet and digits in the first font, an optional sample text and a table of all weights with their usage. A CSS snippet with a copy button is generated from the first font. Further fields of the Detail layout:
+
+- **Fallback fonts** — Appended to the font family in the snippet and the specimen, e.g. `'Segoe UI', sans-serif`
+- **Sample text** — Optional line below the alphabet
+- **Download link** — Optional link to the font files
+- **Note** — Rich text above the weights, e.g. how the font is hosted
+
+Enter the font family as you would in CSS, including quotes or a stack where needed, because the value is used as it is.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-icons.svg" height="20"> Icons
 

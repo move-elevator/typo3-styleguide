@@ -168,6 +168,45 @@
 			<trans-unit id="contentelement.fonts.items">
 				<source>Fonts</source>
 			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.specimen">
+				<source>Specimen</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.detail">
+				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback">
+				<source>Fallback fonts</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback.description">
+				<source>Appended to the family in the CSS snippet, for example a system font.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample">
+				<source>Sample text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample.description">
+				<source>Optional line shown below the alphabet in the Detail layout.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download">
+				<source>Download link</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download.label">
+				<source>Download font</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note.description">
+				<source>For example how the font is hosted. Shown above the weights in the Detail layout.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.weights">
+				<source>Weights</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.example">
+				<source>Example</source>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font">
 				<source>Font</source>
 			</trans-unit>
@@ -179,6 +218,12 @@
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font.label">
 				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose">
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose.description">
+				<source>What this weight is used for. Shown in the Detail layout of the Fonts element.</source>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
 				<source>Icons</source>

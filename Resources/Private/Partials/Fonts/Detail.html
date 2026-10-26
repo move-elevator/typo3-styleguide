@@ -1,0 +1,68 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+<f:variable name="family" value="{fonts.0.data.font}{f:if(condition: data.tx_typo3styleguide_fonts_fallback, then: ', {data.tx_typo3styleguide_fonts_fallback}')}" />
+<f:variable name="snippet" value="font-family: {family};" />
+
+<div class="typo3-styleguide__font-detail">
+    <div class="typo3-styleguide__font-detail-specimen" style="font-family: {family};">
+        <p class="typo3-styleguide__font-detail-aa" aria-hidden="true">Aa</p>
+        <div>
+            <p class="typo3-styleguide__font-detail-name">{fonts.0.data.font}</p>
+            <p class="typo3-styleguide__font-detail-glyphs">
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                abcdefghijklmnopqrstuvwxyz<br/>
+                1234567890 (,.;:?!$&amp;*)
+            </p>
+            <f:if condition="{data.tx_typo3styleguide_fonts_sample}">
+                <p class="typo3-styleguide__font-detail-sample">{data.tx_typo3styleguide_fonts_sample}</p>
+            </f:if>
+        </div>
+    </div>
+
+    <f:if condition="{data.bodytext}">
+        <div class="typo3-styleguide__font-detail-note">
+            <f:format.html>{data.bodytext}</f:format.html>
+        </div>
+    </f:if>
+
+    <div class="typo3-styleguide__font-detail-table-wrap">
+        <table class="typo3-styleguide__font-detail-table">
+            <caption class="typo3-styleguide__visually-hidden"><f:translate key="{lll}contentelement.fonts.weights"/></caption>
+            <thead>
+                <tr>
+                    <th scope="col"><f:translate key="{lll}tx_typo3styleguide_font.font_weight"/></th>
+                    <th scope="col"><f:translate key="{lll}tx_typo3styleguide_font.label"/></th>
+                    <th scope="col"><f:translate key="{lll}tx_typo3styleguide_font.purpose"/></th>
+                    <th scope="col"><f:translate key="{lll}contentelement.fonts.example"/></th>
+                </tr>
+            </thead>
+            <tbody>
+                <f:for each="{fonts}" as="font">
+                    <tr>
+                        <th scope="row">{font.data.font_weight}</th>
+                        <td>{f:if(condition: font.data.label, then: font.data.label, else: font.data.font)}</td>
+                        <td>{font.data.purpose}</td>
+                        <td style="font-family: {font.data.font};{f:if(condition: '{font.data.font_weight}', then: ' font-weight: {font.data.font_weight};')}">Sphinx of black quartz</td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="typo3-styleguide__font-detail-snippet">
+        <pre><code>{snippet}</code></pre>
+        <button type="button" class="typo3-styleguide__copy" data-copy="{snippet}"><f:translate key="{lll}contentelement.colors.copy"/></button>
+    </div>
+
+    <f:if condition="{data.tx_typo3styleguide_fonts_download}">
+        <p class="typo3-styleguide__font-detail-download">
+            <f:link.typolink parameter="{data.tx_typo3styleguide_fonts_download}"><f:translate key="{lll}contentelement.fonts.download.label"/></f:link.typolink>
+        </p>
+    </f:if>
+</div>
+
+</html>
