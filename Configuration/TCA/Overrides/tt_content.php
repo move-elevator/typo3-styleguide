@@ -182,6 +182,51 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 ],
             ],
         ],
+        'tx_typo3styleguide_colors_layout' => [
+            'label' => $lll.'contentelement.colors.layout',
+            'onChange' => 'reload',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => 'swatches',
+                'items' => [
+                    [
+                        'label' => $lll.'contentelement.colors.layout.swatches',
+                        'value' => 'swatches',
+                    ],
+                    [
+                        'label' => $lll.'contentelement.colors.layout.detail',
+                        'value' => 'detail',
+                    ],
+                ],
+            ],
+        ],
+        'tx_typo3styleguide_colors_contrast_light' => [
+            'label' => $lll.'contentelement.colors.contrast_light',
+            'description' => $lll.'contentelement.colors.contrast.description',
+            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:=:detail',
+            'config' => [
+                'type' => 'input',
+                'size' => 10,
+                'max' => 7,
+                'eval' => 'trim',
+                'default' => '#FFFFFF',
+                'placeholder' => '#FFFFFF',
+            ],
+        ],
+        'tx_typo3styleguide_colors_contrast_dark' => [
+            'label' => $lll.'contentelement.colors.contrast_dark',
+            'description' => $lll.'contentelement.colors.contrast.description',
+            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:=:detail',
+            'config' => [
+                'type' => 'input',
+                'size' => 10,
+                'max' => 7,
+                'eval' => 'trim',
+                'default' => '#000000',
+                'placeholder' => '#000000',
+            ],
+        ],
         'tx_typo3styleguide_fonts' => [
             'label' => $lll.'contentelement.fonts.items',
             'config' => [
@@ -323,7 +368,8 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_colors'] = [
     'previewRenderer' => StyleguidePreviewRenderer::class,
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
-                    --palette--;;header,tx_typo3styleguide_colors,
+                    --palette--;;header,tx_typo3styleguide_colors_layout,tx_typo3styleguide_colors,bodytext,
+                    tx_typo3styleguide_colors_contrast_light,tx_typo3styleguide_colors_contrast_dark,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -336,6 +382,17 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_colors'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+    'columnsOverrides' => [
+        'bodytext' => [
+            'label' => $lll.'contentelement.colors.usage',
+            'description' => $lll.'contentelement.colors.usage.description',
+            'displayCond' => 'FIELD:tx_typo3styleguide_colors_layout:=:detail',
+            'config' => [
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
+            ],
+        ],
+    ],
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_fonts'] = [

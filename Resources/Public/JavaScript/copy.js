@@ -19,6 +19,11 @@ class Copy {
         }
       });
     });
+
+    // Real buttons are operable and named by their own text, so they only need the click handler
+    document.querySelectorAll('button.typo3-styleguide__copy[data-copy]').forEach(el => {
+      el.addEventListener('click', () => this.copyToClipboard(el));
+    });
   }
 
   // Created up front: screen readers can miss a status node that is inserted right before its first message

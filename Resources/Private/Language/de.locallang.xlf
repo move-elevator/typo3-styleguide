@@ -83,6 +83,82 @@
 				<source />
 				<target>Bezeichnung</target>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.layout">
+				<source />
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.swatches">
+				<source />
+				<target>Farbfelder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.detail">
+				<source />
+				<target>Detail</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage">
+				<source />
+				<target>Verwendungsregeln</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage.description">
+				<source />
+				<target>Wann welche Farbe gilt, zum Beispiel für Text, Flächen oder Akzente. Wird im Layout Detail über den Farben angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_light">
+				<source />
+				<target>Helle Textfarbe (HEX)</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_dark">
+				<source />
+				<target>Dunkle Textfarbe (HEX)</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.description">
+				<source />
+				<target>Referenzfarbe für die Kontrastprüfung im Layout Detail. Jede Farbe zeigt, ob sie als Hintergrund für diese Textfarbe taugt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.light">
+				<source />
+				<target>Heller Text</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.dark">
+				<source />
+				<target>Dunkler Text</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aaa">
+				<source />
+				<target>AAA</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aa">
+				<source />
+				<target>AA</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.large">
+				<source />
+				<target>Nur große Schrift</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.fail">
+				<source />
+				<target>Nicht für Text</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.copy">
+				<source />
+				<target>Kopieren</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.cmyk">
+				<source />
+				<target>CMYK</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.pms">
+				<source />
+				<target>PMS</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.variable">
+				<source />
+				<target>Variablenname</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.detail.description">
+				<source />
+				<target>Wird im Layout Detail des Farben-Elements angezeigt.</target>
+			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source />
 				<target>Schriften</target>

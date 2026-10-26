@@ -63,6 +63,63 @@
 			<trans-unit id="tx_typo3styleguide_color.label">
 				<source>Label</source>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.swatches">
+				<source>Swatches</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.detail">
+				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage">
+				<source>Usage rules</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage.description">
+				<source>When to use which color, for example for text, surfaces or accents. Shown above the colors in the Detail layout.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_light">
+				<source>Light text color (HEX)</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_dark">
+				<source>Dark text color (HEX)</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.description">
+				<source>Reference color for the contrast check in the Detail layout. Each color shows whether it works as a background for this text color.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.light">
+				<source>Light text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.dark">
+				<source>Dark text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aaa">
+				<source>AAA</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aa">
+				<source>AA</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.large">
+				<source>Large text only</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.fail">
+				<source>Not for text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.copy">
+				<source>Copy</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.cmyk">
+				<source>CMYK</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.pms">
+				<source>PMS</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.variable">
+				<source>Variable name</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.detail.description">
+				<source>Shown in the Detail layout of the Colors element.</source>
+			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source>Fonts</source>
 			</trans-unit>

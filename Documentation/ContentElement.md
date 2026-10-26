@@ -34,7 +34,16 @@ The `Colors` content element displays a color palette. Each color is defined as 
 - **Color** — HEX color value (e.g. `#EAE7E2`)
 - **Label** — Optional name for the color (e.g. "cararra")
 
+- **CMYK**, **PMS**, **Variable name** — Optional values for the Detail layout (e.g. `0, 72, 100, 0`, `PANTONE 165 C`, `$color-primary`)
+
 Colors are rendered as swatches with their HEX value and label.
+
+Choose the **Layout** to change the output:
+
+- **Swatches** — The default, one square swatch per color
+- **Detail** — One card per color with HEX, RGB (calculated from the HEX value), the optional CMYK, PMS and variable name, and a contrast check. HEX, RGB and the variable name are copy buttons
+
+The Detail layout adds a rich text field for usage rules above the colors, for example when a color is meant for text, surfaces or accents. For the contrast check, each color is compared to a light and a dark text color (default `#FFFFFF` and `#000000`, adjustable per element) and gets the WCAG level it reaches: `AAA`, `AA`, `Large text only` or `Not for text`. The level is always written out, never conveyed by color alone.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-fonts.svg" height="20"> Fonts
 

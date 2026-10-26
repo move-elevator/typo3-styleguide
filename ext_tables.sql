@@ -2,6 +2,9 @@ CREATE TABLE tt_content
 (
 	tx_typo3styleguide_technicalheadlinetag varchar(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'h2',
 	tx_typo3styleguide_colors int(11) unsigned DEFAULT 0 NOT NULL,
+	tx_typo3styleguide_colors_layout varchar(10) DEFAULT 'swatches' NOT NULL,
+	tx_typo3styleguide_colors_contrast_light varchar(7) DEFAULT '#FFFFFF' NOT NULL,
+	tx_typo3styleguide_colors_contrast_dark varchar(7) DEFAULT '#000000' NOT NULL,
 	tx_typo3styleguide_fonts int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_icons_path varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_icons_exclude varchar(255) DEFAULT '' NOT NULL,
@@ -18,6 +21,9 @@ CREATE TABLE tx_typo3styleguide_color
 	parenttable varchar(255) DEFAULT '' NOT NULL,
 	color varchar(7) DEFAULT '' NOT NULL,
 	label varchar(255) DEFAULT '' NOT NULL,
+	cmyk varchar(50) DEFAULT '' NOT NULL,
+	pms varchar(100) DEFAULT '' NOT NULL,
+	variable varchar(100) DEFAULT '' NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_font

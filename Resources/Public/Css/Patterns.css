@@ -310,3 +310,144 @@
         margin: 0 16px;
     }
 }
+
+/* Colors, Detail layout */
+.typo3-styleguide__color-usage {
+    margin: 0 40px 24px;
+    max-width: 720px;
+    color: var(--typo3-sg-text-secondary);
+}
+
+.typo3-styleguide__color-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    margin: 0 40px;
+    padding: 0;
+}
+
+.typo3-styleguide__color-card {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide__color-card-swatch {
+    flex: 0 0 168px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    min-height: 148px;
+    padding: 16px;
+    border-right: 1px solid var(--typo3-sg-border);
+    font-family: monospace, sans-serif;
+    font-weight: bolder;
+}
+
+.typo3-styleguide__color-card-body {
+    flex: 1 1 360px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 24px;
+}
+
+.typo3-styleguide__color-card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.typo3-styleguide__color-card-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px 24px;
+    margin: 0;
+}
+
+.typo3-styleguide__color-card-values dt {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--typo3-sg-text-secondary);
+}
+
+.typo3-styleguide__color-card-values dd {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 2px 0 0;
+    font-family: monospace, sans-serif;
+}
+
+.typo3-styleguide__copy {
+    min-height: 44px;
+    padding: 4px 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline dotted;
+    cursor: pointer;
+}
+
+.typo3-styleguide__copy:focus-visible {
+    outline: 2px solid var(--typo3-sg-accent);
+    outline-offset: 2px;
+}
+
+.typo3-styleguide__color-card-contrast {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 14px 0 0;
+    border-top: 1px solid var(--typo3-sg-border);
+}
+
+.typo3-styleguide__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border: 2px solid var(--typo3-sg-text-primary);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+}
+
+.typo3-styleguide__chip--aaa,
+.typo3-styleguide__chip--aa {
+    background: var(--typo3-sg-text-primary);
+    color: var(--typo3-sg-bg-primary);
+}
+
+@media (max-width: 768px) {
+    .typo3-styleguide__color-usage,
+    .typo3-styleguide__color-cards {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .typo3-styleguide__color-card-swatch {
+        flex-basis: 100%;
+        min-height: 96px;
+        border-right: 0;
+        border-bottom: 1px solid var(--typo3-sg-border);
+    }
+}
+
+@media (max-width: 480px) {
+    .typo3-styleguide__color-usage,
+    .typo3-styleguide__color-cards {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
