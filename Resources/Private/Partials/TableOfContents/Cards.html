@@ -5,7 +5,7 @@
     data-namespace-typo3-fluid="true"
 >
 
-<div class="typo3-styleguide-toc__cards">
+<f:if condition="{groupsOnly}"><f:else><div class="typo3-styleguide-toc__cards">
     <f:for each="{pages}" as="page">
         <f:if condition="{page.data.doktype} == 1754310721">
             <a href="{page.link}" class="typo3-styleguide-toc__card">
@@ -18,7 +18,7 @@
             </a>
         </f:if>
     </f:for>
-</div>
+</div></f:else></f:if>
 
 <f:for each="{pages}" as="page">
     <f:if condition="{page.data.doktype} == 1754310721">

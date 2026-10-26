@@ -17,11 +17,11 @@
 <ul class="typo3-styleguide__color-cards" role="list">
     <f:for each="{colors}" as="color">
         <f:if condition="{color.data.color}">
-            <f:variable name="contrastColor"><sg:contrastColor color="{color.data.color}"/></f:variable>
             <f:variable name="ratioLight" value="{sg:contrastRatio(color: color.data.color, background: light)}" />
             <f:variable name="ratioDark" value="{sg:contrastRatio(color: color.data.color, background: dark)}" />
             <f:variable name="levelLight"><sg:contrastLevel ratio="{ratioLight}"/></f:variable>
             <f:variable name="levelDark"><sg:contrastLevel ratio="{ratioDark}"/></f:variable>
+            <f:variable name="contrastColor" value="{f:if(condition: '{ratioLight} >= {ratioDark}', then: light, else: dark)}" />
             <li class="typo3-styleguide__color-card">
                 <div class="typo3-styleguide__color-card-swatch" style="background-color: {color.data.color}; color: {contrastColor};">
                     <span>{color.data.color}</span>

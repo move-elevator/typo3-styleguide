@@ -17,11 +17,11 @@
 <ul class="typo3-styleguide__color-status" role="list">
     <f:for each="{colors}" as="color">
         <f:if condition="{color.data.color}">
-            <f:variable name="contrastColor"><sg:contrastColor color="{color.data.color}"/></f:variable>
             <f:variable name="ratioLight" value="{sg:contrastRatio(color: color.data.color, background: light)}" />
             <f:variable name="ratioDark" value="{sg:contrastRatio(color: color.data.color, background: dark)}" />
             <f:variable name="levelLight"><sg:contrastLevel ratio="{ratioLight}"/></f:variable>
             <f:variable name="levelDark"><sg:contrastLevel ratio="{ratioDark}"/></f:variable>
+            <f:variable name="contrastColor" value="{f:if(condition: '{ratioLight} >= {ratioDark}', then: light, else: dark)}" />
             <li class="typo3-styleguide__color-status-card">
                 <div class="typo3-styleguide__color-status-head" style="background-color: {color.data.color}; color: {contrastColor};">
                     <f:switch expression="{color.data.role}">
@@ -36,20 +36,31 @@
                         </f:case>
                     </f:switch>
                     <strong>{f:if(condition: color.data.label, then: color.data.label, else: color.data.color)}</strong>
+                    <f:if condition="{color.data.role} && !{color.data.label}">
+                        <span class="typo3-styleguide__visually-hidden"><f:translate key="{lll}tx_typo3styleguide_color.role.{color.data.role}"/></span>
+                    </f:if>
                 </div>
                 <div class="typo3-styleguide__color-status-body">
-                    <p class="typo3-styleguide__color-status-values">
-                        <button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color}">{color.data.color}</button>
-                        <button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color -> sg:format.rgb()}">RGB {color.data.color -> sg:format.rgb()}</button>
-                    </p>
-                    <ul class="typo3-styleguide__color-card-contrast" role="list">
-                        <li class="typo3-styleguide__chip typo3-styleguide__chip--{levelLight}">
-                            <strong><f:translate key="{lll}contentelement.colors.contrast.light"/> <f:format.number decimals="2">{ratioLight}</f:format.number>:1</strong>
-                            <span><f:translate key="{lll}contentelement.colors.contrast.{levelLight}"/></span>
+                    <dl class="typo3-styleguide__color-status-values">
+                        <div>
+                            <dt>HEX</dt>
+                            <dd><button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color}">{color.data.color}</button></dd>
+                        </div>
+                        <div>
+                            <dt>RGB</dt>
+                            <dd><button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color -> sg:format.rgb()}">{color.data.color -> sg:format.rgb()}</button></dd>
+                        </div>
+                    </dl>
+                    <ul class="typo3-styleguide__color-status-contrast" role="list">
+                        <li>
+                            <span class="typo3-styleguide__color-status-contrast-label"><f:translate key="{lll}contentelement.colors.contrast.light"/></span>
+                            <span><f:format.number decimals="2">{ratioLight}</f:format.number>:1</span>
+                            <span class="typo3-styleguide__chip typo3-styleguide__chip--{levelLight}"><f:translate key="{lll}contentelement.colors.contrast.{levelLight}"/></span>
                         </li>
-                        <li class="typo3-styleguide__chip typo3-styleguide__chip--{levelDark}">
-                            <strong><f:translate key="{lll}contentelement.colors.contrast.dark"/> <f:format.number decimals="2">{ratioDark}</f:format.number>:1</strong>
-                            <span><f:translate key="{lll}contentelement.colors.contrast.{levelDark}"/></span>
+                        <li>
+                            <span class="typo3-styleguide__color-status-contrast-label"><f:translate key="{lll}contentelement.colors.contrast.dark"/></span>
+                            <span><f:format.number decimals="2">{ratioDark}</f:format.number>:1</span>
+                            <span class="typo3-styleguide__chip typo3-styleguide__chip--{levelDark}"><f:translate key="{lll}contentelement.colors.contrast.{levelDark}"/></span>
                         </li>
                     </ul>
                 </div>

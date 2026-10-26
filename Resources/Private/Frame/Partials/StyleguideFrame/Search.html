@@ -1,0 +1,16 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+
+<f:asset.script identifier="typo3styleguide_frame_search_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/frame_search.js" />
+
+<form class="typo3-styleguide-frame__search" role="search" data-sg-start-search data-none="{f:translate(key: '{lll}frame.search.none')}" data-count="{f:translate(key: '{lll}frame.search.count')}" hidden>
+    <label class="typo3-styleguide__visually-hidden" for="typo3-styleguide-start-search"><f:translate key="{lll}frame.search.label"/></label>
+    <input type="search" id="typo3-styleguide-start-search" placeholder="{f:translate(key: '{lll}frame.search.placeholder')}" autocomplete="off" data-sg-start-search-input>
+    <p class="typo3-styleguide-frame__search-status" role="status" data-sg-start-search-status></p>
+</form>
+
+</html>

@@ -4,5 +4,10 @@ plugin.tx_typo3styleguide.frame {
   # Menu entry levels, which count from 0: the sections in the header and the pages in the side menu
   sectionEntryLevel = 1
   pageEntryLevel = 2
+  # Comma-separated columns (colPos) whose content elements are shown in the main area, in this order
+  colPos = 0
   brand = Styleguide
+  # Optional logo instead of the brand text, and the logo for the dark theme. EXT: paths or paths of the public folder
+  logo =
+  logoDark =
 }

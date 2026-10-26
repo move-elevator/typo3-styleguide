@@ -7,7 +7,9 @@
 <ol class="typo3-styleguide__color-scale">
     <f:for each="{colors}" as="color" iteration="iterator">
         <f:if condition="{color.data.color}">
-            <f:variable name="contrastColor"><sg:contrastColor color="{color.data.color}"/></f:variable>
+            <f:variable name="ratioWhite" value="{sg:contrastRatio(color: color.data.color, background: '#FFFFFF')}" />
+            <f:variable name="ratioBlack" value="{sg:contrastRatio(color: color.data.color, background: '#000000')}" />
+            <f:variable name="contrastColor" value="{f:if(condition: '{ratioWhite} >= {ratioBlack}', then: '#FFFFFF', else: '#000000')}" />
             <f:variable name="step"><f:format.padding padLength="2" padString="0">{iterator.cycle}</f:format.padding></f:variable>
             <li class="typo3-styleguide__color-scale-step" style="background-color: {color.data.color}; color: {contrastColor};">
                 <strong>{f:if(condition: color.data.label, then: color.data.label, else: step)}</strong>

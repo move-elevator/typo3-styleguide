@@ -29,7 +29,7 @@
         </div>
     </f:if>
 
-    <div class="typo3-styleguide__font-detail-table-wrap">
+    <div class="typo3-styleguide__font-detail-table-wrap" tabindex="0" role="region" aria-label="{f:translate(key: '{lll}contentelement.fonts.weights')}">
         <table class="typo3-styleguide__font-detail-table">
             <caption class="typo3-styleguide__visually-hidden"><f:translate key="{lll}contentelement.fonts.weights"/></caption>
             <thead>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="typo3-styleguide__font-detail-snippet">
-        <pre><code>{snippet}</code></pre>
+        <pre tabindex="0" aria-label="{f:translate(key: '{lll}contentelement.fonts.snippet')}"><code>{snippet}</code></pre>
         <button type="button" class="typo3-styleguide__copy" data-copy="{snippet}"><f:translate key="{lll}contentelement.colors.copy"/></button>
     </div>
 

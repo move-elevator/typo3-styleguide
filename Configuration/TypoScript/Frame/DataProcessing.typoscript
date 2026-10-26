@@ -1,0 +1,49 @@
+# The menus of the frame. The keys and variable names are unique, so they do not collide with the processors of a project that renders its pages itself
+page.10 {
+  variables.styleguideBrand = TEXT
+  variables.styleguideBrand.value = {$plugin.tx_typo3styleguide.frame.brand}
+  variables.styleguideLogo = TEXT
+  variables.styleguideLogo.value = {$plugin.tx_typo3styleguide.frame.logo}
+  variables.styleguideLogoDark = TEXT
+  variables.styleguideLogoDark.value = {$plugin.tx_typo3styleguide.frame.logoDark}
+
+  dataProcessing {
+    1761600010 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1761600010 {
+      special = list
+      special.value.data = leveluid:{$plugin.tx_typo3styleguide.frame.rootLevel}
+      as = styleguideHome
+    }
+
+    1761600020 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1761600020 {
+      entryLevel = {$plugin.tx_typo3styleguide.frame.sectionEntryLevel}
+      levels = 1
+      as = styleguideSections
+    }
+
+    1761600030 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1761600030 {
+      entryLevel = {$plugin.tx_typo3styleguide.frame.pageEntryLevel}
+      levels = 1
+      as = styleguidePages
+    }
+
+    # What is below the current entry of the header, for the side menu: the groups and their pages, or the pages of the area.
+    # The entries of the header are not repeated there
+    1761600050 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1761600050 {
+      entryLevel = {$plugin.tx_typo3styleguide.frame.pageEntryLevel}
+      levels = 2
+      expandAll = 1
+      as = styleguideTree
+    }
+
+    1761600040 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    1761600040 {
+      special = rootline
+      special.range = {$plugin.tx_typo3styleguide.frame.rootLevel}|-1
+      as = styleguideBreadcrumb
+    }
+  }
+}
