@@ -1,0 +1,8 @@
+plugin.tx_typo3styleguide.frame {
+  # Where the styleguide sits in the page tree. The site root is level 0, so a start page directly below it is level 1
+  rootLevel = 1
+  # Menu entry levels, which count from 0: the sections in the header and the pages in the side menu
+  sectionEntryLevel = 1
+  pageEntryLevel = 2
+  brand = Styleguide
+}

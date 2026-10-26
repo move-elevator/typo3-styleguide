@@ -24,6 +24,7 @@ This extension provides several tools for a simple TYPO3 based styleguide.
 * Rich backend previews for all styleguide content elements
 * Custom page type for styleguide pages with restricted content element availability
 * Backend layout for styleguide pages
+* Optional frame with header, breadcrumb and side menu for the styleguide pages
 * Optional restriction of frontend access to logged-in backend users
 * Collection of TYPO3 ViewHelpers for reuse in templates
 
@@ -50,6 +51,12 @@ Include static TypoScript template via the backend or import it:
 ```
 @import 'EXT:typo3_styleguide/Configuration/TypoScript/setup.typoscript'
 ```
+
+#### Frame (optional)
+
+The static template **TYPO3 Styleguide Frame** renders a header, breadcrumb, side menu and a neutral theme around the styleguide pages. Add it as an extension template on the styleguide start page, so it only applies to that page and everything below it. Other pages keep the page template of your project.
+
+The constants `plugin.tx_typo3styleguide.frame.*` set the brand text and where the styleguide sits in the page tree. To adapt colors, font and corners, override the custom properties of `.typo3-styleguide-frame`.
 
 ## 📙 Documentation
 

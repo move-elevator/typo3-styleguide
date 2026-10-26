@@ -1,0 +1,55 @@
+page {
+  meta.viewport = width=device-width, initial-scale=1
+  includeCSS.typo3styleguideFrame = EXT:typo3_styleguide/Resources/Public/Css/Frame.css
+
+  100 >
+  10 = FLUIDTEMPLATE
+  10 {
+    templateRootPaths.1761600000 = EXT:typo3_styleguide/Resources/Private/Frame/Templates/
+    partialRootPaths.1761600000 = EXT:typo3_styleguide/Resources/Private/Frame/Partials/
+    templateName = Frame
+
+    variables {
+      brand = TEXT
+      brand.value = {$plugin.tx_typo3styleguide.frame.brand}
+      content = CONTENT
+      content {
+        table = tt_content
+        select {
+          orderBy = sorting
+          where = {#colPos}=0
+        }
+      }
+    }
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = list
+        special.value.data = leveluid:{$plugin.tx_typo3styleguide.frame.rootLevel}
+        as = home
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        entryLevel = {$plugin.tx_typo3styleguide.frame.sectionEntryLevel}
+        levels = 1
+        as = sections
+      }
+
+      30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      30 {
+        entryLevel = {$plugin.tx_typo3styleguide.frame.pageEntryLevel}
+        levels = 1
+        as = pages
+      }
+
+      40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      40 {
+        special = rootline
+        special.range = {$plugin.tx_typo3styleguide.frame.rootLevel}|-1
+        as = breadcrumb
+      }
+    }
+  }
+}

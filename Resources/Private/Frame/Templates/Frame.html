@@ -1,0 +1,31 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<a class="typo3-styleguide-frame__skip" href="#main"><f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:frame.skip"/></a>
+
+<div class="typo3-styleguide-frame">
+    <f:render partial="Header" arguments="{brand: brand, home: home, sections: sections}" />
+
+    <div class="typo3-styleguide-frame__intro">
+        <div class="typo3-styleguide-frame__inner">
+            <f:render partial="Breadcrumb" arguments="{items: breadcrumb}" />
+            <div class="typo3-styleguide-frame__accent" aria-hidden="true"></div>
+            <h1 class="typo3-styleguide-frame__title">{data.title}</h1>
+        </div>
+    </div>
+
+    <div class="typo3-styleguide-frame__inner typo3-styleguide-frame__layout">
+        <f:if condition="{pages}">
+            <aside class="typo3-styleguide-frame__aside">
+                <f:render partial="SideNav" arguments="{items: pages}" />
+            </aside>
+        </f:if>
+        <main id="main" class="typo3-styleguide-frame__main">
+            <f:format.raw>{content}</f:format.raw>
+        </main>
+    </div>
+</div>
+
+</html>

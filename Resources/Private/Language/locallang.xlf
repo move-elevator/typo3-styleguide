@@ -45,6 +45,21 @@
 			<trans-unit id="wizard.tab.styleguide">
 				<source>Styleguide</source>
 			</trans-unit>
+			<trans-unit id="frame.skip">
+				<source>Skip to content</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.main">
+				<source>Main menu</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.home">
+				<source>Home</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.section">
+				<source>Pages in this section</source>
+			</trans-unit>
+			<trans-unit id="frame.breadcrumb">
+				<source>Breadcrumb</source>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.label">
 				<source>Colors</source>
 			</trans-unit>

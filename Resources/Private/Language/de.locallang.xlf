@@ -59,6 +59,26 @@
 				<source />
 				<target>Styleguide</target>
 			</trans-unit>
+			<trans-unit id="frame.skip">
+				<source />
+				<target>Zum Inhalt springen</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.main">
+				<source />
+				<target>Hauptmenü</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.home">
+				<source />
+				<target>Start</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.section">
+				<source />
+				<target>Seiten in diesem Bereich</target>
+			</trans-unit>
+			<trans-unit id="frame.breadcrumb">
+				<source />
+				<target>Brotkrumen</target>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.label">
 				<source />
 				<target>Farben</target>
