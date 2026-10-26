@@ -14,8 +14,8 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 
 ## Structure
 
-- `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `DataProcessing/`, `Middleware/`, `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
-- `Configuration/`: `TCA/` (content elements, page types and TypoScript templates are registered in `TCA/Overrides/`), `TsConfig/`, `TypoScript/`, `Services.yaml`, `RequestMiddlewares.php`, `Icons.php`
+- `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `DataProcessing/`, `Middleware/` (backend-user restriction and the preview frames of the element documentation), `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
+- `Configuration/`: `Sets/Frame/` (site set with the frame parts for projects with their own page template), `TCA/` (content elements, page types and TypoScript templates are registered in `TCA/Overrides/`), `TsConfig/`, `TypoScript/`, `Services.yaml`, `RequestMiddlewares.php`, `Icons.php`
 - `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`, the optional page frame under `Frame/`) and `Public/`
 - `Tests/Unit/`: PHPUnit unit tests
 - `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment. `data.xml` holds two page trees: `/styleguide` with the plain content elements and `/styleguide-neu` with the frame and the new design. A new tree needs its rows appended to the page tree, the header records and `pid_lookup` as well as the table rows, and inline fields must hold the uids of their children, not a count, or the import re-parents existing records. `ddev install` imports every `*.xml` in the folder
