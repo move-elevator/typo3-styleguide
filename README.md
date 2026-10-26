@@ -19,7 +19,7 @@ This extension provides several tools for a simple TYPO3 based styleguide.
 
 ## ✨ Features
 
-* Dedicated content elements for colors, fonts, icons, images, technical headlines and a table of contents for child pages
+* Dedicated content elements for colors, fonts, icons, images, a gallery, technical headlines and a table of contents for child pages
 * Automatic table of contents for technical headlines within a page
 * Rich backend previews for all styleguide content elements
 * Custom page type for styleguide pages with restricted content element availability

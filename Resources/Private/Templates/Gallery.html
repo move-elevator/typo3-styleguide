@@ -1,0 +1,33 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+
+<div class="typo3-styleguide__frame">
+    <f:if condition="{images}">
+        <ul class="typo3-styleguide__gallery" role="list" style="--typo3-sg-gallery-columns: {data.tx_typo3styleguide_gallery_columns}">
+            <f:for each="{images}" as="image">
+                <li>
+                    <figure class="typo3-styleguide__gallery-figure">
+                        <f:image image="{image}" maxWidth="600" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
+                        <f:if condition="{image.description}">
+                            <figcaption class="typo3-styleguide__gallery-caption">{image.description}</figcaption>
+                        </f:if>
+                    </figure>
+                    <f:if condition="{data.tx_typo3styleguide_gallery_downloads}">
+                        <f:variable name="label"><f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.gallery.download"/></f:variable>
+                        <a class="typo3-styleguide__gallery-download" href="{image.publicUrl}" download aria-label="{label} {image.name}">{label}</a>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+</div>
+
+</f:section>
+</html>

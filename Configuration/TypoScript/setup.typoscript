@@ -52,6 +52,16 @@ tt_content {
     }
   }
 
+  typo3styleguide_gallery =< lib.contentElement
+  typo3styleguide_gallery {
+    templateName = Gallery
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+      references.fieldName = tx_typo3styleguide_gallery_images
+      as = images
+    }
+  }
+
   typo3styleguide_tableofcontents =< lib.contentElement
   typo3styleguide_tableofcontents {
     templateName = TableOfContents

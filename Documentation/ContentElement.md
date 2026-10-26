@@ -8,6 +8,7 @@ This extension provides the following content elements for building a styleguide
 - [Icons](#icons)
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
+- [Gallery](#gallery)
 
 > [!TIP]
 > All styleguide content elements are only available on the custom [Styleguide page type](PageType.md) and grouped under a dedicated **Styleguide** tab in the New Content Element wizard.
@@ -71,3 +72,13 @@ The `Table of Contents` content element renders a navigable overview of the chil
 > In `Cards` layout, each card shows the icon of the child page's **Representative content element** property (set on that page's *Styleguide* tab), if configured.
 
 Place it on an overview page to document the page structure. Headlines within a single page are linked automatically by the [Technical Headline](#technical-headline) element instead.
+
+## <img src="../Resources/Public/Icons/content-styleguide-gallery.svg" height="20"> Gallery
+
+The `Gallery` content element shows an image collection as a grid, for example an image library. Select the images as file references, so editors maintain them in the backend.
+
+- **Images** — File references. The alternative text and the description of each reference are used as `alt` and as caption
+- **Columns** — 2 to 6 columns on wide screens, reduced to 3 and 2 on narrow screens
+- **Show download links** — Adds a download link with the original file below each image
+
+Images load lazily and are scaled to a maximum width of 600 px, the download always delivers the original file.

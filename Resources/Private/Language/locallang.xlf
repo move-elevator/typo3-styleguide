@@ -132,6 +132,27 @@
 			<trans-unit id="contentelement.tableofcontents.layout.cards">
 				<source>Cards</source>
 			</trans-unit>
+			<trans-unit id="contentelement.gallery.label">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.description">
+				<source>An image collection as a grid, for example an image library. Captions and alternative texts come from the file references, optionally with a download per image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.columns">
+				<source>Columns</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads">
+				<source>Show download links</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads.description">
+				<source>Adds a download link below each image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.download">
+				<source>Download</source>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>
 			</trans-unit>

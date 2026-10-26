@@ -175,6 +175,34 @@
 				<source />
 				<target>Karten</target>
 			</trans-unit>
+			<trans-unit id="contentelement.gallery.label">
+				<source />
+				<target>Galerie</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.description">
+				<source />
+				<target>Eine Bildersammlung als Raster, zum Beispiel eine Bilddatenbank. Bildunterschriften und Alternativtexte kommen aus den Dateireferenzen, optional mit Download pro Bild.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.images">
+				<source />
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.columns">
+				<source />
+				<target>Spalten</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads">
+				<source />
+				<target>Download-Links anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads.description">
+				<source />
+				<target>Fügt unter jedem Bild einen Download-Link hinzu.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.download">
+				<source />
+				<target>Herunterladen</target>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />
 				<target>Repräsentatives Inhaltselement</target>

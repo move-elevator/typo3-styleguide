@@ -116,12 +116,28 @@ ExtensionManagementUtility::addTcaSelectItem(
     'after',
 );
 
+// --- Gallery ---
+ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'label' => $lll.'contentelement.gallery.label',
+        'value' => 'typo3styleguide_gallery',
+        'icon' => 'content-styleguide-gallery',
+        'description' => $lll.'contentelement.gallery.description',
+        'group' => 'styleguide',
+    ],
+    'typo3styleguide_tableofcontents',
+    'after',
+);
+
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_technicalheadline'] = 'content-styleguide-headline';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_colors'] = 'content-styleguide-colors';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts'] = 'content-styleguide-fonts';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_tableofcontents'] = 'content-styleguide-tableofcontents';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_gallery'] = 'content-styleguide-gallery';
 
 $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['columns'],
@@ -204,6 +220,37 @@ $GLOBALS['TCA']['tt_content']['columns'] = array_replace_recursive(
                 'max' => 255,
                 'eval' => 'trim',
                 'placeholder' => '*-alt.svg, legacy-*, *.json',
+            ],
+        ],
+        'tx_typo3styleguide_gallery_images' => [
+            'label' => $lll.'contentelement.gallery.images',
+            'config' => [
+                'type' => 'file',
+                'allowed' => 'common-image-types',
+            ],
+        ],
+        'tx_typo3styleguide_gallery_columns' => [
+            'label' => $lll.'contentelement.gallery.columns',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => '4',
+                'items' => [
+                    ['label' => '2', 'value' => '2'],
+                    ['label' => '3', 'value' => '3'],
+                    ['label' => '4', 'value' => '4'],
+                    ['label' => '5', 'value' => '5'],
+                    ['label' => '6', 'value' => '6'],
+                ],
+            ],
+        ],
+        'tx_typo3styleguide_gallery_downloads' => [
+            'label' => $lll.'contentelement.gallery.downloads',
+            'description' => $lll.'contentelement.gallery.downloads.description',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'default' => 0,
             ],
         ],
         'tx_typo3styleguide_images' => [
@@ -353,6 +400,25 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_tableofcontents'] = [
     'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     --palette--;;header,tx_typo3styleguide_tableofcontents_layout,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_gallery'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
+    'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;header,tx_typo3styleguide_gallery_images,tx_typo3styleguide_gallery_columns,tx_typo3styleguide_gallery_downloads,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
