@@ -89,7 +89,7 @@
 			</trans-unit>
 			<trans-unit id="frame.search.placeholder">
 				<source />
-				<target>Im Styleguide suchen, zum Beispiel Logo</target>
+				<target>Im Styleguide suchen</target>
 			</trans-unit>
 			<trans-unit id="frame.search.count">
 				<source />

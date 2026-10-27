@@ -67,7 +67,7 @@
 				<source>Search the styleguide</source>
 			</trans-unit>
 			<trans-unit id="frame.search.placeholder">
-				<source>Search the styleguide, for example logo</source>
+				<source>Search the styleguide</source>
 			</trans-unit>
 			<trans-unit id="frame.search.count">
 				<source>{shown} of {total} pages</source>

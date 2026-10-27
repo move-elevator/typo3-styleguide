@@ -138,3 +138,12 @@ if (filter) {
     }
   });
 }
+
+// On a narrow screen the menu starts closed behind its summary, on a wide one it is always open
+const toggle = document.querySelector('[data-sg-sidenav-toggle]');
+if (toggle && window.matchMedia) {
+  const narrow = window.matchMedia('(max-width: 768px)');
+  const sync = () => { toggle.open = !narrow.matches; };
+  sync();
+  narrow.addEventListener('change', sync);
+}

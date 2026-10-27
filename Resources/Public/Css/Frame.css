@@ -504,6 +504,11 @@ body:has(.typo3-styleguide-frame__intro--start) .typo3-styleguide-technical-head
     background: var(--typo3-sg-accent);
 }
 
+/* The summary only exists for narrow screens, where the menu starts closed. Wide screens always show the menu */
+.typo3-styleguide-frame__sidenav-toggle > summary {
+    display: none;
+}
+
 /* Filter and groups of the side menu */
 .typo3-styleguide-frame__sidenav-filter {
     display: flex;
@@ -636,9 +641,83 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__sidenav-filter input:
         padding-right: 16px;
     }
 
+    /* Logo and theme switch share the first row, the navigation is one row below that scrolls sideways when it is too wide */
     .typo3-styleguide-frame__header-inner {
-        padding-top: 12px;
-        padding-bottom: 4px;
+        padding-top: 8px;
+        padding-bottom: 0;
+        min-height: 0;
+        column-gap: 16px;
+    }
+
+    .typo3-styleguide-frame__brand {
+        order: 1;
+    }
+
+    .typo3-styleguide-frame__theme {
+        order: 2;
+    }
+
+    .typo3-styleguide-frame__nav {
+        order: 3;
+        flex: 0 0 100%;
+        min-width: 0;
+        margin: 0 -16px;
+        overflow-x: auto;
+    }
+
+    .typo3-styleguide-frame__nav-list {
+        flex-wrap: nowrap;
+        gap: 0;
+        padding: 0 8px;
+    }
+
+    .typo3-styleguide-frame__nav-link {
+        white-space: nowrap;
+    }
+
+    .typo3-styleguide-frame__intro--start::after {
+        display: none;
+    }
+
+    .typo3-styleguide-frame__intro--start .typo3-styleguide-frame__inner {
+        padding-top: 40px;
+        padding-bottom: 48px;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle > summary {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        border: 1px solid var(--typo3-sg-text-secondary);
+        border-radius: var(--typo3-sg-radius);
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle > summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle > summary::before {
+        content: "";
+        flex: 0 0 16px;
+        width: 16px;
+        height: 16px;
+        background: currentColor;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle[open] > summary::before {
+        transform: rotate(90deg);
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle[open] > summary {
+        margin-bottom: 16px;
     }
 
     .typo3-styleguide-frame__layout {
