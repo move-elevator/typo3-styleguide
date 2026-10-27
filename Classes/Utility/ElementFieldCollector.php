@@ -59,26 +59,39 @@ final class ElementFieldCollector
         }
 
         $fields = [];
-        foreach ($this->fieldEntries($showitem, $tca) as $entry) {
-            [$field, $label] = $entry;
-            $column = $tca['columns'][$field] ?? null;
-            if (!is_array($column) || 'passthrough' === ($column['config']['type'] ?? null)) {
-                continue;
+        foreach ($this->fieldEntries($showitem, $tca) as [$field, $label]) {
+            $described = $this->describe($field, $label, $type, $tca, $translate);
+            if (null !== $described) {
+                $fields[] = $described;
             }
-
-            $override = $tca['types'][$type]['columnsOverrides'][$field] ?? [];
-            $config = array_replace_recursive($column['config'] ?? [], $override['config'] ?? []);
-            $name = (string) ($override['label'] ?? ('' !== $label ? $label : ($column['label'] ?? '')));
-            $note = (string) ($override['description'] ?? $column['description'] ?? '');
-
-            $fields[] = [
-                'name' => '' !== $name ? $translate($name) : $field,
-                'required' => true === ($config['required'] ?? false) || str_contains((string) ($config['eval'] ?? ''), 'required'),
-                'note' => '' !== $note ? $translate($note) : '',
-            ];
         }
 
         return $fields;
+    }
+
+    /**
+     * @param array<string, mixed>     $tca
+     * @param callable(string): string $translate
+     *
+     * @return array{name: string, required: bool, note: string}|null
+     */
+    private function describe(string $field, string $label, string $type, array $tca, callable $translate): ?array
+    {
+        $column = $tca['columns'][$field] ?? null;
+        if (!is_array($column) || 'passthrough' === ($column['config']['type'] ?? null)) {
+            return null;
+        }
+
+        $override = $tca['types'][$type]['columnsOverrides'][$field] ?? [];
+        $config = array_replace_recursive($column['config'] ?? [], $override['config'] ?? []);
+        $name = (string) ($override['label'] ?? ('' !== $label ? $label : ($column['label'] ?? '')));
+        $note = (string) ($override['description'] ?? $column['description'] ?? '');
+
+        return [
+            'name' => '' !== $name ? $translate($name) : $field,
+            'required' => true === ($config['required'] ?? false) || str_contains((string) ($config['eval'] ?? ''), 'required'),
+            'note' => '' !== $note ? $translate($note) : '',
+        ];
     }
 
     /**
@@ -89,6 +102,30 @@ final class ElementFieldCollector
     private function fieldEntries(string $showitem, array $tca): array
     {
         $entries = [];
+        foreach ($this->relevantItems($showitem) as $item) {
+            $parts = explode(';', $item);
+            if ('--palette--' !== $parts[0]) {
+                $entries[$parts[0]] ??= [$parts[0], $parts[1] ?? ''];
+
+                continue;
+            }
+
+            foreach ($this->paletteEntries($parts[2] ?? '', $tca) as $paletteEntry) {
+                $entries[$paletteEntry[0]] ??= $paletteEntry;
+            }
+        }
+
+        return array_values($entries);
+    }
+
+    /**
+     * The entries of a showitem without separators and the tabs every content type has.
+     *
+     * @return list<string>
+     */
+    private function relevantItems(string $showitem): array
+    {
+        $items = [];
         $inStandardTab = false;
         foreach (array_map(trim(...), explode(',', $showitem)) as $item) {
             if (str_starts_with($item, '--div--')) {
@@ -96,26 +133,25 @@ final class ElementFieldCollector
 
                 continue;
             }
-            if ('' === $item || $inStandardTab || str_starts_with($item, '--linebreak--')) {
-                continue;
+            if ('' !== $item && !$inStandardTab && !str_starts_with($item, '--linebreak--')) {
+                $items[] = $item;
             }
-
-            $parts = explode(';', $item);
-            if ('--palette--' === $parts[0]) {
-                $palette = $parts[2] ?? '';
-                if (in_array($palette, self::STANDARD_PALETTES, true) || !array_key_exists($palette, $tca['palettes'] ?? [])) {
-                    continue;
-                }
-                foreach ($this->fieldEntries((string) $tca['palettes'][$palette]['showitem'], $tca) as $paletteEntry) {
-                    $entries[$paletteEntry[0]] ??= $paletteEntry;
-                }
-
-                continue;
-            }
-
-            $entries[$parts[0]] ??= [$parts[0], $parts[1] ?? ''];
         }
 
-        return array_values($entries);
+        return $items;
+    }
+
+    /**
+     * @param array<string, mixed> $tca
+     *
+     * @return list<array{string, string}>
+     */
+    private function paletteEntries(string $palette, array $tca): array
+    {
+        if (in_array($palette, self::STANDARD_PALETTES, true) || !array_key_exists($palette, $tca['palettes'] ?? [])) {
+            return [];
+        }
+
+        return $this->fieldEntries((string) $tca['palettes'][$palette]['showitem'], $tca);
     }
 }

@@ -21,6 +21,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\{ContentObjectRenderer, DataProcessorInterface};
 
+use function array_slice;
 use function count;
 use function is_array;
 use function is_string;
@@ -107,25 +108,31 @@ final class ElementDocProcessor implements DataProcessorInterface
 
         $examples = [];
         foreach ($accessiblePageIds as $pageId) {
-            $headline = '';
-            $rows = $cObj->getRecords('tt_content', ['pidInList' => (string) $pageId, 'orderBy' => 'sorting']);
-            foreach ($rows as $row) {
-                if (self::HEADLINE_CTYPE === $row['CType']) {
-                    $headline = (string) $row['header'];
+            $examples = [...$examples, ...$this->examplesOnPage($cObj, $cType, $pageId)];
+            if (count($examples) >= self::MAX_EXAMPLES) {
+                break;
+            }
+        }
 
-                    continue;
-                }
-                if ($cType !== $row['CType']) {
-                    continue;
-                }
+        return array_slice($examples, 0, self::MAX_EXAMPLES);
+    }
 
+    /**
+     * @return list<array{name: string, src: string}>
+     */
+    private function examplesOnPage(ContentObjectRenderer $cObj, string $cType, int $pageId): array
+    {
+        $examples = [];
+        $headline = '';
+        $rows = $cObj->getRecords('tt_content', ['pidInList' => (string) $pageId, 'orderBy' => 'sorting']);
+        foreach ($rows as $row) {
+            if (self::HEADLINE_CTYPE === $row['CType']) {
+                $headline = (string) $row['header'];
+            } elseif ($cType === $row['CType']) {
                 $examples[] = [
                     'name' => '' !== $headline ? $headline : (string) $row['header'],
                     'src' => PreviewUrl::forPage($cObj, $pageId, '&'.ElementPreviewMiddleware::PARAMETER.'='.(int) $row['uid']),
                 ];
-                if (count($examples) >= self::MAX_EXAMPLES) {
-                    return $examples;
-                }
             }
         }
 
