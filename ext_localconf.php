@@ -22,4 +22,5 @@ use TYPO3\CMS\Core\Utility\{ExtensionManagementUtility, GeneralUtility};
 
     // The preview frames load a page with this parameter. It must not need a cHash and must not split the page cache
     $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'sg_preview';
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'sg_page_preview';
 })();

@@ -80,6 +80,28 @@ final class ElementPreviewMiddlewareTest extends TestCase
         self::assertSame('noindex', $result->getHeaderLine('X-Robots-Tag'));
     }
 
+    public function testRefusesThePagePreviewWithoutBackendLogin(): void
+    {
+        $this->setBackendLogin(false);
+        $handler = $this->createMock(RequestHandlerInterface::class);
+        $handler->expects(self::never())->method('handle');
+
+        $result = $this->createSubject()->process($this->request(['sg_page_preview' => '1']), $handler);
+
+        self::assertSame(403, $result->getStatusCode());
+    }
+
+    public function testReturnsTheWholePageForThePagePreview(): void
+    {
+        $this->setBackendLogin(true);
+
+        $result = $this->createSubject()->process($this->request(['sg_page_preview' => '1']), $this->handlerReturning(new HtmlResponse(self::PAGE)));
+
+        self::assertSame(self::PAGE, (string) $result->getBody());
+        self::assertSame('private, no-store', $result->getHeaderLine('Cache-Control'));
+        self::assertSame('noindex', $result->getHeaderLine('X-Robots-Tag'));
+    }
+
     public function testAnswersNotFoundWhenTheElementIsNotOnThePage(): void
     {
         $this->setBackendLogin(true);

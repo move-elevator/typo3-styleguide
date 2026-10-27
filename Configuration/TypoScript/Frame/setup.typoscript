@@ -1,5 +1,5 @@
-# The preview frames of the element documentation show a page of the project as it is, so the frame steps aside for them
-[not (traverse(request.getQueryParams(), 'sg_preview') > 0)]
+# The preview frames show a page of the project as it is, so the frame steps aside for them
+[not (traverse(request.getQueryParams(), 'sg_preview') > 0) and not traverse(request.getQueryParams(), 'sg_page_preview')]
   page {
     meta.viewport = width=device-width, initial-scale=1
     includeCSS.typo3styleguideFrame = EXT:typo3_styleguide/Resources/Public/Css/Frame.css

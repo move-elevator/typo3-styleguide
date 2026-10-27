@@ -3,10 +3,14 @@
     data-namespace-typo3-fluid="true"
 >
 
-<div class="typo3-styleguide-frame typo3-styleguide-frame--chrome">
-    <f:render partial="StyleguideFrame/Header" arguments="{brand: styleguideBrand, logo: styleguideLogo, logoDark: styleguideLogoDark, home: styleguideHome, sections: styleguideSections}" />
+<f:if condition="{styleguideBare}">
+    <f:else>
+        <div class="typo3-styleguide-frame typo3-styleguide-frame--chrome">
+            <f:render partial="StyleguideFrame/Header" arguments="{brand: styleguideBrand, logo: styleguideLogo, logoDark: styleguideLogoDark, home: styleguideHome, sections: styleguideSections}" />
 
-    <f:render partial="StyleguideFrame/Intro" arguments="{styleguideBreadcrumb: styleguideBreadcrumb}" />
-</div>
+            <f:render partial="StyleguideFrame/Intro" arguments="{styleguideBreadcrumb: styleguideBreadcrumb}" />
+        </div>
+    </f:else>
+</f:if>
 
 </html>

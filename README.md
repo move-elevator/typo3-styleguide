@@ -81,6 +81,8 @@ The partial renders the header, the breadcrumb and the title. The menus are avai
 </div>
 ```
 
+The [Page Preview](Documentation/ContentElement.md) element loads a page with the parameter `sg_page_preview`. The site set then sets the variable `styleguideBare`, and the Chrome partial renders nothing. Use the variable in your own layout to leave out the side menu and the container around the content.
+
 The content of the page then sits in a narrower column. If your project lays out its content with a grid that the elements join (such as a `subgrid` with named lines), give `.typo3-styleguide-frame__main` the same grid in your own stylesheet, so the elements find their columns. The settings `plugin.tx_typo3styleguide.frame.*` of the site set have the same meaning as the constants. If the project lays out its `body` as a grid, the frame spans all columns.
 
 On pages with the frame, the [Technical Headline](Documentation/ContentElement.md#technical-headline) shows as a plain heading and its table of contents as a one-line navigation, as in the design. The anchor link appears when the heading is hovered, and a navigation with a single entry is hidden. Pages without the frame keep the previous look.

@@ -30,7 +30,8 @@ use const ENT_QUOTES;
  * `sg_preview=<uid>` returns that page reduced to one content element. The page is rendered as usual,
  * so its own access rules apply and the project's CSS and layout reach the element. Only logged-in
  * backend users get the reduced page, because the frames are meant for the people who document
- * the elements.
+ * the elements. A request with `sg_page_preview=1` returns the page as a whole, for the page
+ * preview element, which shows a page without the frame around it.
  *
  * @author Konrad Michalik <km@move-elevator.de>
  * @license GPL-2.0-or-later
@@ -39,13 +40,16 @@ class ElementPreviewMiddleware implements MiddlewareInterface
 {
     public const PARAMETER = 'sg_preview';
 
+    public const PAGE_PARAMETER = 'sg_page_preview';
+
     public function __construct(private readonly Context $context) {}
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $queryParams = $request->getQueryParams();
         $uid = (int) ($queryParams[self::PARAMETER] ?? 0);
-        if ($uid <= 0) {
+        $wholePage = '' !== (string) ($queryParams[self::PAGE_PARAMETER] ?? '');
+        if ($uid <= 0 && !$wholePage) {
             return $handler->handle($request);
         }
 
@@ -56,6 +60,12 @@ class ElementPreviewMiddleware implements MiddlewareInterface
         $response = $handler->handle($request);
         if (200 !== $response->getStatusCode() || !str_contains($response->getHeaderLine('Content-Type'), 'text/html')) {
             return $response;
+        }
+
+        if ($wholePage) {
+            return $response
+                ->withHeader('Cache-Control', 'private, no-store')
+                ->withHeader('X-Robots-Tag', 'noindex');
         }
 
         $html = PreviewDocument::isolate((string) $response->getBody(), $uid);

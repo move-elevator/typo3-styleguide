@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\DataProcessing;
 
+use MoveElevator\Styleguide\Middleware\ElementPreviewMiddleware;
 use MoveElevator\Styleguide\Utility\PreviewUrl;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -58,7 +59,7 @@ final class PagePreviewProcessor implements DataProcessorInterface
 
         $processedData['examples'] = [[
             'name' => (string) $page['title'],
-            'src' => PreviewUrl::forPage($cObj, $pageId),
+            'src' => PreviewUrl::forPage($cObj, $pageId, '&'.ElementPreviewMiddleware::PAGE_PARAMETER.'=1'),
         ]];
 
         return $processedData;

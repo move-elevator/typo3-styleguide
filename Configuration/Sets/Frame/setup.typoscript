@@ -6,3 +6,9 @@ page {
   includeCSS.typo3styleguideFrame = EXT:typo3_styleguide/Resources/Public/Css/Frame.css
   10.paths.1761600000 = EXT:typo3_styleguide/Resources/Private/Frame/
 }
+
+# The page preview element shows a page without the frame around it, the Chrome partial leaves it out for this variable
+[traverse(request.getQueryParams(), 'sg_page_preview')]
+  page.10.variables.styleguideBare = TEXT
+  page.10.variables.styleguideBare.value = 1
+[END]

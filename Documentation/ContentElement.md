@@ -147,7 +147,7 @@ Each example is a frame that loads the example page itself and shows only the on
 >
 > The frames show the page of your project without its own page background, because that is a decoration of the page and not part of the element. Elements that scripts add to the page later, such as a cookie banner, cannot be removed on the server.
 >
-> The parameter `sg_preview` is excluded from the cache hash, so the page cache is not split by it. The reduced page is sent with `Cache-Control: private, no-store`.
+> The parameters `sg_preview` and `sg_page_preview` are excluded from the cache hash. The reduced page is sent with `Cache-Control: private, no-store`. The page preview element uses `sg_page_preview`, which returns the whole page, only the frame of this extension steps aside for it.
 
 > [!TIP]
 > The inline records of the Colors, Fonts, Images and Guidelines elements are found by the page they are stored on, so these elements also render correctly when they are shown on a different page.
