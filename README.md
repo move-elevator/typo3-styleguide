@@ -87,7 +87,7 @@ The content of the page then sits in a narrower column. If your project lays out
 
 On pages with the frame, the [Technical Headline](Documentation/ContentElement.md#technical-headline) shows as a plain heading and its table of contents as a one-line navigation, as in the design. The anchor link appears when the heading is hovered, and a navigation with a single entry is hidden. Pages without the frame keep the previous look.
 
-The logo in the header comes from the settings `plugin.tx_typo3styleguide.frame.logo` and `logoDark` (the constants of the static template work the same way). Without a logo the brand text is shown. Without a dark logo the light one sits on a light background in the dark theme.
+The logo in the header comes from the settings `plugin.tx_typo3styleguide.frame.logo` and `logoDark` (an `EXT:` path, the constants of the static template work the same way). Without a logo the brand text is shown. Without a dark logo the light one sits on a light background in the dark theme.
 
 The side menu shows what is below the current entry of the header, so the entries of the header are not repeated: the pages of the area, or groups that open and close with the number of their pages. A filter field above narrows them down. A page below a group is one level deeper in the page tree. The side menu stays in view while the page scrolls. Below the active entry it lists the headings of the page (the Technical Headlines and the Preview and Fields parts of an Element Documentation) and marks the one in view while you scroll. A page with fewer than two headings shows none.
 

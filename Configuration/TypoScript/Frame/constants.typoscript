@@ -7,7 +7,7 @@ plugin.tx_typo3styleguide.frame {
   # Comma-separated columns (colPos) whose content elements are shown in the main area, in this order
   colPos = 0
   brand = Styleguide
-  # Optional logo instead of the brand text, and the logo for the dark theme. EXT: paths or paths of the public folder
+  # Optional logo instead of the brand text, and the logo for the dark theme. EXT: paths
   logo =
   logoDark =
 }

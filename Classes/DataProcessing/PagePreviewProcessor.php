@@ -42,8 +42,13 @@ final class PagePreviewProcessor implements DataProcessorInterface
     {
         $processedData['examples'] = [];
 
+        // A page that is itself shown in a page preview shows no further frame, so pages that point at each other cannot nest endlessly
+        if ('' !== (string) ($cObj->getRequest()->getQueryParams()[ElementPreviewMiddleware::PAGE_PARAMETER] ?? '')) {
+            return $processedData;
+        }
+
         $pageId = GeneralUtility::intExplode(',', (string) ($cObj->data['tx_typo3styleguide_pagepreview_page'] ?? ''), true)[0] ?? 0;
-        if ($pageId <= 0) {
+        if ($pageId <= 0 || $pageId === (int) ($cObj->data['pid'] ?? 0)) {
             return $processedData;
         }
 

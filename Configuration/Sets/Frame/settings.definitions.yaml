@@ -23,7 +23,7 @@ settings:
     default: 2
     category: typo3styleguide
   plugin.tx_typo3styleguide.frame.logo:
-    label: 'Logo in the header instead of the brand name (a path, EXT: paths work)'
+    label: 'Logo in the header instead of the brand name (an EXT: path)'
     type: string
     default: ''
     category: typo3styleguide
