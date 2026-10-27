@@ -20,7 +20,7 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 - `Tests/Unit/`: PHPUnit unit tests
 - `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment. `data.xml` holds two page trees: `/styleguide` with the plain content elements and `/styleguide-neu` with the frame and the new design. A new tree needs its rows appended to the page tree, the header records and `pid_lookup` as well as the table rows, and inline fields must hold the uids of their children, not a count, or the import re-parents existing records. `ddev install` imports every `*.xml` in the folder
 - `Tests/CGL/`: separate Composer project holding all code quality tools and their configs. Its `composer.lock` is committed and updated by Renovate, so tool releases only reach CI through a Renovate PR
-- `Documentation/`: generated ViewHelper docs and content element notes
+- `Documentation/`: the documentation linked from the README: content elements, the frame (`Frame.md`), page type, backend layout, access and one page per ViewHelper
 - `.ddev/`: DDEV setup with custom commands (`cgl`, `install`, `all`, `typo3`, and one command per TYPO3 version)
 - `ext_localconf.php`, `ext_tables.php`, `ext_tables.sql`, `ext_emconf.php`: classic extension registration files
 
@@ -40,7 +40,7 @@ ddev all typo3 database:updateschema   # run across all instances
 
 Each TYPO3 version has its own docroot, database and hostname (`<version>.typo3-styleguide.ddev.site`).
 
-Regenerate the ViewHelper documentation with `ddev composer doc:viewhelpers`. It scans `Classes/ViewHelpers` and writes to `Documentation/ViewHelpers/`.
+The ViewHelper pages in `Documentation/ViewHelpers/` are written by hand. `ddev composer doc:viewhelpers` builds stubs from the class docblocks, which would overwrite the examples, and it currently fails with a `TypeError` in `Documentation/phpdoc.php`, so do not run it. A new ViewHelper gets a page and an entry in `CLASSES.md` by hand.
 
 ## Testing
 
