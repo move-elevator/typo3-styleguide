@@ -100,8 +100,9 @@ tt_content {
       special = directory
       special.value.data = TSFE:id
       levels = 9
-      # The field of the element overrides the depth when it is set, also where a project has set its own depth
+      # The field of the element overrides the depth when it is set, also where a project has set its own depth. TYPO3 14 treats "0" as a value for override, so the condition is explicit
       levels.override.field = tx_typo3styleguide_tableofcontents_levels
+      levels.override.if.isTrue.field = tx_typo3styleguide_tableofcontents_levels
       includeSpacer = 1
       as = pages
       expandAll = 1
