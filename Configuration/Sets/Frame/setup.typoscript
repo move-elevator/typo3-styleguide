@@ -1,5 +1,5 @@
 # Building blocks for a project that renders its pages with its own template (PAGEVIEW): the menus, the stylesheet and the partials.
-# The project places the frame in its own layout, see the Frame section of the README
+# The project places the frame in its own layout, see Documentation/Frame.md
 @import 'EXT:typo3_styleguide/Configuration/TypoScript/Frame/DataProcessing.typoscript'
 
 page {
