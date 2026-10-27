@@ -36,8 +36,7 @@ const fit = (frame) => {
     // The frame's own border is not part of the document height
     const border = frame.offsetHeight - frame.clientHeight;
     const previous = frame.style.height;
-    // With the frame at no height the page shows how high its content is. Measured in the frame, a page with `height: 100%` on html
-    // and body would only report the height of the frame itself. The height is set again before anything is painted
+    // At no height the page reports its content height, a `height: 100%` page would only report the frame's own height
     frame.style.height = '0px';
     const height = `${Math.ceil(doc.documentElement.scrollHeight) + border}px`;
     const changed = previous !== height;
@@ -61,9 +60,8 @@ const watch = (frame) => {
   doc?.fonts?.ready.then(() => fit(frame));
   if (!doc?.body) return;
 
-  // The content can grow after the load: images and fonts that arrive late, and above all what the visitor opens in the frame,
-  // such as an accordion. A change of the page and a resize of the body both trigger a new fit.
-  // Content that is as high as the frame (vh units) could grow with every fit, so the fits are limited until the visitor does something
+  // The content can grow after the load (late images and fonts, an accordion the visitor opens), so a change of the page or a resize of the body fits again
+  // Content as high as the frame (vh units) could grow with every fit, so the fits are limited until the visitor does something
   let refits = 0;
   let waiting = false;
   const refit = () => {
@@ -80,8 +78,8 @@ const watch = (frame) => {
     [50, 350].forEach(delay => setTimeout(refit, delay));
   };
 
-  if (window.ResizeObserver) new ResizeObserver(refit).observe(doc.body);
-  if (window.MutationObserver) new MutationObserver(refit).observe(doc.documentElement, { subtree: true, childList: true, attributes: true });
+  new ResizeObserver(refit).observe(doc.body);
+  new MutationObserver(refit).observe(doc.documentElement, { subtree: true, childList: true, attributes: true });
   ['click', 'keyup', 'toggle', 'transitionend', 'animationend'].forEach(type => doc.addEventListener(type, type === 'click' || type === 'keyup' ? interaction : refit, true));
 };
 
@@ -90,7 +88,7 @@ document.querySelectorAll('[data-sg-preview]').forEach(root => {
 
   frames.forEach(frame => {
     frame.addEventListener('load', () => watch(frame));
-    if (window.ResizeObserver) new ResizeObserver(() => place(frame)).observe(frame.parentElement);
+    new ResizeObserver(() => place(frame)).observe(frame.parentElement);
   });
 
   // The width buttons are hidden in the markup, so without JavaScript the previews simply use the full width
