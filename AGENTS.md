@@ -9,7 +9,7 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 - Composer package: `move-elevator/typo3-styleguide`
 - Extension key: `typo3_styleguide`
 - Namespace: `MoveElevator\Styleguide`
-- PHP `~8.2 || ~8.3 || ~8.4 || ~8.5`, TYPO3 `^12.0 || ^13.0 || ^14.0`, `ext-dom`, `ext-intl`
+- PHP `~8.2 || ~8.3 || ~8.4 || ~8.5`, TYPO3 `^12.4 || ^13.0 || ^14.0`, `ext-dom`, `ext-intl`
 - Optional: `blueways/bw-static-template` renders any Fluid template or partial as a content element
 
 ## Structure
