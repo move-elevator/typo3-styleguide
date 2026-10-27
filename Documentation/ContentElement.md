@@ -168,7 +168,7 @@ Each example is a frame that loads the example page itself and shows only the on
 
 The `Page Preview` content element shows a whole page in a frame, for example to document a page type. Use the [Element Documentation](#element-documentation) for single elements and this element where the page around them matters.
 
-- **Page** — The page that is shown. It must be reachable by the visitors of the page with this element
+- **Page** — The page that is shown. It must be reachable by the visitors of the page with this element, and the preview itself is only available to logged-in backend users
 - **Description** — Optional rich text above the preview
 
 The preview has the width buttons, the scale and the link to open the page in a new tab of the Element Documentation. The page is loaded as it is, so it keeps its own layout and access rules. The frame has a fixed height of 800 px and scrolls inside, because a whole page is usually longer than the screen.

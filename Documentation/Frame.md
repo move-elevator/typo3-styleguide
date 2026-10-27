@@ -7,7 +7,7 @@ How to add it depends on how your project renders pages:
 | Your project | Use | Section |
 |--------------|-----|---------|
 | Has no page template of its own | Static template **TYPO3 Styleguide Frame** | [Static template](#static-template) |
-| Renders pages with its own layout (PAGEVIEW, Site Sets) | Site set `move-elevator/typo3-styleguide-frame` | [Site set](#site-set) |
+| TYPO3 13.1 or later, renders pages with its own layout (PAGEVIEW) | Site set `move-elevator/typo3-styleguide-frame` | [Site set](#site-set) |
 
 ## Static template
 
@@ -31,7 +31,7 @@ A project registers its CSS and scripts in its own layout, so replacing the page
      - move-elevator/typo3-styleguide-frame
    ```
 
-2. Render the header, breadcrumb and title in your layout:
+2. Render the header, breadcrumb and title in your layout. The set applies to one site. If the layout is shared with pages that are not part of the styleguide, wrap this call and the container of the next step in a condition of your own:
 
    ```html
    <f:render partial="StyleguideFrame/Chrome" arguments="{_all}" />
@@ -108,12 +108,22 @@ The frame sets the custom properties of the theme, and the styleguide elements t
 
 ## Styling
 
-Override the custom properties of `.typo3-styleguide-frame` to change colors, font and corners. Set the same properties in a `prefers-color-scheme: dark` block for the dark theme.
+Override the custom properties of `.typo3-styleguide-frame` to change colors, font and corners. The dark theme sets the colors with more specific selectors, so a color needs a rule for each of the two ways the dark theme is switched on: the system setting and the switch in the header.
 
 ```css
 .typo3-styleguide-frame {
     --typo3-sg-accent: #8abb2b;
     --typo3-sg-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-sg-theme="light"]) .typo3-styleguide-frame {
+        --typo3-sg-accent: #a6d04f;
+    }
+}
+
+:root[data-sg-theme="dark"] .typo3-styleguide-frame {
+    --typo3-sg-accent: #a6d04f;
 }
 ```
 
