@@ -46,7 +46,9 @@ if (active && headings.length >= MIN_ENTRIES) {
   let current = null;
 
   const update = () => {
-    const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    // A page that fits the screen does not scroll, so its first heading is the current one and not the last
+    const scrollable = document.documentElement.scrollHeight > window.innerHeight + 2;
+    const atEnd = scrollable && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
     let next = atEnd ? headings.length - 1 : -1;
     if (!atEnd) headings.forEach((heading, i) => { if (heading.getBoundingClientRect().top <= OFFSET) next = i; });
 
