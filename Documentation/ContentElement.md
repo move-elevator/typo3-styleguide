@@ -39,6 +39,8 @@ The `Colors` content element displays a color palette. Each color is defined as 
 - **CMYK**, **PMS**, **Variable name** — Optional values for the Detail layout (e.g. `0, 72, 100, 0`, `PANTONE 165 C`, `$color-primary`)
 - **Role** — Optional `Success`, `Warning` or `Error`, shown as a symbol in the Status layout
 
+![Colors element: a color card with HEX, RGB, CMYK, variable name and contrast badges](Images/element-colors.jpg)
+
 Colors are rendered as swatches with their HEX value and label.
 
 Choose the **Layout** to change the output:
@@ -59,6 +61,8 @@ The `Fonts` content element showcases available fonts. Each font is defined as a
 - **Label** — Optional display name
 - **Usage** — Optional purpose of this weight for the Detail layout (e.g. "Headlines")
 
+![Fonts element: a specimen card and a table of font weights](Images/element-fonts.jpg)
+
 Each font entry renders a specimen text in the specified font family and weight.
 
 Choose the **Layout** `Detail` for one specimen per element instead: a large "Aa", the alphabet and digits in the first font, an optional sample text and a table of all weights with their usage. A CSS snippet with a copy button is generated from the first font. Further fields of the Detail layout:
@@ -78,6 +82,8 @@ The `Icons` content element displays all icon files from a given directory. Conf
 - **Exclude** — Optional comma-separated list of file name patterns to skip (e.g. `*-alt.svg, legacy-*, *.json`). The wildcards `*` and `?` are supported.
 - **Show search** — Optional search field above the icons
 
+![Icons element: icons with their names](Images/element-icons.jpg)
+
 All files in the directory that are not excluded are rendered as icons with their filename as label.
 
 Enable **Show search** to add a search field above the icons. It filters the icons by their name while you type and tells screen readers how many are left.
@@ -88,6 +94,8 @@ The `Images` content element displays a collection of images. Each image is defi
 
 - **Path** — An `EXT:` path to the image file (e.g. `EXT:sitepackage/Resources/Public/Images/logo.svg`)
 - **Caption** — Optional caption text
+
+![Images element: two logos with download buttons](Images/element-images.jpg)
 
 Enable **Show download links** to add a download link with the original file below each image, for example for logo files.
 
@@ -123,6 +131,8 @@ The `Guidelines` content element shows Do and Don't rules as cards. Each rule is
 - **Text** — The rule
 - **Example image** — Optional `EXT:` path to an image that shows the rule
 
+![Guidelines element: Do and Don't cards](Images/element-guidelines.jpg)
+
 Every card carries a symbol and a word, so a rule never relies on color alone. The example image has no alternative text of its own, because the rule text describes it.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-elementdoc.svg" height="20"> Element Documentation
@@ -132,6 +142,8 @@ The `Element Documentation` content element documents a content type, for exampl
 - **Content type** — The type to document
 - **Example pages** — Up to ten pages that hold example elements of this type
 - **Description** — Optional rich text above the preview
+
+![Element documentation: a preview frame with width switch](Images/element-elementdoc.jpg)
 
 It renders two parts:
 
