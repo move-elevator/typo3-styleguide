@@ -128,7 +128,7 @@
 }
 
 .typo3-styleguide__icon-search input:focus-visible {
-    outline: 2px solid var(--typo3-sg-accent);
+    outline: 2px solid var(--typo3-sg-text-primary);
     outline-offset: 2px;
 }
 

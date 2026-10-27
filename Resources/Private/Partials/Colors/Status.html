@@ -36,7 +36,7 @@
                         </f:case>
                     </f:switch>
                     <strong>{f:if(condition: color.data.label, then: color.data.label, else: color.data.color)}</strong>
-                    <f:if condition="{color.data.role} && !{color.data.label}">
+                    <f:if condition="{color.data.role}">
                         <span class="typo3-styleguide__visually-hidden"><f:translate key="{lll}tx_typo3styleguide_color.role.{color.data.role}"/></span>
                     </f:if>
                 </div>

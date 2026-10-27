@@ -283,6 +283,7 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide__icon-search input:focus-vis
 
 .typo3-styleguide-frame__breadcrumb-list li + li::before {
     content: "/";
+    content: "/" / "";
     margin-right: 8px;
 }
 
@@ -347,6 +348,13 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide__icon-search input:focus-vis
     transform: rotate(-12deg);
 }
 
+/* Below this width the shape would reach the lead and the search status */
+@media (max-width: 1100px) {
+    .typo3-styleguide-frame__intro--start::after {
+        display: none;
+    }
+}
+
 .typo3-styleguide-frame__lead {
     max-width: 560px;
     margin: 20px 0 0;
@@ -386,6 +394,15 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__search input {
     background: var(--typo3-sg-bg-primary);
     color: var(--typo3-sg-text-primary);
     box-shadow: none;
+}
+
+.typo3-styleguide-frame__search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .typo3-styleguide-frame__search-status {
@@ -675,8 +692,9 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__sidenav-filter input:
         white-space: nowrap;
     }
 
-    .typo3-styleguide-frame__intro--start::after {
-        display: none;
+    /* The scrolling row clips what lies outside it, so the focus ring sits inside the link */
+    .typo3-styleguide-frame__nav-link:focus-visible {
+        outline-offset: -4px;
     }
 
     .typo3-styleguide-frame__intro--start .typo3-styleguide-frame__inner {
