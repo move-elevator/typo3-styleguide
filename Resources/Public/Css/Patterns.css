@@ -414,6 +414,68 @@
     color: var(--typo3-sg-text-secondary);
 }
 
+.typo3-styleguide__rule {
+    background: var(--typo3-sg-bg-primary);
+    border: 2px solid var(--typo3-sg-text-primary);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--typo3-sg-text-primary);
+    max-width: 640px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.typo3-styleguide__rule--dont {
+    border-style: dashed;
+}
+
+.typo3-styleguide__rule--note {
+    border-style: dotted;
+}
+
+.typo3-styleguide__rule-type {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+.typo3-styleguide__rule--do .typo3-styleguide__rule-type {
+    background: var(--typo3-sg-text-primary);
+    color: var(--typo3-sg-bg-primary);
+}
+
+.typo3-styleguide__rule-title {
+    font-weight: bold;
+    margin: 0;
+    padding: 12px 16px 0;
+}
+
+.typo3-styleguide__rule-media {
+    margin: 12px 0 0;
+}
+
+.typo3-styleguide__rule-media img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.typo3-styleguide__rule-text {
+    overflow-wrap: anywhere;
+    padding: 16px;
+}
+
+.typo3-styleguide__rule-text > :first-child {
+    margin-top: 0;
+}
+
+.typo3-styleguide__rule-text > :last-child {
+    margin-bottom: 0;
+}
+
 .typo3-styleguide__font p {
     margin: 0;
     padding: 0;
