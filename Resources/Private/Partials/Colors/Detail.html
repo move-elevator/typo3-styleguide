@@ -23,7 +23,7 @@
             <f:variable name="levelDark"><sg:contrastLevel ratio="{ratioDark}"/></f:variable>
             <f:variable name="contrastColor" value="{f:if(condition: '{ratioLight} >= {ratioDark}', then: light, else: dark)}" />
             <li class="typo3-styleguide__color-card">
-                <div class="typo3-styleguide__color-card-swatch" style="background-color: {color.data.color}; color: {contrastColor};">
+                <div class="typo3-styleguide__color-card-swatch" style="background-color: rgb({color.data.color -> sg:format.rgb()}); color: {contrastColor};">
                     <span>{color.data.color}</span>
                 </div>
                 <div class="typo3-styleguide__color-card-body">

@@ -31,7 +31,7 @@
                         </f:variable>
                         <div class="typo3-styleguide__element" data-copy="{color.data.color}">
                             <div class="typo3-styleguide__color"
-                                 style="background-color: {color.data.color}; color: {contrastColor};">
+                                 style="background-color: rgb({color.data.color -> sg:format.rgb()}); color: {contrastColor};">
                                 <p class="typo3-styleguide__color-value">
                                     {color.data.color}
                                 </p>

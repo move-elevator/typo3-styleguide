@@ -11,7 +11,7 @@
             <f:variable name="ratioBlack" value="{sg:contrastRatio(color: color.data.color, background: '#000000')}" />
             <f:variable name="contrastColor" value="{f:if(condition: '{ratioWhite} >= {ratioBlack}', then: '#FFFFFF', else: '#000000')}" />
             <f:variable name="step"><f:format.padding padLength="2" padString="0">{iterator.cycle}</f:format.padding></f:variable>
-            <li class="typo3-styleguide__color-scale-step" style="background-color: {color.data.color}; color: {contrastColor};">
+            <li class="typo3-styleguide__color-scale-step" style="background-color: rgb({color.data.color -> sg:format.rgb()}); color: {contrastColor};">
                 <strong>{f:if(condition: color.data.label, then: color.data.label, else: step)}</strong>
                 <span>{color.data.color}</span>
             </li>
