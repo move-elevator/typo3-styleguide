@@ -23,6 +23,7 @@ use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 use function count;
 use function htmlspecialchars;
 use function is_array;
+use function strip_tags;
 
 use const ENT_QUOTES;
 use const PATHINFO_FILENAME;
@@ -288,7 +289,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
         return $this->renderFluidPreview('Guidelines', ['guidelines' => array_map(
             static fn (array $child): array => [
                 'type' => (string) $child['type'],
-                'text' => GeneralUtility::fixed_lgd_cs((string) $child['text'], 90),
+                'text' => GeneralUtility::fixed_lgd_cs(strip_tags((string) $child['text']), 90),
             ],
             $children,
         )]);

@@ -76,6 +76,7 @@ return [
             'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.text',
             'config' => [
                 'type' => 'text',
+                'enableRichtext' => true,
                 'cols' => 50,
                 'rows' => 3,
                 'eval' => 'trim',

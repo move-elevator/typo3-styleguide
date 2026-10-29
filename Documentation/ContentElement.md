@@ -167,7 +167,7 @@ The `Guidelines` content element shows Do, Don't and Note rules as cards. Each r
 
 - **Type** — `Do`, `Don't` or `Note`
 - **Title** — Optional short title of the rule
-- **Text** — The rule
+- **Text** — The rule, as rich text
 - **Image** — Optional image from the file list. Set its alternative text on the file reference
 - **Example image** — Optional `EXT:` path to an image, used when no image is selected
 

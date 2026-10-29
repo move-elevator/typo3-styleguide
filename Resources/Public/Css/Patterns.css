@@ -965,6 +965,14 @@ details[open] > summary.typo3-styleguide__field-head::before {
     color: var(--typo3-sg-text-secondary);
 }
 
+.typo3-styleguide__guideline-text > :first-child {
+    margin-top: 0;
+}
+
+.typo3-styleguide__guideline-text > :last-child {
+    margin-bottom: 0;
+}
+
 /* Fonts, Detail layout */
 .typo3-styleguide__font-detail {
     display: flex;
