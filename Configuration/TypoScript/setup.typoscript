@@ -77,6 +77,12 @@ tt_content {
       markers.uid.field = uid
       orderBy = sorting
       as = guidelines
+      dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      dataProcessing.10 {
+        references.fieldName = image
+        references.table = tx_typo3styleguide_guideline
+        as = images
+      }
     }
   }
 

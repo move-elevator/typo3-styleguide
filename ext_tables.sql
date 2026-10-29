@@ -80,7 +80,9 @@ CREATE TABLE tx_typo3styleguide_guideline
 	parentid int(11) DEFAULT 0 NOT NULL,
 	parenttable varchar(255) DEFAULT '' NOT NULL,
 	type varchar(10) DEFAULT 'do' NOT NULL,
+	title varchar(255) DEFAULT '' NOT NULL,
 	text text,
+	image int(11) unsigned DEFAULT 0 NOT NULL,
 	path varchar(255) DEFAULT '' NOT NULL,
 );
 

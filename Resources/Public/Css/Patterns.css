@@ -933,8 +933,24 @@ details[open] > summary.typo3-styleguide__field-head::before {
     color: var(--typo3-sg-bg-primary);
 }
 
-.typo3-styleguide__guideline--dont .typo3-styleguide__guideline-label {
+.typo3-styleguide__guideline--dont .typo3-styleguide__guideline-label,
+.typo3-styleguide__guideline--note .typo3-styleguide__guideline-label {
     border-bottom: 2px solid var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide__guideline--dont {
+    border-style: dashed;
+}
+
+.typo3-styleguide__guideline--note {
+    border-style: dotted;
+}
+
+.typo3-styleguide__guideline-title {
+    margin: 0;
+    padding: 12px 18px 0;
+    color: var(--typo3-sg-text-primary);
+    font-weight: bold;
 }
 
 .typo3-styleguide__guideline-image {

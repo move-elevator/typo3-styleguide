@@ -163,15 +163,17 @@ Images load lazily and are scaled to a maximum width of 600 px, the download alw
 
 ## <img src="../Resources/Public/Icons/content-styleguide-guidelines.svg" height="20"> Guidelines
 
-The `Guidelines` content element shows Do and Don't rules as cards. Each rule is defined as an inline record with:
+The `Guidelines` content element shows Do, Don't and Note rules as cards. Each rule is defined as an inline record with:
 
-- **Type** — `Do` or `Don't`
+- **Type** — `Do`, `Don't` or `Note`
+- **Title** — Optional short title of the rule
 - **Text** — The rule
-- **Example image** — Optional `EXT:` path to an image that shows the rule
+- **Image** — Optional image from the file list. Set its alternative text on the file reference
+- **Example image** — Optional `EXT:` path to an image, used when no image is selected
 
 ![Guidelines element: Do and Don't cards](Images/element-guidelines.jpg)
 
-Every card carries a symbol and a word, so a rule never relies on color alone. The example image has no alternative text of its own, because the rule text describes it.
+Every card carries a symbol and a word, and the frame differs per type (solid, dashed or dotted), so a rule never relies on color alone. An image selected from the file list uses its own alternative text. The example image path has none, so the rule text should describe it.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-elementdoc.svg" height="20"> Element Documentation
 

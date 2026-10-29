@@ -56,7 +56,20 @@ return [
                         'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.type.dont',
                         'value' => 'dont',
                     ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.type.note',
+                        'value' => 'note',
+                    ],
                 ],
+            ],
+        ],
+        'title' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.title',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+                'eval' => 'trim',
             ],
         ],
         'text' => [
@@ -67,6 +80,15 @@ return [
                 'rows' => 3,
                 'eval' => 'trim',
                 'required' => true,
+            ],
+        ],
+        'image' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.image',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.image.description',
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types',
             ],
         ],
         'path' => [
@@ -83,7 +105,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'type,text,path',
+            'showitem' => 'type,title,text,image,path',
         ],
     ],
 ];

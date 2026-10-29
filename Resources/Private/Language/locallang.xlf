@@ -390,14 +390,26 @@
 			<trans-unit id="tx_typo3styleguide_guideline.type.dont">
 				<source>Don't</source>
 			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.title">
+				<source>Title</source>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline.text">
 				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image.description">
+				<source>Optional image that shows the rule. Set its alternative text on the file reference. It takes precedence over the example image path.</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline.path">
 				<source>Example image</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline.path.description">
-				<source>Optional EXT: path to an image that shows the rule. The text describes it, so the image has no alternative text of its own.</source>
+				<source>Optional EXT: path to an image that shows the rule, used when no image is selected. It has no alternative text of its own, so the text should describe it.</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_image">
 				<source>Image</source>

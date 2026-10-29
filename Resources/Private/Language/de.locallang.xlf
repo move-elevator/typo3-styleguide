@@ -515,9 +515,25 @@
 				<source />
 				<target>So machen wir es</target>
 			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.note">
+				<source />
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.title">
+				<source />
+				<target>Titel</target>
+			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline.type.dont">
 				<source />
 				<target>Das vermeiden wir</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image">
+				<source />
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image.description">
+				<source />
+				<target>Optionales Bild, das die Regel zeigt. Den Alternativtext an der Dateireferenz setzen. Es hat Vorrang vor dem Pfad des Beispielbilds.</target>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline.text">
 				<source />
@@ -529,7 +545,7 @@
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_guideline.path.description">
 				<source />
-				<target>Optionaler EXT:-Pfad zu einem Bild, das die Regel zeigt. Der Text beschreibt es, deshalb hat das Bild keinen eigenen Alternativtext.</target>
+				<target>Optionaler EXT:-Pfad zu einem Bild, das die Regel zeigt, wird genutzt, wenn kein Bild ausgewählt ist. Es hat keinen eigenen Alternativtext, deshalb sollte der Text es beschreiben.</target>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_image">
 				<source />

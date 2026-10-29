@@ -13,21 +13,32 @@
         <ul class="typo3-styleguide__guidelines" role="list">
             <f:for each="{guidelines}" as="guideline">
                 <f:if condition="{guideline.data.text}">
-                    <li class="typo3-styleguide__guideline typo3-styleguide__guideline--{f:if(condition: '{guideline.data.type} == dont', then: 'dont', else: 'do')}">
+                    <f:switch expression="{guideline.data.type}">
+                        <f:case value="dont"><f:variable name="type" value="dont"/></f:case>
+                        <f:case value="note"><f:variable name="type" value="note"/></f:case>
+                        <f:defaultCase><f:variable name="type" value="do"/></f:defaultCase>
+                    </f:switch>
+                    <li class="typo3-styleguide__guideline typo3-styleguide__guideline--{type}">
                         <p class="typo3-styleguide__guideline-label">
-                            <f:if condition="{guideline.data.type} == dont">
-                                <f:then>
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-                                    <f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.type.dont"/>
-                                </f:then>
-                                <f:else>
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
-                                    <f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.type.do"/>
-                                </f:else>
-                            </f:if>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <f:switch expression="{type}">
+                                    <f:case value="dont"><path d="M6 6l12 12M18 6L6 18"></path></f:case>
+                                    <f:case value="note"><path d="M12 11v5M12 8h.01"></path><circle cx="12" cy="12" r="9"></circle></f:case>
+                                    <f:defaultCase><path d="M5 12.5l4.5 4.5L19 7.5"></path></f:defaultCase>
+                                </f:switch>
+                            </svg>
+                            <f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_guideline.type.{type}"/>
                         </p>
-                        <f:if condition="{guideline.data.path}">
-                            <img class="typo3-styleguide__guideline-image" src="{f:uri.resource(path: guideline.data.path)}" alt="" loading="lazy"/>
+                        <f:if condition="{guideline.data.title}">
+                            <p class="typo3-styleguide__guideline-title">{guideline.data.title}</p>
+                        </f:if>
+                        <f:if condition="{guideline.images.0}">
+                            <f:then>
+                                <f:image class="typo3-styleguide__guideline-image" image="{guideline.images.0}" maxWidth="800" loading="lazy"/>
+                            </f:then>
+                            <f:else if="{guideline.data.path}">
+                                <img class="typo3-styleguide__guideline-image" src="{f:uri.resource(path: guideline.data.path)}" alt="" loading="lazy"/>
+                            </f:else>
                         </f:if>
                         <p class="typo3-styleguide__guideline-text">{guideline.data.text}</p>
                     </li>

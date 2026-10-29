@@ -2,7 +2,7 @@
       data-namespace-typo3-fluid="true">
 <ul style="margin:0;padding:0;list-style:none;font-size:11px;line-height:1.4;">
     <f:for each="{guidelines}" as="guideline">
-        <li style="margin:0 0 4px;"><strong>{f:if(condition: '{guideline.type} == dont', then: '✕', else: '✓')}</strong> {guideline.text}</li>
+        <li style="margin:0 0 4px;"><strong><f:switch expression="{guideline.type}"><f:case value="dont">✕</f:case><f:case value="note">i</f:case><f:defaultCase>✓</f:defaultCase></f:switch></strong> {guideline.text}</li>
     </f:for>
 </ul>
 </html>
