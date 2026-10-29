@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\ViewHelpers\Format;
 
+use InvalidArgumentException;
 use MoveElevator\Styleguide\Utility\ColorUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
@@ -20,6 +21,8 @@ use function implode;
 
 /**
  * RgbViewHelper.
+ *
+ * Returns an empty string for an invalid color, so a faulty record turns into a dropped CSS declaration and not into an error page.
  *
  * @author Konrad Michalik <km@move-elevator.de>
  * @license GPL-2.0-or-later
@@ -33,7 +36,11 @@ class RgbViewHelper extends AbstractViewHelper
 
     public function render(): string
     {
-        return implode(', ', ColorUtility::hexToRgb((string) $this->renderChildren()));
+        try {
+            return implode(', ', ColorUtility::hexToRgb((string) $this->renderChildren()));
+        } catch (InvalidArgumentException) {
+            return '';
+        }
     }
 
     public function getContentArgumentName(): string

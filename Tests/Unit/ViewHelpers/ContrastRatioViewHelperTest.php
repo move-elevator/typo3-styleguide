@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\Tests\Unit\ViewHelpers;
 
-use InvalidArgumentException;
 use MoveElevator\Styleguide\ViewHelpers\ContrastRatioViewHelper;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -52,11 +51,9 @@ final class ContrastRatioViewHelperTest extends TestCase
     }
 
     #[DataProvider('invalidColorProvider')]
-    public function testRenderRejectsInvalidColors(string $color): void
+    public function testRenderReturnsLowestRatioForInvalidColors(string $color): void
     {
-        $this->expectException(InvalidArgumentException::class);
-
-        $this->render($color, '#FFFFFF');
+        $this->assertSame(1.0, $this->render($color, '#FFFFFF'));
     }
 
     /**

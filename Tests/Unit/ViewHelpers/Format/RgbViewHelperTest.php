@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace MoveElevator\Styleguide\Tests\Unit\ViewHelpers\Format;
 
-use InvalidArgumentException;
 use MoveElevator\Styleguide\ViewHelpers\Format\RgbViewHelper;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -45,11 +44,9 @@ final class RgbViewHelperTest extends TestCase
     }
 
     #[DataProvider('invalidColorProvider')]
-    public function testRenderRejectsInvalidColors(string $hex): void
+    public function testRenderReturnsEmptyStringForInvalidColors(string $hex): void
     {
-        $this->expectException(InvalidArgumentException::class);
-
-        $this->render($hex);
+        $this->assertSame('', $this->render($hex));
     }
 
     /**
