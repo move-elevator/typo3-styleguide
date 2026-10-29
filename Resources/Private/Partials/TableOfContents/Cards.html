@@ -23,10 +23,17 @@
 <f:for each="{pages}" as="page">
     <f:if condition="{page.data.doktype} == 1754310721">
         <f:if condition="{page.children}">
-            <div class="typo3-styleguide-toc__group">
-                <h3 class="typo3-styleguide-toc__group-title">{page.title}</h3>
-                <f:render partial="TableOfContents/Cards" arguments="{pages: page.children}" />
-            </div>
+            <f:then>
+                <div class="typo3-styleguide-toc__group">
+                    <h3 class="typo3-styleguide-toc__group-title">{page.title}</h3>
+                    <f:render partial="TableOfContents/Cards" arguments="{pages: page.children}" />
+                </div>
+            </f:then>
+            <f:else if="{groupsOnly}">
+                <div class="typo3-styleguide-toc__group">
+                    <f:render partial="TableOfContents/Cards" arguments="{pages: {0: page}}" />
+                </div>
+            </f:else>
         </f:if>
     </f:if>
 </f:for>
