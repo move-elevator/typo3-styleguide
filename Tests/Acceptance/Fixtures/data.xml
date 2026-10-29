@@ -805,6 +805,13 @@
                     <relations index="rels" type="array"></relations>
                     <softrefs type="array"></softrefs>
                 </rec>
+                <rec index="7" type="array">
+                    <uid>7</uid>
+                    <pid>11</pid>
+                    <title>Check the contrast of touch targets</title>
+                    <relations index="rels" type="array"></relations>
+                    <softrefs type="array"></softrefs>
+                </rec>
             </table>
         </records>
         <pid_lookup type="array">
@@ -978,6 +985,7 @@
                 <table index="tx_typo3styleguide_guideline" type="array">
                     <item index="5">1</item>
                     <item index="6">1</item>
+                    <item index="7">1</item>
                 </table>
             </page_contents>
             <page_contents index="12" type="array">
@@ -5353,7 +5361,7 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="tx_typo3styleguide_fonts" type="integer">0</field>
                 <field index="tx_typo3styleguide_images" type="integer">0</field>
                 <field index="bodytext"></field>
-                <field index="tx_typo3styleguide_guidelines">5,6</field>
+                <field index="tx_typo3styleguide_guidelines">5,6,7</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
@@ -6892,6 +6900,24 @@ Cell 4|Cell 5|Cell 6</field>
                 <field index="parenttable">tt_content</field>
                 <field index="type">dont</field>
                 <field index="text">Do not shrink the touch area below 48 by 48 pixels.</field>
+            </fieldlist>
+            <related index="rels" type="array"></related>
+        </tablerow>
+        <tablerow index="tx_typo3styleguide_guideline:7" type="array">
+            <fieldlist index="data" type="array">
+                <field index="uid" type="integer">7</field>
+                <field index="pid" type="integer">11</field>
+                <field index="tstamp" type="integer">1761600000</field>
+                <field index="crdate" type="integer">1761600000</field>
+                <field index="deleted" type="integer">0</field>
+                <field index="hidden" type="integer">0</field>
+                <field index="sorting" type="integer">7</field>
+                <field index="parentid" type="integer">49</field>
+                <field index="parenttable">tt_content</field>
+                <field index="type">note</field>
+                <field index="title">Contrast of touch targets</field>
+                <field index="text">&lt;p&gt;Check the &lt;strong&gt;contrast&lt;/strong&gt; of buttons and links against their background.&lt;/p&gt;</field>
+                <field index="path">EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-guidelines.svg</field>
             </fieldlist>
             <related index="rels" type="array"></related>
         </tablerow>
