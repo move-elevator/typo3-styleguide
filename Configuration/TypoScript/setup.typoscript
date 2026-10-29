@@ -92,6 +92,19 @@ tt_content {
     dataProcessing.10 = MoveElevator\Styleguide\DataProcessing\PagePreviewProcessor
   }
 
+  typo3styleguide_imagesizes =< lib.contentElement
+  typo3styleguide_imagesizes {
+    templateName = ImageSizes
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_imagesize
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = sizes
+    }
+  }
+
   typo3styleguide_tableofcontents =< lib.contentElement
   typo3styleguide_tableofcontents {
     templateName = TableOfContents

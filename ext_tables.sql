@@ -20,6 +20,7 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_elementdoc_pages varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_pagepreview_page varchar(255) DEFAULT '' NOT NULL,
 	tx_typo3styleguide_tableofcontents_layout varchar(10) DEFAULT 'list' NOT NULL,
+	tx_typo3styleguide_imagesizes int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_tableofcontents_levels tinyint(3) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_gallery_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_gallery_columns varchar(2) DEFAULT '4' NOT NULL,
@@ -46,6 +47,18 @@ CREATE TABLE tx_typo3styleguide_font
 	font_weight varchar(30) DEFAULT '' NOT NULL,
 	label varchar(255) DEFAULT '' NOT NULL,
 	purpose varchar(255) DEFAULT '' NOT NULL,
+);
+
+CREATE TABLE tx_typo3styleguide_imagesize
+(
+	parentid int(11) DEFAULT 0 NOT NULL,
+	parenttable varchar(255) DEFAULT '' NOT NULL,
+	channel varchar(255) DEFAULT '' NOT NULL,
+	image_type varchar(255) DEFAULT '' NOT NULL,
+	width int(11) DEFAULT 0 NOT NULL,
+	height int(11) DEFAULT 0 NOT NULL,
+	format varchar(100) DEFAULT '' NOT NULL,
+	valid_as_of date DEFAULT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_image

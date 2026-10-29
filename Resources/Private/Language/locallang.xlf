@@ -480,6 +480,42 @@
 			<trans-unit id="contentelement.pagelinks.pages">
 				<source>Pages</source>
 			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.label">
+				<source>Image Sizes</source>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.description">
+				<source>Image and format specifications per channel. One inline record per size, shown as a table with a preview of the aspect ratio and the date the values were checked.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.items">
+				<source>Sizes</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize">
+				<source>Image size</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.channel">
+				<source>Channel</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.image_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.width">
+				<source>Width (px)</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.height">
+				<source>Height (px)</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.format">
+				<source>Format</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.valid_as_of">
+				<source>Valid as of</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.size">
+				<source>Size</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.preview">
+				<source>Proportion</source>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>
 			</trans-unit>

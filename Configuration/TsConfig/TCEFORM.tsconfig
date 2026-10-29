@@ -38,7 +38,7 @@
 [end]
 
 [traverse(page, "doktype") != 1754310721]
-  TCEFORM.tt_content.CType.removeItems := addToList(typo3styleguide_technicalheadline,typo3styleguide_colors,typo3styleguide_fonts,typo3styleguide_icons,typo3styleguide_images,typo3styleguide_tableofcontents,typo3styleguide_gallery,typo3styleguide_guidelines,typo3styleguide_elementdoc,typo3styleguide_pagepreview,typo3styleguide_pagelinks)
+  TCEFORM.tt_content.CType.removeItems := addToList(typo3styleguide_technicalheadline,typo3styleguide_colors,typo3styleguide_fonts,typo3styleguide_icons,typo3styleguide_images,typo3styleguide_tableofcontents,typo3styleguide_gallery,typo3styleguide_guidelines,typo3styleguide_elementdoc,typo3styleguide_pagepreview,typo3styleguide_pagelinks,typo3styleguide_imagesizes)
 [end]
 
 [traverse(page, "doktype") != 1754310721]

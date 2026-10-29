@@ -1,0 +1,42 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+
+<div class="typo3-styleguide__frame">
+    <div class="typo3-styleguide__table-scroll" role="region" tabindex="0" aria-label="{f:translate(key: 'contentelement.imagesizes.label', extensionName: 'Typo3Styleguide')}">
+        <table class="typo3-styleguide__table">
+            <thead>
+                <tr>
+                    <th scope="col"><f:translate key="tx_typo3styleguide_imagesize.channel" extensionName="Typo3Styleguide"/></th>
+                    <th scope="col"><f:translate key="tx_typo3styleguide_imagesize.image_type" extensionName="Typo3Styleguide"/></th>
+                    <th scope="col"><f:translate key="tx_typo3styleguide_imagesize.size" extensionName="Typo3Styleguide"/></th>
+                    <th scope="col"><f:translate key="tx_typo3styleguide_imagesize.preview" extensionName="Typo3Styleguide"/></th>
+                    <th scope="col"><f:translate key="tx_typo3styleguide_imagesize.format" extensionName="Typo3Styleguide"/></th>
+                    <th scope="col"><f:translate key="tx_typo3styleguide_imagesize.valid_as_of" extensionName="Typo3Styleguide"/></th>
+                </tr>
+            </thead>
+            <tbody>
+                <f:for each="{sizes}" as="size">
+                    <f:variable name="orientation" value="{f:if(condition: '{size.data.width} >= {size.data.height}', then: 'landscape', else: 'portrait')}"/>
+                    <tr>
+                        <th scope="row">{size.data.channel}</th>
+                        <td>{size.data.image_type}</td>
+                        <td>{size.data.width} &times; {size.data.height} px</td>
+                        <td><span class="typo3-styleguide__ratio typo3-styleguide__ratio--{orientation}" style="aspect-ratio: {size.data.width} / {size.data.height};" aria-hidden="true"></span></td>
+                        <td>{size.data.format}</td>
+                        <td><f:if condition="{size.data.valid_as_of}"><time datetime="{size.data.valid_as_of}">{size.data.valid_as_of}</time></f:if></td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</f:section>
+</html>

@@ -9,6 +9,7 @@ This extension provides the following content elements for building a styleguide
 - [Images](#images)
 - [Table of Contents](#table-of-contents)
 - [Page Links](#page-links)
+- [Image Sizes](#image-sizes)
 - [Gallery](#gallery)
 - [Guidelines](#guidelines)
 - [Element Documentation](#element-documentation)
@@ -120,6 +121,20 @@ The `Page Links` content element renders links to manually selected pages of any
 
 - **Pages** — The pages to link, rendered in the selected order. Pages hidden in menus are included.
 - **Layout** — `List` for a flat list, or `Cards` for a card grid, matching the [Table of Contents](#table-of-contents) styling. `Groups` and `Areas` are offered by the shared field but render as a list.
+
+- [Image Sizes](#image-sizes)
+
+## <img src="../Resources/Public/Icons/content-styleguide-imagesizes.svg" height="20"> Image Sizes
+
+The `Image Sizes` content element documents image and format specifications as a table. Each size is defined as an inline record with:
+
+- **Channel** — Where the image is used (e.g. `LinkedIn`)
+- **Type** — Optional kind of image (e.g. `Profile picture`)
+- **Width** and **Height** — Size in pixels
+- **Format** — Optional file format (e.g. `JPG/PNG`)
+- **Valid as of** — Optional date the values were last checked
+
+The table shows each size next to a frame in the same aspect ratio, so proportions can be compared at a glance. The date is shown as is, which makes outdated values visible. Platform specifications change often, so keep the date up to date.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-gallery.svg" height="20"> Gallery
 
