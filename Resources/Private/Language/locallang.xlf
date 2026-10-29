@@ -252,6 +252,9 @@
 			<trans-unit id="tx_typo3styleguide_font.purpose.description">
 				<source>What this weight is used for. Shown in the Detail layout of the Fonts element.</source>
 			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.source">
+				<source>Source</source>
+			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
 				<source>Icons</source>
 			</trans-unit>

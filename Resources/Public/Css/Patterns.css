@@ -1199,3 +1199,8 @@ details[open] > summary.typo3-styleguide__field-head::before {
     padding: 0 16px;
     text-decoration: none;
 }
+
+.typo3-styleguide__font-detail-source {
+    font-size: 0.875em;
+    opacity: 0.8;
+}

@@ -44,7 +44,7 @@
                 <f:for each="{fonts}" as="font">
                     <tr>
                         <th scope="row">{font.data.font_weight}</th>
-                        <td>{f:if(condition: font.data.label, then: font.data.label, else: font.data.font)}</td>
+                        <td>{f:if(condition: font.data.label, then: font.data.label, else: font.data.font)}<f:if condition="{font.data.source}"><br/><span class="typo3-styleguide__font-detail-source">{font.data.source}</span></f:if></td>
                         <td>{font.data.purpose}</td>
                         <td style="font-family: {font.data.font};{f:if(condition: '{font.data.font_weight}', then: ' font-weight: {font.data.font_weight};')}">Sphinx of black quartz</td>
                     </tr>

@@ -335,6 +335,10 @@
 				<source />
 				<target>Wofür dieses Gewicht gilt. Wird im Layout Detail des Schriften-Elements angezeigt.</target>
 			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.source">
+				<source />
+				<target>Quelle</target>
+			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
 				<source />
 				<target>Icons</target>

@@ -82,10 +82,20 @@ return [
                 'placeholder' => 'Headlines',
             ],
         ],
+        'source' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.source',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => 'Self-hosted (WOFF2)',
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'font,font_weight,label,purpose',
+            'showitem' => 'font,font_weight,label,purpose,source',
         ],
     ],
 ];

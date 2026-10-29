@@ -52,6 +52,7 @@ CREATE TABLE tx_typo3styleguide_font
 	font_weight varchar(30) DEFAULT '' NOT NULL,
 	label varchar(255) DEFAULT '' NOT NULL,
 	purpose varchar(255) DEFAULT '' NOT NULL,
+	source varchar(255) DEFAULT '' NOT NULL,
 );
 
 CREATE TABLE tx_typo3styleguide_imagesize

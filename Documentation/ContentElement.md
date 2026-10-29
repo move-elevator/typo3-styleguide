@@ -65,6 +65,7 @@ The `Fonts` content element showcases available fonts. Each font is defined as a
 - **Font Weight** — Optional weight value (e.g. `700`)
 - **Label** — Optional display name
 - **Usage** — Optional purpose of this weight for the Detail layout (e.g. "Headlines")
+- **Source** — Optional note on where the font comes from (e.g. `Self-hosted (WOFF2)`), shown below the label in the Detail layout
 
 ![Fonts element: a specimen card and a table of font weights](Images/element-fonts.jpg)
 
