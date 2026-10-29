@@ -95,6 +95,10 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide__element--icon[data-copy] {
     color: inherit;
 }
 
+.typo3-styleguide-frame .typo3-styleguide-frame__sidenav-anchor {
+    color: var(--typo3-sg-text-secondary);
+}
+
 /* The focus ring uses the text color, so it stays visible whatever brand color the accent is */
 .typo3-styleguide-frame :focus-visible,
 body:has(.typo3-styleguide-frame) .typo3-styleguide__icon-search input:focus-visible {
