@@ -28,7 +28,7 @@
                 <f:variable name="rgb" value="{sg:rgbColor(color: color.data.color)}"/>
                 <div class="typo3-styleguide__element">
                     <div class="typo3-styleguide__color" data-copy="{color.data.color}" aria-label="Copy {color.data.color} {color.data.label}"
-                         style="background-color: {color.data.color}; color: {contrastColor};">
+                         style="background-color: rgb({rgb}); color: {contrastColor};">
                         <p class="typo3-styleguide__color-value">
                             {color.data.color}
                         </p>
