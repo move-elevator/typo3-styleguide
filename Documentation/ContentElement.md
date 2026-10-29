@@ -55,6 +55,8 @@ Choose the **Layout** to change the output:
 
 The Detail and Status layouts add a rich text field for usage rules above the colors, for example when a color is meant for text, surfaces or accents. For the contrast check, each color is compared to a light and a dark text color (default `#FFFFFF` and `#000000`, adjustable per element) and gets the WCAG level it reaches: `AAA`, `AA`, `Large text only` or `Not for text`. The level is always written out, never conveyed by color alone.
 
+In the Detail layout, the palette can also be downloaded below the cards as SCSS variables, LESS variables or a JSON file in the design tokens format. The files are generated in the browser from the records of the element, nothing is stored on the server, and the downloads are visible to everyone who can see the page. Only colors with a valid HEX value and a variable name are included, a leading `$` or `@` of the name is ignored.
+
 ## <img src="../Resources/Public/Icons/content-styleguide-fonts.svg" height="20"> Fonts
 
 The `Fonts` content element showcases available fonts. Each font is defined as an inline record with:

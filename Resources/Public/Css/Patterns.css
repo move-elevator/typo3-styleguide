@@ -1177,3 +1177,25 @@ details[open] > summary.typo3-styleguide__field-head::before {
         --typo3-sg-gutter: 16px;
     }
 }
+
+.typo3-styleguide__exports {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.typo3-styleguide__export {
+    align-items: center;
+    border: 2px solid var(--typo3-sg-text-primary);
+    border-radius: 10px;
+    color: var(--typo3-sg-text-primary);
+    display: inline-flex;
+    font-family: monospace, sans-serif;
+    font-weight: bold;
+    min-height: 44px;
+    padding: 0 16px;
+    text-decoration: none;
+}
