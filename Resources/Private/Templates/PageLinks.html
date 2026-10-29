@@ -1,0 +1,46 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+<f:asset.css identifier="typo3styleguide_toc_css" href="EXT:typo3_styleguide/Resources/Public/Css/TableOfContents.css"/>
+
+<f:if condition="{pages}">
+    <nav class="typo3-styleguide-toc typo3-styleguide-toc--{data.tx_typo3styleguide_tableofcontents_layout}">
+        <f:switch expression="{data.tx_typo3styleguide_tableofcontents_layout}">
+            <f:case value="cards">
+                <div class="typo3-styleguide-toc__cards">
+                    <f:for each="{pages}" as="page">
+                        <a href="{page.link}" class="typo3-styleguide-toc__card">
+                            <f:if condition="{page.data.tx_typo3styleguide_ctype_icon}">
+                                <span class="typo3-styleguide-toc__card-icon">
+                                    <core:icon identifier="{sg:cTypeIconIdentifier(ctype: page.data.tx_typo3styleguide_ctype_icon)}" size="default" />
+                                </span>
+                            </f:if>
+                            <span class="typo3-styleguide-toc__card-title">{page.title}</span>
+                        </a>
+                    </f:for>
+                </div>
+            </f:case>
+            <f:defaultCase>
+                <ul class="typo3-styleguide-toc__list">
+                    <f:for each="{pages}" as="page">
+                        <li class="typo3-styleguide-toc__item">
+                            <a href="{page.link}" class="typo3-styleguide-toc__link">{page.title}</a>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:defaultCase>
+        </f:switch>
+    </nav>
+</f:if>
+
+</f:section>
+
+</html>

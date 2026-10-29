@@ -15,6 +15,7 @@ namespace MoveElevator\Styleguide\Preview;
 
 use MoveElevator\Styleguide\Utility\FileListUtility;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Database\{Connection, ConnectionPool};
 use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
@@ -36,6 +37,13 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
 {
     private const TEMPLATE_PATH = 'EXT:typo3_styleguide/Resources/Private/Templates/Preview/';
 
+    private const LAYOUT_LABELS = [
+        'list' => 'List',
+        'cards' => 'Cards',
+        'groups' => 'Groups',
+        'areas' => 'Areas',
+    ];
+
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $row = $this->getRowFromItem($item);
@@ -48,6 +56,7 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             'typo3styleguide_icons' => $this->renderIconsPreview($row),
             'typo3styleguide_images' => $this->renderImagesPreview($row),
             'typo3styleguide_tableofcontents' => $this->renderTableOfContentsPreview($row),
+            'typo3styleguide_pagelinks' => $this->renderPageLinksPreview($row),
             'typo3styleguide_gallery' => $this->renderGalleryPreview($row),
             'typo3styleguide_guidelines' => $this->renderGuidelinesPreview($row),
             'typo3styleguide_elementdoc' => $this->renderElementDocPreview($row),
@@ -174,16 +183,38 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function renderTableOfContentsPreview(array $row): string
     {
-        $layout = (string) ($row['tx_typo3styleguide_tableofcontents_layout'] ?? 'list');
-        $layoutLabels = [
-            'list' => 'List',
-            'cards' => 'Cards',
-            'areas' => 'Areas',
-        ];
-
         return $this->renderFluidPreview('TableOfContents', [
-            'layout' => $layoutLabels[$layout] ?? $layout,
+            'layout' => $this->getLayoutLabel($row),
         ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderPageLinksPreview(array $row): string
+    {
+        $pageTitles = [];
+        foreach (GeneralUtility::intExplode(',', (string) ($row['pages'] ?? ''), true) as $pageUid) {
+            $page = BackendUtility::getRecord('pages', $pageUid, 'title');
+            if (null !== $page) {
+                $pageTitles[] = (string) $page['title'];
+            }
+        }
+
+        return $this->renderFluidPreview('PageLinks', [
+            'layout' => $this->getLayoutLabel($row),
+            'pageTitles' => $pageTitles,
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function getLayoutLabel(array $row): string
+    {
+        $layout = (string) ($row['tx_typo3styleguide_tableofcontents_layout'] ?? 'list');
+
+        return self::LAYOUT_LABELS[$layout] ?? $layout;
     }
 
     /**

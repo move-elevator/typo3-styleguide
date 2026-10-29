@@ -108,6 +108,18 @@ tt_content {
       expandAll = 1
     }
   }
+
+  typo3styleguide_pagelinks =< lib.contentElement
+  typo3styleguide_pagelinks {
+    templateName = PageLinks
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    dataProcessing.10 {
+      special = list
+      special.value.field = pages
+      includeNotInMenu = 1
+      as = pages
+    }
+  }
 }
 
 # Marks every content element for the preview frames, see ElementPreviewMiddleware. Only requests that carry the parameter get the markers

@@ -117,6 +117,21 @@ ExtensionManagementUtility::addTcaSelectItem(
     'after',
 );
 
+// --- Page Links ---
+ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'label' => $lll.'contentelement.pagelinks.label',
+        'value' => 'typo3styleguide_pagelinks',
+        'icon' => 'content-styleguide-pagelinks',
+        'description' => $lll.'contentelement.pagelinks.description',
+        'group' => 'styleguide',
+    ],
+    'typo3styleguide_tableofcontents',
+    'after',
+);
+
 // --- Gallery ---
 ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
@@ -183,6 +198,7 @@ $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_fonts
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_icons'] = 'content-styleguide-icons';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_images'] = 'content-styleguide-images';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_tableofcontents'] = 'content-styleguide-tableofcontents';
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_pagelinks'] = 'content-styleguide-pagelinks';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_gallery'] = 'content-styleguide-gallery';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_guidelines'] = 'content-styleguide-guidelines';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['typo3styleguide_elementdoc'] = 'content-styleguide-elementdoc';
@@ -769,4 +785,31 @@ $GLOBALS['TCA']['tt_content']['types']['typo3styleguide_gallery'] = [
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['typo3styleguide_pagelinks'] = [
+    'previewRenderer' => StyleguidePreviewRenderer::class,
+    'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    --palette--;;general,
+                    --palette--;;header,pages,tx_typo3styleguide_tableofcontents_layout,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
+                    --palette--;;access,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+                    rowDescription,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,',
+    'columnsOverrides' => [
+        'pages' => [
+            'label' => $lll.'contentelement.pagelinks.pages',
+            'config' => [
+                'minitems' => 1,
+            ],
+        ],
+    ],
 ];

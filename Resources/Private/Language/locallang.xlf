@@ -471,6 +471,15 @@
 			<trans-unit id="contentelement.gallery.download">
 				<source>Download</source>
 			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.label">
+				<source>Page links</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.description">
+				<source>Links to manually selected pages of any page type, as list or cards. Use it for demo pages that cannot be styleguide pages, e.g. because of page type restrictions for content elements.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.pages">
+				<source>Pages</source>
+			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>
 			</trans-unit>
