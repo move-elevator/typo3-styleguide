@@ -26,7 +26,6 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_brandasset_white int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_brandasset_protected decimal(5,2) DEFAULT 0.00 NOT NULL,
 	tx_typo3styleguide_brandasset_downloads int(11) unsigned DEFAULT 0 NOT NULL,
-	tx_typo3styleguide_guideline_type varchar(10) DEFAULT 'do' NOT NULL,
 	tx_typo3styleguide_tableofcontents_levels tinyint(3) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_gallery_images int(11) unsigned DEFAULT 0 NOT NULL,
 	tx_typo3styleguide_gallery_columns varchar(2) DEFAULT '4' NOT NULL,

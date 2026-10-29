@@ -132,16 +132,6 @@ tt_content {
     }
   }
 
-  typo3styleguide_guideline =< lib.contentElement
-  typo3styleguide_guideline {
-    templateName = Guideline
-    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    dataProcessing.10 {
-      references.fieldName = image
-      as = images
-    }
-  }
-
   typo3styleguide_tableofcontents =< lib.contentElement
   typo3styleguide_tableofcontents {
     templateName = TableOfContents

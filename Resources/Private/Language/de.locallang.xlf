@@ -727,30 +727,6 @@
 				<source />
 				<target>Downloads</target>
 			</trans-unit>
-			<trans-unit id="contentelement.guideline.label">
-				<source />
-				<target>Richtlinie</target>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.description">
-				<source />
-				<target>Eine Regel mit optionalem Bild und Text, gekennzeichnet als Richtig, Falsch oder Hinweis. Für Regeln zu Icons, Bildern und der Verwendung.</target>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type">
-				<source />
-				<target>Art</target>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type.do">
-				<source />
-				<target>Richtig</target>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type.dont">
-				<source />
-				<target>Falsch</target>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type.note">
-				<source />
-				<target>Hinweis</target>
-			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />
 				<target>Repräsentatives Inhaltselement</target>

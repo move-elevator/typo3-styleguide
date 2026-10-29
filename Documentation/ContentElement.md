@@ -11,7 +11,6 @@ This extension provides the following content elements for building a styleguide
 - [Page Links](#page-links)
 - [Image Sizes](#image-sizes)
 - [Brand Asset](#brand-asset)
-- [Guideline](#guideline)
 - [Gallery](#gallery)
 - [Guidelines](#guidelines)
 - [Element Documentation](#element-documentation)
@@ -151,16 +150,6 @@ Set the alternative text of each logo on its file reference, the caption only na
 
 > [!NOTE]
 > The element is built on file references instead of paths inside an extension. That keeps the files editable in the backend, but it also means they live in the file storage and not in the repository.
-
-## <img src="../Resources/Public/Icons/content-styleguide-guideline.svg" height="20"> Guideline
-
-The `Guideline` content element shows a single rule with an optional image and a text. Use it for icon rules, image rules and general usage rules. It provides:
-
-- **Type** — `Do`, `Don't` or `Note`
-- **Image** — Optional image, set the alternative text on the file reference
-- **Text** — Rich text for the rule
-
-The type is shown as an icon and a written label, the frame differs as well (solid, dashed or dotted), so the meaning never depends on color alone. The heading of the element is shown as the rule's title below the type, and the element is named by both for screen readers.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-gallery.svg" height="20"> Gallery
 

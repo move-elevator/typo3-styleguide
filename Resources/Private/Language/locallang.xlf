@@ -546,24 +546,6 @@
 			<trans-unit id="contentelement.brandasset.downloads">
 				<source>Downloads</source>
 			</trans-unit>
-			<trans-unit id="contentelement.guideline.label">
-				<source>Guideline</source>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.description">
-				<source>A rule with an optional image and a text, marked as do, don't or note. Use it for icon, image and usage rules.</source>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type">
-				<source>Type</source>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type.do">
-				<source>Do</source>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type.dont">
-				<source>Don't</source>
-			</trans-unit>
-			<trans-unit id="contentelement.guideline.type.note">
-				<source>Note</source>
-			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>
 			</trans-unit>
