@@ -214,12 +214,15 @@
     border-radius: 6px;
     box-sizing: border-box;
     color: var(--typo3-sg-text-primary);
+    cursor: pointer;
     font-family: monospace, sans-serif;
+    font-size: inherit;
     margin-bottom: 2rem;
     margin-top: -1rem;
     min-height: 44px;
     overflow-wrap: anywhere;
     padding: 12px;
+    text-align: left;
     width: 100%;
 }
 
