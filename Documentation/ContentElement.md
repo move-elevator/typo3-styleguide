@@ -202,7 +202,7 @@ Each example is a frame that loads the example page itself and shows only the on
 > The parameters `sg_preview` and `sg_page_preview` are excluded from the cache hash. The reduced page is sent with `Cache-Control: private, no-store`. The page preview element uses `sg_page_preview`, which returns the whole page, only the frame of this extension steps aside for it.
 
 > [!TIP]
-> The inline records of the Colors, Fonts, Images and Guidelines elements are found by the page they are stored on, so these elements also render correctly when they are shown on a different page.
+> The inline records of the Colors, Fonts, Images, Image Sizes and Guidelines elements are found by the page they are stored on, so these elements also render correctly when they are shown on a different page.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-pagepreview.svg" height="20"> Page Preview
 

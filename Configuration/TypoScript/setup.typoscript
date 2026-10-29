@@ -104,6 +104,7 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_imagesize
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -170,6 +171,7 @@ tt_content {
 
 # Marks every content element for the preview frames, see ElementPreviewMiddleware. Only requests that carry the parameter get the markers
 [traverse(request.getQueryParams(), 'sg_preview') > 0]
+  config.no_cache = 1
   tt_content.stdWrap.dataWrap = <!--sg-preview-start:{field:uid}-->|<!--sg-preview-end:{field:uid}-->
 [END]
 
