@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3f7d5ae108f2ba459cfa491a6470b42",
+    "content-hash": "3ee7422ff56cc4cf574a24f1d0c04053",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -6702,16 +6702,16 @@
         },
         {
             "name": "hn/typo3-mcp-server",
-            "version": "v0.6.2",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hauptsacheNet/typo3-mcp-server.git",
-                "reference": "74e8188b09d3b87974b053cdf449f67f93f28219"
+                "reference": "68b4d8ab781a5ced259a296e7db82be0ef092601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hauptsacheNet/typo3-mcp-server/zipball/74e8188b09d3b87974b053cdf449f67f93f28219",
-                "reference": "74e8188b09d3b87974b053cdf449f67f93f28219",
+                "url": "https://api.github.com/repos/hauptsacheNet/typo3-mcp-server/zipball/68b4d8ab781a5ced259a296e7db82be0ef092601",
+                "reference": "68b4d8ab781a5ced259a296e7db82be0ef092601",
                 "shasum": ""
             },
             "require": {
@@ -6753,9 +6753,9 @@
             "homepage": "https://github.com/hauptsacheNet/typo3-mcp-server",
             "support": {
                 "issues": "https://github.com/hauptsacheNet/typo3-mcp-server/issues",
-                "source": "https://github.com/hauptsacheNet/typo3-mcp-server/tree/v0.6.2"
+                "source": "https://github.com/hauptsacheNet/typo3-mcp-server/tree/v0.7.0"
             },
-            "time": "2026-08-31T14:38:09+00:00"
+            "time": "2026-10-28T16:22:18+00:00"
         },
         {
             "name": "logiscape/mcp-sdk-php",
