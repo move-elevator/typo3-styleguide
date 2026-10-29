@@ -16,7 +16,7 @@ A styleguide that lives in the TYPO3 site it describes stays current, because ed
 
 ## ✨ Features
 
-- [**Content elements**](Documentation/ContentElement.md): colors, fonts, icons, images, image sizes, gallery, page links and Do and Don't guidelines, each with a backend preview
+- [**Content elements**](Documentation/ContentElement.md): colors, fonts, icons, images, image sizes, brand assets, gallery, page links and Do and Don't guidelines, each with a backend preview
 - [**Element documentation**](Documentation/ContentElement.md#element-documentation): the fields of any content element, read from the TCA, with live examples in preview frames
 - [**Page preview**](Documentation/ContentElement.md#page-preview): shows a page of your site inside the styleguide
 - [**Table of contents**](Documentation/ContentElement.md#table-of-contents): child pages as list, cards or areas, with a depth per element

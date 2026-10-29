@@ -105,6 +105,33 @@ tt_content {
     }
   }
 
+  typo3styleguide_brandasset =< lib.contentElement
+  typo3styleguide_brandasset {
+    templateName = BrandAsset
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = tx_typo3styleguide_brandasset_light
+        as = light
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      20 {
+        references.fieldName = tx_typo3styleguide_brandasset_dark
+        as = dark
+      }
+      30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      30 {
+        references.fieldName = tx_typo3styleguide_brandasset_white
+        as = white
+      }
+      40 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      40 {
+        references.fieldName = tx_typo3styleguide_brandasset_downloads
+        as = downloads
+      }
+    }
+  }
+
   typo3styleguide_tableofcontents =< lib.contentElement
   typo3styleguide_tableofcontents {
     templateName = TableOfContents

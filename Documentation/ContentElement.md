@@ -10,6 +10,7 @@ This extension provides the following content elements for building a styleguide
 - [Table of Contents](#table-of-contents)
 - [Page Links](#page-links)
 - [Image Sizes](#image-sizes)
+- [Brand Asset](#brand-asset)
 - [Gallery](#gallery)
 - [Guidelines](#guidelines)
 - [Element Documentation](#element-documentation)
@@ -122,8 +123,6 @@ The `Page Links` content element renders links to manually selected pages of any
 - **Pages** — The pages to link, rendered in the selected order. Pages hidden in menus are included.
 - **Layout** — `List` for a flat list, or `Cards` for a card grid, matching the [Table of Contents](#table-of-contents) styling. `Groups` and `Areas` are offered by the shared field but render as a list.
 
-- [Image Sizes](#image-sizes)
-
 ## <img src="../Resources/Public/Icons/content-styleguide-imagesizes.svg" height="20"> Image Sizes
 
 The `Image Sizes` content element documents image and format specifications as a table. Each size is defined as an inline record with:
@@ -135,6 +134,19 @@ The `Image Sizes` content element documents image and format specifications as a
 - **Valid as of** — Optional date the values were last checked
 
 The table shows each size next to a frame in the same aspect ratio, so proportions can be compared at a glance. The date is shown as is, which makes outdated values visible. Platform specifications change often, so keep the date up to date.
+
+## <img src="../Resources/Public/Icons/content-styleguide-brandasset.svg" height="20"> Brand Asset
+
+The `Brand Asset` content element shows a logo in its variants on matching backgrounds and offers the files for download. All files are selected from the file list, so editors maintain them in the backend. It provides:
+
+- **Logo for light backgrounds**, **Logo for dark backgrounds** and **White logo** — One image each, shown on a light, a dark and a gray background. Variants without an image are not shown.
+- **Protected area** — Optional distance to keep free around the logo, as a multiple of the logo height (e.g. `0.5`). With `0` or no value, the protected area is not shown.
+- **Downloads** — Any number of files, listed with their size and grouped by file format (e.g. `SVG`, `PNG`, `ZIP`).
+
+Set the alternative text of each logo on its file reference, the caption only names the variant. The logo is shown 64px high, the protected area is drawn as a dashed frame at the given distance. No value is preset, because the distance is defined by the brand.
+
+> [!NOTE]
+> The element is built on file references instead of paths inside an extension. That keeps the files editable in the backend, but it also means they live in the file storage and not in the repository.
 
 ## <img src="../Resources/Public/Icons/content-styleguide-gallery.svg" height="20"> Gallery
 
