@@ -61,10 +61,70 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'cmyk' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.cmyk',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.detail.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'max' => 50,
+                'eval' => 'trim',
+                'placeholder' => '0, 72, 100, 0',
+            ],
+        ],
+        'pms' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.pms',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.detail.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 100,
+                'eval' => 'trim',
+                'placeholder' => 'PANTONE 165 C',
+            ],
+        ],
+        'variable' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.variable',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.detail.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 100,
+                'eval' => 'trim',
+                'placeholder' => '$color-primary',
+            ],
+        ],
+        'role' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => '',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.none',
+                        'value' => '',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.success',
+                        'value' => 'success',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.warning',
+                        'value' => 'warning',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_color.role.error',
+                        'value' => 'error',
+                    ],
+                ],
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'color,label',
+            'showitem' => 'color,label,cmyk,pms,variable,role',
         ],
     ],
 ];

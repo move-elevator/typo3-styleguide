@@ -15,6 +15,7 @@ namespace MoveElevator\Styleguide\Preview;
 
 use MoveElevator\Styleguide\Utility\FileListUtility;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 use TYPO3\CMS\Core\Database\{Connection, ConnectionPool};
 use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
@@ -22,6 +23,7 @@ use TYPO3\CMS\Core\Utility\{GeneralUtility, PathUtility};
 use function count;
 use function htmlspecialchars;
 use function is_array;
+use function strip_tags;
 
 use const ENT_QUOTES;
 use const PATHINFO_FILENAME;
@@ -36,6 +38,13 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
 {
     private const TEMPLATE_PATH = 'EXT:typo3_styleguide/Resources/Private/Templates/Preview/';
 
+    private const LAYOUT_LABELS = [
+        'list' => 'List',
+        'cards' => 'Cards',
+        'groups' => 'Groups',
+        'areas' => 'Areas',
+    ];
+
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $row = $this->getRowFromItem($item);
@@ -48,6 +57,12 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
             'typo3styleguide_icons' => $this->renderIconsPreview($row),
             'typo3styleguide_images' => $this->renderImagesPreview($row),
             'typo3styleguide_tableofcontents' => $this->renderTableOfContentsPreview($row),
+            'typo3styleguide_pagelinks' => $this->renderPageLinksPreview($row),
+            'typo3styleguide_imagesizes' => $this->renderImageSizesPreview($row),
+            'typo3styleguide_gallery' => $this->renderGalleryPreview($row),
+            'typo3styleguide_guidelines' => $this->renderGuidelinesPreview($row),
+            'typo3styleguide_elementdoc' => $this->renderElementDocPreview($row),
+            'typo3styleguide_pagepreview' => $this->renderPagePreviewPreview($row),
             default => parent::renderPageModulePreviewContent($item),
         };
     }
@@ -143,6 +158,31 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
     /**
      * @param array<string, mixed> $row
      */
+    private function renderImageSizesPreview(array $row): string
+    {
+        $children = $this->getChildRecords('tx_typo3styleguide_imagesize', (int) $row['uid']);
+        if ([] === $children) {
+            return '';
+        }
+
+        $sizes = [];
+        foreach ($children as $child) {
+            $channel = (string) $child['channel'];
+            $type = (string) $child['image_type'];
+
+            $sizes[] = [
+                'label' => '' !== $type ? $channel.', '.$type : $channel,
+                'width' => (int) $child['width'],
+                'height' => (int) $child['height'],
+            ];
+        }
+
+        return $this->renderFluidPreview('ImageSizes', ['sizes' => $sizes]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
     private function renderImagesPreview(array $row): string
     {
         $children = $this->getChildRecords('tx_typo3styleguide_image', (int) $row['uid']);
@@ -170,15 +210,89 @@ class StyleguidePreviewRenderer extends StandardContentPreviewRenderer
      */
     private function renderTableOfContentsPreview(array $row): string
     {
-        $layout = (string) ($row['tx_typo3styleguide_tableofcontents_layout'] ?? 'list');
-        $layoutLabels = [
-            'list' => 'List',
-            'cards' => 'Cards',
-        ];
-
         return $this->renderFluidPreview('TableOfContents', [
-            'layout' => $layoutLabels[$layout] ?? $layout,
+            'layout' => $this->getLayoutLabel($row),
         ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderPageLinksPreview(array $row): string
+    {
+        $pageTitles = [];
+        foreach (GeneralUtility::intExplode(',', (string) ($row['pages'] ?? ''), true) as $pageUid) {
+            $page = BackendUtility::getRecord('pages', $pageUid, 'title');
+            if (null !== $page) {
+                $pageTitles[] = (string) $page['title'];
+            }
+        }
+
+        return $this->renderFluidPreview('PageLinks', [
+            'layout' => $this->getLayoutLabel($row),
+            'pageTitles' => $pageTitles,
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function getLayoutLabel(array $row): string
+    {
+        $layout = (string) ($row['tx_typo3styleguide_tableofcontents_layout'] ?? 'list');
+
+        return self::LAYOUT_LABELS[$layout] ?? $layout;
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderGalleryPreview(array $row): string
+    {
+        return $this->renderFluidPreview('Gallery', [
+            'count' => (int) ($row['tx_typo3styleguide_gallery_images'] ?? 0),
+            'columns' => (string) ($row['tx_typo3styleguide_gallery_columns'] ?? ''),
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderElementDocPreview(array $row): string
+    {
+        return $this->renderFluidPreview('ElementDoc', [
+            'cType' => (string) ($row['tx_typo3styleguide_elementdoc_ctype'] ?? ''),
+            'pageCount' => count(GeneralUtility::intExplode(',', (string) ($row['tx_typo3styleguide_elementdoc_pages'] ?? ''), true)),
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderPagePreviewPreview(array $row): string
+    {
+        return $this->renderFluidPreview('PagePreview', [
+            'page' => GeneralUtility::intExplode(',', (string) ($row['tx_typo3styleguide_pagepreview_page'] ?? ''), true)[0] ?? 0,
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $row
+     */
+    private function renderGuidelinesPreview(array $row): string
+    {
+        $children = $this->getChildRecords('tx_typo3styleguide_guideline', (int) $row['uid']);
+        if ([] === $children) {
+            return '';
+        }
+
+        return $this->renderFluidPreview('Guidelines', ['guidelines' => array_map(
+            static fn (array $child): array => [
+                'type' => (string) $child['type'],
+                'text' => GeneralUtility::fixed_lgd_cs(strip_tags((string) $child['text']), 90),
+            ],
+            $children,
+        )]);
     }
 
     /**

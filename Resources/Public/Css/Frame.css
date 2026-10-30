@@ -1,0 +1,913 @@
+/* A page with the frame is a styleguide page, so the decoration a project paints on its body does not shine through the elements.
+   A body that is a grid with a minimum height would otherwise spread the free space over its rows as white space */
+body:has(.typo3-styleguide-frame) {
+    align-content: start;
+    background-image: none;
+}
+
+/* Neutral theme. Override these properties on .typo3-styleguide-frame to adapt colors, font and corners. */
+.typo3-styleguide-frame,
+body:has(.typo3-styleguide-frame) {
+    --typo3-sg-bg-primary: #ffffff;
+    --typo3-sg-bg-secondary: #f3f4f6;
+    --typo3-sg-text-primary: #111827;
+    --typo3-sg-text-secondary: #4b5563;
+    --typo3-sg-border: #d1d5db;
+    --typo3-sg-accent: #2563eb;
+    --typo3-sg-radius: 8px;
+    --typo3-sg-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --typo3-sg-surface-alt: var(--typo3-sg-bg-secondary);
+    --typo3-sg-muted: var(--typo3-sg-text-secondary);
+    --typo3-sg-ink: var(--typo3-sg-text-primary);
+
+    min-height: 100vh;
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    font-family: var(--typo3-sg-font);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+}
+
+/* Dark mode follows the setting of the system until the switch in the header is used. The variables have the names of Patterns.css, so elements inside and outside the frame agree */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-sg-theme="light"]) .typo3-styleguide-frame,
+    :root:not([data-sg-theme="light"]) body:has(.typo3-styleguide-frame) {
+        color-scheme: dark;
+        --typo3-sg-bg-primary: #111827;
+        --typo3-sg-bg-secondary: #1f2937;
+        --typo3-sg-text-primary: #f3f4f6;
+        --typo3-sg-text-secondary: #9ca3af;
+        --typo3-sg-border: #374151;
+        --typo3-sg-accent: #60a5fa;
+        --typo3-sg-hover-overlay: rgba(255, 255, 255, 0.1);
+        --typo3-sg-copy-bg: rgba(255, 255, 255, 0.9);
+        --typo3-sg-copy-text: #000000;
+    }
+}
+
+:root[data-sg-theme="dark"] .typo3-styleguide-frame,
+:root[data-sg-theme="dark"] body:has(.typo3-styleguide-frame) {
+    color-scheme: dark;
+    --typo3-sg-bg-primary: #111827;
+    --typo3-sg-bg-secondary: #1f2937;
+    --typo3-sg-text-primary: #f3f4f6;
+    --typo3-sg-text-secondary: #9ca3af;
+    --typo3-sg-border: #374151;
+    --typo3-sg-accent: #60a5fa;
+    --typo3-sg-hover-overlay: rgba(255, 255, 255, 0.1);
+    --typo3-sg-copy-bg: rgba(255, 255, 255, 0.9);
+    --typo3-sg-copy-text: #000000;
+}
+
+/* The light choice also holds on a dark system, where Patterns.css would switch the remaining variables */
+:root[data-sg-theme="light"] .typo3-styleguide-frame,
+:root[data-sg-theme="light"] body:has(.typo3-styleguide-frame) {
+    color-scheme: light;
+    --typo3-sg-hover-overlay: rgba(0, 0, 0, 0.1);
+    --typo3-sg-copy-bg: rgba(0, 0, 0, 0.7);
+    --typo3-sg-copy-text: #ffffff;
+}
+
+body:has(.typo3-styleguide-frame) {
+    margin: 0;
+}
+
+/* A project colors its headings and links itself, mostly for a light page. Our elements take the color of the page instead, so they follow the theme.
+   The selector is weaker than any class, so an element that sets its own color keeps it */
+html body:where(:has(.typo3-styleguide-frame)) :where([class*="typo3-styleguide"]) {
+    color: inherit;
+}
+
+/* These two are colored by a rule of a project that is stronger than the one above */
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc__link,
+body:has(.typo3-styleguide-frame) .typo3-styleguide__image-caption-text {
+    color: inherit;
+}
+
+/* A project may paint the container of the elements or everything with role="button" white. The icons are such elements */
+body:has(.typo3-styleguide-frame) .typo3-styleguide__element-container,
+body:has(.typo3-styleguide-frame) .typo3-styleguide__element--icon[data-copy] {
+    background: none;
+    color: inherit;
+}
+
+.typo3-styleguide-frame a {
+    color: inherit;
+}
+
+.typo3-styleguide-frame .typo3-styleguide-frame__sidenav-anchor {
+    color: var(--typo3-sg-text-secondary);
+}
+
+/* The focus ring uses the text color, so it stays visible whatever brand color the accent is */
+.typo3-styleguide-frame :focus-visible,
+body:has(.typo3-styleguide-frame) .typo3-styleguide__icon-search input:focus-visible {
+    outline: 2px solid var(--typo3-sg-text-primary);
+    outline-offset: 2px;
+}
+
+.typo3-styleguide-frame__skip {
+    position: absolute;
+    left: 16px;
+    top: -100px;
+    z-index: 10;
+    padding: 12px 20px;
+    background: #ffffff;
+    color: #111827;
+    border: 2px solid #111827;
+}
+
+.typo3-styleguide-frame__skip:focus {
+    top: 16px;
+}
+
+/* The frame parts inside a page of the project do not fill the screen */
+.typo3-styleguide-frame.typo3-styleguide-frame--chrome {
+    /* Spans all columns when the project lays out its body as a grid. The doubled class wins over a rule like `.grid > *` */
+    grid-column: 1 / -1;
+    min-height: 0;
+}
+
+.typo3-styleguide-frame__inner {
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* Header */
+.typo3-styleguide-frame__header {
+    border-bottom: 1px solid var(--typo3-sg-border);
+    background: var(--typo3-sg-bg-primary);
+}
+
+.typo3-styleguide-frame__header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 48px;
+    min-height: 72px;
+}
+
+.typo3-styleguide-frame__theme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--typo3-sg-text-secondary);
+    cursor: pointer;
+}
+
+.typo3-styleguide-frame__theme[hidden] {
+    display: none;
+}
+
+.typo3-styleguide-frame__theme:hover {
+    background: var(--typo3-sg-bg-secondary);
+    color: var(--typo3-sg-text-primary);
+}
+
+/* The icon shows the theme that a click switches to */
+.typo3-styleguide-frame__theme-sun,
+.typo3-styleguide-frame__theme[aria-pressed="true"] .typo3-styleguide-frame__theme-moon {
+    display: none;
+}
+
+.typo3-styleguide-frame__theme[aria-pressed="true"] .typo3-styleguide-frame__theme-sun {
+    display: block;
+}
+
+.typo3-styleguide-frame__brand {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.typo3-styleguide-frame__logo {
+    display: block;
+    width: auto;
+    height: 40px;
+}
+
+/* A logo for the dark theme replaces the light one. Without it the light logo sits on a light background */
+.typo3-styleguide-frame__logo--dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-sg-theme="light"]) .typo3-styleguide-frame__logo--light:has(+ .typo3-styleguide-frame__logo--dark) {
+        display: none;
+    }
+
+    :root:not([data-sg-theme="light"]) .typo3-styleguide-frame__logo--dark {
+        display: block;
+    }
+
+    :root:not([data-sg-theme="light"]) .typo3-styleguide-frame__logo--light:only-child {
+        padding: 4px 10px;
+        border-radius: var(--typo3-sg-radius);
+        background: #ffffff;
+    }
+}
+
+:root[data-sg-theme="dark"] .typo3-styleguide-frame__logo--light:has(+ .typo3-styleguide-frame__logo--dark) {
+    display: none;
+}
+
+:root[data-sg-theme="dark"] .typo3-styleguide-frame__logo--dark {
+    display: block;
+}
+
+:root[data-sg-theme="dark"] .typo3-styleguide-frame__logo--light:only-child {
+    padding: 4px 10px;
+    border-radius: var(--typo3-sg-radius);
+    background: #ffffff;
+}
+
+.typo3-styleguide-frame__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.typo3-styleguide-frame__nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+}
+
+.typo3-styleguide-frame__nav-link:hover {
+    border-bottom-color: var(--typo3-sg-border);
+}
+
+.typo3-styleguide-frame__nav-link--active,
+.typo3-styleguide-frame__nav-link--active:hover {
+    border-bottom-color: var(--typo3-sg-accent);
+    font-weight: 900;
+}
+
+/* Page intro */
+.typo3-styleguide-frame__intro {
+    border-bottom: 1px solid var(--typo3-sg-border);
+    background: var(--typo3-sg-bg-secondary);
+}
+
+.typo3-styleguide-frame__intro .typo3-styleguide-frame__inner {
+    padding-top: 40px;
+    padding-bottom: 44px;
+}
+
+.typo3-styleguide-frame__breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.875rem;
+}
+
+.typo3-styleguide-frame__breadcrumb-list li + li::before {
+    content: "/";
+    content: "/" / "";
+    margin-right: 8px;
+}
+
+.typo3-styleguide-frame__accent {
+    width: 64px;
+    height: 6px;
+    margin: 20px 0 16px;
+    border-radius: var(--typo3-sg-radius);
+    background: var(--typo3-sg-accent);
+}
+
+.typo3-styleguide-frame__title {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+
+/* The start page has a larger head with a lead and a search field */
+.typo3-styleguide-frame__intro--start {
+    position: relative;
+    overflow: hidden;
+}
+
+.typo3-styleguide-frame__intro--start .typo3-styleguide-frame__inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 72px;
+    padding-bottom: 80px;
+}
+
+.typo3-styleguide-frame__intro--start .typo3-styleguide-frame__title {
+    font-size: clamp(2.75rem, 7vw, 5rem);
+}
+
+/* Two rounded shapes behind the head, in the surface and in the brand color */
+.typo3-styleguide-frame__intro--start::before,
+.typo3-styleguide-frame__intro--start::after {
+    content: "";
+    position: absolute;
+    border-radius: calc(var(--typo3-sg-radius) * 5);
+    pointer-events: none;
+}
+
+.typo3-styleguide-frame__intro--start::before {
+    right: -120px;
+    top: -140px;
+    width: 640px;
+    height: 640px;
+    background: var(--typo3-sg-bg-primary);
+    opacity: 0.6;
+    transform: rotate(14deg);
+}
+
+.typo3-styleguide-frame__intro--start::after {
+    right: 260px;
+    bottom: -220px;
+    width: 420px;
+    height: 420px;
+    background: var(--typo3-sg-accent);
+    transform: rotate(-12deg);
+}
+
+/* Below this width the shape would reach the lead and the search status */
+@media (max-width: 1100px) {
+    .typo3-styleguide-frame__intro--start::after {
+        display: none;
+    }
+}
+
+.typo3-styleguide-frame__lead {
+    max-width: 560px;
+    margin: 20px 0 0;
+    color: var(--typo3-sg-text-secondary);
+    font-size: 1.375rem;
+}
+
+.typo3-styleguide-frame__search {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    max-width: 560px;
+    margin-top: 32px;
+}
+
+.typo3-styleguide-frame__search[hidden] {
+    display: none;
+}
+
+.typo3-styleguide-frame__search input {
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    min-height: 56px;
+    padding: 0 20px;
+    border: 2px solid var(--typo3-sg-text-primary);
+    border-radius: var(--typo3-sg-radius);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    font: inherit;
+    font-size: 1.0625rem;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__search input {
+    border: 2px solid var(--typo3-sg-text-primary);
+    border-radius: var(--typo3-sg-radius);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    box-shadow: none;
+}
+
+.typo3-styleguide-frame__search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.typo3-styleguide-frame__search-status {
+    margin: 0;
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.875rem;
+}
+
+.typo3-styleguide-frame__search-status:empty {
+    display: none;
+}
+
+/* The page navigation of the headings has no use next to the cards of the start page */
+body:has(.typo3-styleguide-frame__intro--start) .typo3-styleguide-technical-headline-toc {
+    display: none;
+}
+
+/* Layout */
+.typo3-styleguide-frame__layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+    align-items: flex-start;
+    padding-top: 48px;
+    padding-bottom: 96px;
+}
+
+/* The side menu stays in view while the page scrolls and scrolls itself when it is longer than the screen */
+.typo3-styleguide-frame__aside {
+    position: sticky;
+    top: 24px;
+    flex: 0 0 260px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+}
+
+.typo3-styleguide-frame__main {
+    flex: 999 1 560px;
+    min-width: 0;
+}
+
+.typo3-styleguide-frame__sidenav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.typo3-styleguide-frame__sidenav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    text-decoration: none;
+}
+
+.typo3-styleguide-frame__sidenav-link {
+    border-radius: var(--typo3-sg-radius);
+}
+
+.typo3-styleguide-frame__sidenav-link:hover {
+    background: var(--typo3-sg-bg-secondary);
+}
+
+/* The page that is open: a tinted row with a bar inside it, so the text does not move */
+.typo3-styleguide-frame__sidenav-link--active,
+.typo3-styleguide-frame__sidenav-link--active:hover {
+    background: var(--typo3-sg-bg-secondary);
+    box-shadow: inset 3px 0 0 var(--typo3-sg-accent);
+    font-weight: 900;
+}
+
+/* The headings of the page below the open page, built by frame_sidenav.js. All of them share one level and the one in view carries a dot */
+.typo3-styleguide-frame__sidenav-anchors {
+    margin: 2px 0 6px;
+    padding: 0 0 0 12px;
+    list-style: none;
+}
+
+.typo3-styleguide-frame__sidenav-anchors > li {
+    position: relative;
+}
+
+.typo3-styleguide-frame__sidenav-anchor {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 0 8px 0 20px;
+    border-radius: var(--typo3-sg-radius);
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.9375rem;
+    text-decoration: none;
+}
+
+.typo3-styleguide-frame__sidenav-anchor:hover {
+    background: var(--typo3-sg-bg-secondary);
+    color: var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide-frame__sidenav-anchor[aria-current="location"] {
+    color: var(--typo3-sg-text-primary);
+    font-weight: 700;
+}
+
+/* A dot and not a bar, so it reads as a position and not as a second open page */
+.typo3-styleguide-frame__sidenav-anchor[aria-current="location"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 50%;
+    background: var(--typo3-sg-accent);
+}
+
+/* The summary only exists for narrow screens, where the menu starts closed. Wide screens always show the menu */
+.typo3-styleguide-frame__sidenav-toggle > summary {
+    display: none;
+}
+
+/* Filter and groups of the side menu */
+.typo3-styleguide-frame__sidenav-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.typo3-styleguide-frame__sidenav-filter[hidden] {
+    display: none;
+}
+
+.typo3-styleguide-frame__sidenav-filter label {
+    margin: 0;
+    padding: 0 2px;
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.typo3-styleguide-frame__sidenav-filter input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--typo3-sg-text-secondary);
+    border-radius: var(--typo3-sg-radius);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    font: inherit;
+    font-size: 0.9375rem;
+}
+
+.typo3-styleguide-frame__sidenav-filter input:hover {
+    border-color: var(--typo3-sg-text-primary);
+}
+
+/* A project styles its search fields too, so the field of the menu repeats the essentials with a stronger selector */
+body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__sidenav-filter input {
+    border: 1px solid var(--typo3-sg-text-secondary);
+    border-radius: var(--typo3-sg-radius);
+    background: var(--typo3-sg-bg-primary);
+    box-shadow: none;
+    color: var(--typo3-sg-text-primary);
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__sidenav-filter input:hover {
+    border-color: var(--typo3-sg-text-primary);
+}
+
+.typo3-styleguide-frame__sidenav-status {
+    margin: 0;
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.875rem;
+}
+
+.typo3-styleguide-frame__sidenav-status:empty {
+    display: none;
+}
+
+.typo3-styleguide-frame__sidenav-group-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border-radius: var(--typo3-sg-radius);
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.typo3-styleguide-frame__sidenav-group-head::-webkit-details-marker {
+    display: none;
+}
+
+.typo3-styleguide-frame__sidenav-group-head::before {
+    content: "";
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.typo3-styleguide-frame__sidenav-group[open] > .typo3-styleguide-frame__sidenav-group-head::before {
+    transform: rotate(90deg);
+}
+
+.typo3-styleguide-frame__sidenav-group-head:hover {
+    background: var(--typo3-sg-bg-secondary);
+}
+
+.typo3-styleguide-frame__sidenav-count {
+    margin-left: auto;
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.typo3-styleguide-frame__sidenav-group > .typo3-styleguide-frame__sidenav-list {
+    margin-left: 20px;
+    padding-left: 8px;
+    border-left: 1px solid var(--typo3-sg-border);
+}
+
+.typo3-styleguide-frame__sidenav-list [hidden] {
+    display: none;
+}
+
+/* Elements sit in the content column, so their own page margins are not needed */
+.typo3-styleguide-frame__main .typo3-styleguide__frame {
+    --typo3-sg-gutter: 0;
+}
+
+.typo3-styleguide-frame__main .typo3-styleguide__element-container,
+.typo3-styleguide-frame__main .typo3-styleguide__gallery,
+.typo3-styleguide-frame__main .typo3-styleguide-toc {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .typo3-styleguide-frame__inner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Logo and theme switch share the first row, the navigation is one row below that scrolls sideways when it is too wide */
+    .typo3-styleguide-frame__header-inner {
+        padding-top: 8px;
+        padding-bottom: 0;
+        min-height: 0;
+        column-gap: 16px;
+    }
+
+    .typo3-styleguide-frame__brand {
+        order: 1;
+    }
+
+    .typo3-styleguide-frame__theme {
+        order: 2;
+    }
+
+    .typo3-styleguide-frame__nav {
+        order: 3;
+        flex: 0 0 100%;
+        min-width: 0;
+        margin: 0 -16px;
+        overflow-x: auto;
+    }
+
+    .typo3-styleguide-frame__nav-list {
+        flex-wrap: nowrap;
+        gap: 0;
+        padding: 0 8px;
+    }
+
+    .typo3-styleguide-frame__nav-link {
+        white-space: nowrap;
+    }
+
+    /* The scrolling row clips what lies outside it, so the focus ring sits inside the link */
+    .typo3-styleguide-frame__nav-link:focus-visible {
+        outline-offset: -4px;
+    }
+
+    .typo3-styleguide-frame__intro--start .typo3-styleguide-frame__inner {
+        padding-top: 40px;
+        padding-bottom: 48px;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle > summary {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        border: 1px solid var(--typo3-sg-text-secondary);
+        border-radius: var(--typo3-sg-radius);
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle > summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle > summary::before {
+        content: "";
+        flex: 0 0 16px;
+        width: 16px;
+        height: 16px;
+        background: currentColor;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle[open] > summary::before {
+        transform: rotate(90deg);
+    }
+
+    .typo3-styleguide-frame__sidenav-toggle[open] > summary {
+        margin-bottom: 16px;
+    }
+
+    .typo3-styleguide-frame__layout {
+        gap: 32px;
+    }
+
+    .typo3-styleguide-frame__aside {
+        position: static;
+        flex-basis: 100%;
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+/* Headings and the page navigation follow the design: plain headings and a one-line navigation instead of the boxes of the technical headline */
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    background: none;
+    font-family: inherit;
+    word-break: normal;
+}
+
+/* Space between the sections, not above the first one. An element sits in its own wrapper (the anchor c<uid>), so the first headline is the first child of the first wrapper */
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline:not(:first-child),
+body:has(.typo3-styleguide-frame) :not(:first-child) > .typo3-styleguide-technical-headline {
+    margin-top: 4rem;
+}
+
+/* The table of contents is hidden when it has one entry, so it does not count as something above the headline */
+body:has(.typo3-styleguide-frame) :first-child > .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child) + .typo3-styleguide-technical-headline,
+body:has(.typo3-styleguide-frame) main > .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child):first-child + .typo3-styleguide-technical-headline {
+    margin-top: 0;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__headline {
+    position: relative;
+    display: block;
+    margin: 0;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+body:has(.typo3-styleguide-frame) h3.typo3-styleguide-technical-headline__headline {
+    font-size: 1.25rem;
+}
+
+body:has(.typo3-styleguide-frame) h4.typo3-styleguide-technical-headline__headline {
+    font-size: 1.125rem;
+}
+
+/* The anchor link shows when the heading is hovered or the link has the focus */
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__link {
+    position: absolute;
+    right: 100%;
+    padding-right: 0.5em;
+    opacity: 0;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__headline:hover .typo3-styleguide-technical-headline__link,
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__link:focus-visible {
+    opacity: 1;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__to-top {
+    display: none;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__label {
+    font-family: inherit;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline__text {
+    max-width: 720px;
+    margin: 1rem 0 0;
+    color: var(--typo3-sg-text-secondary);
+    font-family: inherit;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem 1.5rem;
+    margin: 0 0 1rem;
+    padding: 0 0 1.25rem;
+    border-bottom: 1px solid var(--typo3-sg-border);
+    background: none;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    line-break: auto;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc__headline {
+    margin: 0;
+    color: var(--typo3-sg-text-secondary);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc__items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc__item.typo3-styleguide-technical-headline-toc__item {
+    margin-left: 0;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc__item::before {
+    content: none;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc__link {
+    min-width: 0;
+    /* A project that underlines its links with a background must not add a second line */
+    background: none;
+    text-decoration: underline;
+}
+
+/* A navigation with a single entry does not help anyone */
+body:has(.typo3-styleguide-frame) .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child) {
+    display: none;
+}
+
+/* The download of an image is an icon on the image. The link keeps its text for screen readers and stays visible, it does not wait for a hover */
+body:has(.typo3-styleguide-frame) .typo3-styleguide__element:has(> .typo3-styleguide__gallery-download),
+body:has(.typo3-styleguide-frame) .typo3-styleguide__gallery > li:has(> .typo3-styleguide__gallery-download) {
+    position: relative;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide__gallery-download {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 8px);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    font-size: 0;
+    text-decoration: none;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide__gallery-download::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+body:has(.typo3-styleguide-frame) .typo3-styleguide__gallery-download:hover {
+    background: var(--typo3-sg-text-primary);
+    color: var(--typo3-sg-bg-primary);
+}

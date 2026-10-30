@@ -1,7 +1,7 @@
 .typo3-styleguide-technical-headline {
     margin: 3rem 0 2rem;
     padding: 2rem;
-    background-color: #f6f4f0;
+    background-color: var(--typo3-sg-surface-alt, #f6f4f0);
     font-family: monospace, sans-serif;
     word-break: break-all;
     scroll-margin: 3.25rem;
@@ -20,17 +20,17 @@ h4.typo3-styleguide-technical-headline__headline {
     font-size: 1.25rem;
 }
 .typo3-styleguide-technical-headline__link {
-    color: #646464;
+    color: var(--typo3-sg-muted, #646464);
     text-decoration: none;
 }
 .typo3-styleguide-technical-headline__link:hover {
-    color: #000000;
+    color: var(--typo3-sg-ink, #000000);
 }
 .typo3-styleguide-technical-headline__title {
     flex-grow: 1;
 }
 .typo3-styleguide-technical-headline__label {
-    color: #646464;
+    color: var(--typo3-sg-muted, #646464);
     font-family: monospace, sans-serif;
     font-size: 1.25rem;
 }
@@ -51,18 +51,18 @@ h4.typo3-styleguide-technical-headline__headline {
     align-items: center;
     border: 0;
     background-color: rgba(0, 0, 0, 0);
-    color: black;
+    color: var(--typo3-sg-ink, #000000);
     cursor: pointer;
 }
 .typo3-styleguide-technical-headline__to-top:hover {
     background-color: rgba(0, 0, 0, 0);
-    color: black;
-    box-shadow: inset 0 0 0 .125rem #646464;
+    color: var(--typo3-sg-ink, #000000);
+    box-shadow: inset 0 0 0 .125rem var(--typo3-sg-muted, #646464);
 }
 .typo3-styleguide-technical-headline-toc {
     margin-bottom: 1rem;
     padding: 2rem;
-    background-color: #f6f4f0;
+    background-color: var(--typo3-sg-surface-alt, #f6f4f0);
     font-family: monospace, sans-serif;
     line-break: anywhere;
     scroll-margin: 3.25rem;
@@ -89,14 +89,14 @@ h4.typo3-styleguide-technical-headline__headline {
 }
 .typo3-styleguide-technical-headline-toc__item::before {
     content: '# ';
-    color: #646464;
+    color: var(--typo3-sg-muted, #646464);
 }
 .typo3-styleguide-technical-headline-toc__link {
     display: inline-flex;
     min-width: 10rem;
     padding: 0.25rem 0;
     text-decoration-style: dotted;
-    text-decoration-color: #646464;
+    text-decoration-color: var(--typo3-sg-muted, #646464);
 }
 .visually-hidden {
     width: 1px !important;

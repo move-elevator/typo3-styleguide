@@ -1,6 +1,7 @@
 lib.contentElement {
   templateRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Templates/
   partialRootPaths.1722340760 = EXT:typo3_styleguide/Resources/Private/Partials/
+  layoutRootPaths.-1 = EXT:typo3_styleguide/Resources/Private/Layouts/
 }
 tt_content {
   typo3styleguide_technicalheadline =< lib.contentElement
@@ -14,6 +15,7 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_color
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -27,6 +29,7 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_font
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
@@ -45,10 +48,94 @@ tt_content {
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
     dataProcessing.10 {
       table = tx_typo3styleguide_image
+      pidInList.field = pid
       where = parentid=###uid### AND parenttable='tt_content'
       markers.uid.field = uid
       orderBy = sorting
       as = images
+    }
+  }
+
+  typo3styleguide_gallery =< lib.contentElement
+  typo3styleguide_gallery {
+    templateName = Gallery
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+      references.fieldName = tx_typo3styleguide_gallery_images
+      as = images
+    }
+  }
+
+  typo3styleguide_guidelines =< lib.contentElement
+  typo3styleguide_guidelines {
+    templateName = Guidelines
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_guideline
+      pidInList.field = pid
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = guidelines
+      dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      dataProcessing.10 {
+        references.fieldName = image
+        references.table = tx_typo3styleguide_guideline
+        as = images
+      }
+    }
+  }
+
+  typo3styleguide_elementdoc =< lib.contentElement
+  typo3styleguide_elementdoc {
+    templateName = ElementDoc
+    dataProcessing.10 = MoveElevator\Styleguide\DataProcessing\ElementDocProcessor
+  }
+
+  typo3styleguide_pagepreview =< lib.contentElement
+  typo3styleguide_pagepreview {
+    templateName = PagePreview
+    dataProcessing.10 = MoveElevator\Styleguide\DataProcessing\PagePreviewProcessor
+  }
+
+  typo3styleguide_imagesizes =< lib.contentElement
+  typo3styleguide_imagesizes {
+    templateName = ImageSizes
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_typo3styleguide_imagesize
+      pidInList.field = pid
+      where = parentid=###uid### AND parenttable='tt_content'
+      markers.uid.field = uid
+      orderBy = sorting
+      as = sizes
+    }
+  }
+
+  typo3styleguide_brandasset =< lib.contentElement
+  typo3styleguide_brandasset {
+    templateName = BrandAsset
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = tx_typo3styleguide_brandasset_light
+        as = light
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      20 {
+        references.fieldName = tx_typo3styleguide_brandasset_dark
+        as = dark
+      }
+      30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      30 {
+        references.fieldName = tx_typo3styleguide_brandasset_white
+        as = white
+      }
+      40 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      40 {
+        references.fieldName = tx_typo3styleguide_brandasset_downloads
+        as = downloads
+      }
     }
   }
 
@@ -60,12 +147,33 @@ tt_content {
       special = directory
       special.value.data = TSFE:id
       levels = 9
+      # The field of the element overrides the depth when it is set, also where a project has set its own depth. TYPO3 14 treats "0" as a value for override, so the condition is explicit
+      levels.override.field = tx_typo3styleguide_tableofcontents_levels
+      levels.override.if.isTrue.field = tx_typo3styleguide_tableofcontents_levels
       includeSpacer = 1
       as = pages
       expandAll = 1
     }
   }
+
+  typo3styleguide_pagelinks =< lib.contentElement
+  typo3styleguide_pagelinks {
+    templateName = PageLinks
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    dataProcessing.10 {
+      special = list
+      special.value.field = pages
+      includeNotInMenu = 1
+      as = pages
+    }
+  }
 }
+
+# Marks every content element for the preview frames, see ElementPreviewMiddleware. Only requests that carry the parameter get the markers
+[traverse(request.getQueryParams(), 'sg_preview') > 0]
+  config.no_cache = 1
+  tt_content.stdWrap.dataWrap = <!--sg-preview-start:{field:uid}-->|<!--sg-preview-end:{field:uid}-->
+[END]
 
 page.meta.robots = noindex,nofollow
 page.meta.robots.if {

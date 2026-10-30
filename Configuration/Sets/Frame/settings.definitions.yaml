@@ -1,0 +1,34 @@
+categories:
+  typo3styleguide:
+    label: TYPO3 Styleguide
+settings:
+  plugin.tx_typo3styleguide.frame.brand:
+    label: Brand name in the header
+    type: string
+    default: Styleguide
+    category: typo3styleguide
+  plugin.tx_typo3styleguide.frame.rootLevel:
+    label: Level of the styleguide start page (the site root is level 0)
+    type: int
+    default: 1
+    category: typo3styleguide
+  plugin.tx_typo3styleguide.frame.sectionEntryLevel:
+    label: Menu level of the sections in the header
+    type: int
+    default: 1
+    category: typo3styleguide
+  plugin.tx_typo3styleguide.frame.pageEntryLevel:
+    label: Menu level of the pages in the side menu
+    type: int
+    default: 2
+    category: typo3styleguide
+  plugin.tx_typo3styleguide.frame.logo:
+    label: 'Logo in the header instead of the brand name (an EXT: path)'
+    type: string
+    default: ''
+    category: typo3styleguide
+  plugin.tx_typo3styleguide.frame.logoDark:
+    label: 'Logo for the dark theme (optional, without it the logo sits on a light background)'
+    type: string
+    default: ''
+    category: typo3styleguide

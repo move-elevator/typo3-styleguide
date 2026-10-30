@@ -59,6 +59,58 @@
 				<source />
 				<target>Styleguide</target>
 			</trans-unit>
+			<trans-unit id="frame.skip">
+				<source />
+				<target>Zum Inhalt springen</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.main">
+				<source />
+				<target>Hauptmenü</target>
+			</trans-unit>
+			<trans-unit id="frame.theme">
+				<source />
+				<target>Dunkles Design</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter">
+				<source />
+				<target>Seiten filtern</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter.none">
+				<source />
+				<target>Keine Seite gefunden</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.overview">
+				<source />
+				<target>Übersicht</target>
+			</trans-unit>
+			<trans-unit id="frame.search.label">
+				<source />
+				<target>Im Styleguide suchen</target>
+			</trans-unit>
+			<trans-unit id="frame.search.placeholder">
+				<source />
+				<target>Im Styleguide suchen</target>
+			</trans-unit>
+			<trans-unit id="frame.search.count">
+				<source />
+				<target>{shown} von {total} Seiten</target>
+			</trans-unit>
+			<trans-unit id="frame.search.none">
+				<source />
+				<target>Keine Seite gefunden</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.home">
+				<source />
+				<target>Start</target>
+			</trans-unit>
+			<trans-unit id="frame.nav.section">
+				<source />
+				<target>Seiten in diesem Bereich</target>
+			</trans-unit>
+			<trans-unit id="frame.breadcrumb">
+				<source />
+				<target>Brotkrumen</target>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.label">
 				<source />
 				<target>Farben</target>
@@ -83,6 +135,114 @@
 				<source />
 				<target>Bezeichnung</target>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.layout">
+				<source />
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.swatches">
+				<source />
+				<target>Farbfelder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.detail">
+				<source />
+				<target>Detail</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.scale">
+				<source />
+				<target>Stufenreihe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.status">
+				<source />
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage">
+				<source />
+				<target>Verwendungsregeln</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage.description">
+				<source />
+				<target>Wann welche Farbe gilt, zum Beispiel für Text, Flächen oder Akzente. Wird im Layout Detail über den Farben angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_light">
+				<source />
+				<target>Helle Textfarbe (HEX)</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_dark">
+				<source />
+				<target>Dunkle Textfarbe (HEX)</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.description">
+				<source />
+				<target>Referenzfarbe für die Kontrastprüfung im Layout Detail. Jede Farbe zeigt, ob sie als Hintergrund für diese Textfarbe taugt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.light">
+				<source />
+				<target>Heller Text</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.dark">
+				<source />
+				<target>Dunkler Text</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aaa">
+				<source />
+				<target>AAA</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aa">
+				<source />
+				<target>AA</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.large">
+				<source />
+				<target>Nur große Schrift</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.fail">
+				<source />
+				<target>Nicht für Text</target>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.copy">
+				<source />
+				<target>Kopieren</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.cmyk">
+				<source />
+				<target>CMYK</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.pms">
+				<source />
+				<target>PMS</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.variable">
+				<source />
+				<target>Variablenname</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.detail.description">
+				<source />
+				<target>Wird im Layout Detail des Farben-Elements angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role">
+				<source />
+				<target>Rolle</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.description">
+				<source />
+				<target>Wird im Layout Status als Symbol angezeigt, damit ein Status nie nur über die Farbe vermittelt wird.</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.none">
+				<source />
+				<target>Keine</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.success">
+				<source />
+				<target>Erfolg</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.warning">
+				<source />
+				<target>Warnung</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.error">
+				<source />
+				<target>Fehler</target>
+			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source />
 				<target>Schriften</target>
@@ -94,6 +254,62 @@
 			<trans-unit id="contentelement.fonts.items">
 				<source />
 				<target>Schriften</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout">
+				<source />
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.specimen">
+				<source />
+				<target>Schriftprobe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.detail">
+				<source />
+				<target>Detail</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback">
+				<source />
+				<target>Fallback-Schriften</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback.description">
+				<source />
+				<target>Wird im CSS-Snippet an die Schriftfamilie angehängt, zum Beispiel eine Systemschrift.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample">
+				<source />
+				<target>Mustertext</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample.description">
+				<source />
+				<target>Optionale Zeile unter dem Alphabet im Layout Detail.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download">
+				<source />
+				<target>Download-Link</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download.label">
+				<source />
+				<target>Schrift laden</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note">
+				<source />
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note.description">
+				<source />
+				<target>Zum Beispiel, wie die Schrift gehostet wird. Wird im Layout Detail über den Gewichten angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.weights">
+				<source />
+				<target>Gewichte</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.snippet">
+				<source />
+				<target>CSS-Snippet</target>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.example">
+				<source />
+				<target>Beispiel</target>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font">
 				<source />
@@ -110,6 +326,18 @@
 			<trans-unit id="tx_typo3styleguide_font.label">
 				<source />
 				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose">
+				<source />
+				<target>Einsatz</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose.description">
+				<source />
+				<target>Wofür dieses Gewicht gilt. Wird im Layout Detail des Schriften-Elements angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.source">
+				<source />
+				<target>Quelle</target>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
 				<source />
@@ -131,6 +359,26 @@
 				<source />
 				<target>Kommagetrennte Dateinamen-Muster, die ausgeschlossen werden, z. B. "*-alt.svg, legacy-*". Die Platzhalter * und ? werden unterstützt.</target>
 			</trans-unit>
+			<trans-unit id="contentelement.icons.search">
+				<source />
+				<target>Suche anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.description">
+				<source />
+				<target>Zeigt über den Icons ein Suchfeld, das die Icons nach ihrem Namen filtert.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.label">
+				<source />
+				<target>Icons suchen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.count">
+				<source />
+				<target>{shown} von {total} Icons</target>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.none">
+				<source />
+				<target>Kein Icon gefunden</target>
+			</trans-unit>
 			<trans-unit id="contentelement.images.label">
 				<source />
 				<target>Bilder</target>
@@ -142,6 +390,162 @@
 			<trans-unit id="contentelement.images.items">
 				<source />
 				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.downloads">
+				<source />
+				<target>Download-Links anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.downloads.description">
+				<source />
+				<target>Zeigt unter jedem Bild einen Download-Link auf die Originaldatei.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.images.download">
+				<source />
+				<target>Herunterladen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.label">
+				<source />
+				<target>Richtlinien</target>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.description">
+				<source />
+				<target>Do-und-Don't-Regeln als Karten mit Symbol und Wort. Ein Inline-Datensatz pro Regel, optional mit Beispielbild.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.items">
+				<source />
+				<target>Richtlinien</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.label">
+				<source />
+				<target>Element-Doku</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.description">
+				<source />
+				<target>Dokumentiert einen Inhaltstyp: seine Felder aus dem TCA und Live-Beispiele von den Seiten, die du nennst. Gehört neben die Regeln zu diesem Element.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype">
+				<source />
+				<target>Inhaltstyp</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype.description">
+				<source />
+				<target>Der Inhaltstyp, der dokumentiert wird. Seine Felder kommen aus dem TCA, das funktioniert für selbst geschriebene Typen und für Content Blocks.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages">
+				<source />
+				<target>Beispielseiten</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages.description">
+				<source />
+				<target>Seiten mit Beispielelementen dieses Typs. Nur Elemente dieser Seiten werden gezeigt, und nur wenn der Besucher die Seite sehen darf.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.note">
+				<source />
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.label">
+				<source />
+				<target>Seitenvorschau</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.description">
+				<source />
+				<target>Zeigt eine ganze Seite in einem Rahmen, zum Beispiel einen Seitentyp. Nutze es, wenn ein einzelnes Element nicht reicht.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page">
+				<source />
+				<target>Seite</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page.description">
+				<source />
+				<target>Die Seite, die im Rahmen gezeigt wird. Die Besucher dieser Seite müssen sie erreichen können.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.type">
+				<source />
+				<target>Inhaltstyp</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview">
+				<source />
+				<target>Vorschau</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview.width">
+				<source />
+				<target>Vorschaubreite</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.desktop">
+				<source />
+				<target>Desktop</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.tablet">
+				<source />
+				<target>Tablet</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.mobile">
+				<source />
+				<target>Mobil</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.scale">
+				<source />
+				<target>Maßstab</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.open">
+				<source />
+				<target>In neuem Tab öffnen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.field.required">
+				<source />
+				<target>Pflicht</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.field.optional">
+				<source />
+				<target>Optional</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields">
+				<source />
+				<target>Felder</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline">
+				<source />
+				<target>Richtlinie</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type">
+				<source />
+				<target>Art</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.do">
+				<source />
+				<target>So machen wir es</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.note">
+				<source />
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.title">
+				<source />
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.dont">
+				<source />
+				<target>Das vermeiden wir</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image">
+				<source />
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image.description">
+				<source />
+				<target>Optionales Bild, das die Regel zeigt. Den Alternativtext an der Dateireferenz setzen. Es hat Vorrang vor dem Pfad des Beispielbilds.</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.text">
+				<source />
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path">
+				<source />
+				<target>Beispielbild</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path.description">
+				<source />
+				<target>Optionaler EXT:-Pfad zu einem Bild, das die Regel zeigt, wird genutzt, wenn kein Bild ausgewählt ist. Es hat keinen eigenen Alternativtext, deshalb sollte der Text es beschreiben.</target>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_image">
 				<source />
@@ -174,6 +578,218 @@
 			<trans-unit id="contentelement.tableofcontents.layout.cards">
 				<source />
 				<target>Karten</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.groups">
+				<source />
+				<target>Karten nach Bereichen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.areas">
+				<source />
+				<target>Bereiche</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels">
+				<source />
+				<target>Tiefe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.description">
+				<source />
+				<target>Wie viele Ebenen der Seiten darunter gezeigt werden. Ohne Auswahl gilt die Einstellung des Projekts.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.default">
+				<source />
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.1">
+				<source />
+				<target>1 Ebene</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.2">
+				<source />
+				<target>2 Ebenen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.3">
+				<source />
+				<target>3 Ebenen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.9">
+				<source />
+				<target>Alle Ebenen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.area.open">
+				<source />
+				<target>Öffnen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.label">
+				<source />
+				<target>Galerie</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.description">
+				<source />
+				<target>Eine Bildersammlung als Raster, zum Beispiel eine Bilddatenbank. Bildunterschriften und Alternativtexte kommen aus den Dateireferenzen, optional mit Download pro Bild.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.images">
+				<source />
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.columns">
+				<source />
+				<target>Spalten</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads">
+				<source />
+				<target>Download-Links anzeigen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads.description">
+				<source />
+				<target>Fügt unter jedem Bild einen Download-Link hinzu.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.download">
+				<source />
+				<target>Herunterladen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.enlarge">
+				<source />
+				<target>Bild vergrößern</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.close">
+				<source />
+				<target>Schließen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.previous">
+				<source />
+				<target>Vorheriges Bild</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.next">
+				<source />
+				<target>Nächstes Bild</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.large">
+				<source />
+				<target>Große Ansicht des Bildes</target>
+			</trans-unit>
+			<trans-unit id="metadata.tab">
+				<source />
+				<target>Styleguide</target>
+			</trans-unit>
+			<trans-unit id="metadata.copyright">
+				<source />
+				<target>Copyright / Urheber</target>
+			</trans-unit>
+			<trans-unit id="metadata.usage_rights">
+				<source />
+				<target>Nutzungsrechte</target>
+			</trans-unit>
+			<trans-unit id="metadata.license_until">
+				<source />
+				<target>Lizenz gültig bis</target>
+			</trans-unit>
+			<trans-unit id="metadata.source">
+				<source />
+				<target>Quelle</target>
+			</trans-unit>
+			<trans-unit id="metadata.title">
+				<source />
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="metadata.description">
+				<source />
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.label">
+				<source />
+				<target>Seitenlinks</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.description">
+				<source />
+				<target>Links auf manuell ausgewählte Seiten beliebigen Seitentyps, als Liste oder Karten. Für Demoseiten, die keine Styleguide-Seiten sein können, z. B. wegen Inhaltselement-Beschränkungen des Seitentyps.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.pages">
+				<source />
+				<target>Seiten</target>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.label">
+				<source />
+				<target>Bildgrößen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.description">
+				<source />
+				<target>Bild- und Formatvorgaben pro Kanal. Ein Inline-Datensatz pro Größe, dargestellt als Tabelle mit Vorschau des Seitenverhältnisses und dem Datum der Prüfung.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.items">
+				<source />
+				<target>Größen</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize">
+				<source />
+				<target>Bildgröße</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.channel">
+				<source />
+				<target>Kanal</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.image_type">
+				<source />
+				<target>Art</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.width">
+				<source />
+				<target>Breite (px)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.height">
+				<source />
+				<target>Höhe (px)</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.format">
+				<source />
+				<target>Format</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.valid_as_of">
+				<source />
+				<target>Gültig seit</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.size">
+				<source />
+				<target>Größe</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.preview">
+				<source />
+				<target>Proportion</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.label">
+				<source />
+				<target>Markenelement</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.description">
+				<source />
+				<target>Ein Logo in seinen Varianten auf passenden Hintergründen, mit optionalem Schutzraum und nach Format gruppierten Downloads.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.light">
+				<source />
+				<target>Logo für helle Hintergründe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.dark">
+				<source />
+				<target>Logo für dunkle Hintergründe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.white">
+				<source />
+				<target>Weißes Logo</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected">
+				<source />
+				<target>Schutzraum (Vielfaches der Logohöhe)</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.description">
+				<source />
+				<target>Abstand, der um das Logo frei bleibt, zum Beispiel 0,5. Leer lassen oder 0, um den Schutzraum auszublenden.</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.caption">
+				<source />
+				<target>Schutzraum: %s mal die Logohöhe</target>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.downloads">
+				<source />
+				<target>Downloads</target>
 			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />

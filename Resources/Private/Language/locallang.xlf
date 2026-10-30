@@ -45,6 +45,45 @@
 			<trans-unit id="wizard.tab.styleguide">
 				<source>Styleguide</source>
 			</trans-unit>
+			<trans-unit id="frame.skip">
+				<source>Skip to content</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.main">
+				<source>Main menu</source>
+			</trans-unit>
+			<trans-unit id="frame.theme">
+				<source>Dark theme</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter">
+				<source>Filter pages</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.filter.none">
+				<source>No page found</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.overview">
+				<source>Overview</source>
+			</trans-unit>
+			<trans-unit id="frame.search.label">
+				<source>Search the styleguide</source>
+			</trans-unit>
+			<trans-unit id="frame.search.placeholder">
+				<source>Search the styleguide</source>
+			</trans-unit>
+			<trans-unit id="frame.search.count">
+				<source>{shown} of {total} pages</source>
+			</trans-unit>
+			<trans-unit id="frame.search.none">
+				<source>No page found</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.home">
+				<source>Home</source>
+			</trans-unit>
+			<trans-unit id="frame.nav.section">
+				<source>Pages in this section</source>
+			</trans-unit>
+			<trans-unit id="frame.breadcrumb">
+				<source>Breadcrumb</source>
+			</trans-unit>
 			<trans-unit id="contentelement.colors.label">
 				<source>Colors</source>
 			</trans-unit>
@@ -63,6 +102,87 @@
 			<trans-unit id="tx_typo3styleguide_color.label">
 				<source>Label</source>
 			</trans-unit>
+			<trans-unit id="contentelement.colors.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.swatches">
+				<source>Swatches</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.detail">
+				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.scale">
+				<source>Scale</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.layout.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage">
+				<source>Usage rules</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.usage.description">
+				<source>When to use which color, for example for text, surfaces or accents. Shown above the colors in the Detail layout.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_light">
+				<source>Light text color (HEX)</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast_dark">
+				<source>Dark text color (HEX)</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.description">
+				<source>Reference color for the contrast check in the Detail layout. Each color shows whether it works as a background for this text color.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.light">
+				<source>Light text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.dark">
+				<source>Dark text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aaa">
+				<source>AAA</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.aa">
+				<source>AA</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.large">
+				<source>Large text only</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.contrast.fail">
+				<source>Not for text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.colors.copy">
+				<source>Copy</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.cmyk">
+				<source>CMYK</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.pms">
+				<source>PMS</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.variable">
+				<source>Variable name</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.detail.description">
+				<source>Shown in the Detail layout of the Colors element.</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role">
+				<source>Role</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.description">
+				<source>Shown as a symbol in the Status layout, so a status never relies on color alone.</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.none">
+				<source>None</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.success">
+				<source>Success</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.warning">
+				<source>Warning</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_color.role.error">
+				<source>Error</source>
+			</trans-unit>
 			<trans-unit id="contentelement.fonts.label">
 				<source>Fonts</source>
 			</trans-unit>
@@ -71,6 +191,48 @@
 			</trans-unit>
 			<trans-unit id="contentelement.fonts.items">
 				<source>Fonts</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.specimen">
+				<source>Specimen</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.layout.detail">
+				<source>Detail</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback">
+				<source>Fallback fonts</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.fallback.description">
+				<source>Appended to the family in the CSS snippet, for example a system font.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample">
+				<source>Sample text</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.sample.description">
+				<source>Optional line shown below the alphabet in the Detail layout.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download">
+				<source>Download link</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.download.label">
+				<source>Download font</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.note.description">
+				<source>For example how the font is hosted. Shown above the weights in the Detail layout.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.weights">
+				<source>Weights</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.snippet">
+				<source>CSS snippet</source>
+			</trans-unit>
+			<trans-unit id="contentelement.fonts.example">
+				<source>Example</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font">
 				<source>Font</source>
@@ -83,6 +245,15 @@
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_font.label">
 				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose">
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.purpose.description">
+				<source>What this weight is used for. Shown in the Detail layout of the Fonts element.</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_font.source">
+				<source>Source</source>
 			</trans-unit>
 			<trans-unit id="contentelement.icons.label">
 				<source>Icons</source>
@@ -99,6 +270,21 @@
 			<trans-unit id="contentelement.icons.exclude.description">
 				<source>Comma-separated file name patterns to exclude, e.g. "*-alt.svg, legacy-*". The wildcards * and ? are supported.</source>
 			</trans-unit>
+			<trans-unit id="contentelement.icons.search">
+				<source>Show search</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.description">
+				<source>Shows a search field above the icons that filters them by name.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.label">
+				<source>Search icons</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.count">
+				<source>{shown} of {total} icons</source>
+			</trans-unit>
+			<trans-unit id="contentelement.icons.search.none">
+				<source>No icon found</source>
+			</trans-unit>
 			<trans-unit id="contentelement.images.label">
 				<source>Images</source>
 			</trans-unit>
@@ -107,6 +293,123 @@
 			</trans-unit>
 			<trans-unit id="contentelement.images.items">
 				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.downloads">
+				<source>Show download links</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.downloads.description">
+				<source>Adds a download link with the original file below each image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.images.download">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.label">
+				<source>Guidelines</source>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.description">
+				<source>Do and Don't rules as cards with a symbol and a word. One inline record per rule, optionally with an example image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.guidelines.items">
+				<source>Guidelines</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.label">
+				<source>Element documentation</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.description">
+				<source>Documents a content type: its fields from the TCA and live examples from the pages you name. Place it next to the rules for that element.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype">
+				<source>Content type</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.ctype.description">
+				<source>The content type to document. Its fields are read from the TCA, so this works for hand-written types and for Content Blocks.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages">
+				<source>Example pages</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.pages.description">
+				<source>Pages with example elements of this type. Only elements on these pages are shown, and only if the visitor may see the page.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.note">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.label">
+				<source>Page preview</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.description">
+				<source>Shows a whole page in a frame, for example a page type. Use it where the page of an element is not enough.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page">
+				<source>Page</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagepreview.page.description">
+				<source>The page that is shown in the frame. It must be reachable by the visitors of this page.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.type">
+				<source>Content type</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview">
+				<source>Preview</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.preview.width">
+				<source>Preview width</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.desktop">
+				<source>Desktop</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.tablet">
+				<source>Tablet</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.width.mobile">
+				<source>Mobile</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.scale">
+				<source>Scale</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.open">
+				<source>Open in new tab</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.field.required">
+				<source>Required</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.field.optional">
+				<source>Optional</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.fields">
+				<source>Fields</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline">
+				<source>Guideline</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.do">
+				<source>Do</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.dont">
+				<source>Don't</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.type.note">
+				<source>Note</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.text">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.image.description">
+				<source>Optional image that shows the rule. Set its alternative text on the file reference. It takes precedence over the example image path.</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path">
+				<source>Example image</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_guideline.path.description">
+				<source>Optional EXT: path to an image that shows the rule, used when no image is selected. It has no alternative text of its own, so the text should describe it.</source>
 			</trans-unit>
 			<trans-unit id="tx_typo3styleguide_image">
 				<source>Image</source>
@@ -131,6 +434,165 @@
 			</trans-unit>
 			<trans-unit id="contentelement.tableofcontents.layout.cards">
 				<source>Cards</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.groups">
+				<source>Cards grouped by area</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.layout.areas">
+				<source>Areas</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels">
+				<source>Depth</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.description">
+				<source>How many levels of the pages below are shown. Without a choice the setting of the project applies.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.1">
+				<source>1 level</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.2">
+				<source>2 levels</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.3">
+				<source>3 levels</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.levels.9">
+				<source>All levels</source>
+			</trans-unit>
+			<trans-unit id="contentelement.tableofcontents.area.open">
+				<source>Open</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.label">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.description">
+				<source>An image collection as a grid, for example an image library. Captions and alternative texts come from the file references, optionally with a download per image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.images">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.columns">
+				<source>Columns</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads">
+				<source>Show download links</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.downloads.description">
+				<source>Adds a download link below each image.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.download">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.enlarge">
+				<source>Enlarge image</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.close">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.previous">
+				<source>Previous image</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.next">
+				<source>Next image</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.large">
+				<source>Large view of the image</source>
+			</trans-unit>
+			<trans-unit id="metadata.tab">
+				<source>Styleguide</source>
+			</trans-unit>
+			<trans-unit id="metadata.copyright">
+				<source>Copyright / author</source>
+			</trans-unit>
+			<trans-unit id="metadata.usage_rights">
+				<source>Usage rights</source>
+			</trans-unit>
+			<trans-unit id="metadata.license_until">
+				<source>License valid until</source>
+			</trans-unit>
+			<trans-unit id="metadata.source">
+				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="metadata.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="metadata.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.label">
+				<source>Page links</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.description">
+				<source>Links to manually selected pages of any page type, as list or cards. Use it for demo pages that cannot be styleguide pages, e.g. because of page type restrictions for content elements.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.pagelinks.pages">
+				<source>Pages</source>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.label">
+				<source>Image Sizes</source>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.description">
+				<source>Image and format specifications per channel. One inline record per size, shown as a table with a preview of the aspect ratio and the date the values were checked.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.imagesizes.items">
+				<source>Sizes</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize">
+				<source>Image size</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.channel">
+				<source>Channel</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.image_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.width">
+				<source>Width (px)</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.height">
+				<source>Height (px)</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.format">
+				<source>Format</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.valid_as_of">
+				<source>Valid as of</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.size">
+				<source>Size</source>
+			</trans-unit>
+			<trans-unit id="tx_typo3styleguide_imagesize.preview">
+				<source>Proportion</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.label">
+				<source>Brand Asset</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.description">
+				<source>A logo shown in its variants on matching backgrounds, with an optional protected area and downloads grouped by format.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.light">
+				<source>Logo for light backgrounds</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.dark">
+				<source>Logo for dark backgrounds</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.variant.white">
+				<source>White logo</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected">
+				<source>Protected area (multiple of the logo height)</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.description">
+				<source>Distance to keep free around the logo, for example 0.5. Leave empty or 0 to hide the protected area.</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.protected.caption">
+				<source>Protected area: %s times the logo height</source>
+			</trans-unit>
+			<trans-unit id="contentelement.brandasset.downloads">
+				<source>Downloads</source>
 			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>

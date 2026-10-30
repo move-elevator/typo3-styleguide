@@ -1,0 +1,16 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:if condition="{styleguideBare}">
+    <f:else>
+        <div class="typo3-styleguide-frame typo3-styleguide-frame--chrome">
+            <f:render partial="StyleguideFrame/Header" arguments="{brand: styleguideBrand, logo: styleguideLogo, logoDark: styleguideLogoDark, home: styleguideHome, sections: styleguideSections}" />
+
+            <f:render partial="StyleguideFrame/Intro" arguments="{styleguideBreadcrumb: styleguideBreadcrumb}" />
+        </div>
+    </f:else>
+</f:if>
+
+</html>

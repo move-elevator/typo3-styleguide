@@ -11,9 +11,20 @@
 <f:asset.script identifier="typo3styleguide_element_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/copy.js" />
 
 
+<f:variable name="files" value="{sg:files(path: data.tx_typo3styleguide_icons_path, exclude: data.tx_typo3styleguide_icons_exclude)}" />
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+
 <div class="typo3-styleguide__frame">
+    <f:if condition="{data.tx_typo3styleguide_icons_search}">
+        <f:asset.script identifier="typo3styleguide_icon_search_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/icon_search.js" />
+        <div class="typo3-styleguide__icon-search" data-sg-icon-search data-count="{f:translate(key: '{lll}contentelement.icons.search.count')}" data-none="{f:translate(key: '{lll}contentelement.icons.search.none')}">
+            <label for="typo3-styleguide-icon-search-{data.uid}"><f:translate key="{lll}contentelement.icons.search.label"/></label>
+            <input type="search" id="typo3-styleguide-icon-search-{data.uid}" autocomplete="off" data-sg-icon-search-input>
+            <p class="typo3-styleguide__icon-search-status" role="status" data-sg-icon-search-status></p>
+        </div>
+    </f:if>
     <div class="typo3-styleguide__element-container typo3-styleguide__element-container--icons">
-        <f:for each="{sg:files(path: data.tx_typo3styleguide_icons_path, exclude: data.tx_typo3styleguide_icons_exclude)}" as="file">
+        <f:for each="{files}" as="file">
             <div class="typo3-styleguide__element typo3-styleguide__element--icon" data-copy="{file -> sg:format.filename()}" role="button" tabindex="0" aria-label="Copy icon name">
                 <div class="typo3-styleguide__image typo3-styleguide__icon">
                     <div class="typo3-styleguide__image-box">
