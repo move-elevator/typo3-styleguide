@@ -84,12 +84,45 @@
     ['click', 'keyup', 'toggle', 'transitionend', 'animationend'].forEach(type => doc.addEventListener(type, type === 'click' || type === 'keyup' ? interaction : refit, true));
   };
 
+  // Every frame renders a whole page. Many frames at once can exceed what a shared host answers in time, so the frames load a few at a time,
+  // and only when they come near the viewport. Without JavaScript the link to open an example in its own tab remains
+  const MAX_PARALLEL = 2;
+  const TIMEOUT = 30000;
+  const queue = [];
+  let running = 0;
+
+  const loadNext = () => {
+    while (running < MAX_PARALLEL && queue.length) {
+      const frame = queue.shift();
+      let released = false;
+      const release = () => {
+        if (released) return;
+        released = true;
+        running--;
+        loadNext();
+      };
+      running++;
+      frame.addEventListener('load', release, { once: true });
+      setTimeout(release, TIMEOUT);
+      frame.src = frame.dataset.sgSrc;
+    }
+  };
+
+  const visible = new IntersectionObserver((entries) => {
+    entries.filter(entry => entry.isIntersecting).forEach(entry => {
+      visible.unobserve(entry.target);
+      queue.push(entry.target.querySelector('[data-sg-preview-frame]'));
+    });
+    loadNext();
+  }, { rootMargin: '400px 0px' });
+
   document.querySelectorAll('[data-sg-preview]').forEach(root => {
     const frames = root.querySelectorAll('[data-sg-preview-frame]');
 
     frames.forEach(frame => {
       frame.addEventListener('load', () => watch(frame));
       new ResizeObserver(() => place(frame)).observe(frame.parentElement);
+      visible.observe(frame.closest('figure'));
     });
 
     // The width buttons are hidden in the markup, so without JavaScript the previews simply use the full width

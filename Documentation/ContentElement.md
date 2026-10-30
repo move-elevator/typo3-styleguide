@@ -208,6 +208,8 @@ Each example is a frame that loads the example page itself and shows only the on
 > [!NOTE]
 > The previews are only shown to logged-in backend users. Without a login, the frames show a short notice. The example pages must be reachable by that backend user, hidden pages and the [restriction to backend users](BackendUserOnlyAccess.md) work as on the page itself. The frame needs the page to be embeddable in your own site, so set `frame-ancestors 'self'` (or `X-Frame-Options: SAMEORIGIN`) if you send such headers.
 >
+> Every frame renders the whole example page once, so the frames load two at a time and only when they come near the viewport. That keeps a page with many examples from sending many heavy requests at once, which a small server may not answer in time. Without JavaScript the frames stay empty and the link above each frame still opens the example.
+
 > The frames show the page of your project without its own page background, because that is a decoration of the page and not part of the element. Elements that scripts add to the page later, such as a cookie banner, cannot be removed on the server.
 >
 > The parameters `sg_preview` and `sg_page_preview` are excluded from the cache hash. The reduced page is sent with `Cache-Control: private, no-store`. The page preview element uses `sg_page_preview`, which returns the whole page, only the frame of this extension steps aside for it.
