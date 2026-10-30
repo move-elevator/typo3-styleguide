@@ -486,6 +486,42 @@
 			<trans-unit id="contentelement.gallery.download">
 				<source>Download</source>
 			</trans-unit>
+			<trans-unit id="contentelement.gallery.enlarge">
+				<source>Enlarge image</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.close">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.previous">
+				<source>Previous image</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.next">
+				<source>Next image</source>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.large">
+				<source>Large view of the image</source>
+			</trans-unit>
+			<trans-unit id="metadata.tab">
+				<source>Styleguide</source>
+			</trans-unit>
+			<trans-unit id="metadata.copyright">
+				<source>Copyright / author</source>
+			</trans-unit>
+			<trans-unit id="metadata.usage_rights">
+				<source>Usage rights</source>
+			</trans-unit>
+			<trans-unit id="metadata.license_until">
+				<source>License valid until</source>
+			</trans-unit>
+			<trans-unit id="metadata.source">
+				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="metadata.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="metadata.description">
+				<source>Description</source>
+			</trans-unit>
 			<trans-unit id="contentelement.pagelinks.label">
 				<source>Page links</source>
 			</trans-unit>

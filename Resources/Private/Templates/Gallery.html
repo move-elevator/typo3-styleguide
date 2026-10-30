@@ -7,6 +7,9 @@
 <f:section name="Main">
 
 <f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+<f:asset.script identifier="typo3styleguide_gallery_lightbox_js" src="EXT:typo3_styleguide/Resources/Public/JavaScript/gallery_lightbox.js" />
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
 
 <div class="typo3-styleguide__frame">
     <f:if condition="{images}">
@@ -14,18 +17,55 @@
             <f:for each="{images}" as="image">
                 <li>
                     <figure class="typo3-styleguide__gallery-figure">
-                        <f:image image="{image}" maxWidth="600" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
+                        <f:variable name="licenseUntil"><f:if condition="{image.properties.tx_typo3styleguide_license_until}"><f:format.date format="d.m.Y">{image.properties.tx_typo3styleguide_license_until}</f:format.date></f:if></f:variable>
+                        <a class="typo3-styleguide__gallery-open" href="{image.publicUrl}" aria-label="{f:translate(key: '{lll}contentelement.gallery.enlarge')}: {f:if(condition: image.title, then: image.title, else: image.name)}"
+                            data-sg-lightbox-item
+                            data-large="{f:uri.image(image: image, maxWidth: '1600')}"
+                            data-alt="{image.alternative}"
+                            data-title="{image.title}"
+                            data-description="{image.description}"
+                            data-copyright="{image.properties.tx_typo3styleguide_copyright}"
+                            data-usage-rights="{image.properties.tx_typo3styleguide_usage_rights}"
+                            data-license-until="{licenseUntil}"
+                            data-source="{image.properties.tx_typo3styleguide_source}"
+                        >
+                            <f:image image="{image}" maxWidth="600" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
+                        </a>
                         <f:if condition="{image.description}">
                             <figcaption class="typo3-styleguide__gallery-caption">{image.description}</figcaption>
                         </f:if>
                     </figure>
                     <f:if condition="{data.tx_typo3styleguide_gallery_downloads}">
-                        <f:variable name="label"><f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.gallery.download"/></f:variable>
+                        <f:variable name="label"><f:translate key="{lll}contentelement.gallery.download"/></f:variable>
                         <a class="typo3-styleguide__gallery-download" href="{image.publicUrl}" download aria-label="{label} {image.name}">{label}</a>
                     </f:if>
                 </li>
             </f:for>
         </ul>
+
+        <dialog class="typo3-styleguide__lightbox" data-sg-lightbox aria-label="{f:translate(key: '{lll}contentelement.gallery.large')}">
+            <div class="typo3-styleguide__lightbox-body">
+                <button type="button" class="typo3-styleguide__lightbox-close" data-sg-lightbox-close aria-label="{f:translate(key: '{lll}contentelement.gallery.close')}"><span aria-hidden="true">&times;</span></button>
+                <div class="typo3-styleguide__lightbox-stage">
+                    <button type="button" class="typo3-styleguide__lightbox-nav" data-sg-lightbox-prev aria-label="{f:translate(key: '{lll}contentelement.gallery.previous')}"><span aria-hidden="true">&lsaquo;</span></button>
+                    <img class="typo3-styleguide__lightbox-image" data-sg-lightbox-image alt="" src="">
+                    <button type="button" class="typo3-styleguide__lightbox-nav" data-sg-lightbox-next aria-label="{f:translate(key: '{lll}contentelement.gallery.next')}"><span aria-hidden="true">&rsaquo;</span></button>
+                </div>
+                <div class="typo3-styleguide__lightbox-info">
+                    <h3 class="typo3-styleguide__lightbox-title" data-sg-lightbox-title></h3>
+                    <p class="typo3-styleguide__lightbox-description" data-sg-lightbox-description></p>
+                    <dl class="typo3-styleguide__lightbox-meta">
+                        <div data-sg-lightbox-row="copyright" hidden><dt><f:translate key="{lll}metadata.copyright"/></dt><dd></dd></div>
+                        <div data-sg-lightbox-row="usageRights" hidden><dt><f:translate key="{lll}metadata.usage_rights"/></dt><dd></dd></div>
+                        <div data-sg-lightbox-row="licenseUntil" hidden><dt><f:translate key="{lll}metadata.license_until"/></dt><dd></dd></div>
+                        <div data-sg-lightbox-row="source" hidden><dt><f:translate key="{lll}metadata.source"/></dt><dd></dd></div>
+                    </dl>
+                    <f:if condition="{data.tx_typo3styleguide_gallery_downloads}">
+                        <a class="typo3-styleguide__gallery-download" href="#" download data-sg-lightbox-download><f:translate key="{lll}contentelement.gallery.download"/></a>
+                    </f:if>
+                </div>
+            </div>
+        </dialog>
     </f:if>
 </div>
 

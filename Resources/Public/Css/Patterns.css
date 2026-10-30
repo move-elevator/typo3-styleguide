@@ -502,6 +502,132 @@
     outline-offset: 2px;
 }
 
+.typo3-styleguide__gallery-open {
+    display: block;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
+
+.typo3-styleguide__gallery-open:focus-visible,
+.typo3-styleguide__lightbox button:focus-visible {
+    outline: 2px solid var(--typo3-sg-text-primary);
+    outline-offset: 2px;
+}
+
+.typo3-styleguide__lightbox {
+    box-sizing: border-box;
+    width: min(1200px, calc(100vw - 32px));
+    max-width: none;
+    max-height: calc(100vh - 32px);
+    padding: 0;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: 12px;
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    overflow: auto;
+}
+
+.typo3-styleguide__lightbox::backdrop {
+    background: rgb(0 0 0 / 70%);
+}
+
+.typo3-styleguide__lightbox-body {
+    position: relative;
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+}
+
+.typo3-styleguide__lightbox-close,
+.typo3-styleguide__lightbox-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: 50%;
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-primary);
+    font: inherit;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.typo3-styleguide__lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+}
+
+.typo3-styleguide__lightbox-stage {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.typo3-styleguide__lightbox-image {
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+@media (min-width: 900px) {
+    .typo3-styleguide__lightbox-body {
+        grid-template-columns: minmax(0, 1fr) 280px;
+        align-items: start;
+        padding: 24px;
+    }
+
+    .typo3-styleguide__lightbox-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    .typo3-styleguide__lightbox-image {
+        max-height: calc(100vh - 120px);
+    }
+
+    .typo3-styleguide__lightbox-info {
+        padding-top: 48px;
+    }
+}
+
+.typo3-styleguide__lightbox-title {
+    margin: 0 0 8px;
+    font-size: 1.125rem;
+}
+
+.typo3-styleguide__lightbox-description {
+    margin: 0 0 12px;
+    color: var(--typo3-sg-text-secondary);
+}
+
+.typo3-styleguide__lightbox-meta {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 12px;
+}
+
+.typo3-styleguide__lightbox-meta dt {
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.875rem;
+}
+
+.typo3-styleguide__lightbox-meta dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.typo3-styleguide__lightbox [hidden] {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .typo3-styleguide__gallery {
         grid-template-columns: repeat(min(var(--typo3-sg-gallery-columns, 4), 3), minmax(0, 1fr));

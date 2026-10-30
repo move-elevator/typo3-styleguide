@@ -32,6 +32,14 @@ CREATE TABLE tt_content
 	tx_typo3styleguide_gallery_downloads tinyint(4) unsigned DEFAULT 0 NOT NULL,
 );
 
+CREATE TABLE sys_file_metadata
+(
+	tx_typo3styleguide_copyright varchar(255) DEFAULT '' NOT NULL,
+	tx_typo3styleguide_usage_rights text,
+	tx_typo3styleguide_license_until int(11) DEFAULT NULL,
+	tx_typo3styleguide_source varchar(255) DEFAULT '' NOT NULL,
+);
+
 CREATE TABLE tx_typo3styleguide_color
 (
 	parentid int(11) DEFAULT 0 NOT NULL,

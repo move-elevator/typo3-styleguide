@@ -161,6 +161,17 @@ The `Gallery` content element shows an image collection as a grid, for example a
 
 Images load lazily and are scaled to a maximum width of 600 px, the download always delivers the original file.
 
+A click on an image opens a large view in a dialog, scaled to a maximum width of 1600 px. It shows the title, the description and the rights information of the image, with the arrow keys, the buttons or `Esc` to browse and close, and the download link when the element shows download links. Without JavaScript, the link around the image opens the original file.
+
+The rights information is kept per file in the file metadata, in the new **Styleguide** tab of the file list. A field that stays empty does not show up in the large view:
+
+- **Copyright / author**
+- **Usage rights** — Free text, line breaks are kept
+- **License valid until** — A date
+- **Source**
+
+The title and the description come from the file reference first and from the file metadata second, as for every file in TYPO3.
+
 ## <img src="../Resources/Public/Icons/content-styleguide-guidelines.svg" height="20"> Guidelines
 
 The `Guidelines` content element shows Do, Don't and Note rules as cards. Each rule is defined as an inline record with:

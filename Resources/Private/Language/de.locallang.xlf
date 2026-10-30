@@ -647,6 +647,54 @@
 				<source />
 				<target>Herunterladen</target>
 			</trans-unit>
+			<trans-unit id="contentelement.gallery.enlarge">
+				<source />
+				<target>Bild vergrößern</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.close">
+				<source />
+				<target>Schließen</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.previous">
+				<source />
+				<target>Vorheriges Bild</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.next">
+				<source />
+				<target>Nächstes Bild</target>
+			</trans-unit>
+			<trans-unit id="contentelement.gallery.large">
+				<source />
+				<target>Große Ansicht des Bildes</target>
+			</trans-unit>
+			<trans-unit id="metadata.tab">
+				<source />
+				<target>Styleguide</target>
+			</trans-unit>
+			<trans-unit id="metadata.copyright">
+				<source />
+				<target>Copyright / Urheber</target>
+			</trans-unit>
+			<trans-unit id="metadata.usage_rights">
+				<source />
+				<target>Nutzungsrechte</target>
+			</trans-unit>
+			<trans-unit id="metadata.license_until">
+				<source />
+				<target>Lizenz gültig bis</target>
+			</trans-unit>
+			<trans-unit id="metadata.source">
+				<source />
+				<target>Quelle</target>
+			</trans-unit>
+			<trans-unit id="metadata.title">
+				<source />
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="metadata.description">
+				<source />
+				<target>Beschreibung</target>
+			</trans-unit>
 			<trans-unit id="contentelement.pagelinks.label">
 				<source />
 				<target>Seitenlinks</target>
