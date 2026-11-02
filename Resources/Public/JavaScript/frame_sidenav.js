@@ -95,7 +95,6 @@
     const status = filter.querySelector('[data-sg-sidenav-filter-status]');
     const nav = filter.closest('nav');
     const groups = [...nav.querySelectorAll('[data-sg-sidenav-group]')];
-    const links = [...nav.querySelectorAll('.typo3-styleguide-frame__sidenav-list a.typo3-styleguide-frame__sidenav-link')];
     const wasOpen = new Map(groups.map(group => [group, group.open]));
     const textOf = element => element.textContent.trim().toLowerCase();
 
@@ -110,24 +109,36 @@
       }
 
       let found = 0;
-      groups.forEach(group => {
-        const groupMatches = textOf(group.querySelector('summary span')).includes(query);
+      // A group whose own name matches shows everything below it, also the groups inside it. Returns the number of visible pages
+      const filterGroup = (entry, inherited) => {
+        const group = entry.querySelector(':scope > [data-sg-sidenav-group]');
+        const matches = inherited || textOf(group.querySelector(':scope > summary span')).includes(query);
         let visible = 0;
-        group.querySelectorAll('[data-sg-sidenav-entry]').forEach(entry => {
-          const overview = entry.hasAttribute('data-sg-sidenav-overview');
-          const match = groupMatches || (!overview && textOf(entry).includes(query));
-          entry.hidden = !match;
-          if (match && !overview) visible++;
+        group.querySelectorAll(':scope > ul > [data-sg-sidenav-entry]').forEach(child => {
+          if (child.hasAttribute('data-sg-sidenav-overview')) {
+            child.hidden = !matches;
+          } else if (child.querySelector(':scope > [data-sg-sidenav-group]')) {
+            visible += filterGroup(child, matches);
+          } else {
+            const match = matches || textOf(child).includes(query);
+            child.hidden = !match;
+            if (match) visible++;
+          }
         });
-        group.closest('[data-sg-sidenav-entry]').hidden = visible === 0;
+        entry.hidden = visible === 0;
         group.open = visible > 0;
-        found += visible;
-      });
 
-      links.filter(link => !link.closest('[data-sg-sidenav-group]')).forEach(link => {
-        const match = textOf(link).includes(query);
-        link.closest('[data-sg-sidenav-entry]').hidden = !match;
-        if (match) found++;
+        return visible;
+      };
+
+      [...nav.querySelector('.typo3-styleguide-frame__sidenav-list').children].forEach(entry => {
+        if (entry.querySelector(':scope > [data-sg-sidenav-group]')) {
+          found += filterGroup(entry, false);
+        } else {
+          const match = textOf(entry).includes(query);
+          entry.hidden = !match;
+          if (match) found++;
+        }
       });
 
       status.textContent = found === 0 ? filter.dataset.none : '';

@@ -34,7 +34,7 @@ page.10 {
     1761600050 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
     1761600050 {
       entryLevel = {$plugin.tx_typo3styleguide.frame.pageEntryLevel}
-      levels = 2
+      levels = {$plugin.tx_typo3styleguide.frame.sideMenuLevels}
       expandAll = 1
       as = styleguideTree
     }

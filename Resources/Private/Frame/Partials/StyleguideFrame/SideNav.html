@@ -17,31 +17,7 @@
         </div>
         <ul class="typo3-styleguide-frame__sidenav-list">
             <f:for each="{items}" as="item">
-                <li data-sg-sidenav-entry>
-                    <f:if condition="{item.children}">
-                        <f:then>
-                            <details class="typo3-styleguide-frame__sidenav-group"{f:if(condition: item.active, then: ' open')} data-sg-sidenav-group>
-                                <summary class="typo3-styleguide-frame__sidenav-group-head">
-                                    <span>{item.title}</span>
-                                    <span class="typo3-styleguide-frame__sidenav-count">{item.children -> f:count()}</span>
-                                </summary>
-                                <ul class="typo3-styleguide-frame__sidenav-list">
-                                    <li data-sg-sidenav-entry data-sg-sidenav-overview>
-                                        <a class="typo3-styleguide-frame__sidenav-link{f:if(condition: item.current, then: ' typo3-styleguide-frame__sidenav-link--active')}" href="{item.link}" aria-current="{f:if(condition: item.current, then: 'page', else: 'false')}"><f:translate key="{lll}frame.nav.overview"/></a>
-                                    </li>
-                                    <f:for each="{item.children}" as="child">
-                                        <li data-sg-sidenav-entry>
-                                            <a class="typo3-styleguide-frame__sidenav-link{f:if(condition: child.current, then: ' typo3-styleguide-frame__sidenav-link--active')}" href="{child.link}" aria-current="{f:if(condition: child.current, then: 'page', else: 'false')}">{child.title}</a>
-                                        </li>
-                                    </f:for>
-                                </ul>
-                            </details>
-                        </f:then>
-                        <f:else>
-                            <a class="typo3-styleguide-frame__sidenav-link{f:if(condition: item.current, then: ' typo3-styleguide-frame__sidenav-link--active')}" href="{item.link}" aria-current="{f:if(condition: item.current, then: 'page', else: 'false')}">{item.title}</a>
-                        </f:else>
-                    </f:if>
-                </li>
+                <f:render partial="StyleguideFrame/SideNavItem" arguments="{item: item}" />
             </f:for>
         </ul>
     </nav>

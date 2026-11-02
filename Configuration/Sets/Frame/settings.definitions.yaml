@@ -22,6 +22,11 @@ settings:
     type: int
     default: 2
     category: typo3styleguide
+  plugin.tx_typo3styleguide.frame.sideMenuLevels:
+    label: Levels of the page tree that the side menu shows below the section
+    type: int
+    default: 2
+    category: typo3styleguide
   plugin.tx_typo3styleguide.frame.logo:
     label: 'Logo in the header instead of the brand name (an EXT: path)'
     type: string

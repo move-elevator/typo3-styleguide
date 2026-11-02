@@ -71,7 +71,7 @@ The set provides these variables to the layout:
 | `styleguideHome` | The start page, for the first entry of the header |
 | `styleguideSections` | The sections in the header |
 | `styleguidePages` | The pages of the current section. Empty when there is nothing for the side menu |
-| `styleguideTree` | What is below the current section, for the side menu: pages, or groups with their pages |
+| `styleguideTree` | What is below the current section, for the side menu: pages, or groups with their pages, as deep as `sideMenuLevels` says |
 | `styleguideBreadcrumb` | The rootline of the current page |
 | `styleguideBrand`, `styleguideLogo`, `styleguideLogoDark` | The brand and logo settings |
 | `styleguideBare` | `1` when the page is loaded by a [Page Preview](ContentElement.md#page-preview), empty otherwise |
@@ -92,11 +92,12 @@ The static template reads them as constants, the site set as settings. Both use 
 | `rootLevel` | `1` | Level of the start page in the page tree. The site root is level 0 |
 | `sectionEntryLevel` | `1` | Menu level of the sections in the header |
 | `pageEntryLevel` | `2` | Menu level of the pages in the side menu |
+| `sideMenuLevels` | `2` | How many levels of the page tree the side menu shows below the section: `2` for groups with their pages, `3` when the groups contain groups |
 | `colPos` | `0` | Comma-separated columns shown in the main area, in this order. Constant of the static template only |
 
 ## Side menu
 
-The side menu shows what is below the current section of the header, so the header entries are not repeated: the pages of the section, or groups that open and close and show the number of their pages. A filter field narrows them down. On a screen of up to 768px width the menu starts closed behind a button, and the header shows the logo and the theme switch in one row with the navigation below it.
+The side menu shows what is below the current section of the header, so the header entries are not repeated: the pages of the section, or groups that open and close and show the number of their pages. Groups can contain groups, as deep as `sideMenuLevels` says. A filter field narrows them down. On a screen of up to 768px width the menu starts closed behind a button, and the header shows the logo and the theme switch in one row with the navigation below it.
 
 Below the active page the menu lists its headings: the [Technical Headlines](ContentElement.md#technical-headline) and the Preview and Fields parts of an [Element Documentation](ContentElement.md#element-documentation). The heading in view is marked while the page scrolls. A page with fewer than two headings lists none.
 
