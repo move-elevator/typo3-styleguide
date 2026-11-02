@@ -972,6 +972,11 @@
     display: none;
 }
 
+/* The height of the stage follows the frame, which is only a few pixels high until its page has loaded. The notice needs room meanwhile */
+.typo3-styleguide__preview-stage:has(> .typo3-styleguide__preview-loading:not([hidden])) {
+    min-height: 160px;
+}
+
 .typo3-styleguide__preview-loading--error {
     border-color: #dc3545;
     color: var(--typo3-sg-text-primary);
