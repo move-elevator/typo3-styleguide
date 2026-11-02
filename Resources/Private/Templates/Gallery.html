@@ -29,7 +29,7 @@
                             data-license-until="{licenseUntil}"
                             data-source="{image.properties.tx_typo3styleguide_source}"
                         >
-                            <f:image image="{image}" maxWidth="600" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
+                            <f:image image="{image}" maxWidth="{f:if(condition: '{data.tx_typo3styleguide_gallery_columns} == 1', then: '1200', else: '600')}" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
                         </a>
                         <f:if condition="{image.description}">
                             <figcaption class="typo3-styleguide__gallery-caption">{image.description}</figcaption>

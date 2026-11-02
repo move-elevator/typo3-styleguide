@@ -156,10 +156,10 @@ Set the alternative text of each logo on its file reference, the caption only na
 The `Gallery` content element shows an image collection as a grid, for example an image library. Select the images as file references, so editors maintain them in the backend.
 
 - **Images** — File references. The alternative text and the description of each reference are used as `alt` and as caption
-- **Columns** — 2 to 6 columns on wide screens, reduced to 3 and 2 on narrow screens
+- **Columns** — 1 to 6 columns on wide screens, reduced to 3 and 2 on narrow screens. One column shows each image at full width
 - **Show download links** — Adds a download link with the original file below each image
 
-Images load lazily and are scaled to a maximum width of 600 px, the download always delivers the original file.
+Images load lazily and are scaled to a maximum width of 600 px (1200 px for one column), the download always delivers the original file.
 
 A click on an image opens a large view in a dialog, scaled to a maximum width of 1600 px. It shows the title, the description and the rights information of the image, with the arrow keys, the buttons or `Esc` to browse and close, and the download link when the element shows download links. Without JavaScript, the link around the image opens the original file.
 
