@@ -27,6 +27,13 @@
             <div class="typo3-styleguide__preview-viewport">
                 <div class="typo3-styleguide__preview-stage">
                     <iframe class="typo3-styleguide__preview-frame" data-sg-preview-frame{f:if(condition: fixedHeight, then: ' data-sg-fixed-height="{fixedHeight}" style="height: {fixedHeight}px"')} data-sg-src="{example.src}" title="{f:translate(key: '{lll}contentelement.elementdoc.preview')}: {example.name}"></iframe>
+                    <div class="typo3-styleguide__preview-loading" data-sg-preview-loading role="status" hidden>
+                        <span class="typo3-styleguide__preview-spinner" aria-hidden="true"></span>
+                        <f:translate key="{lll}contentelement.elementdoc.loading"/>
+                    </div>
+                    <div class="typo3-styleguide__preview-loading typo3-styleguide__preview-loading--error" data-sg-preview-error role="alert" hidden>
+                        <span><f:translate key="{lll}contentelement.elementdoc.error"/> <span data-sg-preview-status></span></span>
+                    </div>
                 </div>
             </div>
         </figure>

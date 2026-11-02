@@ -487,6 +487,14 @@
 				<source />
 				<target>Maßstab</target>
 			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.loading">
+				<source />
+				<target>Vorschau wird geladen …</target>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.error">
+				<source />
+				<target>Die Vorschau konnte nicht geladen werden.</target>
+			</trans-unit>
 			<trans-unit id="contentelement.elementdoc.open">
 				<source />
 				<target>In neuem Tab öffnen</target>

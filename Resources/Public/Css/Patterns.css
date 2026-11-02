@@ -925,9 +925,12 @@
     background: var(--typo3-sg-bg-primary);
 }
 
+.typo3-styleguide__preview-stage {
+    position: relative;
+}
+
 /* With JavaScript the frame has the width of the chosen device and is scaled down to fit the column */
 .typo3-styleguide__preview-stage.is-scaled {
-    position: relative;
     overflow: hidden;
 }
 
@@ -938,6 +941,50 @@
     max-width: none;
     margin: 0;
     transform-origin: top center;
+}
+
+.typo3-styleguide__preview-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--typo3-sg-border);
+    border-radius: var(--typo3-sg-radius, 10px);
+    background: var(--typo3-sg-bg-primary);
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.875rem;
+}
+
+.typo3-styleguide__preview-loading[hidden] {
+    display: none;
+}
+
+.typo3-styleguide__preview-loading--error {
+    border-color: #dc3545;
+    color: var(--typo3-sg-text-primary);
+    text-align: center;
+}
+
+.typo3-styleguide__preview-spinner {
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--typo3-sg-border);
+    border-top-color: var(--typo3-sg-accent, currentColor);
+    border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .typo3-styleguide__preview-spinner {
+        animation: typo3-styleguide-spin 0.8s linear infinite;
+    }
+}
+
+@keyframes typo3-styleguide-spin {
+    to { transform: rotate(360deg); }
 }
 
 .typo3-styleguide__element-doc-fields {

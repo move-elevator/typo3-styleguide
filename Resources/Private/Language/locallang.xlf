@@ -366,6 +366,12 @@
 			<trans-unit id="contentelement.elementdoc.scale">
 				<source>Scale</source>
 			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.loading">
+				<source>Loading preview…</source>
+			</trans-unit>
+			<trans-unit id="contentelement.elementdoc.error">
+				<source>The preview could not be loaded.</source>
+			</trans-unit>
 			<trans-unit id="contentelement.elementdoc.open">
 				<source>Open in new tab</source>
 			</trans-unit>

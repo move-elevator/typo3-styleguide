@@ -53,6 +53,18 @@
     }
   };
 
+  // A frame fires `load` for an error page as well, so the status comes from the navigation entry of the frame, without a second request.
+  // Null: the page is not readable, for example the browser's own error page of a frame that was refused. An unknown status counts as fine
+  const statusOf = (frame) => {
+    try {
+      if (!frame.contentDocument?.documentElement) return null;
+
+      return frame.contentWindow.performance.getEntriesByType('navigation')[0]?.responseStatus || 200;
+    } catch {
+      return null;
+    }
+  };
+
   const watch = (frame) => {
     fit(frame);
     if (frame.dataset.sgFixedHeight) return;
@@ -120,7 +132,26 @@
     const frames = root.querySelectorAll('[data-sg-preview-frame]');
 
     frames.forEach(frame => {
-      frame.addEventListener('load', () => watch(frame));
+      // The indicators are hidden in the markup, so without JavaScript, where the frame stays empty, they do not wait for anything
+      const loading = frame.parentElement.querySelector('[data-sg-preview-loading]');
+      const failure = frame.parentElement.querySelector('[data-sg-preview-error]');
+      if (loading) loading.hidden = false;
+
+      frame.addEventListener('load', () => {
+        // The empty frame can report a load of its own before the address is set
+        if (!frame.getAttribute('src')) return;
+        if (loading) loading.hidden = true;
+
+        const status = statusOf(frame);
+        if (failure && (status === null || status >= 400)) {
+          failure.querySelector('[data-sg-preview-status]').textContent = status ? `(HTTP ${status})` : '';
+          failure.hidden = false;
+
+          return;
+        }
+        if (failure) failure.hidden = true;
+        watch(frame);
+      });
       new ResizeObserver(() => place(frame)).observe(frame.parentElement);
       visible.observe(frame.closest('figure'));
     });
