@@ -595,6 +595,15 @@
     .typo3-styleguide__lightbox-info {
         padding-top: 48px;
     }
+
+    /* Without a title, description, rights or download the column would only be empty space */
+    .typo3-styleguide__lightbox.is-bare .typo3-styleguide__lightbox-body {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .typo3-styleguide__lightbox.is-bare .typo3-styleguide__lightbox-info {
+        display: none;
+    }
 }
 
 .typo3-styleguide__lightbox-title {

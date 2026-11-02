@@ -911,3 +911,15 @@ body:has(.typo3-styleguide-frame) .typo3-styleguide__gallery-download:hover {
     background: var(--typo3-sg-text-primary);
     color: var(--typo3-sg-bg-primary);
 }
+
+/* In the large view the download is a button with its label below the image data, not an icon on a corner that the close button already occupies */
+body:has(.typo3-styleguide-frame) .typo3-styleguide__lightbox .typo3-styleguide__gallery-download {
+    position: static;
+    display: inline-flex;
+    gap: 8px;
+    width: auto;
+    height: auto;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 1rem;
+}

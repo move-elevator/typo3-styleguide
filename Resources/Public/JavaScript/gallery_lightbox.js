@@ -33,6 +33,7 @@
         element.hidden = !data[row];
       });
       if (download) download.href = items[current].href;
+      dialog.classList.toggle('is-bare', !(download || data.title || data.description || ROWS.some(row => data[row])));
       // Hidden by visibility, so the image keeps its column
       previous.style.visibility = next.style.visibility = items.length < 2 ? 'hidden' : '';
     };
