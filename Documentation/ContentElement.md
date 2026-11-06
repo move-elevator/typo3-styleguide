@@ -159,9 +159,9 @@ The `Gallery` content element shows an image collection as a grid, for example a
 - **Columns** — 1 to 6 columns on wide screens, reduced to 3 and 2 on narrow screens. One column shows each image at full width
 - **Show download links** — Adds a download link with the original file below each image
 
-Images load lazily and are scaled to a maximum width of 600 px (1200 px for one column), the download always delivers the original file.
+Images load lazily and are scaled to a maximum width of 600 px (1200 px for one column), the download always delivers the original file. Scaling keeps only the first frame of an animated GIF, so the gallery shows the original file instead to visitors who do not reduce motion, and in the large view. A crop of the file reference does not apply to the original.
 
-A click on an image opens a large view in a dialog, scaled to a maximum width of 1600 px. It shows the title, the description and the rights information of the image, with the arrow keys, the buttons or `Esc` to browse and close, and the download link when the element shows download links. Without JavaScript, the link around the image opens the original file.
+A click on an image opens a large view in a dialog, scaled to a maximum width of 1600 px (GIF files unscaled). It shows the title, the description and the rights information of the image, with the arrow keys, the buttons or `Esc` to browse and close, and the download link when the element shows download links. Without JavaScript, the link around the image opens the original file.
 
 The rights information is kept per file in the file metadata, in the new **Styleguide** tab of the file list. A field that stays empty does not show up in the large view:
 

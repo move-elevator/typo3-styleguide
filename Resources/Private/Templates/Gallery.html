@@ -18,9 +18,14 @@
                 <li>
                     <figure class="typo3-styleguide__gallery-figure">
                         <f:variable name="licenseUntil"><f:if condition="{image.properties.tx_typo3styleguide_license_until}"><f:format.date format="d.m.Y">{image.properties.tx_typo3styleguide_license_until}</f:format.date></f:if></f:variable>
+                        <f:comment>Image processing keeps only the first frame of a GIF, so animated images are delivered unprocessed</f:comment>
+                        <f:if condition="{image.mimeType} == 'image/gif'">
+                            <f:then><f:variable name="large" value="{image.publicUrl}"/></f:then>
+                            <f:else><f:variable name="large" value="{f:uri.image(image: image, maxWidth: '1600')}"/></f:else>
+                        </f:if>
                         <a class="typo3-styleguide__gallery-open" href="{image.publicUrl}" aria-label="{f:translate(key: '{lll}contentelement.gallery.enlarge')}: {f:if(condition: image.title, then: image.title, else: image.name)}"
                             data-sg-lightbox-item
-                            data-large="{f:uri.image(image: image, maxWidth: '1600')}"
+                            data-large="{large}"
                             data-alt="{image.alternative}"
                             data-title="{image.title}"
                             data-description="{image.description}"
@@ -29,7 +34,17 @@
                             data-license-until="{licenseUntil}"
                             data-source="{image.properties.tx_typo3styleguide_source}"
                         >
-                            <f:image image="{image}" maxWidth="{f:if(condition: '{data.tx_typo3styleguide_gallery_columns} == 1', then: '1200', else: '600')}" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
+                            <picture>
+                                <f:variable name="maxWidth" value="{f:if(condition: '{data.tx_typo3styleguide_gallery_columns} == 1', then: '1200', else: '600')}" />
+                                <f:comment>The animation is the original file, visitors who reduce motion get the first frame as a PNG, also from a GIF too small to be scaled</f:comment>
+                                <f:if condition="{image.mimeType} == 'image/gif'">
+                                    <f:then>
+                                        <source media="(prefers-reduced-motion: no-preference)" srcset="{image.publicUrl}">
+                                        <f:image image="{image}" maxWidth="{maxWidth}" fileExtension="png" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/>
+                                    </f:then>
+                                    <f:else><f:image image="{image}" maxWidth="{maxWidth}" loading="lazy" alt="{image.alternative}" class="typo3-styleguide__gallery-image"/></f:else>
+                                </f:if>
+                            </picture>
                         </a>
                         <f:if condition="{image.description}">
                             <figcaption class="typo3-styleguide__gallery-caption">{image.description}</figcaption>
