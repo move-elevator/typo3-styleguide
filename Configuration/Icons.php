@@ -46,4 +46,32 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-tableofcontents.svg',
     ],
+    'content-styleguide-brandasset' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-brandasset.svg',
+    ],
+    'content-styleguide-imagesizes' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-imagesizes.svg',
+    ],
+    'content-styleguide-gallery' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-gallery.svg',
+    ],
+    'content-styleguide-guidelines' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-guidelines.svg',
+    ],
+    'content-styleguide-elementdoc' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-elementdoc.svg',
+    ],
+    'content-styleguide-pagepreview' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-pagepreview.svg',
+    ],
+    'content-styleguide-pagelinks' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:typo3_styleguide/Resources/Public/Icons/content-styleguide-pagelinks.svg',
+    ],
 ];
