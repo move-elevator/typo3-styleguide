@@ -79,6 +79,14 @@
 				<source />
 				<target>Keine Seite gefunden</target>
 			</trans-unit>
+			<trans-unit id="frame.updated">
+				<source />
+				<target>Zuletzt geändert</target>
+			</trans-unit>
+			<trans-unit id="frame.updated.format">
+				<source />
+				<target>d.m.Y</target>
+			</trans-unit>
 			<trans-unit id="frame.nav.overview">
 				<source />
 				<target>Übersicht</target>
@@ -802,6 +810,14 @@
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source />
 				<target>Repräsentatives Inhaltselement</target>
+			</trans-unit>
+			<trans-unit id="page.styleguide.header_image">
+				<source />
+				<target>Headerbild</target>
+			</trans-unit>
+			<trans-unit id="page.styleguide.header_image.description">
+				<source />
+				<target>Steht im Frame über dem Inhalt und dem Inhaltsverzeichnis der Seite</target>
 			</trans-unit>
 		</body>
 	</file>

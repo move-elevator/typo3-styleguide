@@ -13,11 +13,13 @@
     <div class="typo3-styleguide-frame__inner typo3-styleguide-frame__layout">
         <f:if condition="{styleguidePages}">
             <aside class="typo3-styleguide-frame__aside">
-                <f:render partial="StyleguideFrame/SideNav" arguments="{items: styleguideTree}" />
+                <f:render partial="StyleguideFrame/SideNav" arguments="{items: styleguideTree, headingLevel: styleguideHeadingLevel}" />
             </aside>
         </f:if>
         <main id="main" class="typo3-styleguide-frame__main">
+            <f:render partial="StyleguideFrame/HeaderImage" arguments="{image: styleguideHeaderImage.0}" />
             <f:format.raw>{content}</f:format.raw>
+            <f:render partial="StyleguideFrame/Updated" />
         </main>
     </div>
 </div>

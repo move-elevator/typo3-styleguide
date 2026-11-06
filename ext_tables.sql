@@ -97,4 +97,5 @@ CREATE TABLE tx_typo3styleguide_guideline
 CREATE TABLE pages
 (
 	tx_typo3styleguide_ctype_icon varchar(255) DEFAULT '' NOT NULL,
+	tx_typo3styleguide_header_image int(11) unsigned DEFAULT 0 NOT NULL,
 );

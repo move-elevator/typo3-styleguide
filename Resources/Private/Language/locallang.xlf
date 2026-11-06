@@ -60,6 +60,12 @@
 			<trans-unit id="frame.nav.filter.none">
 				<source>No page found</source>
 			</trans-unit>
+			<trans-unit id="frame.updated">
+				<source>Last changed</source>
+			</trans-unit>
+			<trans-unit id="frame.updated.format">
+				<source>Y-m-d</source>
+			</trans-unit>
 			<trans-unit id="frame.nav.overview">
 				<source>Overview</source>
 			</trans-unit>
@@ -602,6 +608,12 @@
 			</trans-unit>
 			<trans-unit id="page.styleguide.ctype_icon">
 				<source>Representative content element</source>
+			</trans-unit>
+			<trans-unit id="page.styleguide.header_image">
+				<source>Header image</source>
+			</trans-unit>
+			<trans-unit id="page.styleguide.header_image.description">
+				<source>Shown above the content and the table of contents of the page in the frame</source>
 			</trans-unit>
 		</body>
 	</file>

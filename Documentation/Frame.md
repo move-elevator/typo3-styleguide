@@ -44,11 +44,13 @@ A project registers its CSS and scripts in its own layout, so replacing the page
        <div class="typo3-styleguide-frame__inner typo3-styleguide-frame__layout">
            <f:if condition="{styleguidePages}">
                <aside class="typo3-styleguide-frame__aside">
-                   <f:render partial="StyleguideFrame/SideNav" arguments="{items: styleguideTree}" />
+                   <f:render partial="StyleguideFrame/SideNav" arguments="{items: styleguideTree, headingLevel: styleguideHeadingLevel}" />
                </aside>
            </f:if>
            <div class="typo3-styleguide-frame__main">
+               <f:render partial="StyleguideFrame/HeaderImage" arguments="{image: styleguideHeaderImage.0}" />
                <f:render section="Main" arguments="{_all}" />
+               <f:render partial="StyleguideFrame/Updated" />
            </div>
        </div>
    </div>
@@ -74,6 +76,8 @@ The set provides these variables to the layout:
 | `styleguideTree` | What is below the current section, for the side menu: pages, or groups with their pages, as deep as `sideMenuLevels` says |
 | `styleguideBreadcrumb` | The rootline of the current page |
 | `styleguideBrand`, `styleguideLogo`, `styleguideLogoDark` | The brand and logo settings |
+| `styleguideHeadingLevel` | The `sideMenuHeadingLevel` setting |
+| `styleguideHeaderImage` | The header image of the page, a list with at most one file |
 | `styleguideBare` | `1` when the page is loaded by a [Page Preview](ContentElement.md#page-preview), empty otherwise |
 
 If your content uses a grid that the elements join (for example a `subgrid` with named lines), give `.typo3-styleguide-frame__main` the same grid in your stylesheet, so the elements find their columns. If your `body` is a grid, the frame spans all columns.
@@ -93,13 +97,18 @@ The static template reads them as constants, the site set as settings. Both use 
 | `sectionEntryLevel` | `1` | Menu level of the sections in the header |
 | `pageEntryLevel` | `2` | Menu level of the pages in the side menu |
 | `sideMenuLevels` | `2` | How many levels of the page tree the side menu shows below the section: `2` for groups with their pages, `3` when the groups contain groups |
+| `sideMenuHeadingLevel` | `4` | Deepest level of a Technical Headline that the side menu lists below the active page: `2` leaves out the `h3` and `h4` headings |
 | `colPos` | `0` | Comma-separated columns shown in the main area, in this order. Constant of the static template only |
 
 ## Side menu
 
 The side menu shows what is below the current section of the header, so the header entries are not repeated: the pages of the section, or groups that open and close and show the number of their pages. Groups can contain groups, as deep as `sideMenuLevels` says. A filter field narrows them down. On a screen of up to 768px width the menu starts closed behind a button, and the header shows the logo and the theme switch in one row with the navigation below it.
 
-Below the active page the menu lists its headings: the [Technical Headlines](ContentElement.md#technical-headline) and the Preview and Fields parts of an [Element Documentation](ContentElement.md#element-documentation). The heading in view is marked while the page scrolls. A page with fewer than two headings lists none.
+Below the active page the menu lists its headings: the [Technical Headlines](ContentElement.md#technical-headline) and the Preview and Fields parts of an [Element Documentation](ContentElement.md#element-documentation). The heading in view is marked while the page scrolls. A page with fewer than two headings lists none. Technical Headlines deeper than `sideMenuHeadingLevel` stay out of the menu, the table of contents on the page still lists them.
+
+## Page
+
+A page of the type Styleguide has a **Header image** in its Styleguide tab. The frame shows it at the top of the main area, followed by the table of contents of the [Technical Headlines](ContentElement.md#technical-headline). In the frame the table of contents always leads the content, also when an image element comes before the first headline. Below the content the frame shows the date of the last change of the page or its content. The `Updated` partial reads it when it renders, so place it after the content. An animated GIF as header image plays only for visitors who do not reduce motion, the others see its first frame.
 
 ## Dark mode
 

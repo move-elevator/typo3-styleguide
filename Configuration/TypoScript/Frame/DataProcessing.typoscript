@@ -6,6 +6,8 @@ page.10 {
   variables.styleguideLogo.value = {$plugin.tx_typo3styleguide.frame.logo}
   variables.styleguideLogoDark = TEXT
   variables.styleguideLogoDark.value = {$plugin.tx_typo3styleguide.frame.logoDark}
+  variables.styleguideHeadingLevel = TEXT
+  variables.styleguideHeadingLevel.value = {$plugin.tx_typo3styleguide.frame.sideMenuHeadingLevel}
 
   dataProcessing {
     1761600010 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
@@ -45,5 +47,16 @@ page.10 {
       special.range = {$plugin.tx_typo3styleguide.frame.rootLevel}|-1
       as = styleguideBreadcrumb
     }
+
+    1761600060 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    1761600060 {
+      references.fieldName = tx_typo3styleguide_header_image
+      as = styleguideHeaderImage
+    }
   }
 }
+
+# The last change of the page and its content for the Updated partial. The column of the page record is only written after the
+# rendering and would be one change behind in the cache
+lib.typo3styleguideUpdated = TEXT
+lib.typo3styleguideUpdated.data = register:SYS_LASTCHANGED

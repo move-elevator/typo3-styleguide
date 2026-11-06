@@ -448,6 +448,25 @@ body:has(.typo3-styleguide-frame__intro--start) .typo3-styleguide-technical-head
     min-width: 0;
 }
 
+.typo3-styleguide-frame__header-image {
+    margin: 0 0 32px;
+}
+
+.typo3-styleguide-frame__header-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--typo3-sg-radius);
+}
+
+.typo3-styleguide-frame__updated {
+    margin: 48px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--typo3-sg-border);
+    color: var(--typo3-sg-text-secondary);
+    font-size: 0.875rem;
+}
+
 .typo3-styleguide-frame__sidenav-list {
     margin: 0;
     padding: 0;
@@ -771,7 +790,8 @@ body:has(.typo3-styleguide-frame) :not(:first-child) > .typo3-styleguide-technic
 
 /* The table of contents is hidden when it has one entry, so it does not count as something above the headline */
 body:has(.typo3-styleguide-frame) :first-child > .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child) + .typo3-styleguide-technical-headline,
-body:has(.typo3-styleguide-frame) main > .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child):first-child + .typo3-styleguide-technical-headline {
+body:has(.typo3-styleguide-frame) main > .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child):first-child + .typo3-styleguide-technical-headline,
+body:has(.typo3-styleguide-frame) .typo3-styleguide-frame__main > .typo3-styleguide-technical-headline-toc:has(.typo3-styleguide-technical-headline-toc__item:only-child) + * > .typo3-styleguide-technical-headline:first-child {
     margin-top: 0;
 }
 

@@ -6,8 +6,12 @@
 
   const active = document.querySelector('.typo3-styleguide-frame__sidenav-link--active');
   const titleOf = heading => (heading.querySelector('.typo3-styleguide-technical-headline__title') ?? heading).textContent.trim();
+  // A technical headline deeper than the configured level stays out of the menu, the parts of an element documentation always count
+  const maxLevel = Number(document.querySelector('[data-sg-heading-level]')?.dataset.sgHeadingLevel) || 4;
+  const levelOf = heading => Number(heading.firstElementChild?.tagName.match(/^H(\d)$/)?.[1] ?? 2);
   // A first headline that is named like the page is the page itself, so it gets no entry below its own entry
   const headings = [...document.querySelectorAll('.typo3-styleguide-technical-headline[id], [data-sg-anchor][id]')]
+    .filter(heading => heading.hasAttribute('data-sg-anchor') || levelOf(heading) <= maxLevel)
     .filter(heading => !active || titleOf(heading).toLowerCase() !== active.textContent.trim().toLowerCase());
 
   if (active && headings.length >= MIN_ENTRIES) {
