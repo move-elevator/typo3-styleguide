@@ -15,6 +15,12 @@
             <f:case value="cards">
                 <f:render partial="TableOfContents/Cards" arguments="{pages: pages}" />
             </f:case>
+            <f:case value="groups">
+                <f:render partial="TableOfContents/Cards" arguments="{pages: pages, groupsOnly: 1}" />
+            </f:case>
+            <f:case value="areas">
+                <f:render partial="TableOfContents/Areas" arguments="{pages: pages}" />
+            </f:case>
             <f:defaultCase>
                 <f:render partial="TableOfContents/List" arguments="{pages: pages}" />
             </f:defaultCase>

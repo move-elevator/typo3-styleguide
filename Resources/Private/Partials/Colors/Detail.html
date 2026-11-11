@@ -1,0 +1,86 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:variable name="lll" value="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:" />
+<f:variable name="light" value="{f:if(condition: data.tx_typo3styleguide_colors_contrast_light, then: data.tx_typo3styleguide_colors_contrast_light, else: '#FFFFFF')}" />
+<f:variable name="dark" value="{f:if(condition: data.tx_typo3styleguide_colors_contrast_dark, then: data.tx_typo3styleguide_colors_contrast_dark, else: '#000000')}" />
+
+<f:if condition="{data.bodytext}">
+    <div class="typo3-styleguide__color-usage">
+        <f:format.html>{data.bodytext}</f:format.html>
+    </div>
+</f:if>
+
+<ul class="typo3-styleguide__color-cards" role="list">
+    <f:for each="{colors}" as="color">
+        <f:if condition="{color.data.color}">
+            <f:variable name="ratioLight" value="{sg:contrastRatio(color: color.data.color, background: light)}" />
+            <f:variable name="ratioDark" value="{sg:contrastRatio(color: color.data.color, background: dark)}" />
+            <f:variable name="levelLight"><sg:contrastLevel ratio="{ratioLight}"/></f:variable>
+            <f:variable name="levelDark"><sg:contrastLevel ratio="{ratioDark}"/></f:variable>
+            <f:variable name="contrastColor" value="{f:if(condition: '{ratioLight} >= {ratioDark}', then: light, else: dark)}" />
+            <li class="typo3-styleguide__color-card">
+                <div class="typo3-styleguide__color-card-swatch" style="background-color: rgb({color.data.color -> sg:format.rgb()}); color: {contrastColor};">
+                    <span>{color.data.color}</span>
+                </div>
+                <div class="typo3-styleguide__color-card-body">
+                    <p class="typo3-styleguide__color-card-title">{f:if(condition: color.data.label, then: color.data.label, else: color.data.color)}</p>
+                    <dl class="typo3-styleguide__color-card-values">
+                        <div>
+                            <dt>HEX</dt>
+                            <dd><button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color}">{color.data.color}</button></dd>
+                        </div>
+                        <div>
+                            <dt>RGB</dt>
+                            <dd><button type="button" class="typo3-styleguide__copy" data-copy="{color.data.color -> sg:format.rgb()}">{color.data.color -> sg:format.rgb()}</button></dd>
+                        </div>
+                        <f:if condition="{color.data.cmyk}">
+                            <div>
+                                <dt>CMYK</dt>
+                                <dd>{color.data.cmyk}</dd>
+                            </div>
+                        </f:if>
+                        <f:if condition="{color.data.pms}">
+                            <div>
+                                <dt>PMS</dt>
+                                <dd>{color.data.pms}</dd>
+                            </div>
+                        </f:if>
+                        <f:if condition="{color.data.variable}">
+                            <div>
+                                <dt><f:translate key="{lll}tx_typo3styleguide_color.variable"/></dt>
+                                <dd><button type="button" class="typo3-styleguide__copy" data-copy="{color.data.variable}">{color.data.variable}</button></dd>
+                            </div>
+                        </f:if>
+                    </dl>
+                    <ul class="typo3-styleguide__color-card-contrast" role="list">
+                        <li class="typo3-styleguide__chip typo3-styleguide__chip--{levelLight}">
+                            <strong><f:translate key="{lll}contentelement.colors.contrast.light"/> <f:format.number decimals="2">{ratioLight}</f:format.number>:1</strong>
+                            <span><f:translate key="{lll}contentelement.colors.contrast.{levelLight}"/></span>
+                        </li>
+                        <li class="typo3-styleguide__chip typo3-styleguide__chip--{levelDark}">
+                            <strong><f:translate key="{lll}contentelement.colors.contrast.dark"/> <f:format.number decimals="2">{ratioDark}</f:format.number>:1</strong>
+                            <span><f:translate key="{lll}contentelement.colors.contrast.{levelDark}"/></span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </f:if>
+    </f:for>
+</ul>
+
+<f:variable name="scss" value="{sg:paletteExport(colors: colors, format: 'scss')}" />
+<f:variable name="less" value="{sg:paletteExport(colors: colors, format: 'less')}" />
+<f:variable name="json" value="{sg:paletteExport(colors: colors, format: 'json')}" />
+<f:if condition="{scss}">
+    <ul class="typo3-styleguide__exports" role="list" aria-label="Export palette">
+        <li><a class="typo3-styleguide__export" href="data:text/plain;charset=utf-8,{scss -> f:format.urlencode()}" download="colors.scss">SCSS<span class="typo3-styleguide__visually-hidden"> (download palette as SCSS)</span></a></li>
+        <li><a class="typo3-styleguide__export" href="data:text/plain;charset=utf-8,{less -> f:format.urlencode()}" download="colors.less">LESS<span class="typo3-styleguide__visually-hidden"> (download palette as LESS)</span></a></li>
+        <li><a class="typo3-styleguide__export" href="data:application/json;charset=utf-8,{json -> f:format.urlencode()}" download="colors.json">JSON<span class="typo3-styleguide__visually-hidden"> (download palette as JSON)</span></a></li>
+    </ul>
+</f:if>
+
+</html>

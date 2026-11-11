@@ -1,0 +1,36 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:sg="http://typo3.org/ns/MoveElevator/Styleguide/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<ul class="typo3-styleguide-toc__areas" role="list">
+    <f:for each="{pages}" as="page">
+        <f:if condition="{page.data.doktype} == 1754310721">
+            <li class="typo3-styleguide-toc__area">
+                <f:if condition="{page.data.tx_typo3styleguide_ctype_icon}">
+                    <span class="typo3-styleguide-toc__area-icon" aria-hidden="true">
+                        <core:icon identifier="{sg:cTypeIconIdentifier(ctype: page.data.tx_typo3styleguide_ctype_icon)}" size="default" />
+                    </span>
+                </f:if>
+                <h3 class="typo3-styleguide-toc__area-title"><a href="{page.link}">{page.title}</a></h3>
+                <f:if condition="{page.data.subtitle}">
+                    <p class="typo3-styleguide-toc__area-text">{page.data.subtitle}</p>
+                </f:if>
+                <f:if condition="{page.children}">
+                    <ul class="typo3-styleguide-toc__area-pages" role="list">
+                        <f:for each="{page.children}" as="child">
+                            <f:if condition="{child.data.doktype} == 1754310721">
+                                <li><a href="{child.link}">{child.title}</a></li>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                </f:if>
+                <a class="typo3-styleguide-toc__area-link" href="{page.link}"><f:translate key="LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:contentelement.tableofcontents.area.open"/><span class="typo3-styleguide__visually-hidden">: {page.title}</span></a>
+            </li>
+        </f:if>
+    </f:for>
+</ul>
+
+</html>

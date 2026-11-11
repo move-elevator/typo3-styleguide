@@ -52,7 +52,16 @@ class TechnicalHeadline {
     })
     html += "</ul></div>"
 
-    this.firstEl?.insertAdjacentHTML("beforebegin", html)
+    // In the frame the table of contents leads the page, also when an image comes before the first headline. Only a header image of the page stays above it
+    const main = document.querySelector(".typo3-styleguide-frame__main")
+    const headerImage = main?.querySelector(":scope > .typo3-styleguide-frame__header-image")
+    if (headerImage) {
+      headerImage.insertAdjacentHTML("afterend", html)
+    } else if (main) {
+      main.insertAdjacentHTML("afterbegin", html)
+    } else {
+      this.firstEl?.insertAdjacentHTML("beforebegin", html)
+    }
   }
 }
 

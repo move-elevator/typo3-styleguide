@@ -1,0 +1,26 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+
+<div class="typo3-styleguide__frame">
+    <div class="typo3-styleguide__element-doc">
+        <f:if condition="{data.bodytext}">
+            <div class="typo3-styleguide__element-doc-note">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </div>
+        </f:if>
+
+        <f:if condition="{examples}">
+            <f:render partial="Preview/Examples" arguments="{examples: examples, uid: data.uid, label: data.header, fixedHeight: 800}" />
+        </f:if>
+    </div>
+</div>
+
+</f:section>
+</html>

@@ -9,18 +9,18 @@ TYPO3 extension providing tools for editorial style guides: content elements, st
 - Composer package: `move-elevator/typo3-styleguide`
 - Extension key: `typo3_styleguide`
 - Namespace: `MoveElevator\Styleguide`
-- PHP `~8.2 || ~8.3 || ~8.4 || ~8.5`, TYPO3 `^12.0 || ^13.0 || ^14.0`, `ext-dom`, `ext-intl`
+- PHP `~8.2 || ~8.3 || ~8.4 || ~8.5`, TYPO3 `^12.4 || ^13.0 || ^14.0`, `ext-dom`, `ext-intl`
 - Optional: `blueways/bw-static-template` renders any Fluid template or partial as a content element
 
 ## Structure
 
-- `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `Middleware/`, `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
-- `Configuration/`: `TCA/` (content elements, page types and TypoScript templates are registered in `TCA/Overrides/`), `TsConfig/`, `TypoScript/`, `Services.yaml`, `RequestMiddlewares.php`, `Icons.php`
-- `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`) and `Public/`
+- `Classes/`: PHP code (`Configuration.php` holds `EXT_KEY`, `EXT_NAME`, `PAGE_TYPE`), with `DataProcessing/`, `Middleware/` (backend-user restriction and the preview frames of the element documentation), `Mcp/`, `Preview/`, `UserFunc/` and `ViewHelpers/` (with a `Format/` sub-namespace)
+- `Configuration/`: `Sets/Frame/` (site set with the frame parts for projects with their own page template), `TCA/` (content elements, page types, TypoScript templates and the rights fields of the file metadata are registered in `TCA/Overrides/`), `TsConfig/`, `TypoScript/`, `Services.yaml`, `RequestMiddlewares.php`, `Icons.php`
+- `Resources/`: `Private/` (Fluid templates, language files, pattern templates under `Templates/Patterns/`, the optional page frame under `Frame/`) and `Public/`
 - `Tests/Unit/`: PHPUnit unit tests
-- `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment
+- `Tests/Acceptance/Fixtures/`: fixtures for the acceptance environment. `data.xml` holds two page trees: `/styleguide` with the plain content elements and `/styleguide-neu` with the frame and the new design. A new tree needs its rows appended to the page tree, the header records and `pid_lookup` as well as the table rows, and inline fields must hold the uids of their children, not a count, or the import re-parents existing records. `ddev install` imports every `*.xml` in the folder
 - `Tests/CGL/`: separate Composer project holding all code quality tools and their configs. Its `composer.lock` is committed and updated by Renovate, so tool releases only reach CI through a Renovate PR
-- `Documentation/`: generated ViewHelper docs and content element notes
+- `Documentation/`: the documentation linked from the README: content elements, the frame (`Frame.md`), page type, backend layout, access and one page per ViewHelper
 - `.ddev/`: DDEV setup with custom commands (`cgl`, `install`, `all`, `typo3`, and one command per TYPO3 version)
 - `ext_localconf.php`, `ext_tables.php`, `ext_tables.sql`, `ext_emconf.php`: classic extension registration files
 
@@ -40,7 +40,7 @@ ddev all typo3 database:updateschema   # run across all instances
 
 Each TYPO3 version has its own docroot, database and hostname (`<version>.typo3-styleguide.ddev.site`).
 
-Regenerate the ViewHelper documentation with `ddev composer doc:viewhelpers`. It scans `Classes/ViewHelpers` and writes to `Documentation/ViewHelpers/`.
+The ViewHelper pages in `Documentation/ViewHelpers/` are written by hand. `ddev composer doc:viewhelpers` builds stubs from the class docblocks, which would overwrite the examples, and it currently fails with a `TypeError` in `Documentation/phpdoc.php`, so do not run it. A new ViewHelper gets a page and an entry in `CLASSES.md` by hand.
 
 ## Testing
 
