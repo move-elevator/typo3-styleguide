@@ -44,7 +44,7 @@ ArrayUtility::mergeRecursiveWithOverrule(
         'types' => [
             Configuration::PAGE_TYPE => [
                 'showitem' => $GLOBALS['TCA']['pages']['types'][PageRepository::DOKTYPE_DEFAULT]['showitem']
-                    .',--div--;LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide,tx_typo3styleguide_ctype_icon',
+                    .',--div--;LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide,tx_typo3styleguide_ctype_icon,tx_typo3styleguide_header_image',
             ],
         ],
     ],
@@ -63,5 +63,15 @@ $GLOBALS['TCA']['pages']['columns']['tx_typo3styleguide_ctype_icon'] = [
             ],
         ],
         'itemsProcFunc' => MoveElevator\Styleguide\UserFunc\CTypeItemsProcFunc::class.'->getItems',
+    ],
+];
+
+$GLOBALS['TCA']['pages']['columns']['tx_typo3styleguide_header_image'] = [
+    'label' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide.header_image',
+    'description' => 'LLL:EXT:'.Configuration::EXT_KEY.'/Resources/Private/Language/locallang.xlf:page.styleguide.header_image.description',
+    'config' => [
+        'type' => 'file',
+        'allowed' => 'common-image-types',
+        'maxitems' => 1,
     ],
 ];

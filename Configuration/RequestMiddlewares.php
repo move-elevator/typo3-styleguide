@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-use MoveElevator\Styleguide\Middleware\BackendUserOnlyAccessMiddleware;
+use MoveElevator\Styleguide\Middleware\{BackendUserOnlyAccessMiddleware, ElementPreviewMiddleware};
 
 return [
     'frontend' => [
@@ -22,6 +22,12 @@ return [
             ],
             'before' => [
                 'typo3/cms-frontend/page-argument-validator',
+            ],
+        ],
+        'typo3-styleguide/element-preview' => [
+            'target' => ElementPreviewMiddleware::class,
+            'after' => [
+                'typo3/cms-frontend/prepare-tsfe-rendering',
             ],
         ],
     ],

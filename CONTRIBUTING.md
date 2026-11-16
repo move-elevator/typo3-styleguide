@@ -31,8 +31,6 @@ ddev cgl lint:composer
 ddev cgl lint:editorconfig
 ddev cgl lint:language
 ddev cgl lint:php
-ddev cgl lint:typoscript
-ddev cgl lint:yaml
 
 # Fix all CGL issues
 ddev cgl fix
@@ -62,9 +60,9 @@ For testing the extension, you need to set up the TYPO3 instances.
 ddev install all
 
 # Or install specific TYPO3 versions
-ddev install 11
 ddev install 12
 ddev install 13
+ddev install 14
 
 # Open the overview page
 ddev launch

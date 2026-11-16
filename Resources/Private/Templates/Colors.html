@@ -12,26 +12,39 @@
 
 
 <div class="typo3-styleguide__frame">
-    <div class="typo3-styleguide__element-container">
-        <f:for each="{colors}" as="color">
-            <f:if condition="{color.data.color}">
-                <f:variable name="contrastColor">
-                    <sg:contrastColor color="{color.data.color}"/>
-                </f:variable>
-                <div class="typo3-styleguide__element" data-copy="{color.data.color}">
-                    <div class="typo3-styleguide__color"
-                         style="background-color: {color.data.color}; color: {contrastColor};">
-                        <p class="typo3-styleguide__color-value">
-                            {color.data.color}
-                        </p>
-                        <p class="typo3-styleguide__color-label">
-                            {color.data.label}
-                        </p>
-                    </div>
-                </div>
-            </f:if>
-        </f:for>
-    </div>
+    <f:switch expression="{data.tx_typo3styleguide_colors_layout}">
+        <f:case value="detail">
+            <f:render partial="Colors/Detail" arguments="{colors: colors, data: data}" />
+        </f:case>
+        <f:case value="scale">
+            <f:render partial="Colors/Scale" arguments="{colors: colors}" />
+        </f:case>
+        <f:case value="status">
+            <f:render partial="Colors/Status" arguments="{colors: colors, data: data}" />
+        </f:case>
+        <f:defaultCase>
+            <div class="typo3-styleguide__element-container">
+                <f:for each="{colors}" as="color">
+                    <f:if condition="{color.data.color}">
+                        <f:variable name="contrastColor">
+                            <sg:contrastColor color="{color.data.color}"/>
+                        </f:variable>
+                        <div class="typo3-styleguide__element" data-copy="{color.data.color}">
+                            <div class="typo3-styleguide__color"
+                                 style="background-color: rgb({color.data.color -> sg:format.rgb()}); color: {contrastColor};">
+                                <p class="typo3-styleguide__color-value">
+                                    {color.data.color}
+                                </p>
+                                <p class="typo3-styleguide__color-label">
+                                    {color.data.label}
+                                </p>
+                            </div>
+                        </div>
+                    </f:if>
+                </f:for>
+            </div>
+        </f:defaultCase>
+    </f:switch>
 </div>
 
 </f:section>

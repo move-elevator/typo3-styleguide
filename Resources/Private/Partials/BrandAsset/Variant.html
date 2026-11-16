@@ -1,0 +1,16 @@
+<f:if condition="{files}">
+    <figure class="typo3-styleguide__logo typo3-styleguide__logo--{variant}">
+        <div class="typo3-styleguide__logo-stage">
+            <div class="typo3-styleguide__logo-area{f:if(condition: '{factor} > 0', then: ' typo3-styleguide__logo-area--protected')}" style="--typo3-sg-protected: {factor};">
+                <f:image image="{files.0}" maxHeight="128"/>
+            </div>
+        </div>
+        <figcaption class="typo3-styleguide__logo-caption">
+            <strong><f:translate key="contentelement.brandasset.variant.{variant}" extensionName="Typo3Styleguide"/></strong>
+            <f:if condition="{factor} > 0">
+                <f:variable name="shown" value="{factor * 1}"/>
+                <span><f:translate key="contentelement.brandasset.protected.caption" extensionName="Typo3Styleguide" arguments="{0: shown}"/></span>
+            </f:if>
+        </figcaption>
+    </figure>
+</f:if>

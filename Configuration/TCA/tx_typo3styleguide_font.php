@@ -71,10 +71,31 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'purpose' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.purpose',
+            'description' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.purpose.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => 'Headlines',
+            ],
+        ],
+        'source' => [
+            'label' => 'LLL:EXT:typo3_styleguide/Resources/Private/Language/locallang.xlf:tx_typo3styleguide_font.source',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+                'placeholder' => 'Self-hosted (WOFF2)',
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'font,font_weight,label',
+            'showitem' => 'font,font_weight,label,purpose,source',
         ],
     ],
 ];

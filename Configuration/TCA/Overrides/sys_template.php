@@ -21,3 +21,9 @@ ExtensionManagementUtility::addStaticFile(
     'Configuration/TypoScript',
     'TYPO3 Styleguide',
 );
+
+ExtensionManagementUtility::addStaticFile(
+    Configuration::EXT_KEY,
+    'Configuration/TypoScript/Frame',
+    'TYPO3 Styleguide Frame',
+);

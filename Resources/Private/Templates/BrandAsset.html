@@ -1,0 +1,37 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default" />
+<f:section name="Main">
+
+<f:asset.css identifier="typo3styleguide_element_css" href="EXT:typo3_styleguide/Resources/Public/Css/Patterns.css"/>
+
+<div class="typo3-styleguide__frame">
+    <div class="typo3-styleguide__element-container">
+        <f:render partial="BrandAsset/Variant" arguments="{files: light, variant: 'light', factor: data.tx_typo3styleguide_brandasset_protected}"/>
+        <f:render partial="BrandAsset/Variant" arguments="{files: dark, variant: 'dark', factor: data.tx_typo3styleguide_brandasset_protected}"/>
+        <f:render partial="BrandAsset/Variant" arguments="{files: white, variant: 'white', factor: data.tx_typo3styleguide_brandasset_protected}"/>
+    </div>
+    <f:if condition="{downloads}">
+        <div class="typo3-styleguide__downloads">
+            <f:groupedFor each="{downloads}" as="files" groupBy="extension" groupKey="format">
+                <div>
+                    <p class="typo3-styleguide__downloads-format">{format -> f:format.case(mode: 'upper')}</p>
+                    <ul class="typo3-styleguide__downloads-list">
+                        <f:for each="{files}" as="file">
+                            <li>
+                                <a href="{file.publicUrl}" download>{file.name}</a>
+                                <span class="typo3-styleguide__downloads-size">{file.size -> f:format.bytes()}</span>
+                            </li>
+                        </f:for>
+                    </ul>
+                </div>
+            </f:groupedFor>
+        </div>
+    </f:if>
+</div>
+
+</f:section>
+</html>

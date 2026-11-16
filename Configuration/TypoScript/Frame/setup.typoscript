@@ -1,0 +1,28 @@
+# The preview frames show a page of the project as it is, so the frame steps aside for them
+[not (traverse(request.getQueryParams(), 'sg_preview') > 0) and not traverse(request.getQueryParams(), 'sg_page_preview')]
+  page {
+    meta.viewport = width=device-width, initial-scale=1
+    includeCSS.typo3styleguideFrame = EXT:typo3_styleguide/Resources/Public/Css/Frame.css
+
+    100 >
+    # A project that renders its pages with PAGEVIEW keeps data processors at page.10, they must not run for the frame
+    10 >
+    10 = FLUIDTEMPLATE
+    10 {
+      templateRootPaths.1761600000 = EXT:typo3_styleguide/Resources/Private/Frame/Templates/
+      partialRootPaths.1761600000 = EXT:typo3_styleguide/Resources/Private/Frame/Partials/
+      templateName = Frame
+
+      variables.content = CONTENT
+      variables.content {
+        table = tt_content
+        select {
+          orderBy = colPos, sorting
+          where = {#colPos} IN ({$plugin.tx_typo3styleguide.frame.colPos})
+        }
+      }
+    }
+  }
+
+  @import 'EXT:typo3_styleguide/Configuration/TypoScript/Frame/DataProcessing.typoscript'
+[END]
